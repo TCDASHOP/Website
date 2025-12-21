@@ -6,126 +6,114 @@
   <meta name="theme-color" content="#050607" />
   <title>SAIREN COLOR ARCHIVE</title>
 
-  <!-- ここに貼る（あなたが聞いてた場所はここで正解） -->
-  <link rel="stylesheet" href="./assets/css/styles.css" />
+  <!-- ✅ CSSはhead内。ここ以外に貼らない -->
+  <link rel="stylesheet" href="./assets/css/styles.css">
+
+  <!-- ✅ JSはdefer付きでhead内に置いてOK -->
   <script defer src="./assets/js/main.js"></script>
+
+  <!-- ✅ CSSが読めてない＝白背景＆青リンクの原因。検知して警告 -->
+  <style>
+    /* CSSが読み込めたら styles.css 側で body{background:#050607;} になる想定 */
+    .css-warning{
+      position:fixed; inset:auto 12px 12px 12px;
+      padding:12px 14px;
+      border:1px solid rgba(255,80,80,.55);
+      background:rgba(30,0,0,.72);
+      color:#fff; font: 12px/1.5 system-ui,-apple-system,"Noto Sans JP",sans-serif;
+      border-radius:12px;
+      z-index:9999;
+      display:none;
+      white-space:pre-wrap;
+    }
+  </style>
 </head>
 
-<body class="no-select">
-  <!-- 背景の色場（反応する“空気”） -->
-  <div class="field" aria-hidden="true">
-    <div class="field__grain"></div>
-    <div class="field__vignette"></div>
-    <div class="field__pulse"></div>
+<body class="page-home" data-page="home">
+  <div class="css-warning" id="cssWarn">
+CSSが読み込めていません → 白背景＆青リンクに戻ります。
+
+原因候補：
+1) ファイル位置が違う（Website/assets/css/styles.css にある？）
+2) パスが違う（linkの ./assets/css/styles.css は合ってる？）
+3) GitHub Pagesの公開ルートが違う（Website/ がルート？）
+4) キャッシュ（URLに ?v=1 を付けて更新）
   </div>
 
-  <header class="topbar">
-    <a class="brand" href="./index.html" aria-label="SAIREN COLOR ARCHIVE">
-      <span class="brand__stack">SAIREN<br/>COLOR<br/>ARCHIVE</span>
-      <span class="brand__dot" aria-hidden="true"></span>
-    </a>
+  <header class="nav">
+    <div class="wrap nav__inner">
+      <a class="brand" href="./index.html">
+        SAIREN<br><span>COLOR ARCHIVE</span>
+      </a>
 
-    <nav class="nav">
-      <a class="nav__link" href="#works">Works</a>
-      <a class="nav__link" href="#about">About</a>
-      <a class="nav__link" href="https://www.tcda.shop/" target="_blank" rel="noopener">Apparel Brand</a>
-    </nav>
+      <nav class="navlinks" aria-label="Primary">
+        <a href="#works">Works</a>
+        <a href="./index.html#about">About</a>
+        <a href="https://www.tcda.shop/" target="_blank" rel="noopener">Apparel Brand</a>
+      </nav>
+    </div>
   </header>
 
-  <main>
-    <!-- HERO -->
+  <main class="wrap">
     <section class="hero" id="top">
-      <div class="hero__meta">
-        <div class="tag">ライブアーカイブ</div>
-        <div class="tag tag--ghost">構造としての色</div>
-        <div class="tag tag--ghost">思考 → 形式</div>
-      </div>
+      <div class="hero__inner">
+        <div class="hero__kicker">LIVE ARCHIVE / 構造としての色</div>
 
-      <h1 class="hero__title" aria-label="構造。">
-        <span class="hero__titleCore" data-morph="構造。|アーティファクト|フィールドノート|ルックブック|構造。">構造。</span>
-        <span class="hero__cursor" aria-hidden="true"></span>
-      </h1>
+        <h1 class="hero__title">
+          <span class="hero__titleCore"
+            data-morph="構造。|アーティファクト|フィールドノート|ルックブック|色は装飾ではない。|これは服になる前の思考だ。">構造。</span>
+        </h1>
 
-      <p class="hero__lead">
-        視覚的な思考が、形式としてアーカイブされています。<br/>
-        <span class="hero__en">This is thought before it becomes clothing.</span>
-      </p>
+        <p class="hero__sub">
+          Visual thoughts archived as form.<br>
+          スクロロールで“分類名”に変異します。
+        </p>
 
-      <div class="telemetry" aria-hidden="true">
-        <div>x <span id="mx">0.00</span></div>
-        <div>y <span id="my">0.00</span></div>
-        <div>t <span id="mt">0.00</span>s</div>
-        <div class="telemetry__hint">SCROLL</div>
-      </div>
+        <div class="hud">
+          <div class="hud__row"><span>x</span><b id="hudX">0.00</b></div>
+          <div class="hud__row"><span>y</span><b id="hudY">0.00</b></div>
+          <div class="hud__row"><span>t</span><b id="hudT">0.00s</b></div>
+          <div class="hud__row"><span>state</span><b id="hudS">LIVE</b></div>
+        </div>
 
-      <div class="hero__divider" aria-hidden="true"></div>
-    </section>
-
-    <!-- WORKS -->
-    <section class="works" id="works">
-      <div class="works__head">
-        <h2 class="works__title">作品</h2>
-        <p class="works__desc">アーティファクト／ルックブック／フィールドノート —— 入口はポータルです。</p>
-      </div>
-
-      <div class="grid">
-        <!-- 01 -->
-        <a class="card" href="./work.html?id=01&cat=artifact&year=2024&img=1.webp" data-field="rgba(60,220,255,.55)">
-          <figure class="card__media">
-            <img src="/assets/img/works/1.webp" alt="Artifact 01" loading="lazy" />
-          </figure>
-          <div class="card__body">
-            <div class="card__meta">ARTIFACT 01 / 2024</div>
-            <div class="card__name">Chromatic Silence</div>
-            <div class="card__note">構造の静寂。色が音ではなく骨格として現れる。</div>
-          </div>
-        </a>
-
-        <!-- 02 -->
-        <a class="card" href="./work.html?id=02&cat=lookbook&year=2025&img=2.webp" data-field="rgba(255,100,160,.55)">
-          <figure class="card__media">
-            <img src="/assets/img/works/2.webp" alt="Lookbook 02" loading="lazy" />
-          </figure>
-          <div class="card__body">
-            <div class="card__meta">LOOKBOOK 02 / 2025</div>
-            <div class="card__name">Moving Canvas</div>
-            <div class="card__note">“着る”は展示ではなく、移動する展示だ。</div>
-          </div>
-        </a>
-
-        <!-- 03 -->
-        <a class="card" href="./work.html?id=03&cat=fieldnote&year=2025&img=3.webp" data-field="rgba(120,255,140,.55)">
-          <figure class="card__media">
-            <img src="/assets/img/works/3.webp" alt="Fieldnote 03" loading="lazy" />
-          </figure>
-          <div class="card__body">
-            <div class="card__meta">FIELDNOTE 03 / 2025</div>
-            <div class="card__name">Field Notes</div>
-            <div class="card__note">観測ログ。思考が崩れる瞬間の採取。</div>
-          </div>
-        </a>
+        <a class="scrollHint" href="#works">SCROLL</a>
       </div>
     </section>
 
-    <!-- ABOUT -->
-    <section class="about" id="about">
-      <h2 class="about__title">About</h2>
+    <section id="works">
+      <div class="sectionTitle">WORKS / 分類ノード（入口ポータル）</div>
+      <div class="grid" id="worksGrid" aria-live="polite"></div>
+    </section>
+
+    <section id="about" class="about">
+      <div class="sectionTitle">ABOUT</div>
       <p class="about__text">
-        SAIREN COLOR ARCHIVE は「色彩＝装飾」ではなく「色彩＝構造」という前提で、<br/>
-        服になる前の思考を保存するためのアーカイブです。
-      </p>
-      <p class="about__text about__text--muted">
-        ※ 右クリック／長押しの抑止は“完全防止”ではありません（仕様上、回避は可能）。<br/>
-        ただし一般ユーザーの保存動機はかなり下げます。
+        これは“服になる前の思考”のアーカイブ。<br>
+        作品は分類されるが、分類は固定されない。構造は変異する。
       </p>
     </section>
 
-    <footer class="footer">
-      <span>© <span id="yearNow"></span> SAIREN COLOR ARCHIVE</span>
-    </footer>
+    <footer class="footer">© 2025 SAIREN COLOR ARCHIVE</footer>
   </main>
 
-  <!-- “崩壊”用オーバーレイ -->
-  <div class="decay" aria-hidden="true"></div>
+  <div class="touchShield" aria-hidden="true"></div>
+
+  <!-- ✅ “白背景に戻る”の即判定：背景が黒じゃなければ警告表示 -->
+  <script>
+    (function(){
+      const warn = document.getElementById('cssWarn');
+      const bg = getComputedStyle(document.body).backgroundColor;
+      // styles.cssが読めていれば濃い黒系になる想定
+      const looksDark = bg.includes('rgb(5') || bg.includes('rgb(0') || bg.includes('rgba(0');
+      if(!looksDark && warn) warn.style.display = 'block';
+
+      // JSが死んでたら気づけるようにタイトルに付与（main.js側でも上書きOK）
+      setTimeout(() => {
+        if(!document.documentElement.dataset.jsok){
+          document.title = "SAIREN COLOR ARCHIVE (JS OFF)";
+        }
+      }, 800);
+    })();
+  </script>
 </body>
 </html>
