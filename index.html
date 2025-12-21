@@ -6,15 +6,14 @@
   <meta name="theme-color" content="#050607" />
   <title>SAIREN COLOR ARCHIVE</title>
 
-  <!-- ✅ CSSはhead内。ここ以外に貼らない -->
+  <!-- CSS（head内） -->
   <link rel="stylesheet" href="./assets/css/styles.css">
 
-  <!-- ✅ JSはdefer付きでhead内に置いてOK -->
+  <!-- JS（deferでhead内OK） -->
   <script defer src="./assets/js/main.js"></script>
 
-  <!-- ✅ CSSが読めてない＝白背景＆青リンクの原因。検知して警告 -->
+  <!-- CSS未読込（白背景＆青リンク）検知 -->
   <style>
-    /* CSSが読み込めたら styles.css 側で body{background:#050607;} になる想定 */
     .css-warning{
       position:fixed; inset:auto 12px 12px 12px;
       padding:12px 14px;
@@ -31,24 +30,20 @@
 
 <body class="page-home" data-page="home">
   <div class="css-warning" id="cssWarn">
-CSSが読み込めていません → 白背景＆青リンクに戻ります。
+CSSが読み込めていません（白背景＆青リンク状態）。
 
-原因候補：
-1) ファイル位置が違う（Website/assets/css/styles.css にある？）
-2) パスが違う（linkの ./assets/css/styles.css は合ってる？）
-3) GitHub Pagesの公開ルートが違う（Website/ がルート？）
-4) キャッシュ（URLに ?v=1 を付けて更新）
+確認：
+1) Website/assets/css/styles.css は存在？
+2) <link href="./assets/css/styles.css"> のパスは合ってる？
+3) キャッシュ：URL末尾に ?v=1 を付けて再読み込み
   </div>
 
   <header class="nav">
     <div class="wrap nav__inner">
-      <a class="brand" href="./index.html">
-        SAIREN<br><span>COLOR ARCHIVE</span>
-      </a>
-
+      <a class="brand" href="./index.html">SAIREN<br><span>COLOR ARCHIVE</span></a>
       <nav class="navlinks" aria-label="Primary">
         <a href="#works">Works</a>
-        <a href="./index.html#about">About</a>
+        <a href="#about">About</a>
         <a href="https://www.tcda.shop/" target="_blank" rel="noopener">Apparel Brand</a>
       </nav>
     </div>
@@ -65,11 +60,11 @@ CSSが読み込めていません → 白背景＆青リンクに戻ります。
         </h1>
 
         <p class="hero__sub">
-          Visual thoughts archived as form.<br>
-          スクロロールで“分類名”に変異します。
+          Scroll to mutate classification.<br>
+          近づくと色場が反応し、無操作でUIが静かに崩壊します。
         </p>
 
-        <div class="hud">
+        <div class="hud" aria-hidden="true">
           <div class="hud__row"><span>x</span><b id="hudX">0.00</b></div>
           <div class="hud__row"><span>y</span><b id="hudY">0.00</b></div>
           <div class="hud__row"><span>t</span><b id="hudT">0.00s</b></div>
@@ -98,16 +93,13 @@ CSSが読み込めていません → 白背景＆青リンクに戻ります。
 
   <div class="touchShield" aria-hidden="true"></div>
 
-  <!-- ✅ “白背景に戻る”の即判定：背景が黒じゃなければ警告表示 -->
   <script>
     (function(){
       const warn = document.getElementById('cssWarn');
       const bg = getComputedStyle(document.body).backgroundColor;
-      // styles.cssが読めていれば濃い黒系になる想定
       const looksDark = bg.includes('rgb(5') || bg.includes('rgb(0') || bg.includes('rgba(0');
       if(!looksDark && warn) warn.style.display = 'block';
 
-      // JSが死んでたら気づけるようにタイトルに付与（main.js側でも上書きOK）
       setTimeout(() => {
         if(!document.documentElement.dataset.jsok){
           document.title = "SAIREN COLOR ARCHIVE (JS OFF)";
