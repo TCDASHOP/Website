@@ -3,62 +3,88 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
-  <meta name="theme-color" content="#0a0a0c" />
+  <meta name="theme-color" content="#050607" />
   <title>Work | SAIREN COLOR ARCHIVE</title>
-
-  <link rel="stylesheet" href="./assets/css/styles.css">
+  <link rel="stylesheet" href="./assets/css/styles.css" />
   <script defer src="./assets/js/main.js"></script>
 </head>
 
-<body class="no-select">
-  <canvas id="field" aria-hidden="true"></canvas>
-  <div class="noise" aria-hidden="true"></div>
-  <div class="vignette" aria-hidden="true"></div>
+<body class="no-select workpage">
+  <div class="field" aria-hidden="true">
+    <div class="field__grain"></div>
+    <div class="field__vignette"></div>
+    <div class="field__pulse"></div>
+  </div>
 
-  <header class="topbar topbar--thin">
-    <a class="brand brand--small" href="./index.html">
-      <span class="brand__jp">サイレン<br>カラー<br>アーカイブ</span>
-      <span class="brand__en">SAIREN COLOR ARCHIVE</span>
+  <header class="topbar">
+    <a class="brand" href="./index.html">
+      <span class="brand__stack">SAIREN<br/>COLOR<br/>ARCHIVE</span>
+      <span class="brand__dot" aria-hidden="true"></span>
     </a>
     <nav class="nav">
-      <a href="./index.html#works">作品</a>
-      <a class="nav__cta" href="https://www.tcda.shop/" target="_blank" rel="noopener">アパレルブランド</a>
+      <a class="nav__link" href="./index.html#works">Works</a>
+      <a class="nav__link" href="./index.html#about">About</a>
+      <a class="nav__link" href="https://www.tcda.shop/" target="_blank" rel="noopener">Apparel Brand</a>
     </nav>
   </header>
 
   <main class="work">
-    <section class="workHero">
-      <div class="workHero__time" id="timelineLabel">t = 0.00</div>
-      <h1 class="workHero__title" id="workTitle">…</h1>
-      <p class="workHero__statement">これは服になる前の思考だ。</p>
-    </section>
+    <section class="work__hero">
+      <div class="work__badge">
+        <span id="wCat">artifact</span> / <span id="wYear">2025</span> / <span id="wId">00</span>
+      </div>
 
-    <section class="timeRail" aria-hidden="true">
-      <div class="timeRail__line"></div>
-      <div class="timeRail__ticks" id="ticks"></div>
-    </section>
+      <h1 class="work__title" id="wTitle">Untitled</h1>
 
-    <section class="workStage">
-      <figure class="workFigure">
-        <img id="workImg" alt="" draggable="false" loading="eager">
-      </figure>
+      <p class="work__statement">
+        <strong>これは服になる前の思考だ。</strong>
+        <span class="work__sub">This is thought before it becomes clothing.</span>
+      </p>
 
-      <div class="workPanel">
-        <div class="workMeta" id="workMeta"></div>
-        <div class="workText" id="workText"></div>
+      <div class="work__canvas">
+        <img id="wImg" src="/assets/img/works/1.webp" alt="work image">
       </div>
     </section>
 
-    <section class="workNav">
-      <a class="btn" id="prevBtn" href="./index.html#works">← 戻る</a>
-      <a class="btn btn--ghost" id="nextBtn" href="./index.html#works">次 →</a>
+    <!-- 時間軸（スクロールで進む） -->
+    <section class="timeline">
+      <div class="timeline__rail" aria-hidden="true"></div>
+
+      <article class="tick">
+        <div class="tick__t">t = 0.00</div>
+        <div class="tick__body">
+          <h2>発生</h2>
+          <p>最初の違和感。まだ説明できない形。</p>
+        </div>
+      </article>
+
+      <article class="tick">
+        <div class="tick__t">t = 0.38</div>
+        <div class="tick__body">
+          <h2>分解</h2>
+          <p>意味ではなく構造へ。色が“骨格”になりはじめる。</p>
+        </div>
+      </article>
+
+      <article class="tick">
+        <div class="tick__t">t = 0.75</div>
+        <div class="tick__body">
+          <h2>固定</h2>
+          <p>ここで初めて「作品」という形式をまとってしまう。</p>
+        </div>
+      </article>
+
+      <div class="work__nav">
+        <a class="navbtn" href="./index.html#works">← 戻る</a>
+        <a class="navbtn navbtn--ghost" id="nextLink" href="./work.html?id=02&cat=lookbook&year=2025&img=2.webp">次 →</a>
+      </div>
     </section>
 
     <footer class="footer">
-      <small>© <span id="year"></span> SAIREN COLOR ARCHIVE</small>
+      <span>© <span id="yearNow"></span> SAIREN COLOR ARCHIVE</span>
     </footer>
   </main>
 
-  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <div class="decay" aria-hidden="true"></div>
 </body>
 </html>
