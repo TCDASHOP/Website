@@ -1,68 +1,49 @@
-[
-  { "id":"01","category":"artifact","year":"2024","title":"Work 01","jp":"これは服になる前の思考だ。","note":"This is thought before it becomes clothing.","image":"./assets/img/works/1.webp","hue":210,
-    "timeline":[{"t":"00:00","text":"色は装飾ではない。"},{"t":"00:21","text":"構造が先にあり、色は遅れて到着する。"},{"t":"00:48","text":"分類は仮。構造は生きている。"}]
-  },
-  { "id":"02","category":"lookbook","year":"2025","title":"Work 02","jp":"これは服になる前の思考だ。","note":"Wearing is movement.","image":"./assets/img/works/2.webp","hue":28,
-    "timeline":[{"t":"00:00","text":"“着る”は静止ではない。"},{"t":"00:29","text":"身体が動くと色の意味が変わる。"},{"t":"01:02","text":"変わることが作品の条件。"}]
-  },
-  { "id":"03","category":"fieldnote","year":"2025","title":"Work 03","jp":"これは服になる前の思考だ。","note":"Observation log.","image":"./assets/img/works/3.webp","hue":300,
-    "timeline":[{"t":"00:00","text":"観測は作品を壊す。"},{"t":"00:33","text":"崩壊の直前だけが真実。"},{"t":"01:10","text":"だから記録する。"}]
-  },
-
-  { "id":"04","category":"artifact","year":"2024","title":"Work 04","jp":"これは服になる前の思考だ。","note":"Thought as form.","image":"./assets/img/works/4.webp","hue":220,
-    "timeline":[{"t":"00:00","text":"骨格としての色。"},{"t":"00:26","text":"余白が意味になる。"},{"t":"00:57","text":"静かに、強い。"}]
-  },
-  { "id":"05","category":"artifact","year":"2024","title":"Work 05","jp":"これは服になる前の思考だ。","note":"Structure first.","image":"./assets/img/works/5.webp","hue":190,
-    "timeline":[{"t":"00:00","text":"分類は入口。"},{"t":"00:30","text":"出口は“服”。"},{"t":"01:05","text":"ここはその前。"}]
-  },
-  { "id":"06","category":"artifact","year":"2024","title":"Work 06","jp":"これは服になる前の思考だ。","note":"Archive node.","image":"./assets/img/works/6.webp","hue":240,
-    "timeline":[{"t":"00:00","text":"色は言語。"},{"t":"00:28","text":"形は文法。"},{"t":"01:00","text":"意味は観測者に発生する。"}]
-  },
-
-  { "id":"07","category":"lookbook","year":"2025","title":"Work 07","jp":"これは服になる前の思考だ。","note":"Lookbook fragment.","image":"./assets/img/works/7.webp","hue":330,
-    "timeline":[{"t":"00:00","text":"動くキャンバス。"},{"t":"00:34","text":"身体が展示装置。"},{"t":"01:11","text":"日常がギャラリー。"}]
-  },
-  { "id":"08","category":"lookbook","year":"2025","title":"Work 08","jp":"これは服になる前の思考だ。","note":"Wearable thought.","image":"./assets/img/works/8.webp","hue":18,
-    "timeline":[{"t":"00:00","text":"視線で作品が変わる。"},{"t":"00:27","text":"動線で意味が変わる。"},{"t":"01:03","text":"固定しない。"}]
-  },
-  { "id":"09","category":"lookbook","year":"2025","title":"Work 09","jp":"これは服になる前の思考だ。","note":"A moving archive.","image":"./assets/img/works/9.webp","hue":45,
-    "timeline":[{"t":"00:00","text":"記録は冷たい。"},{"t":"00:32","text":"だから熱を入れる。"},{"t":"01:08","text":"色で。"}]
-  },
-
-  { "id":"10","category":"fieldnote","year":"2025","title":"Work 10","jp":"これは服になる前の思考だ。","note":"Fieldnote.","image":"./assets/img/works/10.webp","hue":140,
-    "timeline":[{"t":"00:00","text":"観測ログ。"},{"t":"00:31","text":"思考の破片。"},{"t":"01:02","text":"拾って繋ぐ。"}]
-  },
-  { "id":"11","category":"fieldnote","year":"2025","title":"Work 11","jp":"これは服になる前の思考だ。","note":"Fieldnote.","image":"./assets/img/works/11.webp","hue":160,
-    "timeline":[{"t":"00:00","text":"崩れるUI。"},{"t":"00:28","text":"崩れる思考。"},{"t":"01:04","text":"崩れたまま美しい。"}]
-  },
-  { "id":"12","category":"fieldnote","year":"2025","title":"Work 12","jp":"これは服になる前の思考だ。","note":"Fieldnote.","image":"./assets/img/works/12.webp","hue":120,
-    "timeline":[{"t":"00:00","text":"分類は仮設。"},{"t":"00:30","text":"仮設で渡る。"},{"t":"01:06","text":"渡った先で変える。"}]
-  },
-
-  { "id":"13","category":"artifact","year":"2026","title":"Work 13","jp":"これは服になる前の思考だ。","note":"Artifact.","image":"./assets/img/works/13.webp","hue":205,
-    "timeline":[{"t":"00:00","text":"構造を研ぐ。"},{"t":"00:36","text":"色を研ぐ。"},{"t":"01:12","text":"魂に嘘をつかない。"}]
-  },
-  { "id":"14","category":"artifact","year":"2026","title":"Work 14","jp":"これは服になる前の思考だ。","note":"Artifact.","image":"./assets/img/works/14.webp","hue":225,
-    "timeline":[{"t":"00:00","text":"静かな圧。"},{"t":"00:29","text":"派手さじゃない。"},{"t":"01:07","text":"密度。"}]
-  },
-  { "id":"15","category":"artifact","year":"2026","title":"Work 15","jp":"これは服になる前の思考だ。","note":"Artifact.","image":"./assets/img/works/15.webp","hue":185,
-    "timeline":[{"t":"00:00","text":"余白は逃げない。"},{"t":"00:33","text":"余白は選ぶ。"},{"t":"01:09","text":"選び直す力。"}]
-  },
-
-  { "id":"16","category":"lookbook","year":"2026","title":"Work 16","jp":"これは服になる前の思考だ。","note":"Lookbook.","image":"./assets/img/works/16.webp","hue":320,
-    "timeline":[{"t":"00:00","text":"運動としての色。"},{"t":"00:38","text":"温度としての形。"},{"t":"01:15","text":"身体と統合する。"}]
-  },
-  { "id":"17","category":"lookbook","year":"2026","title":"Work 17","jp":"これは服になる前の思考だ。","note":"Lookbook.","image":"./assets/img/works/17.webp","hue":350,
-    "timeline":[{"t":"00:00","text":"世界観の入口。"},{"t":"00:30","text":"入口は複数。"},{"t":"01:06","text":"迷わせるのが正しい。"}]
-  },
-
-  { "id":"18","category":"fieldnote","year":"2026","title":"Work 18","jp":"これは服になる前の思考だ。","note":"Fieldnote.","image":"./assets/img/works/18.webp","hue":150,
-    "timeline":[{"t":"00:00","text":"観測が色を呼ぶ。"},{"t":"00:33","text":"色が意味を呼ぶ。"},{"t":"01:08","text":"意味がまた観測を呼ぶ。"}]
-  },
-  { "id":"19","category":"fieldnote","year":"2026","title":"Work 19","jp":"これは服になる前の思考だ。","note":"Fieldnote.","image":"./assets/img/works/19.webp","hue":110,
-    "timeline":[{"t":"00:00","text":"崩壊は演出。"},{"t":"00:30","text":"演出は真実。"},{"t":"01:05","text":"真実は静か。"}]
-  },
-  { "id":"20","category":"fieldnote","year":"2026","title":"Work 20","jp":"これは服になる前の思考だ。","note":"Fieldnote.","image":"./assets/img/works/20.webp","hue":170,
-    "timeline":[{"t":"00:00","text":"分類名に変異する。"},{"t":"00:34","text":"色場が反応する。"},{"t":"01:10","text":"UIが崩れる。"}]
-  }
-]
+{
+  "works": [
+    {
+      "id": "01",
+      "category": "artifact",
+      "year": "2024",
+      "title": "Chromatic Silence",
+      "caption": "構造の静寂。色が音ではなく骨格として現れる。",
+      "image": "/assets/img/works/1.webp",
+      "accent": "#7b5cff",
+      "shopUrl": "https://www.tcda.shop/",
+      "desc": "視覚の内部で、色が『意味』ではなく『構造』へ移行する瞬間を固定した。",
+      "notes": [
+        "色は装飾ではなく、接続の規則。",
+        "沈黙は欠如ではなく、密度。"
+      ]
+    },
+    {
+      "id": "02",
+      "category": "lookbook",
+      "year": "2025",
+      "title": "Moving Canvas",
+      "caption": "服になる直前の思考。運動としての色。",
+      "image": "/assets/img/works/2.webp",
+      "accent": "#00ffd5",
+      "shopUrl": "https://www.tcda.shop/",
+      "desc": "“着る”は展示ではなく、移動する展示だ。色は身体の移動に追従して再構成される。",
+      "notes": [
+        "視線＝カメラ、身体＝展示室。",
+        "移動は編集であり、構図の再生成。"
+      ]
+    },
+    {
+      "id": "03",
+      "category": "fieldnote",
+      "year": "2025",
+      "title": "Field Notes",
+      "caption": "観測ログ。思考が崩れる瞬間の採取。",
+      "image": "/assets/img/works/3.webp",
+      "accent": "#ff4d9a",
+      "shopUrl": "https://www.tcda.shop/",
+      "desc": "崩壊は失敗ではなく、次の分類の入口。観測の痕跡として保存する。",
+      "notes": [
+        "分類は固定ではなく、変形するUI。",
+        "記録は“完成”ではなく“未完の証拠”。"
+      ]
+    }
+  ]
+}
