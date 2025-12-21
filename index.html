@@ -3,171 +3,205 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="theme-color" content="#07080b" />
+  <meta name="description" content="SAIREN COLOR ARCHIVE — Visual thoughts archived as form." />
+
   <title>SAIREN COLOR ARCHIVE</title>
-  <meta name="description" content="SAIREN COLOR ARCHIVE — Color as structure. A living archive of visual thought." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <!-- Optional: if you already dislike external fonts, remove these two lines -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css" />
+  <!-- 任意：iOS/日本語でも崩れないシステムフォント中心 -->
+  <link rel="stylesheet" href="./assets/css/styles.css" />
 </head>
 
-<body>
-  <!-- Generative field -->
-  <canvas id="field" aria-hidden="true"></canvas>
+<body class="no-select">
+  <!-- 背景の「色場」(ホバー/ポインタで反応する) -->
+  <div class="field" aria-hidden="true">
+    <div class="field__grain"></div>
+    <div class="field__vignette"></div>
+    <div class="field__cursor"></div>
+    <div class="field__pulse"></div>
+  </div>
 
-  <!-- Film-grain layer -->
-  <div class="grain" aria-hidden="true"></div>
+  <!-- UI崩壊用オーバーレイ -->
+  <div class="decay" aria-hidden="true"></div>
 
-  <header class="top">
-    <div class="mark">
-      <div class="mark__stack">
-        <span>SAIREN</span><span>COLOR</span><span>ARCHIVE</span>
-      </div>
-      <div class="mark__meta">
-        <span class="pill">LIVE ARCHIVE</span>
-        <span class="tiny">COLOR AS STRUCTURE</span>
-      </div>
-    </div>
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="SAIREN COLOR ARCHIVE">
+      <span class="brand__stack">
+        <span>SAIREN</span>
+        <span>COLOR</span>
+        <span>ARCHIVE</span>
+      </span>
+      <span class="brand__badge" title="Live Archive">LIVE</span>
+    </a>
 
-    <nav class="nav">
-      <a href="#works" class="nav__a">Works</a>
-      <a href="#about" class="nav__a">About</a>
-      <a href="#brand" class="nav__a">Apparel Brand</a>
+    <nav class="nav" aria-label="Primary">
+      <a href="#works" data-nav>Works</a>
+      <a href="#about" data-nav>About</a>
+      <a href="#brand" data-nav>Apparel Brand</a>
+      <button class="nav__toggle" type="button" aria-label="Toggle UI" data-toggle-ui>
+        <span></span><span></span>
+      </button>
     </nav>
   </header>
 
-  <main class="stage">
-    <!-- HERO: fractured typography -->
-    <section class="hero" id="top">
-      <div class="hero__type" aria-label="COLOR IS NOT DECORATION. IT IS STRUCTURE.">
-        <span class="t t1">COLOR</span>
-        <span class="t t2">IS NOT</span>
-        <span class="t t3">DECORATION.</span>
-        <span class="t t4">IT IS</span>
-        <span class="t t5">STRUCTURE.</span>
+  <main id="top" class="main">
+    <!-- HERO -->
+    <section class="hero" data-section="hero">
+      <div class="hero__meta">
+        <span class="chip">ライブアーカイブ</span>
+        <span class="chip">構造としての色</span>
+        <span class="chip">思考 → 形式</span>
       </div>
 
-      <div class="hero__foot">
-        <p class="hero__note">
-          Visual thoughts archived as form.<br/>
-          <span class="muted">Scroll to fracture the statement.</span>
-        </p>
-        <div class="hero__coords">
-          <span class="tiny" id="coordA">x 0.00</span>
-          <span class="tiny" id="coordB">y 0.00</span>
-          <span class="tiny" id="coordC">z 0.00</span>
-        </div>
+      <!-- スクロールで「分類名」に変異する -->
+      <h1 class="hero__title" aria-label="Archive Title">
+        <span class="hero__titleLine">
+          <span class="mutate" data-mutate>
+            <span class="mutate__base" data-base>構造。</span>
+            <span class="mutate__alt" aria-hidden="true" data-alt></span>
+          </span>
+        </span>
+      </h1>
+
+      <!-- 英文/和文の小さな宣言（必要なら差し替えOK） -->
+      <p class="hero__lead">
+        視覚的な思考が、形式としてアーカイブされていきます。<br />
+        <span class="mono">This is thought before it becomes clothing.</span>
+      </p>
+
+      <!-- 右側の「座標」演出（スクロールで更新） -->
+      <div class="hud" aria-hidden="true">
+        <div class="hud__row"><span>x</span><span class="mono" data-hud-x>0.00</span></div>
+        <div class="hud__row"><span>y</span><span class="mono" data-hud-y>0.00</span></div>
+        <div class="hud__row"><span>t</span><span class="mono" data-hud-t>0.00s</span></div>
       </div>
+
+      <!-- スクロール誘導 -->
+      <a class="scrollHint" href="#works" aria-label="Scroll to works">
+        <span class="scrollHint__dot"></span>
+        <span class="mono">SCROLL</span>
+      </a>
     </section>
 
     <!-- WORKS -->
-    <section class="works" id="works">
-      <div class="sectionHead">
-        <h2>Works</h2>
-        <p class="muted">Artifacts, lookbooks, color studies. Each entry is a portal.</p>
+    <section id="works" class="works" data-section="works">
+      <header class="sectionHead">
+        <h2 class="sectionHead__title">作品</h2>
+        <p class="sectionHead__sub mono">
+          アーティファクト / ルックブック / フィールドノート — 入口はポータルです。
+        </p>
+      </header>
+
+      <!-- 画像なしでも成立するカード（後から data-img を差し替えるだけ） -->
+      <div class="grid" data-grid>
+
+        <!-- CARD 1 -->
+        <article class="card" data-card data-node="artifact" tabindex="0">
+          <a class="card__inner" href="./work.html?id=01">
+            <div class="card__media" data-media>
+              <div class="card__placeholder">
+                <span class="mono">ARTIFACT 01</span>
+                <span class="tiny">image pending</span>
+              </div>
+            </div>
+            <div class="card__body">
+              <h3 class="card__title">Chromatic Silence</h3>
+              <p class="card__desc">構造の静寂。色が音ではなく骨格として現れる。</p>
+              <div class="card__tags mono">
+                <span>#artifact</span><span>#structure</span><span>#2024</span>
+              </div>
+            </div>
+          </a>
+        </article>
+
+        <!-- CARD 2 -->
+        <article class="card" data-card data-node="lookbook" tabindex="0">
+          <a class="card__inner" href="./work.html?id=02">
+            <div class="card__media" data-media>
+              <div class="card__placeholder">
+                <span class="mono">LOOKBOOK 02</span>
+                <span class="tiny">image pending</span>
+              </div>
+            </div>
+            <div class="card__body">
+              <h3 class="card__title">Moving Canvas</h3>
+              <p class="card__desc">服になる直前の思考。運動としての色。</p>
+              <div class="card__tags mono">
+                <span>#lookbook</span><span>#wearable</span><span>#2025</span>
+              </div>
+            </div>
+          </a>
+        </article>
+
+        <!-- CARD 3 -->
+        <article class="card" data-card data-node="fieldnote" tabindex="0">
+          <a class="card__inner" href="./work.html?id=03">
+            <div class="card__media" data-media>
+              <div class="card__placeholder">
+                <span class="mono">FIELDNOTE 03</span>
+                <span class="tiny">image pending</span>
+              </div>
+            </div>
+            <div class="card__body">
+              <h3 class="card__title">Field Notes</h3>
+              <p class="card__desc">観測ログ。思考が崩れる瞬間の採取。</p>
+              <div class="card__tags mono">
+                <span>#fieldnote</span><span>#log</span><span>#time</span>
+              </div>
+            </div>
+          </a>
+        </article>
+
       </div>
 
-      <div class="grid">
-        <!-- Card 01 -->
-        <article class="card" data-ink="a">
-          <a class="card__hit" href="#" aria-label="Transcend Color 001"></a>
-          <div class="card__frame">
-            <div class="card__img">
-              <!-- ここをあなたの画像に差し替え：images/xxx.jpg -->
-              <img src="images/logo.png" alt="" draggable="false" />
-            </div>
-            <div class="card__label">
-              <div class="card__title">Transcend Color 001</div>
-              <div class="card__meta">2025 / LOOKBOOK</div>
-              <div class="card__tag">ARCHIVE-01</div>
-            </div>
-          </div>
-        </article>
-
-        <!-- Card 02 -->
-        <article class="card" data-ink="b">
-          <a class="card__hit" href="#" aria-label="Chromatic Silence"></a>
-          <div class="card__frame">
-            <div class="card__img">
-              <img src="images/logo.png" alt="" draggable="false" />
-            </div>
-            <div class="card__label">
-              <div class="card__title">Chromatic Silence</div>
-              <div class="card__meta">2024 / ARTWORK</div>
-              <div class="card__tag">SPECIMEN</div>
-            </div>
-          </div>
-        </article>
-
-        <!-- Card 03 -->
-        <article class="card" data-ink="c">
-          <a class="card__hit" href="#" aria-label="Moving Canvas"></a>
-          <div class="card__frame">
-            <div class="card__img">
-              <img src="images/logo.png" alt="" draggable="false" />
-            </div>
-            <div class="card__label">
-              <div class="card__title">Moving Canvas</div>
-              <div class="card__meta">2025 / LOOKBOOK</div>
-              <div class="card__tag">FIELD NOTE</div>
-            </div>
-          </div>
-        </article>
+      <div class="works__foot mono">
+        <span>※ 画像は後から差し替え可能（HTMLの data-img に入れるだけ）</span>
       </div>
     </section>
 
     <!-- ABOUT -->
-    <section class="about" id="about">
-      <div class="sectionHead">
-        <h2>About</h2>
-      </div>
+    <section id="about" class="about" data-section="about">
+      <header class="sectionHead">
+        <h2 class="sectionHead__title">について</h2>
+      </header>
 
-      <div class="about__body">
-        <p>
-          Sairen Takashima is an artist and founder of an apparel brand.
-          Working with color as structure, not decoration.
+      <div class="about__box">
+        <p class="about__lead">
+          <span class="mono">Sairen Takashima</span> — artist & founder.<br />
+          色は装飾ではなく構造。視覚思考を、着用可能な形式へ。
         </p>
-        <p class="muted">
-          This archive is not a portfolio. It’s a living index of visual thought — constantly shifting, re-labeled, re-sequenced.
+
+        <p class="about__note mono">
+          “This is thought before it becomes clothing.”
         </p>
       </div>
     </section>
 
-    <!-- BRAND -->
-    <section class="brand" id="brand">
-      <div class="sectionHead">
-        <h2>Apparel Brand</h2>
-        <p class="muted">Wearable forms derived from original artworks.</p>
-      </div>
+    <!-- APPAREL BRAND -->
+    <section id="brand" class="brandSection" data-section="brand">
+      <header class="sectionHead">
+        <h2 class="sectionHead__title">アパレルブランド</h2>
+        <p class="sectionHead__sub mono">Products are provided via apparel brand site.</p>
+      </header>
 
-      <div class="brand__panel">
-        <div class="brand__line">
-          <span class="tiny">OFFICIAL</span>
-          <span class="pill">ART → WEAR</span>
-        </div>
-        <p class="brand__copy">
-          Products are sold via the official apparel brand site.<br/>
-          AI-generated models may be used for visual representation only (designs/artworks are original).<br/>
-          Colors may vary depending on display and production process.
-        </p>
-
+      <div class="brandSection__box">
         <a class="cta" href="https://www.tcda.shop/" target="_blank" rel="noopener">
-          Visit Apparel Brand →
+          <span class="cta__kicker mono">APPAREL BRAND</span>
+          <span class="cta__title">Transcend Color Digital Apparel</span>
+          <span class="cta__sub">作品が、服として現れる場所へ。</span>
         </a>
       </div>
     </section>
 
-    <footer class="foot">
-      <div class="foot__left">
-        <span class="tiny">© <span id="year"></span> SAIREN COLOR ARCHIVE</span>
-      </div>
-      <div class="foot__right">
-        <span class="tiny">archive.tcda.shop</span>
+    <footer class="footer">
+      <div class="footer__left mono">© <span data-year></span> SAIREN COLOR ARCHIVE</div>
+      <div class="footer__right mono">
+        <a href="mailto:info@tcda.shop">info@tcda.shop</a>
       </div>
     </footer>
   </main>
 
-  <script src="assets/js/main.js"></script>
+  <script src="./assets/js/main.js" defer></script>
 </body>
 </html>
