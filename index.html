@@ -3,104 +3,58 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
-  <meta name="theme-color" content="#000000" />
+  <meta name="theme-color" content="#050507" />
   <title>SAIREN COLOR ARCHIVE</title>
 
-  <!-- ここに挿入（headの中） -->
-  <link rel="stylesheet" href="/assets/css/style.css">
-  <script defer src="/assets/js/main.js"></script>
+  <!-- CSS -->
+  <link rel="stylesheet" href="/assets/css/style.css?v=20251221" />
+
+  <!-- JS -->
+  <script defer src="/assets/js/main.js?v=20251221"></script>
 </head>
 
-<body class="bg-fixed noselect">
-  <!-- 背景（色場） -->
-  <canvas id="field" aria-hidden="true"></canvas>
+<body>
+  <!-- Fullscreen canvas -->
+  <canvas id="fx" aria-hidden="true"></canvas>
 
-  <!-- 上部UI -->
-  <header class="topbar" id="topbar">
-    <a class="brand" href="/" aria-label="SAIREN COLOR ARCHIVE">
-      <span class="brand__stack">SAIREN<br>COLOR<br>ARCHIVE</span>
-      <span class="brand__tag">LIVE ARCHIVE</span>
-    </a>
+  <!-- Top UI (fixed, not animated) -->
+  <header class="ui" role="banner">
+    <div class="left">
+      <div class="brand">
+        <div class="brand-title" data-i18n="brandTitle">SAIREN COLOR ARCHIVE</div>
+        <div class="brand-sub" data-i18n="brandSub">これは服になる前の思考だ。</div>
+      </div>
 
-    <nav class="nav">
-      <a href="#works" class="nav__link">Works</a>
-      <a href="#about" class="nav__link">About</a>
-      <a href="https://www.tcda.shop/" class="nav__link" target="_blank" rel="noopener">Apparel Brand</a>
-    </nav>
+      <nav class="lang" aria-label="Language">
+        <button type="button" class="lang-btn" data-lang="ja" aria-pressed="true">JP</button>
+        <button type="button" class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+      </nav>
+    </div>
+
+    <div class="right" aria-label="Status">
+      <div class="hud">
+        <div class="row"><span class="k">t</span><span class="v" id="t">0.00s</span></div>
+        <div class="row"><span class="k" data-i18n="hudPhaseK">phase</span><span class="v" id="phase">SPLASH</span></div>
+        <div class="row"><span class="k" data-i18n="hudCountK">count</span><span class="v" id="count">0</span></div>
+      </div>
+    </div>
   </header>
 
-  <!-- HERO -->
-  <main>
-    <section class="hero" id="hero">
-      <div class="hero__grid" aria-hidden="true"></div>
+  <!-- Bottom help -->
+  <footer class="help" role="contentinfo">
+    <p class="help-text" data-i18n="helpText">
+      クリック/タップで再スプラッシュ。<b>1</b>=TEXT / <b>2</b>=RINGS / <b>R</b>=RESET
+    </p>
+    <p class="help-meta">
+      <span data-i18n="metaMailK">Contact</span>:
+      <a href="mailto:info@sairencolorarchive.com">info@sairencolorarchive.com</a>
+      <span class="dot">•</span>
+      <span>© <span id="y"></span> SAIREN COLOR ARCHIVE</span>
+    </p>
+  </footer>
 
-      <div class="hero__inner">
-        <p class="hero__kicker">ライブアーカイブ｜構造としての色｜思考 → 形式</p>
-
-        <!-- ✅ スクロールで“分類名”に変異するタイトル -->
-        <h1 class="morph">
-          <span class="morph__label" id="morphLabel" data-label="構造。">構造。</span>
-          <span class="morph__sub" id="morphSub">This is thought before it becomes clothing.</span>
-        </h1>
-
-        <p class="hero__lead">
-          視覚的な思考が、形式としてアーカイブされています。<br>
-          スクロールで「分類」を再帰的に切り替えてください。
-        </p>
-
-        <div class="hero__meta">
-          <div class="meta" id="hud">
-            <span class="meta__k">x</span><span class="meta__v" id="mx">0.00</span>
-            <span class="meta__k">y</span><span class="meta__v" id="my">0.00</span>
-            <span class="meta__k">t</span><span class="meta__v" id="mt">0.00s</span>
-          </div>
-
-          <a class="scrollhint" href="#works" aria-label="Scroll to works">
-            <span>SCROLL</span>
-            <i class="scrollhint__dot"></i>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- WORKS -->
-    <section class="section" id="works">
-      <div class="section__head">
-        <h2 class="section__title">作品</h2>
-        <p class="section__desc">
-          アーティファクト／ルックブック／フィールドノート。<br>
-          それぞれの入口は“分類ノード”です。
-        </p>
-      </div>
-
-      <!-- JSがworks.jsonから自動生成 -->
-      <div class="grid" id="worksGrid" aria-live="polite"></div>
-    </section>
-
-    <!-- ABOUT -->
-    <section class="section" id="about">
-      <div class="section__head">
-        <h2 class="section__title">About</h2>
-        <p class="section__desc">
-          これは服になる前の思考だ。<br>
-          “着る”は展示ではなく、移動する展示だ。
-        </p>
-      </div>
-
-      <div class="about">
-        <p class="about__text">
-          SAIREN COLOR ARCHIVE は、色を装飾ではなく「構造」として扱うための保管庫。<br>
-          作品は、TCDA（Transcend Color Digital Apparel）のプロダクトに接続される前段の思考体。
-        </p>
-      </div>
-    </section>
-
-    <footer class="footer">
-      <small>© <span id="year"></span> SAIREN COLOR ARCHIVE</small>
-    </footer>
-  </main>
-
-  <!-- “静かな崩壊”のフィルター -->
-  <div class="decay" id="decay" aria-hidden="true"></div>
+  <noscript>
+    <div class="noscript" data-i18n="noJs">JavaScript が必要です。</div>
+  </noscript>
 </body>
 </html>
