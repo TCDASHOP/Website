@@ -26,17 +26,17 @@
 
 <body class="page-work" data-page="work">
   <div class="css-warning" id="cssWarn">
-CSSが読み込めていません → 作品ページが“素のHTML”になります。
+CSSが読み込めていません。
 
 確認：
 - Website/assets/css/styles.css は存在？
-- work.html のlinkパスは ./assets/css/styles.css ？
+- <link href="./assets/css/styles.css"> のパスは合ってる？
   </div>
 
   <header class="nav">
     <div class="wrap nav__inner">
       <a class="brand" href="./index.html">SAIREN<br><span>COLOR ARCHIVE</span></a>
-      <nav class="navlinks">
+      <nav class="navlinks" aria-label="Primary">
         <a href="./index.html#works">Works</a>
         <a href="./index.html#about">About</a>
         <a href="https://www.tcda.shop/" target="_blank" rel="noopener">Apparel Brand</a>
@@ -64,8 +64,8 @@ CSSが読み込めていません → 作品ページが“素のHTML”にな�
       <div class="workBody" id="workBody"></div>
 
       <div class="workNav">
-        <a class="pill" id="prevLink" href="./index.html#works">← 戻る</a>
-        <a class="pill" id="nextLink" href="./index.html#works">次 →</a>
+        <a class="pill" id="prevLink" href="./index.html#works">← Prev</a>
+        <a class="pill" id="nextLink" href="./index.html#works">Next →</a>
       </div>
     </section>
 
