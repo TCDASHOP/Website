@@ -1,276 +1,80 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#0b0b0f" />
-
+  <meta charset="utf-8">
   <title>SAIREN COLOR ARCHIVE</title>
-  <meta name="description" content="SAIREN COLOR ARCHIVE — Color as structure, not decoration. Lookbook & artworks by Sairen Takashima." />
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="SAIREN COLOR ARCHIVE" />
-  <meta property="og:description" content="Lookbook & artworks. Color as structure, not decoration." />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="/images/og-image.jpg" />
-  <meta property="og:url" content="https://sairencolor.art/" />
+  <meta name="description" content="SAIREN COLOR ARCHIVE — color as thought, art as structure.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image" />
+  <!-- SEO / OG -->
+  <meta property="og:title" content="SAIREN COLOR ARCHIVE">
+  <meta property="og:description" content="An archive of color, structure, and visual thought.">
+  <meta property="og:type" content="website">
 
-  <link rel="icon" href="/images/logo.png" />
-  <link rel="preload" href="/images/hero.jpg" as="image" />
-  <link rel="stylesheet" href="/assets/css/style.css" />
+  <link rel="stylesheet" href="/assets/css/style.css">
 </head>
 
 <body>
-  <!-- Ambient backdrop -->
-  <div class="aurora" aria-hidden="true"></div>
 
-  <header class="header" id="top">
-    <a class="brand" href="#top" aria-label="SAIREN COLOR ARCHIVE Home">
-      <img src="/images/logo.png" alt="" class="brand__mark" />
-      <span class="brand__type">SAIREN COLOR ARCHIVE</span>
+<header class="site-header">
+  <div class="logo">SAIREN<br>COLOR<br>ARCHIVE</div>
+  <nav class="nav">
+    <a href="#works">Works</a>
+    <a href="#about">About</a>
+    <a href="https://www.tcda.shop/" target="_blank" rel="noopener">
+      Apparel Brand
     </a>
+  </nav>
+</header>
 
-    <nav class="nav" aria-label="Primary">
-      <a class="nav__link" href="#works" data-i18n="nav_works">Works</a>
-      <a class="nav__link" href="#about" data-i18n="nav_about">About</a>
-      <a class="nav__link" href="#brand" data-i18n="nav_brand">Apparel Brand</a>
-      <a class="nav__link" href="#info" data-i18n="nav_info">Info</a>
-    </nav>
+<main>
 
-    <div class="header__tools">
-      <button class="chip" id="soundToggle" type="button" aria-pressed="false" title="Ambient sound">
-        <span class="chip__dot" aria-hidden="true"></span>
-        <span class="chip__text" data-i18n="chip_sound">Sound</span>
-      </button>
-
-      <button class="chip" id="langToggle" type="button" aria-pressed="false" title="Language">
-        <span class="chip__text" id="langLabel">JP</span>
-      </button>
-
-      <a class="chip chip--ghost" href="#works">
-        <span class="chip__text" data-i18n="chip_enter">Enter</span>
-      </a>
-    </div>
-  </header>
-
-  <main>
-    <!-- HERO -->
-    <section class="hero">
-      <div class="hero__media">
-        <img src="/images/hero.jpg" alt="Abstract color artwork by Sairen" class="hero__img" loading="eager" />
-        <div class="hero__glass" aria-hidden="true"></div>
-      </div>
-
-      <div class="hero__copy">
-        <p class="kicker" data-i18n="hero_kicker">ARCHIVE / LOOKBOOK / ARTWORKS</p>
-        <h1 class="title" data-i18n="hero_title">
-          Color is not decoration.<br />It is structure.
-        </h1>
-        <p class="lede" data-i18n="hero_lede">
-          A living archive where visual thought becomes wearable form — and returns to art again.
-        </p>
-
-        <div class="hero__cta">
-          <a class="btn" href="#works" data-i18n="cta_viewworks">View Works</a>
-          <a class="btn btn--outline" href="#brand" data-i18n="cta_brand">Explore Apparel Brand</a>
-        </div>
-
-        <div class="micro" data-i18n="hero_micro">
-          Minimal UI. Maximum presence. Scroll slowly.
-        </div>
-      </div>
-    </section>
-
-    <!-- WORKS -->
-    <section class="section" id="works">
-      <div class="section__head">
-        <h2 class="h2" data-i18n="works_title">Works</h2>
-        <p class="sub" data-i18n="works_sub">
-          Selected lookbooks and artworks. Each piece is a chapter, not a product.
-        </p>
-      </div>
-
-      <div class="grid">
-        <!-- Card 1 -->
-        <article class="card">
-          <a class="card__link" href="#" aria-label="Transcend Color 001">
-            <div class="card__thumb">
-              <img src="/images/work1.jpg" alt="Transcend Color 001" loading="lazy" />
-            </div>
-            <div class="card__meta">
-              <div class="card__top">
-                <h3 class="card__title">Transcend Color 001</h3>
-                <span class="pill">2025 / LOOKBOOK</span>
-              </div>
-              <p class="card__desc" data-i18n="work1_desc">
-                A first signal: color as a system, not a mood.
-              </p>
-            </div>
-          </a>
-        </article>
-
-        <!-- Card 2 -->
-        <article class="card">
-          <a class="card__link" href="#" aria-label="Chromatic Silence">
-            <div class="card__thumb">
-              <img src="/images/work2.jpg" alt="Chromatic Silence" loading="lazy" />
-            </div>
-            <div class="card__meta">
-              <div class="card__top">
-                <h3 class="card__title">Chromatic Silence</h3>
-                <span class="pill">2024 / ARTWORK</span>
-              </div>
-              <p class="card__desc" data-i18n="work2_desc">
-                Quiet intensity: saturation with restraint.
-              </p>
-            </div>
-          </a>
-        </article>
-
-        <!-- Card 3 -->
-        <article class="card">
-          <a class="card__link" href="#" aria-label="Moving Canvas">
-            <div class="card__thumb">
-              <img src="/images/work3.jpg" alt="Moving Canvas" loading="lazy" />
-            </div>
-            <div class="card__meta">
-              <div class="card__top">
-                <h3 class="card__title">Moving Canvas</h3>
-                <span class="pill">2025 / LOOKBOOK</span>
-              </div>
-              <p class="card__desc" data-i18n="work3_desc">
-                When the body becomes the frame, the world becomes the gallery.
-              </p>
-            </div>
-          </a>
-        </article>
-      </div>
-
-      <div class="section__foot">
-        <p class="note" data-i18n="works_note">
-          Tip: replace the “#” links with your lookbook pages later. The design stays.
-        </p>
-      </div>
-    </section>
-
-    <!-- ABOUT -->
-    <section class="section section--split" id="about">
-      <div class="split">
-        <div class="split__left">
-          <h2 class="h2" data-i18n="about_title">About</h2>
-          <p class="body" data-i18n="about_p1">
-            Sairen Takashima is an artist and founder of an apparel brand that treats clothing as an extension of visual philosophy.
-          </p>
-          <p class="body" data-i18n="about_p2">
-            Working with color as structure, not decoration — building a language that can be worn, archived, and re-read.
-          </p>
-
-          <div class="quote">
-            <p class="quote__text" data-i18n="about_quote">
-              “A moving canvas — where visual thought becomes wearable form.”
-            </p>
-            <p class="quote__by">— SAIREN</p>
-          </div>
-        </div>
-
-        <div class="split__right">
-          <div class="panel">
-            <h3 class="panel__title" data-i18n="panel_title">Archive Principles</h3>
-            <ul class="list">
-              <li data-i18n="p1">Color accuracy matters. Beauty without truth is decoration.</li>
-              <li data-i18n="p2">Minimal text. Presence is the message.</li>
-              <li data-i18n="p3">Works are chapters — each has context and intent.</li>
-              <li data-i18n="p4">The archive expands slowly, deliberately.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- APPAREL BRAND -->
-    <section class="section" id="brand">
-      <div class="section__head">
-        <h2 class="h2" data-i18n="brand_title">Apparel Brand</h2>
-        <p class="sub" data-i18n="brand_sub">
-          Wearable extensions of the archive. The shop is not the story — it’s a portal.
-        </p>
-      </div>
-
-      <div class="brandbox">
-        <div class="brandbox__left">
-          <h3 class="h3" data-i18n="brand_h">Transcend Color Digital Apparel</h3>
-          <p class="body" data-i18n="brand_p">
-            Items are produced on-demand. Visuals may include AI-generated models for representation only; artworks/designs are original.
-          </p>
-
-          <div class="brandbox__cta">
-            <a class="btn" href="https://www.tcda.shop/" target="_blank" rel="noopener" data-i18n="brand_btn">
-              Visit Apparel Brand
-            </a>
-            <a class="btn btn--outline" href="#info" data-i18n="brand_btn2">Read Notes</a>
-          </div>
-        </div>
-
-        <div class="brandbox__right" aria-hidden="true">
-          <div class="spark"></div>
-          <div class="spark spark--b"></div>
-          <div class="spark spark--c"></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- INFO -->
-    <section class="section" id="info">
-      <div class="section__head">
-        <h2 class="h2" data-i18n="info_title">Info</h2>
-        <p class="sub" data-i18n="info_sub">
-          Practical notes and clarity. No noise.
-        </p>
-      </div>
-
-      <div class="cols">
-        <div class="col">
-          <h3 class="h3" data-i18n="contact_title">Contact</h3>
-          <p class="body">
-            <a class="link" href="mailto:info@tcda.shop">info@tcda.shop</a>
-          </p>
-        </div>
-
-        <div class="col">
-          <h3 class="h3" data-i18n="notes_title">Notes</h3>
-          <ul class="list list--compact">
-            <li data-i18n="n1">AI-generated models may be used for visual representation only (artworks/designs are original).</li>
-            <li data-i18n="n2">Colors may vary depending on display and production process.</li>
-            <li data-i18n="n3">This archive is independent from the apparel sales platform.</li>
-          </ul>
-        </div>
-
-        <div class="col">
-          <h3 class="h3" data-i18n="nav_title">Navigation</h3>
-          <ul class="list list--compact">
-            <li><a class="link" href="#works" data-i18n="nav_works">Works</a></li>
-            <li><a class="link" href="#about" data-i18n="nav_about">About</a></li>
-            <li><a class="link" href="#brand" data-i18n="nav_brand">Apparel Brand</a></li>
-            <li><a class="link" href="#top" data-i18n="nav_top">Back to top</a></li>
-          </ul>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <p class="footer__line">
-      <span>© <span id="year"></span> SAIREN COLOR ARCHIVE</span>
-      <span class="footer__dot" aria-hidden="true"></span>
-      <span class="muted" data-i18n="footer_m">
-        Built for calm, built for color.
-      </span>
+  <!-- HERO -->
+  <section class="hero">
+    <h1>
+      COLOR<br>
+      IS NOT DECORATION.<br>
+      IT IS STRUCTURE.
+    </h1>
+    <p class="hero-note">
+      Visual thoughts archived as form.
     </p>
-  </footer>
+  </section>
 
-  <script src="/assets/js/main.js" defer></script>
+  <!-- WORKS -->
+  <section id="works" class="works">
+    <article class="work">
+      <div class="work-image" style="background-image:url('/images/work1.jpg');"></div>
+      <div class="work-meta">
+        <h2>Transcend Color 001</h2>
+        <span>2025 / LOOKBOOK</span>
+      </div>
+    </article>
+
+    <article class="work">
+      <div class="work-image" style="background-image:url('/images/work2.jpg');"></div>
+      <div class="work-meta">
+        <h2>Chromatic Silence</h2>
+        <span>2024 / ARTWORK</span>
+      </div>
+    </article>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="about">
+    <p>
+      Sairen Takashima is an artist working with color as structure, not ornament.
+      This archive records visual thinking as a continuous experiment.
+    </p>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <p>© 2025 SAIREN COLOR ARCHIVE</p>
+</footer>
+
+<script src="/assets/js/main.js"></script>
 </body>
 </html>
