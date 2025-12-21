@@ -1,201 +1,236 @@
-/* SAIREN COLOR ARCHIVE – interactions
-   1) Scroll morph title (構造 → 分類名)
-   2) Hover card => background field reacts
-   3) Idle => UI decays quietly
-   + Copy deterrence (not absolute)
-*/
-
 (() => {
   document.documentElement.dataset.jsok = "1";
-  // 以下そのまま…
-   (function(){
-  const $ = (q, el=document) => el.querySelector(q);
-  const $$ = (q, el=document) => [...el.querySelectorAll(q)];
 
-  // Year
-  const y = new Date().getFullYear();
-  $$("#yearNow").forEach(n => n.textContent = String(y));
+  const $ = (q, root=document) => root.querySelector(q);
+  const $$ = (q, root=document) => [...root.querySelectorAll(q)];
 
-  // Telemetry
-  const mx = $("#mx"), my = $("#my"), mt = $("#mt");
-  const start = performance.now();
-
-  // Background field variables
   const root = document.documentElement;
-  let px = 0.5, py = 0.4;
+  const body = document.body;
 
-  function setField(x, y){
-    root.style.setProperty("--fieldX", (x*100).toFixed(2) + "%");
-    root.style.setProperty("--fieldY", (y*100).toFixed(2) + "%");
-  }
+  // ========= コピー抑止（完全防止ではなく“抑止”） =========
+  const block = (e) => { e.preventDefault(); e.stopPropagation(); return false; };
+  window.addEventListener("contextmenu", block, {passive:false});
+  window.addEventListener("copy", block, {passive:false});
+  window.addEventListener("cut", block, {passive:false});
+  window.addEventListener("dragstart", (e) => {
+    if (e.target && (e.target.tagName === "IMG")) block(e);
+  }, {passive:false});
 
-  // Smooth pointer follow
-  let targetX = 0.5, targetY = 0.4;
+  const shield = $(".touchShield");
+  const enableShield = () => { if(shield) shield.style.pointerEvents = "auto"; };
+  const disableShield = () => { if(shield) shield.style.pointerEvents = "none"; };
+
+  // ========= HUD =========
+  const hudX = $("#hudX");
+  const hudY = $("#hudY");
+  const hudT = $("#hudT");
+  const hudS = $("#hudS");
+
+  const t0 = performance.now();
+  (function tickHUD(){
+    if (hudT) hudT.textContent = ((performance.now() - t0) / 1000).toFixed(2) + "s";
+    requestAnimationFrame(tickHUD);
+  })();
+
   window.addEventListener("pointermove", (e) => {
-    targetX = e.clientX / window.innerWidth;
-    targetY = e.clientY / window.innerHeight;
-    if(mx) mx.textContent = targetX.toFixed(2);
-    if(my) my.textContent = targetY.toFixed(2);
-    bumpIdle();
+    const x = e.clientX / window.innerWidth;
+    const y = e.clientY / window.innerHeight;
+    if (hudX) hudX.textContent = x.toFixed(2);
+    if (hudY) hudY.textContent = y.toFixed(2);
   }, {passive:true});
 
-  // Scroll => morph title + time
-  const title = $(".hero__titleCore");
-  const morphSrc = title?.dataset?.morph || "";
-  const morphList = morphSrc.split("|").map(s => s.trim()).filter(Boolean);
-  function morphByScroll(){
-    const h = document.documentElement;
-    const sc = h.scrollTop || document.body.scrollTop || 0;
-    const max = Math.max(1, (h.scrollHeight - window.innerHeight));
-    const p = Math.min(1, sc / max);
+  // ========= トップ文字：スクロールで変異 =========
+  function setupMorphTitle() {
+    const el = $(".hero__titleCore");
+    if (!el) return;
 
-    // 4段階で変異（上で指定した配列を使う）
-    if(title && morphList.length){
-      const idx = Math.min(morphList.length - 1, Math.floor(p * morphList.length));
-      const next = morphList[idx];
-      if(title.textContent !== next){
-        title.animate([
-          { filter:"blur(0px)", opacity:1, transform:"translateY(0px)" },
-          { filter:"blur(8px)", opacity:0.2, transform:"translateY(6px)" }
-        ], { duration:180, easing:"ease-out" }).onfinish = () => {
-          title.textContent = next;
-          title.animate([
-            { filter:"blur(8px)", opacity:0.2, transform:"translateY(-6px)" },
-            { filter:"blur(0px)", opacity:1, transform:"translateY(0px)" }
-          ], { duration:220, easing:"ease-out" });
-        };
-      }
-    }
+    const seq = (el.dataset.morph || "").split("|").map(s => s.trim()).filter(Boolean);
+    if (seq.length < 2) return;
 
-    // 背景もスクロールで微妙に呼吸
-    root.style.setProperty("--fieldHue", String(180 + Math.round(p*140)));
-    bumpIdle();
-  }
-  window.addEventListener("scroll", morphByScroll, {passive:true});
+    let lastIndex = -1;
 
-  // Card hover => field color
-  $$(".card").forEach(card => {
-    card.addEventListener("pointerenter", () => {
-      const c = card.getAttribute("data-field");
-      if(c) root.style.setProperty("--fieldA", "0.72");
-      bumpIdle();
-    });
-    card.addEventListener("pointermove", (e) => {
-      const r = card.getBoundingClientRect();
-      const x = (e.clientX - r.left) / r.width;
-      const y = (e.clientY - r.top) / r.height;
-      targetX = 0.15 + x*0.70;
-      targetY = 0.18 + y*0.62;
-
-      // hue shift by card tone
-      const tint = card.getAttribute("data-field") || "";
-      if(tint.includes("255,100,160")) root.style.setProperty("--fieldHue", "330");
-      else if(tint.includes("120,255,140")) root.style.setProperty("--fieldHue", "140");
-      else root.style.setProperty("--fieldHue", "200");
-
-      bumpIdle();
-    });
-    card.addEventListener("pointerleave", () => {
-      root.style.setProperty("--fieldA", "0.55");
-      bumpIdle();
-    });
-  });
-
-  // RAF loop: smooth follow + time
-  function loop(){
-    px += (targetX - px) * 0.08;
-    py += (targetY - py) * 0.08;
-    setField(px, py);
-
-    if(mt){
-      const t = (performance.now() - start)/1000;
-      mt.textContent = t.toFixed(2);
-    }
-    requestAnimationFrame(loop);
-  }
-  requestAnimationFrame(loop);
-
-  // Work page: read query and set content
-  function getParam(k){
-    const u = new URL(location.href);
-    return u.searchParams.get(k) || "";
-  }
-  const wImg = $("#wImg");
-  if(wImg){
-    const id = getParam("id") || "01";
-    const cat = getParam("cat") || "artifact";
-    const year = getParam("year") || "2025";
-    const img = getParam("img") || "1.webp";
-
-    $("#wId").textContent = id;
-    $("#wCat").textContent = cat;
-    $("#wYear").textContent = year;
-
-    // ここは後で作品ごとの辞書にできる（20枚になってもOK）
-    const titleMap = {
-      "01":"Chromatic Silence",
-      "02":"Moving Canvas",
-      "03":"Field Notes",
+    const morphTo = (txt) => {
+      el.animate([
+        { transform: "translate3d(0,0,0) scale(1)", filter:"blur(0px)", opacity:1 },
+        { transform: "translate3d(0,6px,0) scale(0.985)", filter:"blur(2px)", opacity:.62 },
+        { transform: "translate3d(0,0,0) scale(1)", filter:"blur(0px)", opacity:1 }
+      ], { duration: 420, easing: "cubic-bezier(.2,.8,.2,1)" });
+      el.textContent = txt;
     };
-    $("#wTitle").textContent = titleMap[id] || ("Work " + id);
 
-    wImg.src = "/assets/img/works/" + img;
-    wImg.alt = "Work " + id;
+    const onScroll = () => {
+      const max = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+      const p = window.scrollY / max;
+      const idx = Math.min(seq.length - 1, Math.floor(p * seq.length));
+      if (idx !== lastIndex) {
+        lastIndex = idx;
+        morphTo(seq[idx]);
+      }
+    };
 
-    // 背景色場、カテゴリで変える
-    const hue = cat === "lookbook" ? 330 : (cat === "fieldnote" ? 140 : 200);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+  }
+
+  // ========= 背景色場反応 =========
+  function setFieldFromEvent(e, hue = 210) {
+    const x = (e.clientX / window.innerWidth) * 100;
+    const y = (e.clientY / window.innerHeight) * 100;
+    root.style.setProperty("--fieldX", x.toFixed(2) + "%");
+    root.style.setProperty("--fieldY", y.toFixed(2) + "%");
     root.style.setProperty("--fieldHue", String(hue));
+  }
 
-    // 次リンク（仮：id+1）
-    const next = String(Number(id) + 1).padStart(2,"0");
-    const nextLink = $("#nextLink");
-    if(nextLink){
-      nextLink.href = "./work.html?id=" + next + "&cat=" + cat + "&year=" + year + "&img=" + img;
+  // ========= 無操作でUI崩壊 =========
+  let idleTimer = null;
+  let decaying = false;
+  let decayVal = 0;
+
+  const bumpActivity = () => {
+    if (idleTimer) clearTimeout(idleTimer);
+
+    if (decaying) {
+      decaying = false;
+      body.classList.remove("is-decaying");
+      decayVal = 0;
+      root.style.setProperty("--decay", "0");
+      root.style.setProperty("--skew", "0deg");
+      root.style.setProperty("--shake", "0px");
+      if (hudS) hudS.textContent = "LIVE";
     }
+    idleTimer = setTimeout(startDecay, 5200);
+  };
+
+  const startDecay = () => {
+    decaying = true;
+    body.classList.add("is-decaying");
+    if (hudS) hudS.textContent = "DECAY";
+
+    const loop = () => {
+      if (!decaying) return;
+      decayVal = Math.min(1, decayVal + 0.008);
+      root.style.setProperty("--decay", decayVal.toFixed(3));
+      root.style.setProperty("--skew", (Math.sin(performance.now()/1200) * decayVal * 2.5).toFixed(2) + "deg");
+      root.style.setProperty("--shake", (Math.sin(performance.now()/180) * decayVal * 2.2).toFixed(2) + "px");
+      requestAnimationFrame(loop);
+    };
+    requestAnimationFrame(loop);
+  };
+
+  ["pointermove","pointerdown","keydown","scroll","touchstart"].forEach(ev => {
+    window.addEventListener(ev, bumpActivity, {passive:true});
+  });
+  bumpActivity();
+
+  // ========= works.json読み込み =========
+  async function loadWorks() {
+    const res = await fetch("./works.json", { cache: "no-store" });
+    if (!res.ok) throw new Error("works.json not found");
+    return await res.json();
   }
 
-  // ===== Idle decay =====
-  let idle = 0; // seconds
-  let last = performance.now();
+  const catLabel = (c) => String(c || "").toUpperCase();
 
-  function bumpIdle(){ idle = 0; root.style.setProperty("--decay","0"); root.style.setProperty("--skew","0deg"); root.style.setProperty("--shake","0px"); }
-
-  function idleLoop(now){
-    const dt = (now - last)/1000;
-    last = now;
-    idle += dt;
-
-    // 7秒から“崩れ始める”
-    const d = Math.max(0, Math.min(1, (idle - 7) / 10));
-    root.style.setProperty("--decay", d.toFixed(3));
-
-    // 崩壊：わずかな歪みと揺れ
-    const skew = (d * 0.9) * (Math.sin(now/1200) * 0.35);
-    const shake = (d * 1.6) * (Math.sin(now/180) * 0.5);
-    root.style.setProperty("--skew", skew.toFixed(3) + "deg");
-    root.style.setProperty("--shake", shake.toFixed(2) + "px");
-
-    requestAnimationFrame(idleLoop);
+  function cardHTML(w) {
+    const hue = w.hue ?? 210;
+    return `
+      <a class="card" href="./work.html?id=${encodeURIComponent(w.id)}" data-hue="${hue}">
+        <div class="card__media">
+          <img src="${w.image}" alt="${w.title}" draggable="false" loading="lazy">
+        </div>
+        <div class="card__body">
+          <div class="card__meta">${catLabel(w.category)} ${w.id} / ${w.year}</div>
+          <div class="card__name">${w.title}</div>
+          <div class="card__note">${w.jp}</div>
+          <div class="card__tag">“これは服になる前の思考だ”</div>
+        </div>
+      </a>
+    `;
   }
-  requestAnimationFrame(idleLoop);
 
-  // ===== Copy deterrence =====
-  // NOTE: 完全防止は不可能。だが一般ユーザーには十分効く。
-  const block = (e) => { e.preventDefault(); bumpIdle(); return false; };
+  async function mountHome() {
+    const grid = $("#worksGrid");
+    if (!grid) return;
 
-  // right click / context menu
-  window.addEventListener("contextmenu", block);
+    const works = await loadWorks();
+    grid.innerHTML = works.map(cardHTML).join("");
 
-  // select / copy
-  window.addEventListener("selectstart", block);
-  window.addEventListener("copy", block);
+    $$(".card", grid).forEach(card => {
+      const hue = Number(card.dataset.hue || 210);
 
-  // drag images
-  window.addEventListener("dragstart", (e) => {
-    const t = e.target;
-    if(t && (t.tagName === "IMG" || t.closest("img"))) block(e);
-  }, {capture:true});
+      card.addEventListener("pointerenter", (e) => {
+        enableShield();
+        setFieldFromEvent(e, hue);
+        root.style.setProperty("--fieldA", ".68");
+      });
+      card.addEventListener("pointermove", (e) => setFieldFromEvent(e, hue));
+      card.addEventListener("pointerleave", () => {
+        disableShield();
+        root.style.setProperty("--fieldA", ".55");
+      });
+    });
+  }
 
-  // mobile long press is mostly "touch-callout:none" + contextmenu block
-  // screenshot保存までは仕様上止められない（OS機能）
+  // ========= work.html（個別ページ＋時間軸） =========
+  const getQuery = (name) => new URL(location.href).searchParams.get(name);
+
+  const nodeHTML = (n) => `
+    <div class="tnode">
+      <div class="tnode__t">${n.t}</div>
+      <div class="tnode__tx">${n.text}</div>
+    </div>
+  `;
+
+  async function mountWork() {
+    const id = getQuery("id");
+    if (!id) return;
+
+    const works = await loadWorks();
+    const idx = works.findIndex(w => String(w.id) === String(id));
+    const w = works[idx >= 0 ? idx : 0];
+
+    $("#workMeta").textContent = `${catLabel(w.category)} ${w.id} / ${w.year}`;
+    $("#workTitle").textContent = w.title;
+    $("#workLead").textContent = w.note || "これは服になる前の思考だ。";
+
+    const img = $("#workImg");
+    img.src = w.image;
+    img.alt = w.title;
+
+    img.addEventListener("pointerenter", enableShield);
+    img.addEventListener("pointerleave", disableShield);
+
+    $("#workBody").innerHTML = (w.timeline || []).map(nodeHTML).join("");
+
+    root.style.setProperty("--fieldHue", String(w.hue ?? 210));
+    root.style.setProperty("--fieldA", ".58");
+
+    const prev = works[(idx - 1 + works.length) % works.length];
+    const next = works[(idx + 1) % works.length];
+    $("#prevLink").href = `./work.html?id=${encodeURIComponent(prev.id)}`;
+    $("#nextLink").href = `./work.html?id=${encodeURIComponent(next.id)}`;
+
+    const fill = $("#tlFill");
+    const onScroll = () => {
+      const doc = document.documentElement;
+      const max = Math.max(1, doc.scrollHeight - window.innerHeight);
+      const p = Math.min(1, Math.max(0, window.scrollY / max));
+      fill.style.width = (p * 100).toFixed(1) + "%";
+
+      // “時間軸の漂い”
+      const fx = 50 + Math.sin(p * Math.PI * 2) * 12;
+      const fy = 40 + Math.cos(p * Math.PI * 2) * 10;
+      root.style.setProperty("--fieldX", fx.toFixed(2) + "%");
+      root.style.setProperty("--fieldY", fy.toFixed(2) + "%");
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+  }
+
+  // ========= boot =========
+  setupMorphTitle();
+
+  const page = body?.dataset?.page;
+  if (page === "home") mountHome().catch(console.error);
+  if (page === "work") mountWork().catch(console.error);
 })();
