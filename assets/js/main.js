@@ -1,354 +1,421 @@
-/* SAIREN COLOR ARCHIVE - main.js */
+(() => {
+  // ================
+  // Year
+  // ================
+  const y = document.getElementById("y");
+  if (y) y.textContent = String(new Date().getFullYear());
 
-const $ = (q, el=document) => el.querySelector(q);
-const $$ = (q, el=document) => [...el.querySelectorAll(q)];
-
-/* -------------------------
-   1) コピー抑止（完全防止ではなく“抑止”）
-   ※本気の人はスクショ等で取れる。Webの仕様上、完全防止は不可能。
-------------------------- */
-function softProtect() {
-  document.addEventListener("contextmenu", (e) => e.preventDefault(), { passive:false });
-  document.addEventListener("dragstart", (e) => e.preventDefault(), { passive:false });
-  document.addEventListener("selectstart", (e) => e.preventDefault(), { passive:false });
-
-  // iOS長押し抑止（完全ではない）
-  document.addEventListener("touchstart", () => {}, { passive:true });
-}
-
-/* -------------------------
-   2) HUD (x,y,t)
-------------------------- */
-function hud() {
-  const mx = $("#mx"), my = $("#my"), mt = $("#mt");
-  const start = performance.now();
-
-  window.addEventListener("pointermove", (e) => {
-    if (!mx || !my) return;
-    const x = (e.clientX / window.innerWidth) * 1.0;
-    const y = (e.clientY / window.innerHeight) * 1.0;
-    mx.textContent = x.toFixed(2);
-    my.textContent = y.toFixed(2);
-  }, { passive:true });
-
-  function loop(now){
-    if (mt) mt.textContent = ((now - start)/1000).toFixed(2) + "s";
-    requestAnimationFrame(loop);
-  }
-  requestAnimationFrame(loop);
-}
-
-/* -------------------------
-   3) HERO: スクロールで分類名に変異
-      構造。→ アーティファクト → フィールドノート
-------------------------- */
-function scrambleTo(el, nextText, ms=520) {
-  const chars = "░▒▓/\\|—_+*<>[]{}()01";
-  const from = el.textContent;
-  const max = Math.max(from.length, nextText.length);
-  const start = performance.now();
-
-  function frame(now){
-    const t = Math.min(1, (now - start)/ms);
-    const reveal = Math.floor(t * max);
-
-    let out = "";
-    for (let i=0; i<max; i++){
-      const done = i < reveal;
-      const target = nextText[i] || "";
-      out += done ? target : chars[Math.floor(Math.random()*chars.length)];
+  // ================
+  // i18n (JP/EN tabs)
+  // ================
+  const I18N = {
+    ja: {
+      brandTitle: "SAIREN COLOR ARCHIVE",
+      brandSub: "これは服になる前の思考だ。",
+      hudPhaseK: "phase",
+      hudCountK: "count",
+      helpText: "クリック/タップで再スプラッシュ。<b>1</b>=TEXT / <b>2</b>=RINGS / <b>R</b>=RESET",
+      metaMailK: "Contact",
+      noJs: "JavaScript が必要です。"
+    },
+    en: {
+      brandTitle: "SAIREN COLOR ARCHIVE",
+      brandSub: "This is thought before it becomes clothing.",
+      hudPhaseK: "phase",
+      hudCountK: "count",
+      helpText: "Tap/Click to re-splash. <b>1</b>=TEXT / <b>2</b>=RINGS / <b>R</b>=RESET",
+      metaMailK: "Contact",
+      noJs: "JavaScript is required."
     }
-    el.textContent = out;
+  };
 
-    if (t < 1) requestAnimationFrame(frame);
-    else el.textContent = nextText;
-  }
-  requestAnimationFrame(frame);
-}
+  const LANG_KEY = "sca_lang";
+  const langBtns = Array.from(document.querySelectorAll(".lang-btn"));
 
-function morphLabel() {
-  const label = $("#morphLabel");
-  const sub = $("#morphSub");
-  if (!label) return;
+  function setLang(lang){
+    const use = I18N[lang] ? lang : "ja";
+    document.documentElement.lang = use;
+    localStorage.setItem(LANG_KEY, use);
 
-  const states = [
-    { at: 0.00, label: "構造。", sub: "This is thought before it becomes clothing." },
-    { at: 0.33, label: "アーティファクト。", sub: "Artifacts: archived visual logic." },
-    { at: 0.66, label: "フィールドノート。", sub: "Field notes: instability captured." }
-  ];
-
-  let current = label.textContent;
-
-  function onScroll(){
-    const y = window.scrollY;
-    const h = Math.max(1, document.body.scrollHeight - window.innerHeight);
-    const p = y / h;
-
-    const s = (p < states[1].at) ? states[0]
-            : (p < states[2].at) ? states[1]
-            : states[2];
-
-    if (s.label !== current) {
-      current = s.label;
-      scrambleTo(label, s.label);
-      if (sub) sub.textContent = s.sub;
-    }
-
-    // 微細な“動き”を常に入れる（トップ文字が生きる）
-    const wobble = (Math.sin(p * Math.PI * 2) * 1.2);
-    label.style.transform = `translateY(${wobble}px)`;
-  }
-
-  window.addEventListener("scroll", onScroll, { passive:true });
-  onScroll();
-}
-
-/* -------------------------
-   4) 背景：作品カードに近づくと色場が反応
-------------------------- */
-function setAccent(hex){
-  document.documentElement.style.setProperty("--accent", hex);
-}
-
-async function loadWorksIntoGrid() {
-  const grid = $("#worksGrid");
-  if (!grid) return;
-
-  try{
-    const res = await fetch("/assets/data/works.json", { cache: "no-cache" });
-    if (!res.ok) throw new Error("works.json not found");
-    const data = await res.json();
-    const works = data.works || [];
-
-    grid.innerHTML = works.map(w => {
-      const badge = `${(w.category||"node").toUpperCase()} ${w.id} / ${w.year||""}`;
-      const href = `/work.html?id=${encodeURIComponent(w.id)}`;
-      const accent = w.accent || "#7b5cff";
-      return `
-        <a class="card" href="${href}" data-accent="${accent}">
-          <img class="thumb" src="${w.image}" alt="${w.title}" loading="lazy" draggable="false">
-          <div class="card__body">
-            <div class="card__line">
-              <span class="badge">${badge}</span>
-              <span class="badge">NODE</span>
-            </div>
-            <h3 class="card__title">${w.title}</h3>
-            <p class="card__caption">${w.caption || ""}</p>
-          </div>
-        </a>
-      `;
-    }).join("");
-
-    // hover / proximity reaction
-    $$(".card", grid).forEach(card => {
-      card.addEventListener("pointerenter", () => {
-        const hex = card.getAttribute("data-accent") || "#7b5cff";
-        setAccent(hex);
-        window.__FIELD && window.__FIELD.pulse(0.9);
-      }, { passive:true });
-
-      card.addEventListener("pointermove", () => {
-        window.__FIELD && window.__FIELD.pulse(0.25);
-      }, { passive:true });
+    langBtns.forEach(btn => {
+      const on = btn.dataset.lang === use;
+      btn.setAttribute("aria-pressed", on ? "true" : "false");
     });
 
-  } catch(e){
-    grid.innerHTML = `<p style="color:rgba(255,255,255,.65)">works.json が読み込めていません（パス確認）。</p>`;
-  }
-}
+    const dict = I18N[use];
+    document.querySelectorAll("[data-i18n]").forEach(el => {
+      const key = el.getAttribute("data-i18n");
+      const val = dict[key];
+      if (val == null) return;
 
-/* -------------------------
-   5) work.html：IDで個別ページ表示 + 時間軸演出
-------------------------- */
-function getParam(name){
-  const u = new URL(location.href);
-  return u.searchParams.get(name);
-}
-
-async function renderWorkPage(){
-  const img = $("#workImg");
-  const title = $("#workTitle");
-  if (!img || !title) return; // index側
-
-  const id = getParam("id") || "01";
-
-  const res = await fetch("/assets/data/works.json", { cache: "no-cache" });
-  const data = await res.json();
-  const w = (data.works || []).find(x => String(x.id) === String(id));
-
-  if (!w){
-    title.textContent = "Not found";
-    return;
+      // helpTextのみHTML許可（<b>など）
+      if (key === "helpText") el.innerHTML = val;
+      else el.textContent = val;
+    });
   }
 
-  document.title = `${w.title}｜SAIREN COLOR ARCHIVE`;
-  setAccent(w.accent || "#7b5cff");
+  const saved = localStorage.getItem(LANG_KEY);
+  const browser = (navigator.language || "ja").toLowerCase().startsWith("en") ? "en" : "ja";
+  setLang(saved || browser);
 
-  img.src = w.image;
-  img.alt = w.title;
+  langBtns.forEach(btn => btn.addEventListener("click", () => setLang(btn.dataset.lang)));
 
-  $("#workPill").textContent = `${(w.category||"node").toUpperCase()} ${w.id} / ${w.year||""}`;
-  title.textContent = w.title;
-  $("#workDesc").textContent = w.desc || "";
+  // ================
+  // Canvas FX
+  // ================
+  const canvas = document.getElementById("fx");
+  const ctx = canvas.getContext("2d", { alpha: false });
 
-  const meta = $("#workMeta");
-  meta.innerHTML = `
-    <dt>category</dt><dd>${w.category || "-"}</dd>
-    <dt>year</dt><dd>${w.year || "-"}</dd>
-    <dt>id</dt><dd>${w.id}</dd>
-  `;
+  const $t = document.getElementById("t");
+  const $phase = document.getElementById("phase");
+  const $count = document.getElementById("count");
 
-  const toShop = $("#toShop");
-  if (toShop){
-    toShop.href = w.shopUrl || "https://www.tcda.shop/";
-    toShop.textContent = w.shopUrl ? "Shop（該当商品へ）" : "Shop（TCDAへ）";
-  }
+  let W=0, H=0, DPR=1;
 
-  const notes = $("#workNotes");
-  const arr = w.notes || [];
-  notes.innerHTML = arr.length
-    ? `<ul>${arr.map(s => `<li>${s}</li>`).join("")}</ul>`
-    : `<p style="margin:0;color:rgba(255,255,255,.62)">—</p>`;
-
-  // timeline tick
-  const tick = $("#tick");
-  const timeText = $("#timeText");
-  function onScroll(){
-    const h = Math.max(1, document.body.scrollHeight - innerHeight);
-    const p = scrollY / h;
-    if (tick){
-      const top = 110 + p * (innerHeight - 220);
-      tick.style.top = `${top}px`;
-    }
-    if (timeText){
-      timeText.textContent = `t = ${(p * 1.00).toFixed(2)}`;
-      timeText.style.top = `${Math.max(0, (p * 100))}%`;
-    }
-  }
-  addEventListener("scroll", onScroll, { passive:true });
-  onScroll();
-}
-
-/* -------------------------
-   6) 放置でUIが静かに崩壊（IDLE）
-------------------------- */
-function idleDecay(){
-  let t = null;
-  const IDLE_MS = 12000;
-
-  const reset = () => {
-    document.body.classList.remove("is-idle");
-    if (t) clearTimeout(t);
-    t = setTimeout(() => {
-      document.body.classList.add("is-idle");
-      window.__FIELD && window.__FIELD.pulse(1.0);
-    }, IDLE_MS);
-  };
-
-  ["pointermove","scroll","keydown","touchstart","click"].forEach(ev => {
-    addEventListener(ev, reset, { passive:true });
-  });
-
-  reset();
-}
-
-/* -------------------------
-   7) 背景Canvas：色場（軽量）
-------------------------- */
-function fieldCanvas(){
-  const c = $("#field");
-  if (!c) return;
-
-  const ctx = c.getContext("2d", { alpha: true });
-  const dpr = Math.min(2, devicePixelRatio || 1);
-
-  let w=0,h=0, pulse=0;
+  const clamp = (v,a,b) => Math.max(a, Math.min(b, v));
+  const lerp  = (a,b,t) => a + (b-a)*t;
+  const rand  = (a,b) => a + Math.random()*(b-a);
 
   function resize(){
-    w = c.width  = Math.floor(innerWidth * dpr);
-    h = c.height = Math.floor(innerHeight * dpr);
-    c.style.width  = innerWidth + "px";
-    c.style.height = innerHeight + "px";
+    DPR = Math.max(1, Math.min(2, window.devicePixelRatio || 1));
+    W = Math.floor(window.innerWidth);
+    H = Math.floor(window.innerHeight);
+    canvas.width  = Math.floor(W * DPR);
+    canvas.height = Math.floor(H * DPR);
+    canvas.style.width  = W + "px";
+    canvas.style.height = H + "px";
+    ctx.setTransform(DPR,0,0,DPR,0,0);
+    buildTargets();
   }
+  window.addEventListener("resize", resize, { passive:true });
+
+  // Background (true black fixed)
+  function clearBg(){
+    ctx.fillStyle = "#050507";
+    ctx.fillRect(0,0,W,H);
+  }
+
+  // Palette (color splashes)
+  const PALETTE = [
+    [255,  51,  92], // neon red-pink
+    [255, 195,   0], // yellow
+    [  0, 180, 255], // cyan
+    [118, 255,   0], // green
+    [171,  62, 255], // purple
+    [255, 122,   0], // orange
+    [255, 255, 255], // white highlights
+  ];
+  function pickColor(){
+    const c = PALETTE[(Math.random()*PALETTE.length)|0];
+    const j = () => (Math.random()*14 - 7);
+    const r = clamp((c[0]+j())|0, 0, 255);
+    const g = clamp((c[1]+j())|0, 0, 255);
+    const b = clamp((c[2]+j())|0, 0, 255);
+    return `rgb(${r},${g},${b})`;
+  }
+
+  // Target shapes (forms)
+  let targetMode = "TEXT"; // TEXT | RINGS
+  let targets = [];
+  let targetShift = 0;
+
+  const off = document.createElement("canvas");
+  const offCtx = off.getContext("2d");
+
+  function buildTargets(){
+    targets = [];
+    targetShift = 0;
+
+    off.width = W;
+    off.height = H;
+    offCtx.clearRect(0,0,W,H);
+
+    if (targetMode === "TEXT"){
+      const base = Math.min(W,H);
+      const f1 = Math.max(44, Math.floor(base * 0.12));
+      const f2 = Math.max(16, Math.floor(base * 0.040));
+
+      offCtx.fillStyle = "#fff";
+      offCtx.textAlign = "center";
+      offCtx.textBaseline = "middle";
+
+      offCtx.font = `900 ${f1}px ui-monospace, system-ui, sans-serif`;
+      offCtx.fillText("SAIREN", W*0.5, H*0.47);
+
+      offCtx.globalAlpha = 0.92;
+      offCtx.font = `800 ${f2}px ui-monospace, system-ui, sans-serif`;
+      offCtx.fillText("COLOR ARCHIVE", W*0.5, H*0.57);
+      offCtx.globalAlpha = 1;
+
+      const img = offCtx.getImageData(0,0,W,H).data;
+      const step = Math.max(4, Math.floor(base / 170));
+      for (let y=0; y<H; y+=step){
+        for (let x=0; x<W; x+=step){
+          const i = (y*W + x)*4;
+          if (img[i+3] > 40) targets.push({x,y});
+        }
+      }
+    } else {
+      const cx = W*0.5;
+      const cy = H*0.52;
+      const base = Math.min(W,H);
+      const rings = [
+        { r: base*0.14, n: 180 },
+        { r: base*0.23, n: 260 },
+        { r: base*0.32, n: 360 },
+      ];
+      for (const rg of rings){
+        for (let i=0; i<rg.n; i++){
+          const t = (i/rg.n) * Math.PI*2;
+          targets.push({ x: cx + Math.cos(t)*rg.r, y: cy + Math.sin(t)*rg.r });
+        }
+      }
+    }
+
+    // shuffle
+    for (let i=targets.length-1; i>0; i--){
+      const j = (Math.random()*(i+1))|0;
+      [targets[i], targets[j]] = [targets[j], targets[i]];
+    }
+  }
+
+  // Particles
+  const particles = [];
+  const MAX = 6500;
+
+  function splash(x,y, power=1){
+    const count = Math.floor(1100 * power);
+    for (let i=0; i<count && particles.length < MAX; i++){
+      const ang = rand(-Math.PI, Math.PI);
+      const spd = rand(2.2, 16.0) * power;
+      const r   = rand(1.1, 5.8);
+      const drip = Math.random() < 0.28;
+
+      particles.push({
+        x: x + rand(-8,8),
+        y: y + rand(-8,8),
+        vx: Math.cos(ang)*spd + rand(-1.3,1.3),
+        vy: Math.sin(ang)*spd + rand(-1.3,1.3),
+        r,
+        col: pickColor(),
+        a: rand(0.70, 1.0),
+        drag: rand(0.90, 0.985),
+        grav: drip ? rand(0.08, 0.18) : rand(0.02, 0.06),
+        life: rand(220, 520),
+        lock: Math.random() < 0.60
+      });
+    }
+  }
+
+  // Phases
+  let time = 0;
+  let phase = "SPLASH"; // SPLASH -> COALESCE -> FORM
+  let crystallize = 0;
+
+  function setPhase(p){
+    phase = p;
+    if ($phase) $phase.textContent = p;
+  }
+
+  function reset(){
+    particles.length = 0;
+    time = 0;
+    crystallize = 0;
+    targetShift = 0;
+    setPhase("SPLASH");
+
+    const cx = W*0.5, cy = H*0.5;
+    splash(cx, cy, 1.0);
+    splash(cx - W*0.18, cy + H*0.05, 0.75);
+    splash(cx + W*0.18, cy - H*0.05, 0.75);
+  }
+
+  // Interaction
+  function onPointer(e){
+    const rect = canvas.getBoundingClientRect();
+    const x = (e.clientX ?? (e.touches && e.touches[0].clientX) ?? W/2) - rect.left;
+    const y = (e.clientY ?? (e.touches && e.touches[0].clientY) ?? H/2) - rect.top;
+    splash(x,y, 0.95);
+    crystallize = Math.max(0, crystallize - 0.12);
+    if (phase !== "SPLASH") setPhase("COALESCE");
+  }
+  window.addEventListener("pointerdown", onPointer, { passive:true });
+  window.addEventListener("touchstart",  onPointer, { passive:true });
+
+  window.addEventListener("keydown", (e) => {
+    const k = e.key.toLowerCase();
+    if (k === "r") reset();
+    if (k === "1"){ targetMode = "TEXT";  buildTargets(); setPhase("COALESCE"); }
+    if (k === "2"){ targetMode = "RINGS"; buildTargets(); setPhase("COALESCE"); }
+  });
+
+  // Draw helpers
+  function fade(alpha){
+    ctx.fillStyle = `rgba(5,5,7,${alpha})`;
+    ctx.fillRect(0,0,W,H);
+  }
+
+  function drawGrid(){
+    ctx.save();
+    ctx.globalAlpha = 0.06;
+    ctx.strokeStyle = "#e9eef6";
+    ctx.lineWidth = 1;
+
+    const step = Math.max(70, Math.floor(Math.min(W,H)/10));
+    ctx.beginPath();
+    for (let x=0; x<=W; x+=step){ ctx.moveTo(x,0); ctx.lineTo(x,H); }
+    for (let y=0; y<=H; y+=step){ ctx.moveTo(0,y); ctx.lineTo(W,y); }
+    ctx.stroke();
+
+    ctx.globalAlpha = 0.08;
+    ctx.beginPath();
+    ctx.moveTo(W/2,0); ctx.lineTo(W/2,H);
+    ctx.moveTo(0,H/2); ctx.lineTo(W,H/2);
+    ctx.stroke();
+
+    ctx.restore();
+  }
+
+  // Step + Draw
+  function step(dt){
+    time += dt;
+
+    // Phase progression
+    if (phase === "SPLASH" && time > 1.05) setPhase("COALESCE");
+    if (phase === "COALESCE"){
+      crystallize = clamp(crystallize + dt*0.10, 0, 0.75);
+      if (crystallize > 0.70) setPhase("FORM");
+    } else if (phase === "FORM"){
+      crystallize = clamp(crystallize + dt*0.12, 0, 1);
+    }
+
+    // micro new splashes at very beginning
+    if (time < 0.9 && particles.length < MAX){
+      const cx=W*0.5, cy=H*0.5;
+      splash(cx + rand(-120,120), cy + rand(-70,70), 0.10);
+    }
+
+    const attract = 0.9 + crystallize*4.6;
+    const willingBase = crystallize;
+
+    // update particles
+    for (let i=particles.length-1; i>=0; i--){
+      const p = particles[i];
+
+      p.vx *= p.drag;
+      p.vy *= p.drag;
+      p.vy += p.grav;
+
+      // small turbulence
+      p.vx += Math.sin((p.x + time*90)*0.002) * 0.02;
+      p.vy += Math.cos((p.y + time*70)*0.002) * 0.02;
+
+      // attract to target
+      if (targets.length){
+        const idx = (targetShift + i) % targets.length;
+        const tg = targets[idx];
+
+        const willing = lerp(0.10, 1.0, willingBase) * (p.lock ? 1 : 0.65);
+        const dx = tg.x - p.x;
+        const dy = tg.y - p.y;
+        const dist = Math.hypot(dx,dy) + 0.0001;
+
+        const pull = (attract * willing) / (1 + dist*0.02);
+        p.vx += (dx/dist) * pull;
+        p.vy += (dy/dist) * pull;
+
+        // settle when close
+        if (dist < 10){ p.vx *= 0.82; p.vy *= 0.82; }
+      }
+
+      p.x += p.vx;
+      p.y += p.vy;
+
+      // bounds
+      if (p.x < -40 || p.x > W+40 || p.y < -40 || p.y > H+70){
+        p.vx *= 0.6; p.vy *= 0.6;
+        p.x = clamp(p.x, -20, W+20);
+        p.y = clamp(p.y, -20, H+40);
+      }
+
+      p.life -= 1;
+      if (p.life <= 0) particles.splice(i,1);
+    }
+
+    // shift targets slowly (gives "forming" motion)
+    if (phase !== "SPLASH"){
+      targetShift = (targetShift + Math.floor(1 + crystallize*10)) % Math.max(1, targets.length);
+    }
+
+    if ($t) $t.textContent = `${time.toFixed(2)}s`;
+    if ($count) $count.textContent = String(particles.length);
+  }
+
+  function draw(){
+    // Black fixed base + trail
+    fade(0.10 + crystallize*0.06);
+
+    if (crystallize > 0.22) drawGrid();
+
+    ctx.save();
+    ctx.globalCompositeOperation = "lighter";
+
+    for (let i=0; i<particles.length; i++){
+      const p = particles[i];
+
+      const sp = Math.hypot(p.vx,p.vy);
+      const stretch = clamp(sp*0.55, 0, 10);
+      const ang = Math.atan2(p.vy,p.vx);
+
+      ctx.globalAlpha = clamp(p.a * (0.32 + crystallize*0.85), 0, 1);
+      ctx.fillStyle = p.col;
+
+      ctx.save();
+      ctx.translate(p.x,p.y);
+      ctx.rotate(ang);
+
+      // main splash blob
+      ctx.beginPath();
+      ctx.ellipse(0,0, p.r + stretch, p.r, 0, 0, Math.PI*2);
+      ctx.fill();
+
+      // droplets
+      if (sp > 4.2 && Math.random() < 0.08){
+        ctx.globalAlpha *= 0.7;
+        ctx.beginPath();
+        const n = 3 + ((Math.random()*4)|0);
+        for (let k=0; k<n; k++){
+          const ox = rand(-18,18);
+          const oy = rand(-12,12);
+          const rr = rand(0.8,2.2);
+          ctx.moveTo(ox+rr, oy);
+          ctx.arc(ox,oy,rr,0,Math.PI*2);
+        }
+        ctx.fill();
+      }
+
+      ctx.restore();
+    }
+
+    ctx.globalCompositeOperation = "source-over";
+    ctx.globalAlpha = 1;
+    ctx.restore();
+  }
+
+  // Loop
+  let last = performance.now();
+  function loop(now){
+    const dt = clamp((now-last)/1000, 0, 0.033);
+    last = now;
+    step(dt);
+    draw();
+    requestAnimationFrame(loop);
+  }
+
+  // Start
   resize();
-  addEventListener("resize", resize, { passive:true });
-
-  const state = {
-    mx: 0.5, my: 0.5,
-    pulse(v){ pulse = Math.min(1, pulse + v); }
-  };
-  window.__FIELD = state;
-
-  addEventListener("pointermove", (e) => {
-    state.mx = e.clientX / innerWidth;
-    state.my = e.clientY / innerHeight;
-  }, { passive:true });
-
-  function draw(now){
-    const acc = getComputedStyle(document.documentElement).getPropertyValue("--accent").trim() || "#7b5cff";
-    const acc2 = getComputedStyle(document.documentElement).getPropertyValue("--accent2").trim() || "#00ffd5";
-
-    ctx.clearRect(0,0,w,h);
-
-    // base dark gradient
-    const g0 = ctx.createLinearGradient(0,0,w,h);
-    g0.addColorStop(0, "rgba(0,0,0,1)");
-    g0.addColorStop(1, "rgba(0,0,0,1)");
-    ctx.fillStyle = g0;
-    ctx.fillRect(0,0,w,h);
-
-    // moving blobs
-    const t = now/1000;
-    const x = (state.mx * w);
-    const y = (state.my * h);
-
-    const r1 = (Math.min(w,h) * (0.55 + 0.10*Math.sin(t*0.7))) * (1 + pulse*0.35);
-    const r2 = (Math.min(w,h) * (0.45 + 0.12*Math.cos(t*0.6))) * (1 + pulse*0.25);
-
-    const g1 = ctx.createRadialGradient(x, y, 0, x, y, r1);
-    g1.addColorStop(0, hexToRgba(acc, 0.18 + pulse*0.20));
-    g1.addColorStop(1, "rgba(0,0,0,0)");
-    ctx.fillStyle = g1;
-    ctx.fillRect(0,0,w,h);
-
-    const x2 = w*(0.75 + 0.08*Math.sin(t*0.4));
-    const y2 = h*(0.35 + 0.08*Math.cos(t*0.5));
-    const g2 = ctx.createRadialGradient(x2, y2, 0, x2, y2, r2);
-    g2.addColorStop(0, hexToRgba(acc2, 0.10 + pulse*0.14));
-    g2.addColorStop(1, "rgba(0,0,0,0)");
-    ctx.fillStyle = g2;
-    ctx.fillRect(0,0,w,h);
-
-    // pulse decay
-    pulse *= 0.92;
-
-    requestAnimationFrame(draw);
-  }
-  requestAnimationFrame(draw);
-}
-
-function hexToRgba(hex, a){
-  const h = hex.replace("#","").trim();
-  const n = parseInt(h.length===3 ? h.split("").map(x=>x+x).join("") : h, 16);
-  const r = (n>>16)&255;
-  const g = (n>>8)&255;
-  const b = n&255;
-  return `rgba(${r},${g},${b},${a})`;
-}
-
-/* -------------------------
-   init
-------------------------- */
-function init(){
-  softProtect();
-  fieldCanvas();
-  hud();
-  morphLabel();
-  idleDecay();
-  loadWorksIntoGrid();
-  renderWorkPage();
-
-  const y = $("#year");
-  if (y) y.textContent = new Date().getFullYear();
-}
-document.addEventListener("DOMContentLoaded", init);
+  clearBg();
+  buildTargets();
+  reset();
+  requestAnimationFrame(loop);
+})();
