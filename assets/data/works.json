@@ -1,1 +1,38 @@
-
+[
+  {
+    "id": "01",
+    "category": "artifact",
+    "title": "Chromatic Silence",
+    "oneLiner": "構造の静寂。色が音ではなく骨格として現れる。",
+    "statement": "これは服になる前の思考だ。",
+    "caption": "視覚的な思考が、形式としてアーカイブされていく。",
+    "year": "2024",
+    "tags": ["artifact", "structure"],
+    "thumb": "./assets/img/works/01_thumb.webp",
+    "full": "./assets/img/works/01_full.webp"
+  },
+  {
+    "id": "02",
+    "category": "lookbook",
+    "title": "Moving Canvas",
+    "oneLiner": "服になる直前の思考。運動としての色。",
+    "statement": "これは服になる前の思考だ。",
+    "caption": "“着る”は展示ではなく、移動する展示だ。",
+    "year": "2025",
+    "tags": ["lookbook", "wearable"],
+    "thumb": "./assets/img/works/02_thumb.webp",
+    "full": "./assets/img/works/02_full.webp"
+  },
+  {
+    "id": "03",
+    "category": "fieldnote",
+    "title": "Field Notes",
+    "oneLiner": "観測ログ。思考が崩れる瞬間の採取。",
+    "statement": "これは服になる前の思考だ。",
+    "caption": "言語化される前に、視覚が先に割れる。",
+    "year": "2025",
+    "tags": ["fieldnote", "log"],
+    "thumb": "./assets/img/works/03_thumb.webp",
+    "full": "./assets/img/works/03_full.webp"
+  }
+]
