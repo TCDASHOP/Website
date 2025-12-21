@@ -5,7 +5,10 @@
    + Copy deterrence (not absolute)
 */
 
-(function(){
+(() => {
+  document.documentElement.dataset.jsok = "1";
+  // 以下そのまま…
+   (function(){
   const $ = (q, el=document) => el.querySelector(q);
   const $$ = (q, el=document) => [...el.querySelectorAll(q)];
 
