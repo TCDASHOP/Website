@@ -1,227 +1,280 @@
-/* =========================
-   SAIREN COLOR ARCHIVE
-   main.js (no external libs)
-   ========================= */
-
 (() => {
-  const $ = (s, r=document) => r.querySelector(s);
-  const $$ = (s, r=document) => Array.from(r.querySelectorAll(s));
+  const $ = (s, el=document) => el.querySelector(s);
+  const $$ = (s, el=document) => [...el.querySelectorAll(s)];
 
-  const root = document.documentElement;
-  const hero = $('[data-section="hero"]');
-  const mutate = $('[data-mutate]');
-  const baseEl = $('[data-base]');
-  const altEl = $('[data-alt]');
-  const yearEl = $('[data-year]');
-  const hudX = $('[data-hud-x]');
-  const hudY = $('[data-hud-y]');
-  const hudT = $('[data-hud-t]');
-  const cards = $$('[data-card]');
-  const grid = $('[data-grid]');
-  const uiToggle = $('[data-toggle-ui]');
+  const year = $("#year");
+  if (year) year.textContent = new Date().getFullYear();
 
-  // 年号
-  if (yearEl) yearEl.textContent = String(new Date().getFullYear());
-
-  // HEROを“動いてる”状態に
-  if (hero) hero.dataset.live = "1";
-
-  // -------------------------
-  // 1) スクロールで文字が「分類名」に変異
-  // （構造。→ アーティファクト → フィールドノート）
-  // -------------------------
-  const phases = [
-    { labelJP: '構造。', labelEN: 'STRUCTURE' },
-    { labelJP: 'アーティファクト。', labelEN: 'ARTIFACT' },
-    { labelJP: 'フィールドノート。', labelEN: 'FIELD NOTE' },
-  ];
-
-  function clamp(n, a, b){ return Math.max(a, Math.min(b, n)); }
-
-  function updateMutateByScroll(){
-    const y = window.scrollY || 0;
-    const h = Math.max(1, window.innerHeight);
-    const p = clamp(y / (h * 1.15), 0, 0.9999); // 0..~1
-    const idx = Math.floor(p * phases.length);
-    const phase = phases[idx] || phases[0];
-
-    if (baseEl) baseEl.textContent = phase.labelJP;
-    if (altEl) altEl.textContent = phase.labelEN;
-
-    // HUD
-    if (hudX) hudX.textContent = (p * 1.00).toFixed(2);
-    if (hudY) hudY.textContent = (y / 1000).toFixed(2);
-  }
-
-  // -------------------------
-  // 2) 作品カードに近づくと背景の色場が反応
-  // -------------------------
-  function setFieldFromPoint(clientX, clientY){
-    const x = (clientX / window.innerWidth) * 100;
-    const y = (clientY / window.innerHeight) * 100;
-    root.style.setProperty('--cx', `${x.toFixed(2)}%`);
-    root.style.setProperty('--cy', `${y.toFixed(2)}%`);
-
-    // hue をX/Yで変化（穏やか）
-    const hue = (x * 3.2 + y * 1.4) % 360;
-    root.style.setProperty('--hue', `${hue.toFixed(0)}`);
-  }
-
-  // Pointer tracking（背景反応）
-  window.addEventListener('pointermove', (e) => {
-    setFieldFromPoint(e.clientX, e.clientY);
-    bumpPulse(0.16);
-  }, { passive: true });
-
-  // カードへ“近づく”反応：カード中心へ吸い寄せるように色場を移動
-  function activateCardProximity(card){
-    const r = card.getBoundingClientRect();
-    const cx = r.left + r.width/2;
-    const cy = r.top + r.height/2;
-    setFieldFromPoint(cx, cy);
-
-    // ノード別に色味を少しずらす
-    const node = card.getAttribute('data-node') || 'artifact';
-    const baseHue = parseFloat(getComputedStyle(root).getPropertyValue('--hue')) || 210;
-    const add = node === 'artifact' ? 0 : node === 'lookbook' ? 40 : 120;
-    root.style.setProperty('--hue', String((baseHue + add) % 360));
-    bumpPulse(0.28);
-  }
-
-  cards.forEach(card => {
-    card.addEventListener('pointerenter', () => activateCardProximity(card));
-    card.addEventListener('focus', () => activateCardProximity(card));
+  $$("[data-jump]").forEach(a => {
+    a.addEventListener("click", (e) => {
+      const href = a.getAttribute("href") || "";
+      if (href.startsWith("#")) {
+        e.preventDefault();
+        const target = $(href);
+        if (target) target.scrollIntoView({behavior:"smooth", block:"start"});
+      }
+    });
   });
 
-  // pulse（背景の鼓動）
-  let pulse = 0;
-  let pulseRAF = null;
+  // ===== 背景“色場” =====
+  const canvas = $("#field");
+  const ctx = canvas?.getContext?.("2d");
+  let W=0,H=0, DPR=1;
+  let mx=0.5,my=0.35, t0=performance.now();
 
-  function bumpPulse(amount){
-    pulse = Math.min(0.65, pulse + amount);
-    root.style.setProperty('--pulse', pulse.toFixed(3));
-    if (!pulseRAF) pulseRAF = requestAnimationFrame(decayPulse);
+  function resize(){
+    if(!canvas || !ctx) return;
+    DPR = Math.min(2, window.devicePixelRatio || 1);
+    W = canvas.width  = Math.floor(innerWidth * DPR);
+    H = canvas.height = Math.floor(innerHeight * DPR);
+    canvas.style.width = innerWidth+"px";
+    canvas.style.height = innerHeight+"px";
   }
-  function decayPulse(){
-    pulse = Math.max(0, pulse - 0.02);
-    root.style.setProperty('--pulse', pulse.toFixed(3));
-    if (pulse > 0) pulseRAF = requestAnimationFrame(decayPulse);
-    else pulseRAF = null;
-  }
+  function lerp(a,b,k){ return a + (b-a)*k; }
 
-  // -------------------------
-  // 3) 一定時間操作しないと、UIが静かに崩壊する
-  // -------------------------
-  let idleTimer = null;
-  let idleMs = 0;
-  const IDLE_LIMIT = 18000; // 18秒（好みで変更）
-
-  function resetIdle(){
-    idleMs = 0;
-    document.body.classList.remove('is-decaying');
+  function paintBlob(o, rgb, alpha){
+    const g = ctx.createRadialGradient(o.x,o.y, 0, o.x,o.y, o.r);
+    g.addColorStop(0, `rgba(${rgb[0]},${rgb[1]},${rgb[2]},${alpha})`);
+    g.addColorStop(1, `rgba(${rgb[0]},${rgb[1]},${rgb[2]},0)`);
+    ctx.fillStyle = g;
+    ctx.fillRect(0,0,W,H);
   }
 
-  function tickIdle(){
-    idleMs += 1000;
-    if (hudT) hudT.textContent = (idleMs/1000).toFixed(2) + "s";
-    if (idleMs >= IDLE_LIMIT){
-      document.body.classList.add('is-decaying');
-      // 崩壊中は、UI透明度を落とす
-      root.style.setProperty('--ui', '0.65');
-    } else {
-      root.style.setProperty('--ui', '1');
-    }
-  }
-
-  function startIdleLoop(){
-    if (idleTimer) clearInterval(idleTimer);
-    idleTimer = setInterval(tickIdle, 1000);
-  }
-
-  ['pointerdown','pointermove','keydown','scroll','touchstart'].forEach(evt => {
-    window.addEventListener(evt, () => { resetIdle(); }, { passive: true });
-  });
-
-  resetIdle();
-  startIdleLoop();
-
-  // -------------------------
-  // HEROタイトル：追加の“生きてる”動き（微細な歪み）
-  // -------------------------
-  let t0 = performance.now();
-
-  function animateTitle(now){
+  function draw(now){
+    if(!canvas || !ctx) return;
     const t = (now - t0) / 1000;
-    // スクロール量と時間を混ぜて、ほんの少しだけ変形
-    const s = (window.scrollY || 0) / 800;
-    const wob = Math.sin(t * 0.9) * 0.6 + Math.sin(t * 1.7) * 0.35;
-    const skew = (wob * 0.25) + (s * 0.15);
 
-    if (baseEl){
-      baseEl.style.transform = `translate3d(0, ${Math.sin(t*0.6)*1.4}px, 0) skewX(${skew}deg)`;
-      baseEl.style.filter = `blur(${Math.max(0, (Math.abs(wob)-0.6))*0.6}px)`;
-    }
-    requestAnimationFrame(animateTitle);
-  }
-  requestAnimationFrame(animateTitle);
+    ctx.clearRect(0,0,W,H);
+    ctx.fillStyle = "#07070a";
+    ctx.fillRect(0,0,W,H);
 
-  // -------------------------
-  // Smooth-ish nav (optional)
-  // -------------------------
-  $$('[data-nav]').forEach(a => {
-    a.addEventListener('click', (e) => {
-      const href = a.getAttribute('href');
-      if (!href || !href.startsWith('#')) return;
-      const el = document.querySelector(href);
-      if (!el) return;
-      e.preventDefault();
-      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    });
-  });
+    const gx = mx*W, gy = my*H;
+    const a = {x: lerp(W*0.15, gx, 0.35) + Math.sin(t*0.7)*W*0.04, y: lerp(H*0.20, gy, 0.25) + Math.cos(t*0.9)*H*0.05, r: Math.min(W,H)*0.55};
+    const b = {x: lerp(W*0.80, gx, 0.30) + Math.cos(t*0.6)*W*0.05, y: lerp(H*0.35, gy, 0.35) + Math.sin(t*0.8)*H*0.04, r: Math.min(W,H)*0.55};
+    const c = {x: lerp(W*0.50, gx, 0.40) + Math.sin(t*0.5)*W*0.03, y: lerp(H*0.85, gy, 0.25) + Math.cos(t*0.7)*H*0.03, r: Math.min(W,H)*0.62};
 
-  // UI toggle（崩壊演出とは別。手動でUIの存在感を落とす）
-  if (uiToggle){
-    uiToggle.addEventListener('click', () => {
-      const cur = parseFloat(getComputedStyle(root).getPropertyValue('--ui')) || 1;
-      root.style.setProperty('--ui', cur > 0.8 ? '0.35' : '1');
-      bumpPulse(0.22);
-    });
+    paintBlob(a, [255,60,170], 0.14);
+    paintBlob(b, [60,220,255], 0.10);
+    paintBlob(c, [255,170,60], 0.08);
+    paintBlob({x:gx,y:gy,r:Math.min(W,H)*0.28}, [120,255,120], 0.08);
+
+    requestAnimationFrame(draw);
   }
 
-  // Scroll-driven mutate + HUD
-  window.addEventListener('scroll', updateMutateByScroll, { passive: true });
-  updateMutateByScroll();
+  function onMove(x,y){
+    mx = x / innerWidth;
+    my = y / innerHeight;
+  }
 
-  // -------------------------
-  // コピー抑止（完全防止ではなく“抑止”）
-  // ※ブラウザ上で100%防ぐのは不可能。保存/スクショは止められない。
-  // -------------------------
-  // 右クリック抑止
-  window.addEventListener('contextmenu', (e) => {
-    e.preventDefault();
-    bumpPulse(0.25);
+  if(canvas && ctx){
+    resize();
+    addEventListener("resize", resize, {passive:true});
+    addEventListener("mousemove", (e)=>onMove(e.clientX,e.clientY), {passive:true});
+    addEventListener("touchmove", (e)=>{
+      const p = e.touches?.[0];
+      if(p) onMove(p.clientX,p.clientY);
+    }, {passive:true});
+    requestAnimationFrame(draw);
+  }
+
+  // ===== テレメトリ =====
+  const tX = $("#tX"), tY = $("#tY"), tT = $("#tT");
+  let start = performance.now();
+  function tick(){
+    const now = performance.now();
+    const sec = (now-start)/1000;
+    if(tT) tT.textContent = sec.toFixed(2)+"s";
+    if(tX) tX.textContent = (mx*100).toFixed(2);
+    if(tY) tY.textContent = (my*100).toFixed(2);
+    requestAnimationFrame(tick);
+  }
+  if(tT || tX || tY) requestAnimationFrame(tick);
+
+  // ===== 1) スクロールで分類名に変異 =====
+  const morphTitle = $("#morphTitle");
+  const marks = $$(".morphMark");
+  const words = morphTitle?.dataset?.words?.split("|") || [];
+  if (morphTitle && marks.length && words.length){
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(ent=>{
+        if(ent.isIntersecting){
+          const w = ent.target.getAttribute("data-word");
+          morphTo(w);
+        }
+      });
+    }, {threshold: 0.55});
+
+    marks.forEach((m,i)=>{
+      m.setAttribute("data-word", words[i] || "構造。");
+      io.observe(m);
+    });
+
+    let lock = false;
+    function morphTo(next){
+      if(lock || !next) return;
+      lock = true;
+      morphTitle.textContent = scrambleText(next);
+      setTimeout(()=>{
+        morphTitle.textContent = next;
+        lock = false;
+      }, 260);
+    }
+    function scrambleText(t){
+      const chars = "█▓▒░<>/\\|—_";
+      return t.split("").map((ch)=> (Math.random()>.55 ? chars[(Math.random()*chars.length)|0] : ch)).join("");
+    }
+  }
+
+  // ===== 2) カード近接で色場反応 =====
+  const grid = $("#worksGrid");
+  function bindCardReact(){
+    $$(".card").forEach(card=>{
+      const set = (x,y)=>{
+        const r = card.getBoundingClientRect();
+        const mx2 = ((x - r.left) / r.width) * 100;
+        const my2 = ((y - r.top) / r.height) * 100;
+        card.style.setProperty("--mx", mx2+"%");
+        card.style.setProperty("--my", my2+"%");
+        onMove(x,y);
+      };
+      card.addEventListener("mousemove", (e)=>set(e.clientX,e.clientY), {passive:true});
+      card.addEventListener("touchmove", (e)=>{
+        const p = e.touches?.[0];
+        if(p) set(p.clientX,p.clientY);
+      }, {passive:true});
+    });
+  }
+
+  // ===== 作品データ読み込み =====
+  async function loadWorks(){
+    if(!grid) return;
+    try{
+      const res = await fetch("./assets/data/works.json", {cache:"no-store"});
+      const data = await res.json();
+      renderWorks(data);
+      bindCardReact();
+    }catch(e){
+      grid.innerHTML = `<div class="muted" style="grid-column:span 12; padding:14px 0;">works.json が見つからない / 形式が違う可能性があります。</div>`;
+    }
+  }
+  function esc(s=""){ return String(s).replace(/[&<>"']/g, m=>({ "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;" }[m])); }
+
+  function renderWorks(items){
+    const html = items.map((it, idx)=>{
+      const n = String(it.id ?? idx+1).padStart(2,"0");
+      const href = `./work.html?id=${encodeURIComponent(it.id ?? n)}`;
+      const thumb = it.thumb || "";
+      const cat = it.category || "artifact";
+      const tags = (it.tags || []).slice(0,4).map(t=>`#${t}`).join(" ");
+      const desc = it.oneLiner || "image pending";
+
+      return `
+      <a class="card" href="${href}" aria-label="${esc(it.title || "Work")}">
+        <img class="card__img" src="${esc(thumb)}" alt="" loading="lazy" draggable="false"
+             onerror="this.style.opacity=.2; this.style.filter='grayscale(1)';" />
+        <div class="card__veil" aria-hidden="true"></div>
+        <div class="card__body">
+          <div class="card__kicker">${esc(cat.toUpperCase())} ${n}</div>
+          <div class="card__title">${esc(it.title || "Untitled")}</div>
+          <p class="card__desc">${esc(desc)}</p>
+          <div class="card__tags">${esc(tags)}</div>
+        </div>
+      </a>`;
+    }).join("");
+    grid.innerHTML = html;
+  }
+
+  loadWorks();
+
+  // ===== work.html 初期化（時間軸）=====
+  async function initWorkPage(){
+    const img = $("#workImg");
+    const title = $("#workTitle");
+    if(!img || !title) return;
+
+    const params = new URLSearchParams(location.search);
+    const id = params.get("id");
+
+    const res = await fetch("./assets/data/works.json", {cache:"no-store"});
+    const items = await res.json();
+    const idx = Math.max(0, items.findIndex(x => String(x.id) === String(id)));
+    const item = items[idx] || items[0];
+
+    title.textContent = item.title || "Untitled";
+    img.src = item.full || item.thumb || "";
+    img.alt = item.title || "";
+
+    const meta = $("#workMeta");
+    const text = $("#workText");
+    if(meta){
+      meta.innerHTML = `
+        <div>category : <b>${esc(item.category || "artifact")}</b></div>
+        <div>year     : <b>${esc(item.year || "—")}</b></div>
+        <div>id       : <b>${esc(item.id || "—")}</b></div>
+      `;
+    }
+    if(text){
+      const lines = [item.statement || "これは服になる前の思考だ。", item.caption || ""].filter(Boolean);
+      text.innerHTML = lines.map(l=>`<p>${esc(l)}</p>`).join("");
+    }
+
+    const prev = $("#prevBtn");
+    const next = $("#nextBtn");
+    const prevItem = items[(idx - 1 + items.length) % items.length];
+    const nextItem = items[(idx + 1) % items.length];
+    if(prev) prev.href = `./work.html?id=${encodeURIComponent(prevItem.id)}`;
+    if(next) next.href = `./work.html?id=${encodeURIComponent(nextItem.id)}`;
+
+    const ticks = $("#ticks");
+    if(ticks) ticks.innerHTML = [0, .25, .5, .75, 1].map(v=>`<span>${v.toFixed(2)}</span>`).join("");
+
+    const label = $("#timelineLabel");
+    const onScroll = ()=>{
+      const max = Math.max(1, document.documentElement.scrollHeight - innerHeight);
+      const p = scrollY / max;
+      const tt = p * 9.99;
+      if(label) label.textContent = `t = ${tt.toFixed(2)}`;
+      onMove(innerWidth*(0.2+0.6*p), innerHeight*(0.25+0.5*(1-p)));
+    };
+    addEventListener("scroll", onScroll, {passive:true});
+    onScroll();
+  }
+  initWorkPage();
+
+  // ===== 3) 放置でUI崩壊 =====
+  let idleTimer = null;
+  const IDLE_MS = 24000;
+  const wake = ()=>{
+    document.body.classList.remove("decay");
+    if(idleTimer) clearTimeout(idleTimer);
+    idleTimer = setTimeout(()=>document.body.classList.add("decay"), IDLE_MS);
+  };
+  ["mousemove","mousedown","keydown","touchstart","touchmove","scroll"].forEach(ev=>{
+    addEventListener(ev, wake, {passive:true});
   });
+  wake();
 
-  // コピー系ショートカット抑止（Ctrl/Cmd + C/S/P/U など）
-  window.addEventListener('keydown', (e) => {
-    const key = (e.key || '').toLowerCase();
-    const ctrl = e.ctrlKey || e.metaKey;
-    if (!ctrl) return;
+  // ===== コピー抑止（右クリック/コピー/ドラッグ/一部ショートカット）=====
+  const toast = $("#toast");
+  let toastTimer = null;
+  const showToast = (msg)=>{
+    if(!toast) return;
+    toast.textContent = msg;
+    toast.classList.add("show");
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(()=>toast.classList.remove("show"), 1200);
+  };
 
-    const blocked = ['c','s','p','u','a']; // copy/save/print/view-source/select-all
-    if (blocked.includes(key)){
+  addEventListener("contextmenu", (e)=>{ e.preventDefault(); showToast("copy disabled"); });
+  addEventListener("copy", (e)=>{ e.preventDefault(); showToast("copy disabled"); });
+  addEventListener("cut", (e)=>{ e.preventDefault(); showToast("copy disabled"); });
+  addEventListener("dragstart", (e)=>{ e.preventDefault(); showToast("drag disabled"); });
+
+  addEventListener("keydown", (e)=>{
+    const k = e.key.toLowerCase();
+    if ((e.ctrlKey || e.metaKey) && ["c","x","s","p","u","a"].includes(k)) {
       e.preventDefault();
-      bumpPulse(0.30);
+      showToast("shortcut blocked");
     }
   });
-
-  // Drag保存っぽい動き抑止（画像導入後にも効く）
-  window.addEventListener('dragstart', (e) => {
-    e.preventDefault();
-  });
-
-  // 長押し保存（iOSの画像保存メニュー）抑止に近いもの
-  // ※iOSは完全には止められないが、コンテキストを出にくくする
-  window.addEventListener('touchstart', () => {}, { passive: true });
-
 })();
