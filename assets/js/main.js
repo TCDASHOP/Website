@@ -1,184 +1,227 @@
-// SAIREN COLOR ARCHIVE — main.js
+/* =========================
+   SAIREN COLOR ARCHIVE
+   main.js (no external libs)
+   ========================= */
+
 (() => {
-  // ----------------------------
-  // Year
-  // ----------------------------
-  const y = document.getElementById("year");
-  if (y) y.textContent = new Date().getFullYear();
+  const $ = (s, r=document) => r.querySelector(s);
+  const $$ = (s, r=document) => Array.from(r.querySelectorAll(s));
 
-  // ----------------------------
-  // Copy deterrence (not absolute)
-  // ----------------------------
-  document.addEventListener("contextmenu", (e) => e.preventDefault(), { passive: false });
+  const root = document.documentElement;
+  const hero = $('[data-section="hero"]');
+  const mutate = $('[data-mutate]');
+  const baseEl = $('[data-base]');
+  const altEl = $('[data-alt]');
+  const yearEl = $('[data-year]');
+  const hudX = $('[data-hud-x]');
+  const hudY = $('[data-hud-y]');
+  const hudT = $('[data-hud-t]');
+  const cards = $$('[data-card]');
+  const grid = $('[data-grid]');
+  const uiToggle = $('[data-toggle-ui]');
 
-  // block common copy shortcuts
-  document.addEventListener("keydown", (e) => {
-    const k = (e.key || "").toLowerCase();
-    const ctrl = e.ctrlKey || e.metaKey;
-    if (ctrl && (k === "c" || k === "s" || k === "p" || k === "u" || k === "a")) {
+  // 年号
+  if (yearEl) yearEl.textContent = String(new Date().getFullYear());
+
+  // HEROを“動いてる”状態に
+  if (hero) hero.dataset.live = "1";
+
+  // -------------------------
+  // 1) スクロールで文字が「分類名」に変異
+  // （構造。→ アーティファクト → フィールドノート）
+  // -------------------------
+  const phases = [
+    { labelJP: '構造。', labelEN: 'STRUCTURE' },
+    { labelJP: 'アーティファクト。', labelEN: 'ARTIFACT' },
+    { labelJP: 'フィールドノート。', labelEN: 'FIELD NOTE' },
+  ];
+
+  function clamp(n, a, b){ return Math.max(a, Math.min(b, n)); }
+
+  function updateMutateByScroll(){
+    const y = window.scrollY || 0;
+    const h = Math.max(1, window.innerHeight);
+    const p = clamp(y / (h * 1.15), 0, 0.9999); // 0..~1
+    const idx = Math.floor(p * phases.length);
+    const phase = phases[idx] || phases[0];
+
+    if (baseEl) baseEl.textContent = phase.labelJP;
+    if (altEl) altEl.textContent = phase.labelEN;
+
+    // HUD
+    if (hudX) hudX.textContent = (p * 1.00).toFixed(2);
+    if (hudY) hudY.textContent = (y / 1000).toFixed(2);
+  }
+
+  // -------------------------
+  // 2) 作品カードに近づくと背景の色場が反応
+  // -------------------------
+  function setFieldFromPoint(clientX, clientY){
+    const x = (clientX / window.innerWidth) * 100;
+    const y = (clientY / window.innerHeight) * 100;
+    root.style.setProperty('--cx', `${x.toFixed(2)}%`);
+    root.style.setProperty('--cy', `${y.toFixed(2)}%`);
+
+    // hue をX/Yで変化（穏やか）
+    const hue = (x * 3.2 + y * 1.4) % 360;
+    root.style.setProperty('--hue', `${hue.toFixed(0)}`);
+  }
+
+  // Pointer tracking（背景反応）
+  window.addEventListener('pointermove', (e) => {
+    setFieldFromPoint(e.clientX, e.clientY);
+    bumpPulse(0.16);
+  }, { passive: true });
+
+  // カードへ“近づく”反応：カード中心へ吸い寄せるように色場を移動
+  function activateCardProximity(card){
+    const r = card.getBoundingClientRect();
+    const cx = r.left + r.width/2;
+    const cy = r.top + r.height/2;
+    setFieldFromPoint(cx, cy);
+
+    // ノード別に色味を少しずらす
+    const node = card.getAttribute('data-node') || 'artifact';
+    const baseHue = parseFloat(getComputedStyle(root).getPropertyValue('--hue')) || 210;
+    const add = node === 'artifact' ? 0 : node === 'lookbook' ? 40 : 120;
+    root.style.setProperty('--hue', String((baseHue + add) % 360));
+    bumpPulse(0.28);
+  }
+
+  cards.forEach(card => {
+    card.addEventListener('pointerenter', () => activateCardProximity(card));
+    card.addEventListener('focus', () => activateCardProximity(card));
+  });
+
+  // pulse（背景の鼓動）
+  let pulse = 0;
+  let pulseRAF = null;
+
+  function bumpPulse(amount){
+    pulse = Math.min(0.65, pulse + amount);
+    root.style.setProperty('--pulse', pulse.toFixed(3));
+    if (!pulseRAF) pulseRAF = requestAnimationFrame(decayPulse);
+  }
+  function decayPulse(){
+    pulse = Math.max(0, pulse - 0.02);
+    root.style.setProperty('--pulse', pulse.toFixed(3));
+    if (pulse > 0) pulseRAF = requestAnimationFrame(decayPulse);
+    else pulseRAF = null;
+  }
+
+  // -------------------------
+  // 3) 一定時間操作しないと、UIが静かに崩壊する
+  // -------------------------
+  let idleTimer = null;
+  let idleMs = 0;
+  const IDLE_LIMIT = 18000; // 18秒（好みで変更）
+
+  function resetIdle(){
+    idleMs = 0;
+    document.body.classList.remove('is-decaying');
+  }
+
+  function tickIdle(){
+    idleMs += 1000;
+    if (hudT) hudT.textContent = (idleMs/1000).toFixed(2) + "s";
+    if (idleMs >= IDLE_LIMIT){
+      document.body.classList.add('is-decaying');
+      // 崩壊中は、UI透明度を落とす
+      root.style.setProperty('--ui', '0.65');
+    } else {
+      root.style.setProperty('--ui', '1');
+    }
+  }
+
+  function startIdleLoop(){
+    if (idleTimer) clearInterval(idleTimer);
+    idleTimer = setInterval(tickIdle, 1000);
+  }
+
+  ['pointerdown','pointermove','keydown','scroll','touchstart'].forEach(evt => {
+    window.addEventListener(evt, () => { resetIdle(); }, { passive: true });
+  });
+
+  resetIdle();
+  startIdleLoop();
+
+  // -------------------------
+  // HEROタイトル：追加の“生きてる”動き（微細な歪み）
+  // -------------------------
+  let t0 = performance.now();
+
+  function animateTitle(now){
+    const t = (now - t0) / 1000;
+    // スクロール量と時間を混ぜて、ほんの少しだけ変形
+    const s = (window.scrollY || 0) / 800;
+    const wob = Math.sin(t * 0.9) * 0.6 + Math.sin(t * 1.7) * 0.35;
+    const skew = (wob * 0.25) + (s * 0.15);
+
+    if (baseEl){
+      baseEl.style.transform = `translate3d(0, ${Math.sin(t*0.6)*1.4}px, 0) skewX(${skew}deg)`;
+      baseEl.style.filter = `blur(${Math.max(0, (Math.abs(wob)-0.6))*0.6}px)`;
+    }
+    requestAnimationFrame(animateTitle);
+  }
+  requestAnimationFrame(animateTitle);
+
+  // -------------------------
+  // Smooth-ish nav (optional)
+  // -------------------------
+  $$('[data-nav]').forEach(a => {
+    a.addEventListener('click', (e) => {
+      const href = a.getAttribute('href');
+      if (!href || !href.startsWith('#')) return;
+      const el = document.querySelector(href);
+      if (!el) return;
       e.preventDefault();
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+
+  // UI toggle（崩壊演出とは別。手動でUIの存在感を落とす）
+  if (uiToggle){
+    uiToggle.addEventListener('click', () => {
+      const cur = parseFloat(getComputedStyle(root).getPropertyValue('--ui')) || 1;
+      root.style.setProperty('--ui', cur > 0.8 ? '0.35' : '1');
+      bumpPulse(0.22);
+    });
+  }
+
+  // Scroll-driven mutate + HUD
+  window.addEventListener('scroll', updateMutateByScroll, { passive: true });
+  updateMutateByScroll();
+
+  // -------------------------
+  // コピー抑止（完全防止ではなく“抑止”）
+  // ※ブラウザ上で100%防ぐのは不可能。保存/スクショは止められない。
+  // -------------------------
+  // 右クリック抑止
+  window.addEventListener('contextmenu', (e) => {
+    e.preventDefault();
+    bumpPulse(0.25);
+  });
+
+  // コピー系ショートカット抑止（Ctrl/Cmd + C/S/P/U など）
+  window.addEventListener('keydown', (e) => {
+    const key = (e.key || '').toLowerCase();
+    const ctrl = e.ctrlKey || e.metaKey;
+    if (!ctrl) return;
+
+    const blocked = ['c','s','p','u','a']; // copy/save/print/view-source/select-all
+    if (blocked.includes(key)){
+      e.preventDefault();
+      bumpPulse(0.30);
     }
   });
 
-  // stop image drag
-  document.addEventListener("dragstart", (e) => e.preventDefault(), { passive: false });
+  // Drag保存っぽい動き抑止（画像導入後にも効く）
+  window.addEventListener('dragstart', (e) => {
+    e.preventDefault();
+  });
 
-  // long-press save image deterrence (iOS behavior varies)
-  document.addEventListener("touchstart", () => {}, { passive: true });
+  // 長押し保存（iOSの画像保存メニュー）抑止に近いもの
+  // ※iOSは完全には止められないが、コンテキストを出にくくする
+  window.addEventListener('touchstart', () => {}, { passive: true });
 
-  // ----------------------------
-  // Generative background field (Canvas)
-  // ----------------------------
-  const canvas = document.getElementById("field");
-  const ctx = canvas.getContext("2d", { alpha: true });
-  let w = 0, h = 0, dpr = 1;
-
-  const resize = () => {
-    dpr = Math.max(1, Math.min(2, window.devicePixelRatio || 1));
-    w = Math.floor(window.innerWidth);
-    h = Math.floor(window.innerHeight);
-    canvas.width = Math.floor(w * dpr);
-    canvas.height = Math.floor(h * dpr);
-    canvas.style.width = w + "px";
-    canvas.style.height = h + "px";
-    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-  };
-  window.addEventListener("resize", resize);
-  resize();
-
-  // Simple hash-noise
-  const hash = (x, y) => {
-    const s = Math.sin(x * 127.1 + y * 311.7) * 43758.5453;
-    return s - Math.floor(s);
-  };
-
-  // Flow points
-  const P = [];
-  const N = 70;
-  for (let i = 0; i < N; i++) {
-    P.push({
-      x: Math.random() * w,
-      y: Math.random() * h,
-      vx: 0,
-      vy: 0,
-      a: Math.random() * Math.PI * 2,
-      s: 0.7 + Math.random() * 1.8
-    });
-  }
-
-  let t = 0;
-  const tick = () => {
-    t += 0.006;
-
-    // fade
-    ctx.fillStyle = "rgba(5,6,8,0.07)";
-    ctx.fillRect(0, 0, w, h);
-
-    // subtle vignette
-    const vg = ctx.createRadialGradient(w * 0.5, h * 0.55, 10, w * 0.5, h * 0.55, Math.max(w, h) * 0.7);
-    vg.addColorStop(0, "rgba(0,0,0,0)");
-    vg.addColorStop(1, "rgba(0,0,0,0.55)");
-    ctx.fillStyle = vg;
-    ctx.fillRect(0, 0, w, h);
-
-    // flow strokes
-    for (let i = 0; i < P.length; i++) {
-      const p = P[i];
-      const n = hash(p.x * 0.006 + t, p.y * 0.006 - t);
-      const ang = n * Math.PI * 6.0;
-      p.vx += Math.cos(ang) * 0.08 * p.s;
-      p.vy += Math.sin(ang) * 0.08 * p.s;
-
-      // damp
-      p.vx *= 0.92;
-      p.vy *= 0.92;
-
-      const ox = p.x;
-      const oy = p.y;
-
-      p.x += p.vx;
-      p.y += p.vy;
-
-      // wrap
-      if (p.x < -50) p.x = w + 50;
-      if (p.x > w + 50) p.x = -50;
-      if (p.y < -50) p.y = h + 50;
-      if (p.y > h + 50) p.y = -50;
-
-      // ink color (chromatic but dark)
-      const hue = (n * 360 + i * 2.6) % 360;
-      ctx.strokeStyle = `hsla(${hue}, 95%, 62%, 0.06)`;
-      ctx.lineWidth = 1.4;
-      ctx.beginPath();
-      ctx.moveTo(ox, oy);
-      ctx.lineTo(p.x, p.y);
-      ctx.stroke();
-    }
-
-    requestAnimationFrame(tick);
-  };
-  tick();
-
-  // ----------------------------
-  // Hero typography fracture (scroll + pointer)
-  // ----------------------------
-  const lines = [...document.querySelectorAll(".hero__type .t")];
-  const coordA = document.getElementById("coordA");
-  const coordB = document.getElementById("coordB");
-  const coordC = document.getElementById("coordC");
-
-  const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
-
-  const applyFracture = (fx, fy, fz) => {
-    // each line splits differently
-    lines.forEach((el, idx) => {
-      const d = (idx + 1) * 0.9;
-      const x = fx * 34 * d;
-      const y = fy * 18 * d;
-      const r = fx * 3.2 * d;
-      const s = 1 + fz * 0.012 * d;
-      const blur = Math.abs(fx) * 1.2 + Math.abs(fy) * 0.8;
-      el.style.transform = `translate3d(${x}px, ${y}px, 0) rotate(${r}deg) scale(${s})`;
-      el.style.filter = `saturate(1.25) contrast(1.05) blur(${blur}px)`;
-      el.style.opacity = `${0.92 - Math.abs(fx) * 0.12 - Math.abs(fy) * 0.06}`;
-    });
-
-    if (coordA) coordA.textContent = `x ${fx.toFixed(2)}`;
-    if (coordB) coordB.textContent = `y ${fy.toFixed(2)}`;
-    if (coordC) coordC.textContent = `z ${fz.toFixed(2)}`;
-  };
-
-  // scroll fracture baseline
-  const onScroll = () => {
-    const s = window.scrollY || 0;
-    const fz = clamp(s / 900, 0, 1);        // 0..1
-    applyFracture(0, 0, fz);
-  };
-  window.addEventListener("scroll", onScroll, { passive: true });
-  onScroll();
-
-  // pointer adds living offset
-  const onMove = (e) => {
-    const cx = window.innerWidth / 2;
-    const cy = window.innerHeight / 2;
-    const fx = clamp((e.clientX - cx) / cx, -1, 1);
-    const fy = clamp((e.clientY - cy) / cy, -1, 1);
-    const s = window.scrollY || 0;
-    const fz = clamp(s / 900, 0, 1);
-    applyFracture(fx * 0.35, fy * 0.30, fz);
-  };
-
-  const isCoarse = window.matchMedia("(pointer: coarse)").matches;
-  if (!isCoarse) {
-    window.addEventListener("mousemove", onMove, { passive: true });
-  } else {
-    window.addEventListener("deviceorientation", (e) => {
-      if (typeof e.beta !== "number" || typeof e.gamma !== "number") return;
-      const fx = clamp(e.gamma / 35, -1, 1);
-      const fy = clamp(e.beta / 35, -1, 1);
-      const s = window.scrollY || 0;
-      const fz = clamp(s / 900, 0, 1);
-      applyFracture(fx * 0.35, fy * 0.30, fz);
-    }, true);
-  }
 })();
