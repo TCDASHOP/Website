@@ -5,86 +5,88 @@
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
   <meta name="theme-color" content="#050607" />
   <title>Work | SAIREN COLOR ARCHIVE</title>
-  <link rel="stylesheet" href="./assets/css/styles.css" />
+
+  <link rel="stylesheet" href="./assets/css/styles.css">
   <script defer src="./assets/js/main.js"></script>
+
+  <style>
+    .css-warning{
+      position:fixed; inset:auto 12px 12px 12px;
+      padding:12px 14px;
+      border:1px solid rgba(255,80,80,.55);
+      background:rgba(30,0,0,.72);
+      color:#fff; font: 12px/1.5 system-ui,-apple-system,"Noto Sans JP",sans-serif;
+      border-radius:12px;
+      z-index:9999;
+      display:none;
+      white-space:pre-wrap;
+    }
+  </style>
 </head>
 
-<body class="no-select workpage">
-  <div class="field" aria-hidden="true">
-    <div class="field__grain"></div>
-    <div class="field__vignette"></div>
-    <div class="field__pulse"></div>
+<body class="page-work" data-page="work">
+  <div class="css-warning" id="cssWarn">
+CSSが読み込めていません → 作品ページが“素のHTML”になります。
+
+確認：
+- Website/assets/css/styles.css は存在？
+- work.html のlinkパスは ./assets/css/styles.css ？
   </div>
 
-  <header class="topbar">
-    <a class="brand" href="./index.html">
-      <span class="brand__stack">SAIREN<br/>COLOR<br/>ARCHIVE</span>
-      <span class="brand__dot" aria-hidden="true"></span>
-    </a>
-    <nav class="nav">
-      <a class="nav__link" href="./index.html#works">Works</a>
-      <a class="nav__link" href="./index.html#about">About</a>
-      <a class="nav__link" href="https://www.tcda.shop/" target="_blank" rel="noopener">Apparel Brand</a>
-    </nav>
+  <header class="nav">
+    <div class="wrap nav__inner">
+      <a class="brand" href="./index.html">SAIREN<br><span>COLOR ARCHIVE</span></a>
+      <nav class="navlinks">
+        <a href="./index.html#works">Works</a>
+        <a href="./index.html#about">About</a>
+        <a href="https://www.tcda.shop/" target="_blank" rel="noopener">Apparel Brand</a>
+      </nav>
+    </div>
   </header>
 
-  <main class="work">
-    <section class="work__hero">
-      <div class="work__badge">
-        <span id="wCat">artifact</span> / <span id="wYear">2025</span> / <span id="wId">00</span>
+  <main class="wrap work">
+    <section class="workHero">
+      <div class="workMeta" id="workMeta">—</div>
+      <h1 class="workTitle" id="workTitle">Loading…</h1>
+      <p class="workLead" id="workLead">これは服になる前の思考だ。</p>
+    </section>
+
+    <section class="workStage">
+      <div class="timelineBar">
+        <div class="timelineBar__fill" id="tlFill"></div>
       </div>
 
-      <h1 class="work__title" id="wTitle">Untitled</h1>
+      <figure class="workFigure">
+        <img class="workImg" id="workImg" alt="" draggable="false">
+        <figcaption class="workCaption" id="workCaption">“これは服になる前の思考だ”</figcaption>
+      </figure>
 
-      <p class="work__statement">
-        <strong>これは服になる前の思考だ。</strong>
-        <span class="work__sub">This is thought before it becomes clothing.</span>
-      </p>
+      <div class="workBody" id="workBody"></div>
 
-      <div class="work__canvas">
-        <img id="wImg" src="/assets/img/works/1.webp" alt="work image">
+      <div class="workNav">
+        <a class="pill" id="prevLink" href="./index.html#works">← 戻る</a>
+        <a class="pill" id="nextLink" href="./index.html#works">次 →</a>
       </div>
     </section>
 
-    <!-- 時間軸（スクロールで進む） -->
-    <section class="timeline">
-      <div class="timeline__rail" aria-hidden="true"></div>
-
-      <article class="tick">
-        <div class="tick__t">t = 0.00</div>
-        <div class="tick__body">
-          <h2>発生</h2>
-          <p>最初の違和感。まだ説明できない形。</p>
-        </div>
-      </article>
-
-      <article class="tick">
-        <div class="tick__t">t = 0.38</div>
-        <div class="tick__body">
-          <h2>分解</h2>
-          <p>意味ではなく構造へ。色が“骨格”になりはじめる。</p>
-        </div>
-      </article>
-
-      <article class="tick">
-        <div class="tick__t">t = 0.75</div>
-        <div class="tick__body">
-          <h2>固定</h2>
-          <p>ここで初めて「作品」という形式をまとってしまう。</p>
-        </div>
-      </article>
-
-      <div class="work__nav">
-        <a class="navbtn" href="./index.html#works">← 戻る</a>
-        <a class="navbtn navbtn--ghost" id="nextLink" href="./work.html?id=02&cat=lookbook&year=2025&img=2.webp">次 →</a>
-      </div>
-    </section>
-
-    <footer class="footer">
-      <span>© <span id="yearNow"></span> SAIREN COLOR ARCHIVE</span>
-    </footer>
+    <footer class="footer">© 2025 SAIREN COLOR ARCHIVE</footer>
   </main>
 
-  <div class="decay" aria-hidden="true"></div>
+  <div class="touchShield" aria-hidden="true"></div>
+
+  <script>
+    (function(){
+      const warn = document.getElementById('cssWarn');
+      const bg = getComputedStyle(document.body).backgroundColor;
+      const looksDark = bg.includes('rgb(5') || bg.includes('rgb(0') || bg.includes('rgba(0');
+      if(!looksDark && warn) warn.style.display = 'block';
+
+      setTimeout(() => {
+        if(!document.documentElement.dataset.jsok){
+          document.title = "Work | SAIREN COLOR ARCHIVE (JS OFF)";
+        }
+      }, 800);
+    })();
+  </script>
 </body>
 </html>
