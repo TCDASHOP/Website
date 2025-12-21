@@ -1,80 +1,173 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="ja">
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
   <title>SAIREN COLOR ARCHIVE</title>
-
-  <meta name="description" content="SAIREN COLOR ARCHIVE — color as thought, art as structure.">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <!-- SEO / OG -->
-  <meta property="og:title" content="SAIREN COLOR ARCHIVE">
-  <meta property="og:description" content="An archive of color, structure, and visual thought.">
-  <meta property="og:type" content="website">
-
-  <link rel="stylesheet" href="/assets/css/style.css">
+  <meta name="description" content="SAIREN COLOR ARCHIVE — Color as structure. A living archive of visual thought." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Optional: if you already dislike external fonts, remove these two lines -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 
 <body>
+  <!-- Generative field -->
+  <canvas id="field" aria-hidden="true"></canvas>
 
-<header class="site-header">
-  <div class="logo">SAIREN<br>COLOR<br>ARCHIVE</div>
-  <nav class="nav">
-    <a href="#works">Works</a>
-    <a href="#about">About</a>
-    <a href="https://www.tcda.shop/" target="_blank" rel="noopener">
-      Apparel Brand
-    </a>
-  </nav>
-</header>
+  <!-- Film-grain layer -->
+  <div class="grain" aria-hidden="true"></div>
 
-<main>
-
-  <!-- HERO -->
-  <section class="hero">
-    <h1>
-      COLOR<br>
-      IS NOT DECORATION.<br>
-      IT IS STRUCTURE.
-    </h1>
-    <p class="hero-note">
-      Visual thoughts archived as form.
-    </p>
-  </section>
-
-  <!-- WORKS -->
-  <section id="works" class="works">
-    <article class="work">
-      <div class="work-image" style="background-image:url('/images/work1.jpg');"></div>
-      <div class="work-meta">
-        <h2>Transcend Color 001</h2>
-        <span>2025 / LOOKBOOK</span>
+  <header class="top">
+    <div class="mark">
+      <div class="mark__stack">
+        <span>SAIREN</span><span>COLOR</span><span>ARCHIVE</span>
       </div>
-    </article>
-
-    <article class="work">
-      <div class="work-image" style="background-image:url('/images/work2.jpg');"></div>
-      <div class="work-meta">
-        <h2>Chromatic Silence</h2>
-        <span>2024 / ARTWORK</span>
+      <div class="mark__meta">
+        <span class="pill">LIVE ARCHIVE</span>
+        <span class="tiny">COLOR AS STRUCTURE</span>
       </div>
-    </article>
-  </section>
+    </div>
 
-  <!-- ABOUT -->
-  <section id="about" class="about">
-    <p>
-      Sairen Takashima is an artist working with color as structure, not ornament.
-      This archive records visual thinking as a continuous experiment.
-    </p>
-  </section>
+    <nav class="nav">
+      <a href="#works" class="nav__a">Works</a>
+      <a href="#about" class="nav__a">About</a>
+      <a href="#brand" class="nav__a">Apparel Brand</a>
+    </nav>
+  </header>
 
-</main>
+  <main class="stage">
+    <!-- HERO: fractured typography -->
+    <section class="hero" id="top">
+      <div class="hero__type" aria-label="COLOR IS NOT DECORATION. IT IS STRUCTURE.">
+        <span class="t t1">COLOR</span>
+        <span class="t t2">IS NOT</span>
+        <span class="t t3">DECORATION.</span>
+        <span class="t t4">IT IS</span>
+        <span class="t t5">STRUCTURE.</span>
+      </div>
 
-<footer class="site-footer">
-  <p>© 2025 SAIREN COLOR ARCHIVE</p>
-</footer>
+      <div class="hero__foot">
+        <p class="hero__note">
+          Visual thoughts archived as form.<br/>
+          <span class="muted">Scroll to fracture the statement.</span>
+        </p>
+        <div class="hero__coords">
+          <span class="tiny" id="coordA">x 0.00</span>
+          <span class="tiny" id="coordB">y 0.00</span>
+          <span class="tiny" id="coordC">z 0.00</span>
+        </div>
+      </div>
+    </section>
 
-<script src="/assets/js/main.js"></script>
+    <!-- WORKS -->
+    <section class="works" id="works">
+      <div class="sectionHead">
+        <h2>Works</h2>
+        <p class="muted">Artifacts, lookbooks, color studies. Each entry is a portal.</p>
+      </div>
+
+      <div class="grid">
+        <!-- Card 01 -->
+        <article class="card" data-ink="a">
+          <a class="card__hit" href="#" aria-label="Transcend Color 001"></a>
+          <div class="card__frame">
+            <div class="card__img">
+              <!-- ここをあなたの画像に差し替え：images/xxx.jpg -->
+              <img src="images/logo.png" alt="" draggable="false" />
+            </div>
+            <div class="card__label">
+              <div class="card__title">Transcend Color 001</div>
+              <div class="card__meta">2025 / LOOKBOOK</div>
+              <div class="card__tag">ARCHIVE-01</div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 02 -->
+        <article class="card" data-ink="b">
+          <a class="card__hit" href="#" aria-label="Chromatic Silence"></a>
+          <div class="card__frame">
+            <div class="card__img">
+              <img src="images/logo.png" alt="" draggable="false" />
+            </div>
+            <div class="card__label">
+              <div class="card__title">Chromatic Silence</div>
+              <div class="card__meta">2024 / ARTWORK</div>
+              <div class="card__tag">SPECIMEN</div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 03 -->
+        <article class="card" data-ink="c">
+          <a class="card__hit" href="#" aria-label="Moving Canvas"></a>
+          <div class="card__frame">
+            <div class="card__img">
+              <img src="images/logo.png" alt="" draggable="false" />
+            </div>
+            <div class="card__label">
+              <div class="card__title">Moving Canvas</div>
+              <div class="card__meta">2025 / LOOKBOOK</div>
+              <div class="card__tag">FIELD NOTE</div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="about" id="about">
+      <div class="sectionHead">
+        <h2>About</h2>
+      </div>
+
+      <div class="about__body">
+        <p>
+          Sairen Takashima is an artist and founder of an apparel brand.
+          Working with color as structure, not decoration.
+        </p>
+        <p class="muted">
+          This archive is not a portfolio. It’s a living index of visual thought — constantly shifting, re-labeled, re-sequenced.
+        </p>
+      </div>
+    </section>
+
+    <!-- BRAND -->
+    <section class="brand" id="brand">
+      <div class="sectionHead">
+        <h2>Apparel Brand</h2>
+        <p class="muted">Wearable forms derived from original artworks.</p>
+      </div>
+
+      <div class="brand__panel">
+        <div class="brand__line">
+          <span class="tiny">OFFICIAL</span>
+          <span class="pill">ART → WEAR</span>
+        </div>
+        <p class="brand__copy">
+          Products are sold via the official apparel brand site.<br/>
+          AI-generated models may be used for visual representation only (designs/artworks are original).<br/>
+          Colors may vary depending on display and production process.
+        </p>
+
+        <a class="cta" href="https://www.tcda.shop/" target="_blank" rel="noopener">
+          Visit Apparel Brand →
+        </a>
+      </div>
+    </section>
+
+    <footer class="foot">
+      <div class="foot__left">
+        <span class="tiny">© <span id="year"></span> SAIREN COLOR ARCHIVE</span>
+      </div>
+      <div class="foot__right">
+        <span class="tiny">archive.tcda.shop</span>
+      </div>
+    </footer>
+  </main>
+
+  <script src="assets/js/main.js"></script>
 </body>
 </html>
