@@ -4,132 +4,89 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>SAIREN COLOR ARCHIVE</title>
-  <meta name="description" content="高嶋 彩蓮（Sairen Takashima）のデジタルアートアーカイブ。色の感覚を軸に作品を公開。" />
+  <meta name="description" content="SAIREN COLOR ARCHIVE — 色は、言葉より先に届く。高嶋 彩蓮（Sairen Takashima）のデジタルアートアーカイブ。" />
   <link rel="stylesheet" href="../assets/css/style.css" />
 </head>
-<body class="theme-a">
-<a class="skip" href="#main">Skip</a>
 
-<header>
-  <div class="container nav">
-    <a class="brand" href="./index.html">
-      <span class="mark" aria-hidden="true"></span>
-      <div>
-        <div class="title">SAIREN COLOR ARCHIVE</div>
-        <div class="sub">Digital Art Archive</div>
-      </div>
-    </a>
-
-    <nav class="menu" aria-label="Primary">
-      <a href="./works.html">WORKS</a>
-      <a href="./about.html">ABOUT</a>
-      <a href="./lookbook.html">LOOKBOOK</a>
-      <a href="./contact.html">CONTACT</a>
-    </nav>
-
-    <div class="right">
-      <a class="btn small" href="../en/index.html" aria-label="Switch to English">EN</a>
-      <div id="themeSwitcher" class="metaRow" aria-label="Theme switcher">
-        <button class="btn small" type="button" data-theme="a">A</button>
-        <button class="btn small" type="button" data-theme="b">B</button>
-        <button class="btn small" type="button" data-theme="c">C</button>
-      </div>
-    </div>
-  </div>
-</header>
-
-<main id="main">
-  <section class="hero">
-    <div class="container heroGrid">
-      <div class="heroCard">
-        <div class="heroMedia">
-          <img src="../assets/images/works/formed/artifact-04-main.webp" alt="Hero artwork" />
+<body data-page="home">
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a class="brand" href="./index.html" aria-label="SAIREN COLOR ARCHIVE Home">
+        <div class="brand-mark" aria-hidden="true"></div>
+        <div class="brand-title">
+          <strong>SAIREN COLOR ARCHIVE</strong>
+          <span>Digital Art Archive</span>
         </div>
-        <div class="heroOverlay" aria-hidden="true"></div>
+      </a>
 
-        <!-- 追加：漂う光のストローク -->
-        <div class="heroStrokes" aria-hidden="true">
-          <div class="stroke s1" style="--r:-12deg"></div>
-          <div class="stroke s2" style="--r:18deg"></div>
-          <div class="stroke s3" style="--r:10deg"></div>
-        </div>
-
-        <div class="heroText">
-          <h1 class="h1">色は、言葉より先に届く。</h1>
-          <p class="lead">
-            ここは私のアーカイブ。<br>
-            説明より、まず視覚で受け取ってください。<br>
-            作品は「加工後（Formed）」を入口に、必要なら「加工前（Color）」まで遡れます。
-          </p>
-          <div class="heroActions">
-            <a class="btn primary" href="./works.html">作品を見る（WORKS）</a>
-            <a class="btn" href="./about.html">自己紹介（ABOUT）</a>
-            <a class="btn" href="./lookbook.html">LOOKBOOK</a>
-          </div>
-        </div>
-      </div>
-
-      <aside class="sideCard">
-        <h2 class="h2">Sairen Takashima</h2>
-        <div class="prose">
-          高嶋 彩蓮（Sairen Takashima）。<br>
-          “色の感覚” を主語に、記憶・沈黙・衝動を定着させる。<br><br>
-          作品は静止画だけど、体験は静止じゃない。<br>
-          このサイトは、色が動くための暗室。
-        </div>
-
-        <div class="hr"></div>
-
-        <div class="metaRow">
-          <a class="btn small" href="mailto:info@sairencolorarchive.com">Mail</a>
-          <a class="btn small" href="./contact.html">Contact</a>
-          <a class="btn small" href="https://www.instagram.com/tcda.shop" target="_blank" rel="noopener">Instagram ↗</a>
-        </div>
-
-        <p class="note">
-          ※テーマA/B/Cは“発光の方向”が変わるだけ。<br>
-          作品の色忠実は崩さない設計にしてあります。
-        </p>
-      </aside>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container">
-      <div class="sectionHead">
-        <div>
-          <h2 class="h2">Works</h2>
-          <div class="hint">最新の抜粋（クリックで詳細：Formed / Color）</div>
-        </div>
-        <a class="btn small" href="./works.html">All →</a>
-      </div>
-
-      <div id="worksGrid" class="grid" aria-label="Works grid"></div>
-    </div>
-  </section>
-</main>
-
-<footer class="footer">
-  <div class="container footGrid">
-    <div>
-      <div class="footTitle">SAIREN COLOR ARCHIVE</div>
-      <div class="copy">© <span id="y"></span> SAIREN COLOR ARCHIVE</div>
-    </div>
-    <div>
-      <div class="footTitle">Links</div>
-      <div class="footLinks">
-        <a href="./works.html">Works</a>
-        <a href="./about.html">About</a>
+      <nav class="nav" aria-label="Primary">
+        <a href="./works.html">WORKS</a>
+        <a href="./about.html">ABOUT</a>
         <a href="./lookbook.html">LOOKBOOK</a>
-        <a href="./contact.html">Contact</a>
-        <a href="./license.html">License</a>
-      </div>
-    </div>
-  </div>
-</footer>
+        <a href="./sns.html">SNS</a>
+        <a href="./contact.html">CONTACT</a>
 
-<div id="toast" class="toast" role="status" aria-live="polite"></div>
-<script>document.getElementById("y").textContent = new Date().getFullYear();</script>
-<script src="../assets/js/main.js"></script>
+        <div class="lang-switch" aria-label="Language switch">
+          <a href="./index.html" aria-current="page">JA</a>
+          <a href="../en/index.html">EN</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero" aria-label="Home Hero">
+      <div class="hero-media" style="background-image:url('../assets/images/works/formed/artifact-04-main.webp');"></div>
+
+      <!-- Home only layers -->
+      <div class="hero-grain" aria-hidden="true"></div>
+
+      <div class="drips" aria-hidden="true">
+        <div class="drip" style="--h:34%;--t:6.4s"></div>
+        <div class="drip" style="--h:48%;--t:7.8s"></div>
+        <div class="drip" style="--h:26%;--t:6.9s"></div>
+        <div class="drip" style="--h:54%;--t:9.2s"></div>
+        <div class="drip" style="--h:30%;--t:7.2s"></div>
+        <div class="drip" style="--h:44%;--t:8.6s"></div>
+        <div class="drip" style="--h:22%;--t:6.6s"></div>
+        <div class="drip" style="--h:58%;--t:9.8s"></div>
+        <div class="drip" style="--h:28%;--t:7.0s"></div>
+        <div class="drip" style="--h:46%;--t:8.9s"></div>
+      </div>
+
+      <div class="hero-inner panel">
+        <div class="kicker">黒ベース / 世界観重視 / 海外対応</div>
+
+        <h1>色は、言葉より先に届く。</h1>
+
+        <p>
+          こんにちは。<strong>高嶋 彩蓮（Sairen Takashima）</strong>です。<br>
+          SAIREN COLOR ARCHIVE は、私が制作するデジタルアートを収蔵・公開する場所として生まれました。<br>
+          ここではまず、作品そのものを見てください。
+        </p>
+
+        <div class="cta-row" aria-label="Primary actions">
+          <a class="btn primary" href="./works.html">作品を見る（WORKS）</a>
+          <a class="btn" href="./lookbook.html">LOOKBOOK</a>
+          <a class="btn" href="./about.html">自己紹介（ABOUT）</a>
+          <a class="btn" href="./sns.html">SNS</a>
+        </div>
+
+        <div class="section">
+          <p class="small">
+            もし世界観が身体の方まで伸びてきたら、LOOKBOOK からアパレルライン（TCDA）にも触れられる導線を用意しています。<br>
+            お仕事のご依頼・コラボレーション・掲載のご相談は CONTACT からどうぞ。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div>Contact: <a href="mailto:info@sairencolorarchive.com">info@sairencolorarchive.com</a></div>
+      <div>© SAIREN COLOR ARCHIVE</div>
+    </footer>
+  </main>
+
+  <script src="../assets/js/main.js"></script>
 </body>
 </html>
