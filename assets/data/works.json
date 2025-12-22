@@ -1,49 +1,141 @@
 {
   "works": [
     {
-      "id": "01",
-      "category": "artifact",
-      "year": "2024",
-      "title": "Chromatic Silence",
-      "caption": "構造の静寂。色が音ではなく骨格として現れる。",
-      "image": "/assets/img/works/1.webp",
-      "accent": "#7b5cff",
-      "shopUrl": "https://www.tcda.shop/",
-      "desc": "視覚の内部で、色が『意味』ではなく『構造』へ移行する瞬間を固定した。",
-      "notes": [
-        "色は装飾ではなく、接続の規則。",
-        "沈黙は欠如ではなく、密度。"
-      ]
+      "id": "artifact-01",
+      "order": 15,
+      "title": "Artifact 01",
+      "subtitle": "Color → Form",
+      "raw": "assets/images/works/color/artifact-01-raw.webp",
+      "formed": "assets/images/works/formed/artifact-01-main.webp",
+      "raw_label": "Raw (before)",
+      "formed_label": "Formed (after)",
+      "tags": ["archive", "color", "formed"]
     },
     {
-      "id": "02",
-      "category": "lookbook",
-      "year": "2025",
-      "title": "Moving Canvas",
-      "caption": "服になる直前の思考。運動としての色。",
-      "image": "/assets/img/works/2.webp",
-      "accent": "#00ffd5",
-      "shopUrl": "https://www.tcda.shop/",
-      "desc": "“着る”は展示ではなく、移動する展示だ。色は身体の移動に追従して再構成される。",
-      "notes": [
-        "視線＝カメラ、身体＝展示室。",
-        "移動は編集であり、構図の再生成。"
-      ]
+      "id": "artifact-02",
+      "order": 14,
+      "title": "Artifact 02",
+      "subtitle": "Color → Form",
+      "raw": "assets/images/works/color/artifact-02-raw.webp",
+      "formed": "assets/images/works/formed/artifact-02-main.webp",
+      "tags": ["archive", "layer", "silence"]
     },
     {
-      "id": "03",
-      "category": "fieldnote",
-      "year": "2025",
-      "title": "Field Notes",
-      "caption": "観測ログ。思考が崩れる瞬間の採取。",
-      "image": "/assets/img/works/3.webp",
-      "accent": "#ff4d9a",
-      "shopUrl": "https://www.tcda.shop/",
-      "desc": "崩壊は失敗ではなく、次の分類の入口。観測の痕跡として保存する。",
-      "notes": [
-        "分類は固定ではなく、変形するUI。",
-        "記録は“完成”ではなく“未完の証拠”。"
-      ]
+      "id": "artifact-03",
+      "order": 13,
+      "title": "Artifact 03",
+      "subtitle": "Color → Form",
+      "raw": "assets/images/works/color/artifact-03-raw.webp",
+      "formed": "assets/images/works/formed/artifact-03-main.webp",
+      "tags": ["memory", "impulse"]
+    },
+    {
+      "id": "artifact-04",
+      "order": 12,
+      "title": "Artifact 04",
+      "subtitle": "Hero",
+      "raw": "assets/images/works/color/artifact-04-raw.webp",
+      "formed": "assets/images/works/formed/artifact-04-main.webp",
+      "tags": ["hero", "signature"]
+    },
+    {
+      "id": "artifact-05",
+      "order": 11,
+      "title": "Artifact 05",
+      "subtitle": "Color → Form",
+      "raw": "assets/images/works/color/artifact-05-raw.webp",
+      "formed": "assets/images/works/formed/artifact-05-main.webp",
+      "tags": ["archive"]
+    },
+    {
+      "id": "artifact-06",
+      "order": 10,
+      "title": "Artifact 06",
+      "subtitle": "Color → Form",
+      "raw": "assets/images/works/color/artifact-06-raw.webp",
+      "formed": "assets/images/works/formed/artifact-06-main.webp",
+      "tags": ["archive"]
+    },
+    {
+      "id": "artifact-07",
+      "order": 9,
+      "title": "Artifact 07",
+      "subtitle": "Color → Form",
+      "raw": "assets/images/works/color/artifact-07-raw.webp",
+      "formed": "assets/images/works/formed/artifact-07-main.webp",
+      "tags": ["archive"]
+    },
+    {
+      "id": "artifact-08",
+      "order": 8,
+      "title": "Artifact 08",
+      "subtitle": "Color → Form",
+      "raw": "assets/images/works/color/artifact-08-raw.webp",
+      "formed": "assets/images/works/formed/artifact-08-main.webp",
+      "tags": ["archive"]
+    },
+    {
+      "id": "artifact-09",
+      "order": 7,
+      "title": "Artifact 09",
+      "subtitle": "Color → Form",
+      "raw": "assets/images/works/color/artifact-09-raw.webp",
+      "formed": "assets/images/works/formed/artifact-09-main.webp",
+      "tags": ["archive"]
+    },
+    {
+      "id": "artifact-10",
+      "order": 6,
+      "title": "Artifact 10",
+      "subtitle": "Color → Form",
+      "raw": "assets/images/works/color/artifact-10-raw.webp",
+      "formed": "assets/images/works/formed/artifact-10-main.webp",
+      "tags": ["archive"]
+    },
+    {
+      "id": "artifact-11",
+      "order": 5,
+      "title": "Artifact 11",
+      "subtitle": "Color → Form",
+      "raw": "assets/images/works/color/artifact-11-raw.webp",
+      "formed": "assets/images/works/formed/artifact-11-main.webp",
+      "tags": ["archive"]
+    },
+    {
+      "id": "artifact-12",
+      "order": 4,
+      "title": "Artifact 12",
+      "subtitle": "Color → Form",
+      "raw": "assets/images/works/color/artifact-12-raw.webp",
+      "formed": "assets/images/works/formed/artifact-12-main.webp",
+      "tags": ["archive"]
+    },
+    {
+      "id": "artifact-13",
+      "order": 3,
+      "title": "Artifact 13",
+      "subtitle": "Color → Form",
+      "raw": "assets/images/works/color/artifact-13-raw.webp",
+      "formed": "assets/images/works/formed/artifact-13-main.webp",
+      "tags": ["archive"]
+    },
+    {
+      "id": "artifact-14",
+      "order": 2,
+      "title": "Artifact 14",
+      "subtitle": "Color → Form",
+      "raw": "assets/images/works/color/artifact-14-raw.webp",
+      "formed": "assets/images/works/formed/artifact-14-main.webp",
+      "tags": ["archive"]
+    },
+    {
+      "id": "artifact-15",
+      "order": 1,
+      "title": "Artifact 15",
+      "subtitle": "Color → Form",
+      "raw": "assets/images/works/color/artifact-15-raw.webp",
+      "formed": "assets/images/works/formed/artifact-15-main.webp",
+      "tags": ["archive"]
     }
   ]
 }
