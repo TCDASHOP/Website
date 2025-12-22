@@ -1,0 +1,64 @@
+(function(){
+  const hero = document.querySelector("[data-hero]");
+  if(!hero) return;
+  const phaseEl = hero.querySelector("[data-phase]");
+  const skipBtn = hero.querySelector("[data-skip]");
+  const path = hero.querySelector("[data-scribble-path]");
+  if(!phaseEl || !path) return;
+
+  const reduced = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if(reduced){
+    phaseEl.textContent = "輪郭 → 完成";
+    return;
+  }
+
+  // stroke animation
+  const len = path.getTotalLength();
+  path.style.strokeDasharray = String(len);
+  path.style.strokeDashoffset = String(len);
+
+  const phases = [
+    "紫・青・赤・緑・黄色の飛沫",
+    "混色",
+    "輪郭",
+    "完成"
+  ];
+  let step = 0;
+
+  const setPhase = (i) => {
+    phaseEl.textContent = phases[i] + (i<3 ? " → " : "");
+  };
+
+  const animate = () => {
+    setPhase(0);
+    const t0 = performance.now();
+    const dur = 2400;
+
+    function frame(t){
+      const p = Math.min(1, (t - t0)/dur);
+      path.style.strokeDashoffset = String(len * (1 - p));
+      if(p < 1){
+        requestAnimationFrame(frame);
+      }else{
+        setPhase(3);
+      }
+    }
+    requestAnimationFrame(frame);
+
+    // phase stepping
+    const timers = [
+      setTimeout(()=>setPhase(1), 800),
+      setTimeout(()=>setPhase(2), 1600),
+      setTimeout(()=>setPhase(3), 2400),
+    ];
+
+    skipBtn?.addEventListener("click", () => {
+      timers.forEach(clearTimeout);
+      phaseEl.textContent = phases[3];
+      path.style.strokeDashoffset = "0";
+      skipBtn.remove();
+    }, {once:true});
+  };
+
+  animate();
+})();
