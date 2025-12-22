@@ -3,57 +3,68 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>SNS｜SAIREN COLOR ARCHIVE</title>
-  <link rel="stylesheet" href="/assets/css/style.css" />
+  <title>SNS | SAIREN COLOR ARCHIVE</title>
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <script defer src="../assets/js/main.js"></script>
 </head>
 
-<body data-page="sns">
-  <header class="topbar">
-    <div class="container topbar-inner">
-      <a class="brand" href="/ja/index.html">
-        <div class="brand-mark" aria-hidden="true"></div>
-        <div class="brand-title">
-          <strong>SAIREN COLOR ARCHIVE</strong>
+<body>
+  <header class="site">
+    <div class="wrap nav">
+      <div class="brand">
+        <div class="brandMark" aria-hidden="true"></div>
+        <div class="brandText">
+          <b>SAIREN COLOR ARCHIVE</b>
           <span>Digital Art Archive</span>
         </div>
-      </a>
+      </div>
 
-      <nav class="nav" aria-label="Primary">
-        <a class="pill" data-nav="works" href="/ja/works.html">WORKS</a>
-        <a class="pill" data-nav="about" href="/ja/about.html">ABOUT</a>
-        <a class="pill" data-nav="lookbook" href="/ja/lookbook.html">LOOKBOOK</a>
-        <a class="pill" data-nav="sns" href="/ja/sns.html">SNS</a>
-        <a class="pill" data-nav="contact" href="/ja/contact.html">CONTACT</a>
-        <a class="pill small" href="/en/sns.html">EN</a>
-        <button class="pill small" id="themeBtn" type="button">THEME</button>
+      <nav class="menu" aria-label="Primary">
+        <a class="pill ghost" data-nav href="works.html">WORKS</a>
+        <a class="pill ghost" data-nav href="about.html">ABOUT</a>
+        <a class="pill ghost" data-nav href="lookbook.html">LOOKBOOK</a>
+        <a class="pill ghost" data-nav href="sns.html">SNS</a>
+        <a class="pill ghost" data-nav href="contact.html">CONTACT</a>
+
+        <span class="sep" aria-hidden="true"></span>
+
+        <div class="langGroup" aria-label="Language">
+          <button class="pill small" type="button" data-lang="ja">JA</button>
+          <button class="pill small" type="button" data-lang="en">EN</button>
+          <button class="pill small" type="button" data-lang="es">ES</button>
+          <button class="pill small" type="button" data-lang="fr">FR</button>
+          <button class="pill small" type="button" data-lang="ko">KO</button>
+          <button class="pill small" type="button" data-lang="zh-hans">中文</button>
+        </div>
       </nav>
     </div>
   </header>
 
-  <main class="page">
-    <div class="container">
-      <section class="panel">
-        <h2>SNS</h2>
-        <p>
-          制作の更新・世界観の断片・アパレル（TCDA）の動きは Instagram に集約しています。
-        </p>
-        <div style="margin-top:14px; display:flex; gap:10px; flex-wrap:wrap;">
-          <a class="btn primary" href="https://www.instagram.com/tcda.shop" target="_blank" rel="noopener">
-            <span class="dot" aria-hidden="true"></span> Instagram：@tcda.shop
-          </a>
-          <a class="btn" href="/ja/contact.html">問い合わせ</a>
+  <main>
+    <div class="wrap">
+      <section class="card">
+        <div class="cardInner">
+          <div class="heroTag">SNS</div>
+          <h1 class="h1">Instagram</h1>
+          <p class="p">制作の断片・色彩の呼吸は、ここに集約します。</p>
+
+          <div class="heroActions" style="margin-top:14px">
+            <a class="pill primary" target="_blank" rel="noopener" href="https://www.instagram.com/tcda.shop">
+              @tcda.shop を開く
+            </a>
+          </div>
+
+          <p class="note">※外部サイト（Instagram）へ移動します。</p>
         </div>
       </section>
     </div>
+
+    <footer>
+      <div class="wrap foot">
+        <div>© SAIREN COLOR ARCHIVE</div>
+        <div>Contact: <a href="mailto:info@sairencolorarchive.com">info@sairencolorarchive.com</a></div>
+      </div>
+    </footer>
   </main>
-
-  <footer class="footer">
-    <div class="container">
-      Contact: <a href="mailto:info@sairencolorarchive.com">info@sairencolorarchive.com</a><br>
-      © SAIREN COLOR ARCHIVE
-    </div>
-  </footer>
-
-  <script src="/assets/js/main.js"></script>
 </body>
 </html>
