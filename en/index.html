@@ -4,14 +4,14 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>SAIREN COLOR ARCHIVE</title>
-  <meta name="description" content="SAIREN COLOR ARCHIVE — Color arrives before words. Digital art archive by Sairen Takashima." />
-  <link rel="stylesheet" href="../assets/css/style.css" />
+  <meta name="description" content="SAIREN COLOR ARCHIVE｜Digital art archive by Sairen Takashima. Color arrives before words." />
+  <link rel="stylesheet" href="/assets/css/style.css" />
 </head>
 
 <body data-page="home">
   <header class="topbar">
     <div class="container topbar-inner">
-      <a class="brand" href="./index.html" aria-label="SAIREN COLOR ARCHIVE Home">
+      <a class="brand" href="/en/index.html" aria-label="SAIREN COLOR ARCHIVE Home">
         <div class="brand-mark" aria-hidden="true"></div>
         <div class="brand-title">
           <strong>SAIREN COLOR ARCHIVE</strong>
@@ -20,73 +20,57 @@
       </a>
 
       <nav class="nav" aria-label="Primary">
-        <a href="./works.html">WORKS</a>
-        <a href="./about.html">ABOUT</a>
-        <a href="./lookbook.html">LOOKBOOK</a>
-        <a href="./sns.html">SNS</a>
-        <a href="./contact.html">CONTACT</a>
-
-        <div class="lang-switch" aria-label="Language switch">
-          <a href="../ja/index.html">JA</a>
-          <a href="./index.html" aria-current="page">EN</a>
-        </div>
+        <a class="pill" data-nav="works" href="/en/works.html">WORKS</a>
+        <a class="pill" data-nav="about" href="/en/about.html">ABOUT</a>
+        <a class="pill" data-nav="lookbook" href="/en/lookbook.html">LOOKBOOK</a>
+        <a class="pill" data-nav="sns" href="/en/sns.html">SNS</a>
+        <a class="pill" data-nav="contact" href="/en/contact.html">CONTACT</a>
+        <a class="pill small" href="/ja/index.html" aria-label="日本語に切り替え">JA</a>
+        <button class="pill small" id="themeBtn" type="button" aria-label="Toggle theme">THEME</button>
       </nav>
     </div>
   </header>
 
-  <main class="container">
-    <section class="hero" aria-label="Home Hero">
-      <div class="hero-media" style="background-image:url('../assets/images/works/formed/artifact-04-main.webp');"></div>
+  <main class="hero">
+    <div class="container">
+      <section class="hero-wrap" aria-label="Hero">
+        <div class="hero-media" style="background-image:url('/assets/images/works/formed/artifact-04-main.webp');"></div>
 
-      <!-- Home only layers -->
-      <div class="hero-grain" aria-hidden="true"></div>
+        <div class="hero-inner">
+          <div class="kicker"><i aria-hidden="true"></i> Black base / World-building / Global</div>
+          <h1 class="h1">Color arrives before words.</h1>
 
-      <div class="drips" aria-hidden="true">
-        <div class="drip" style="--h:34%;--t:6.4s"></div>
-        <div class="drip" style="--h:48%;--t:7.8s"></div>
-        <div class="drip" style="--h:26%;--t:6.9s"></div>
-        <div class="drip" style="--h:54%;--t:9.2s"></div>
-        <div class="drip" style="--h:30%;--t:7.2s"></div>
-        <div class="drip" style="--h:44%;--t:8.6s"></div>
-        <div class="drip" style="--h:22%;--t:6.6s"></div>
-        <div class="drip" style="--h:58%;--t:9.8s"></div>
-        <div class="drip" style="--h:28%;--t:7.0s"></div>
-        <div class="drip" style="--h:46%;--t:8.9s"></div>
-      </div>
+          <p class="lead">
+            Hello. I’m <strong>Sairen Takashima</strong>.<br>
+            SAIREN COLOR ARCHIVE was created as a place to collect and present my digital artworks.<br><br>
+            My work is built around the sensation of color—something that reaches you before language does.
+            I don’t rush toward fixed shapes or “correct answers.”
+            I layer feelings, memories, silence, and impulses into color—until they settle into a form.
+          </p>
 
-      <div class="hero-inner panel">
-        <div class="kicker">Black base / Atmosphere first / Global-ready</div>
+          <div class="hero-actions" role="navigation" aria-label="Hero actions">
+            <a class="btn primary" href="/en/works.html"><span class="dot" aria-hidden="true"></span> View Works</a>
+            <a class="btn" href="/en/lookbook.html">LOOKBOOK</a>
+            <a class="btn" href="/en/about.html">ABOUT</a>
+            <a class="btn" href="/en/sns.html">SNS (Instagram)</a>
+          </div>
 
-        <h1>Color arrives before words.</h1>
-
-        <p>
-          Hello. I’m <strong>Sairen Takashima</strong>.<br>
-          SAIREN COLOR ARCHIVE is a place to collect and publish my digital artworks.<br>
-          Start by looking at the works themselves.
-        </p>
-
-        <div class="cta-row" aria-label="Primary actions">
-          <a class="btn primary" href="./works.html">View Works</a>
-          <a class="btn" href="./lookbook.html">LOOKBOOK</a>
-          <a class="btn" href="./about.html">ABOUT</a>
-          <a class="btn" href="./sns.html">SNS</a>
-        </div>
-
-        <div class="section">
-          <p class="small">
-            If the atmosphere reaches your body, move to LOOKBOOK and touch the apparel line (TCDA).<br>
-            For commissions, collaborations, or features, contact via CONTACT.
+          <p class="lead" style="margin-top:14px;">
+            For commissions, collaborations, or features, please reach out via <strong>CONTACT</strong>.<br>
+            I can propose what fits your goal—concept design, visual production, or artwork licensing.
           </p>
         </div>
-      </div>
-    </section>
-
-    <footer class="footer">
-      <div>Contact: <a href="mailto:info@sairencolorarchive.com">info@sairencolorarchive.com</a></div>
-      <div>© SAIREN COLOR ARCHIVE</div>
-    </footer>
+      </section>
+    </div>
   </main>
 
-  <script src="../assets/js/main.js"></script>
+  <footer class="footer">
+    <div class="container">
+      Contact: <a href="mailto:info@sairencolorarchive.com">info@sairencolorarchive.com</a><br>
+      © SAIREN COLOR ARCHIVE
+    </div>
+  </footer>
+
+  <script src="/assets/js/main.js"></script>
 </body>
 </html>
