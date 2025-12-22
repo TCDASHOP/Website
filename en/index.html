@@ -4,73 +4,113 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>SAIREN COLOR ARCHIVE</title>
-  <meta name="description" content="SAIREN COLOR ARCHIVE｜Digital art archive by Sairen Takashima. Color arrives before words." />
-  <link rel="stylesheet" href="/assets/css/style.css" />
+  <meta name="description" content="A digital art archive where color speaks first." />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <script defer src="../assets/js/main.js"></script>
 </head>
 
 <body data-page="home">
-  <header class="topbar">
-    <div class="container topbar-inner">
-      <a class="brand" href="/en/index.html" aria-label="SAIREN COLOR ARCHIVE Home">
-        <div class="brand-mark" aria-hidden="true"></div>
-        <div class="brand-title">
-          <strong>SAIREN COLOR ARCHIVE</strong>
+  <header class="site">
+    <div class="wrap nav">
+      <div class="brand">
+        <div class="brandMark" aria-hidden="true"></div>
+        <div class="brandText">
+          <b>SAIREN COLOR ARCHIVE</b>
           <span>Digital Art Archive</span>
         </div>
-      </a>
+      </div>
 
-      <nav class="nav" aria-label="Primary">
-        <a class="pill" data-nav="works" href="/en/works.html">WORKS</a>
-        <a class="pill" data-nav="about" href="/en/about.html">ABOUT</a>
-        <a class="pill" data-nav="lookbook" href="/en/lookbook.html">LOOKBOOK</a>
-        <a class="pill" data-nav="sns" href="/en/sns.html">SNS</a>
-        <a class="pill" data-nav="contact" href="/en/contact.html">CONTACT</a>
-        <a class="pill small" href="/ja/index.html" aria-label="日本語に切り替え">JA</a>
-        <button class="pill small" id="themeBtn" type="button" aria-label="Toggle theme">THEME</button>
+      <nav class="menu" aria-label="Primary">
+        <a class="pill ghost" data-nav href="works.html">WORKS</a>
+        <a class="pill ghost" data-nav href="about.html">ABOUT</a>
+        <a class="pill ghost" data-nav href="lookbook.html">LOOKBOOK</a>
+        <a class="pill ghost" data-nav href="sns.html">SNS</a>
+        <a class="pill ghost" data-nav href="contact.html">CONTACT</a>
+
+        <span class="sep" aria-hidden="true"></span>
+
+        <div class="langGroup" aria-label="Language">
+          <button class="pill small" type="button" data-lang="ja">JA</button>
+          <button class="pill small" type="button" data-lang="en">EN</button>
+          <button class="pill small" type="button" data-lang="es">ES</button>
+          <button class="pill small" type="button" data-lang="fr">FR</button>
+          <button class="pill small" type="button" data-lang="ko">KO</button>
+          <button class="pill small" type="button" data-lang="zh-hans">中文</button>
+        </div>
+
+        <button class="pill small" id="themeBtn" type="button" aria-label="Theme">THEME</button>
       </nav>
     </div>
   </header>
 
-  <main class="hero">
-    <div class="container">
-      <section class="hero-wrap" aria-label="Hero">
-        <div class="hero-media" style="background-image:url('/assets/images/works/formed/artifact-04-main.webp');"></div>
+  <div class="homeFx" aria-hidden="true">
+    <canvas id="fxCanvas"></canvas>
+    <div class="veil"></div>
+  </div>
 
-        <div class="hero-inner">
-          <div class="kicker"><i aria-hidden="true"></i> Black base / World-building / Global</div>
-          <h1 class="h1">Color arrives before words.</h1>
+  <main>
+    <div class="wrap grid">
+      <section class="card hero">
+        <div class="heroBg" aria-hidden="true"></div>
 
-          <p class="lead">
-            Hello. I’m <strong>Sairen Takashima</strong>.<br>
-            SAIREN COLOR ARCHIVE was created as a place to collect and present my digital artworks.<br><br>
-            My work is built around the sensation of color—something that reaches you before language does.
-            I don’t rush toward fixed shapes or “correct answers.”
-            I layer feelings, memories, silence, and impulses into color—until they settle into a form.
-          </p>
+        <div class="heroOutline" aria-hidden="true">
+          <svg viewBox="0 0 1000 600" preserveAspectRatio="none">
+            <path d="M40,90 Q40,40 90,40 L910,40 Q960,40 960,90 L960,510 Q960,560 910,560 L90,560 Q40,560 40,510 Z" />
+          </svg>
+        </div>
 
-          <div class="hero-actions" role="navigation" aria-label="Hero actions">
-            <a class="btn primary" href="/en/works.html"><span class="dot" aria-hidden="true"></span> View Works</a>
-            <a class="btn" href="/en/lookbook.html">LOOKBOOK</a>
-            <a class="btn" href="/en/about.html">ABOUT</a>
-            <a class="btn" href="/en/sns.html">SNS (Instagram)</a>
+        <div class="heroContent">
+          <div class="heroText">
+            <div class="heroTag">Purple→Blue→Red / Splash→Blend→Outline→Complete</div>
+
+            <h1 class="h1">Color arrives before words.</h1>
+            <p class="p">
+              SAIREN COLOR ARCHIVE is a place to store digital artworks quietly—
+              and let them ignite only when needed. Start with the work.
+            </p>
+
+            <div class="heroActions" role="navigation" aria-label="Hero actions">
+              <a class="pill primary" href="works.html">View WORKS</a>
+              <a class="pill secondary" href="lookbook.html">LOOKBOOK</a>
+              <a class="pill secondary" href="about.html">ABOUT</a>
+            </div>
+
+            <div class="note">
+              The Home page is intentionally more theatrical. Other pages stay calm to protect viewing.
+            </div>
           </div>
-
-          <p class="lead" style="margin-top:14px;">
-            For commissions, collaborations, or features, please reach out via <strong>CONTACT</strong>.<br>
-            I can propose what fits your goal—concept design, visual production, or artwork licensing.
-          </p>
         </div>
       </section>
+
+      <aside class="card sideCard">
+        <div class="cardInner">
+          <p class="sideTitle">Next</p>
+          <div class="linkList">
+            <a class="linkRow" href="works.html">
+              WORKS
+              <small>Raw → Formed transformations</small>
+            </a>
+            <a class="linkRow" href="lookbook.html">
+              LOOKBOOK
+              <small>Editorial bridge to the apparel line</small>
+            </a>
+            <a class="linkRow" href="sns.html">
+              SNS
+              <small>Instagram / Social hub</small>
+            </a>
+          </div>
+        </div>
+      </aside>
     </div>
+
+    <footer>
+      <div class="wrap foot">
+        <div>© SAIREN COLOR ARCHIVE</div>
+        <div>
+          Contact: <a href="mailto:info@sairencolorarchive.com">info@sairencolorarchive.com</a>
+        </div>
+      </div>
+    </footer>
   </main>
-
-  <footer class="footer">
-    <div class="container">
-      Contact: <a href="mailto:info@sairencolorarchive.com">info@sairencolorarchive.com</a><br>
-      © SAIREN COLOR ARCHIVE
-    </div>
-  </footer>
-
-  <script src="/assets/js/main.js"></script>
 </body>
 </html>
