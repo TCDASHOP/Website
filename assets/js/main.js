@@ -1,135 +1,230 @@
-/* =========================
-   SAIREN COLOR ARCHIVE
-   - Theme switch (A/B/C)
-   - Works gallery / detail loader
-   ========================= */
+/* SAIREN COLOR ARCHIVE - main.js */
 
-const SCA = (() => {
-  const qs = (s, root=document) => root.querySelector(s);
-  const qsa = (s, root=document) => [...root.querySelectorAll(s)];
+const $ = (sel, root=document) => root.querySelector(sel);
+const $$ = (sel, root=document) => [...root.querySelectorAll(sel)];
 
-  function setTheme(theme){
-    const t = theme || "a";
+function toast(msg){
+  const t = $("#toast");
+  if(!t) return;
+  t.textContent = msg;
+  t.classList.add("show");
+  setTimeout(()=>t.classList.remove("show"), 2400);
+}
+
+function getParam(name){
+  const u = new URL(location.href);
+  return u.searchParams.get(name);
+}
+
+async function loadJSON(path){
+  const res = await fetch(path, {cache:"no-store"});
+  if(!res.ok) throw new Error(`Failed: ${path}`);
+  return await res.json();
+}
+
+function setActiveNav(){
+  const path = location.pathname;
+  $$(".menu a").forEach(a=>{
+    const href = a.getAttribute("href");
+    if(!href) return;
+    if(path.endsWith(href) || path.endsWith(href.replace("./","/"))){
+      a.classList.add("active");
+    }
+  });
+}
+
+function themeInit(){
+  const saved = localStorage.getItem("sca_theme");
+  if(saved){
     document.body.classList.remove("theme-a","theme-b","theme-c");
-    document.body.classList.add(`theme-${t}`);
-    localStorage.setItem("sca_theme", t);
-    const sel = qs("[data-theme-select]");
-    if(sel) sel.value = t;
+    document.body.classList.add(saved);
   }
 
-  function initTheme(){
-    const saved = localStorage.getItem("sca_theme") || "a";
-    setTheme(saved);
+  const switcher = $("#themeSwitcher");
+  if(!switcher) return;
 
-    const sel = qs("[data-theme-select]");
-    if(sel){
-      sel.value = saved;
-      sel.addEventListener("change", e => setTheme(e.target.value));
-    }
+  $$("#themeSwitcher [data-theme]").forEach(btn=>{
+    btn.addEventListener("click", ()=>{
+      const t = btn.dataset.theme;
+      const cls = `theme-${t}`;
+      document.body.classList.remove("theme-a","theme-b","theme-c");
+      document.body.classList.add(cls);
+      localStorage.setItem("sca_theme", cls);
+      toast(`Theme ${t.toUpperCase()} applied`);
+    });
+  });
+}
+
+function escapeHtml(s){
+  return String(s||"").replace(/[&<>"']/g, m => ({
+    "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"
+  }[m]));
+}
+
+function renderWorksGrid(works, mount){
+  mount.innerHTML = works.map(w => `
+    <a class="card" href="./work.html?id=${encodeURIComponent(w.id)}" aria-label="${escapeHtml(w.title)}">
+      <div class="cardMedia">
+        <img loading="lazy" src="${w.formedThumb}" alt="${escapeHtml(w.title)}">
+      </div>
+      <div class="cardBody">
+        <h3 class="cardTitle">${escapeHtml(w.title)}</h3>
+        <div class="cardMeta">
+          ${w.year ? `<span class="tag">${escapeHtml(w.year)}</span>` : ``}
+          ${w.series ? `<span class="tag">${escapeHtml(w.series)}</span>` : ``}
+          ${w.tags?.[0] ? `<span class="tag">${escapeHtml(w.tags[0])}</span>` : `<span class="tag">Formed</span>`}
+        </div>
+      </div>
+    </a>
+  `).join("");
+}
+
+async function pageWorks(){
+  const mount = $("#worksGrid");
+  if(!mount) return;
+
+  const data = await loadJSON(`../assets/data/works.json`);
+  const works = data.works || [];
+  renderWorksGrid(works, mount);
+
+  const count = $("#worksCount");
+  if(count) count.textContent = String(works.length);
+}
+
+async function pageWorkDetail(){
+  const mount = $("#workDetail");
+  if(!mount) return;
+
+  const id = getParam("id");
+  const data = await loadJSON(`../assets/data/works.json`);
+  const works = data.works || [];
+  const w = works.find(x => x.id === id) || works[0];
+
+  if(!w){
+    mount.innerHTML = `<div class="panel"><p class="small">Work not found.</p></div>`;
+    return;
   }
 
-  async function loadJSON(path){
-    const res = await fetch(path, {cache:"no-store"});
-    if(!res.ok) throw new Error(`Failed: ${path}`);
-    return await res.json();
+  document.title = `${w.title} | SAIREN COLOR ARCHIVE`;
+
+  mount.innerHTML = `
+    <div class="sectionHead">
+      <div>
+        <div class="kicker">${escapeHtml(w.series || "WORK")}${w.year ? ` / ${escapeHtml(w.year)}` : ""}</div>
+        <h1 class="h1" style="margin:8px 0 0;font-size:22px;">${escapeHtml(w.title)}</h1>
+      </div>
+      <a class="btn small" href="./works.html">← Back</a>
+    </div>
+
+    <div class="split">
+      <div class="panel">
+        <div class="label">FORMED</div>
+        <div style="margin-top:10px;border-radius:16px;overflow:hidden;border:1px solid rgba(255,255,255,.10)">
+          <img src="${w.formedMain}" alt="${escapeHtml(w.title)} - formed">
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="label">COLOR</div>
+        <div style="margin-top:10px;border-radius:16px;overflow:hidden;border:1px solid rgba(255,255,255,.10)">
+          <img src="${w.rawMain}" alt="${escapeHtml(w.title)} - raw">
+        </div>
+      </div>
+    </div>
+
+    ${w.note ? `
+      <div class="panel" style="margin-top:14px">
+        <div class="label">NOTE</div>
+        <div class="small">${escapeHtml(w.note)}</div>
+      </div>` : ``}
+  `;
+}
+
+async function pageLookbook(){
+  const mount = $("#lookbookMount");
+  if(!mount) return;
+
+  const data = await loadJSON(`../assets/data/lookbook.json`);
+
+  mount.innerHTML = `
+    <div class="panel">
+      <div class="label">LOOKBOOK</div>
+      <div class="big">${escapeHtml(data.title || "LOOKBOOK")}</div>
+      <p class="small">${escapeHtml(data.description || "")}</p>
+      <div class="hr"></div>
+      <a class="btn primary" href="${data.url}" target="_blank" rel="noopener">Open ↗</a>
+      ${data.shopUrl ? `<a class="btn" href="${data.shopUrl}" target="_blank" rel="noopener">Shop ↗</a>` : ``}
+    </div>
+  `;
+}
+
+function mailtoPrefill(){
+  const form = $("#contactForm");
+  if(!form) return;
+
+  form.addEventListener("submit", (e)=>{
+    e.preventDefault();
+    const name = $("#c_name").value.trim();
+    const email = $("#c_email").value.trim();
+    const subject = $("#c_subject").value.trim();
+    const message = $("#c_message").value.trim();
+
+    const to = "info@sairencolorarchive.com";
+    const s = subject || "Inquiry from SAIREN COLOR ARCHIVE";
+    const body =
+`Name: ${name}
+Email: ${email}
+
+Message:
+${message}
+`;
+    location.href = `mailto:${encodeURIComponent(to)}?subject=${encodeURIComponent(s)}&body=${encodeURIComponent(body)}`;
+  });
+}
+
+/* ===== ARTIST MOTION: hero parallax ===== */
+function heroParallax(){
+  const hero = $(".heroCard");
+  const img = $(".heroMedia img");
+  if(!hero || !img) return;
+
+  let raf = null;
+  let tx = 0, ty = 0;
+
+  function apply(){
+    raf = null;
+    // clamp
+    const x = Math.max(-10, Math.min(10, tx));
+    const y = Math.max(-8, Math.min(8, ty));
+    img.style.transform = `scale(1.12) translate3d(${x}px, ${y}px, 0)`;
   }
 
-  function getParam(name){
-    const u = new URL(location.href);
-    return u.searchParams.get(name);
+  hero.addEventListener("mousemove", (e)=>{
+    const r = hero.getBoundingClientRect();
+    const cx = (e.clientX - r.left) / r.width - 0.5;
+    const cy = (e.clientY - r.top) / r.height - 0.5;
+    tx = cx * 16;
+    ty = cy * 12;
+    if(!raf) raf = requestAnimationFrame(apply);
+  });
+
+  hero.addEventListener("mouseleave", ()=>{
+    img.style.transform = "";
+  });
+}
+
+document.addEventListener("DOMContentLoaded", async ()=>{
+  setActiveNav();
+  themeInit();
+  mailtoPrefill();
+  heroParallax();
+
+  try{
+    await pageWorks();
+    await pageWorkDetail();
+    await pageLookbook();
+  }catch(err){
+    console.error(err);
+    toast("Load error (check paths / JSON).");
   }
-
-  function pathPrefix(){
-    // /ja/... or /en/... から /assets を指す
-    // 例: /ja/works.html -> ../assets/...
-    return "../";
-  }
-
-  async function renderWorksGallery(){
-    const mount = qs("[data-works-gallery]");
-    if(!mount) return;
-
-    const dataPath = mount.getAttribute("data-src") || (pathPrefix()+"assets/data/works.json");
-    const data = await loadJSON(dataPath);
-
-    // newest first (id desc) を仮定
-    const items = (data.works || []).slice().sort((a,b)=> (b.order||0)-(a.order||0));
-
-    mount.innerHTML = items.map(w => {
-      const href = `work.html?id=${encodeURIComponent(w.id)}`;
-      const title = w.title || w.id;
-      const subtitle = w.subtitle || "";
-      const img = (pathPrefix() + w.formed);
-      return `
-        <a class="work-tile" href="${href}">
-          <img loading="lazy" src="${img}" alt="${escapeHtml(title)}">
-          <div class="label">
-            <strong>${escapeHtml(title)}</strong>
-            <span>${escapeHtml(subtitle)}</span>
-          </div>
-        </a>
-      `;
-    }).join("");
-  }
-
-  async function renderWorkDetail(){
-    const mount = qs("[data-work-detail]");
-    if(!mount) return;
-
-    const id = getParam("id");
-    const dataPath = mount.getAttribute("data-src") || (pathPrefix()+"assets/data/works.json");
-    const data = await loadJSON(dataPath);
-
-    const item = (data.works||[]).find(w => w.id === id) || (data.works||[])[0];
-    if(!item){
-      mount.innerHTML = `<div class="panel card"><p class="muted">No work found.</p></div>`;
-      return;
-    }
-
-    const titleEl = qs("[data-work-title]");
-    const subEl = qs("[data-work-subtitle]");
-    if(titleEl) titleEl.textContent = item.title || item.id;
-    if(subEl) subEl.textContent = item.subtitle || "";
-
-    const formedImg = qs("[data-formed-img]");
-    const rawImg = qs("[data-raw-img]");
-    const formedCap = qs("[data-formed-cap]");
-    const rawCap = qs("[data-raw-cap]");
-
-    if(formedImg) formedImg.src = pathPrefix()+item.formed;
-    if(rawImg) rawImg.src = pathPrefix()+item.raw;
-
-    if(formedCap) formedCap.textContent = item.formed_label || "Formed (after)";
-    if(rawCap) rawCap.textContent = item.raw_label || "Raw (before)";
-
-    const tags = qs("[data-work-tags]");
-    if(tags){
-      const arr = item.tags || [];
-      tags.innerHTML = arr.map(t=>`<span class="badge"># ${escapeHtml(t)}</span>`).join(" ");
-    }
-  }
-
-  function escapeHtml(str){
-    return (str||"").replace(/[&<>"']/g, (m)=>({
-      "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"
-    }[m]));
-  }
-
-  function initLangSave(){
-    const lang = document.documentElement.getAttribute("lang");
-    if(lang === "ja" || lang === "en"){
-      localStorage.setItem("sca_lang", lang);
-    }
-  }
-
-  function init(){
-    initLangSave();
-    initTheme();
-    renderWorksGallery().catch(console.error);
-    renderWorkDetail().catch(console.error);
-  }
-
-  return { init, setTheme };
-})();
-
-document.addEventListener("DOMContentLoaded", SCA.init);
+});
