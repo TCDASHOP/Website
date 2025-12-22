@@ -4,116 +4,131 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>SAIREN COLOR ARCHIVE</title>
-  <meta name="description" content="SAIREN COLOR ARCHIVE — Digital Art Archive by Sairen Takashima." />
+  <meta name="description" content="Digital art archive by Sairen Takashima. Works centered on the sensation of color." />
   <link rel="stylesheet" href="../assets/css/style.css" />
-  <script defer src="../assets/js/main.js"></script>
 </head>
 <body class="theme-a">
-  <header class="site-header">
-    <div class="container nav">
-      <a class="brand" href="./index.html">
-        <div class="mark" aria-hidden="true"></div>
-        <div class="name">
-          <strong>SAIREN COLOR ARCHIVE</strong>
-          <span>Digital Art Archive</span>
-        </div>
-      </a>
+<a class="skip" href="#main">Skip</a>
 
-      <div class="navlinks">
-        <a class="btn ghost" href="./works.html">WORKS</a>
-        <a class="btn ghost" href="./about.html">ABOUT</a>
-        <a class="btn ghost" href="./lookbook.html">LOOKBOOK</a>
-        <a class="btn ghost" href="./contact.html">CONTACT</a>
-        <a class="btn ghost" href="../ja/index.html" aria-label="Switch to Japanese">JA</a>
+<header>
+  <div class="container nav">
+    <a class="brand" href="./index.html">
+      <span class="mark" aria-hidden="true"></span>
+      <div>
+        <div class="title">SAIREN COLOR ARCHIVE</div>
+        <div class="sub">Digital Art Archive</div>
+      </div>
+    </a>
 
-        <div class="theme-switch pill" title="Theme A/B/C">
-          <span class="kbd">THEME</span>
-          <select data-theme-select>
-            <option value="a">A</option>
-            <option value="b">B</option>
-            <option value="c">C</option>
-          </select>
-        </div>
+    <nav class="menu" aria-label="Primary">
+      <a href="./works.html">WORKS</a>
+      <a href="./about.html">ABOUT</a>
+      <a href="./lookbook.html">LOOKBOOK</a>
+      <a href="./contact.html">CONTACT</a>
+    </nav>
+
+    <div class="right">
+      <a class="btn small" href="../ja/index.html" aria-label="Switch to Japanese">JA</a>
+      <div id="themeSwitcher" class="metaRow" aria-label="Theme switcher">
+        <button class="btn small" type="button" data-theme="a">A</button>
+        <button class="btn small" type="button" data-theme="b">B</button>
+        <button class="btn small" type="button" data-theme="c">C</button>
       </div>
     </div>
-  </header>
+  </div>
+</header>
 
-  <main class="container section">
-    <section class="hero" aria-label="Hero">
-      <div class="media" style="background-image:url('../assets/images/works/formed/artifact-04-main.webp')"></div>
-      <div class="veil"></div>
-      <div class="content">
-        <div class="badge">Black-based / world-building / strong navigation</div>
-        <h1>Color arrives before words.</h1>
-        <p>
-          Hi. I’m <strong>Sairen Takashima</strong>.<br>
-          SAIREN COLOR ARCHIVE is a place to store and publish my digital artworks.<br>
-          Please start with the works themselves.
+<main id="main">
+  <section class="hero">
+    <div class="container heroGrid">
+      <div class="heroCard">
+        <div class="heroMedia">
+          <img src="../assets/images/works/formed/artifact-04-main.webp" alt="Hero artwork" />
+        </div>
+        <div class="heroOverlay" aria-hidden="true"></div>
+
+        <div class="heroStrokes" aria-hidden="true">
+          <div class="stroke s1" style="--r:-12deg"></div>
+          <div class="stroke s2" style="--r:18deg"></div>
+          <div class="stroke s3" style="--r:10deg"></div>
+        </div>
+
+        <div class="heroText">
+          <h1 class="h1">Color arrives before language.</h1>
+          <p class="lead">
+            This is my archive.<br>
+            Take it in with your eyes first—before explanations.<br>
+            Start with “Formed”, and trace back to “Color” when needed.
+          </p>
+          <div class="heroActions">
+            <a class="btn primary" href="./works.html">View Works</a>
+            <a class="btn" href="./about.html">About</a>
+            <a class="btn" href="./lookbook.html">LOOKBOOK</a>
+          </div>
+        </div>
+      </div>
+
+      <aside class="sideCard">
+        <h2 class="h2">Sairen Takashima</h2>
+        <div class="prose">
+          I work with the sensation of color—before words.<br>
+          Memory, silence, impulse: layered and fixed into images.<br><br>
+          The works are still images, but the experience shouldn’t be still.<br>
+          This site is a darkroom where color moves.
+        </div>
+
+        <div class="hr"></div>
+
+        <div class="metaRow">
+          <a class="btn small" href="mailto:info@sairencolorarchive.com">Mail</a>
+          <a class="btn small" href="./contact.html">Contact</a>
+          <a class="btn small" href="https://www.instagram.com/tcda.shop" target="_blank" rel="noopener">Instagram ↗</a>
+        </div>
+
+        <p class="note">
+          Theme A/B/C only changes the glow direction.<br>
+          Color accuracy stays the priority.
         </p>
-        <div class="cta">
-          <a class="btn primary" href="./works.html">View Works</a>
-          <a class="btn" href="./lookbook.html">LOOKBOOK → Apparel</a>
-          <a class="btn ghost" href="./about.html">About</a>
-        </div>
-      </div>
-    </section>
+      </aside>
+    </div>
+  </section>
 
-    <section class="section">
-      <h2>Flow</h2>
-      <div class="grid">
-        <div class="panel card third">
-          <h3>1. Website</h3>
-          <p>Start with viewing. We show <strong>Raw → Formed</strong> as a transformation.</p>
+  <section class="section">
+    <div class="container">
+      <div class="sectionHead">
+        <div>
+          <h2 class="h2">Works</h2>
+          <div class="hint">Latest selection (click for Formed / Color)</div>
         </div>
-        <div class="panel card third">
-          <h3>2. Lookbook</h3>
-          <p>When the world reaches your body. We guide you to a separate lookbook site.</p>
-        </div>
-        <div class="panel card third">
-          <h3>3. Apparel Shop</h3>
-          <p>TCDA apparel line. Purchasing happens on the shop side.</p>
-        </div>
+        <a class="btn small" href="./works.html">All →</a>
       </div>
-    </section>
 
-    <section class="section">
-      <h2>Featured</h2>
-      <p>A quick preview. Open a work to compare Raw vs Formed.</p>
-      <div class="gallery" data-works-gallery data-src="../assets/data/works.json"></div>
-      <div style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap">
-        <a class="btn primary" href="./works.html">Open WORKS</a>
-        <a class="btn ghost" href="./contact.html">Contact</a>
-      </div>
-    </section>
-  </main>
+      <div id="worksGrid" class="grid" aria-label="Works grid"></div>
+    </div>
+  </section>
+</main>
 
-  <footer>
-    <div class="container footer-grid">
-      <div>
-        <div class="badge">SAIREN COLOR ARCHIVE</div>
-        <p class="muted" style="margin:10px 0 0;line-height:1.7">
-          Not only to “display” art, but to “wear” it — bringing it into daily life.
-        </p>
-      </div>
-      <div>
-        <h3 style="margin:0 0 10px">Links</h3>
-        <div style="display:flex;flex-direction:column;gap:8px">
-          <a href="./works.html">WORKS</a>
-          <a href="./about.html">ABOUT</a>
-          <a href="./lookbook.html">LOOKBOOK</a>
-          <a href="./contact.html">CONTACT</a>
-        </div>
-      </div>
-      <div>
-        <h3 style="margin:0 0 10px">Contact</h3>
-        <div class="small">info@sairencolorarchive.com</div>
-        <div style="height:8px"></div>
-        <a class="btn" href="mailto:info@sairencolorarchive.com">Send Email</a>
+<footer class="footer">
+  <div class="container footGrid">
+    <div>
+      <div class="footTitle">SAIREN COLOR ARCHIVE</div>
+      <div class="copy">© <span id="y"></span> SAIREN COLOR ARCHIVE</div>
+    </div>
+    <div>
+      <div class="footTitle">Links</div>
+      <div class="footLinks">
+        <a href="./works.html">Works</a>
+        <a href="./about.html">About</a>
+        <a href="./lookbook.html">LOOKBOOK</a>
+        <a href="./contact.html">Contact</a>
+        <a href="./license.html">License</a>
       </div>
     </div>
-    <div class="container small" style="margin-top:14px;opacity:.7">
-      © SAIREN COLOR ARCHIVE
-    </div>
-  </footer>
+  </div>
+</footer>
+
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+<script>document.getElementById("y").textContent = new Date().getFullYear();</script>
+<script src="../assets/js/main.js"></script>
 </body>
 </html>
