@@ -4,131 +4,89 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>SAIREN COLOR ARCHIVE</title>
-  <meta name="description" content="Digital art archive by Sairen Takashima. Works centered on the sensation of color." />
+  <meta name="description" content="SAIREN COLOR ARCHIVE — Color arrives before words. Digital art archive by Sairen Takashima." />
   <link rel="stylesheet" href="../assets/css/style.css" />
 </head>
-<body class="theme-a">
-<a class="skip" href="#main">Skip</a>
 
-<header>
-  <div class="container nav">
-    <a class="brand" href="./index.html">
-      <span class="mark" aria-hidden="true"></span>
-      <div>
-        <div class="title">SAIREN COLOR ARCHIVE</div>
-        <div class="sub">Digital Art Archive</div>
-      </div>
-    </a>
-
-    <nav class="menu" aria-label="Primary">
-      <a href="./works.html">WORKS</a>
-      <a href="./about.html">ABOUT</a>
-      <a href="./lookbook.html">LOOKBOOK</a>
-      <a href="./contact.html">CONTACT</a>
-    </nav>
-
-    <div class="right">
-      <a class="btn small" href="../ja/index.html" aria-label="Switch to Japanese">JA</a>
-      <div id="themeSwitcher" class="metaRow" aria-label="Theme switcher">
-        <button class="btn small" type="button" data-theme="a">A</button>
-        <button class="btn small" type="button" data-theme="b">B</button>
-        <button class="btn small" type="button" data-theme="c">C</button>
-      </div>
-    </div>
-  </div>
-</header>
-
-<main id="main">
-  <section class="hero">
-    <div class="container heroGrid">
-      <div class="heroCard">
-        <div class="heroMedia">
-          <img src="../assets/images/works/formed/artifact-04-main.webp" alt="Hero artwork" />
+<body data-page="home">
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a class="brand" href="./index.html" aria-label="SAIREN COLOR ARCHIVE Home">
+        <div class="brand-mark" aria-hidden="true"></div>
+        <div class="brand-title">
+          <strong>SAIREN COLOR ARCHIVE</strong>
+          <span>Digital Art Archive</span>
         </div>
-        <div class="heroOverlay" aria-hidden="true"></div>
+      </a>
 
-        <div class="heroStrokes" aria-hidden="true">
-          <div class="stroke s1" style="--r:-12deg"></div>
-          <div class="stroke s2" style="--r:18deg"></div>
-          <div class="stroke s3" style="--r:10deg"></div>
-        </div>
-
-        <div class="heroText">
-          <h1 class="h1">Color arrives before language.</h1>
-          <p class="lead">
-            This is my archive.<br>
-            Take it in with your eyes first—before explanations.<br>
-            Start with “Formed”, and trace back to “Color” when needed.
-          </p>
-          <div class="heroActions">
-            <a class="btn primary" href="./works.html">View Works</a>
-            <a class="btn" href="./about.html">About</a>
-            <a class="btn" href="./lookbook.html">LOOKBOOK</a>
-          </div>
-        </div>
-      </div>
-
-      <aside class="sideCard">
-        <h2 class="h2">Sairen Takashima</h2>
-        <div class="prose">
-          I work with the sensation of color—before words.<br>
-          Memory, silence, impulse: layered and fixed into images.<br><br>
-          The works are still images, but the experience shouldn’t be still.<br>
-          This site is a darkroom where color moves.
-        </div>
-
-        <div class="hr"></div>
-
-        <div class="metaRow">
-          <a class="btn small" href="mailto:info@sairencolorarchive.com">Mail</a>
-          <a class="btn small" href="./contact.html">Contact</a>
-          <a class="btn small" href="https://www.instagram.com/tcda.shop" target="_blank" rel="noopener">Instagram ↗</a>
-        </div>
-
-        <p class="note">
-          Theme A/B/C only changes the glow direction.<br>
-          Color accuracy stays the priority.
-        </p>
-      </aside>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container">
-      <div class="sectionHead">
-        <div>
-          <h2 class="h2">Works</h2>
-          <div class="hint">Latest selection (click for Formed / Color)</div>
-        </div>
-        <a class="btn small" href="./works.html">All →</a>
-      </div>
-
-      <div id="worksGrid" class="grid" aria-label="Works grid"></div>
-    </div>
-  </section>
-</main>
-
-<footer class="footer">
-  <div class="container footGrid">
-    <div>
-      <div class="footTitle">SAIREN COLOR ARCHIVE</div>
-      <div class="copy">© <span id="y"></span> SAIREN COLOR ARCHIVE</div>
-    </div>
-    <div>
-      <div class="footTitle">Links</div>
-      <div class="footLinks">
-        <a href="./works.html">Works</a>
-        <a href="./about.html">About</a>
+      <nav class="nav" aria-label="Primary">
+        <a href="./works.html">WORKS</a>
+        <a href="./about.html">ABOUT</a>
         <a href="./lookbook.html">LOOKBOOK</a>
-        <a href="./contact.html">Contact</a>
-        <a href="./license.html">License</a>
-      </div>
-    </div>
-  </div>
-</footer>
+        <a href="./sns.html">SNS</a>
+        <a href="./contact.html">CONTACT</a>
 
-<div id="toast" class="toast" role="status" aria-live="polite"></div>
-<script>document.getElementById("y").textContent = new Date().getFullYear();</script>
-<script src="../assets/js/main.js"></script>
+        <div class="lang-switch" aria-label="Language switch">
+          <a href="../ja/index.html">JA</a>
+          <a href="./index.html" aria-current="page">EN</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero" aria-label="Home Hero">
+      <div class="hero-media" style="background-image:url('../assets/images/works/formed/artifact-04-main.webp');"></div>
+
+      <!-- Home only layers -->
+      <div class="hero-grain" aria-hidden="true"></div>
+
+      <div class="drips" aria-hidden="true">
+        <div class="drip" style="--h:34%;--t:6.4s"></div>
+        <div class="drip" style="--h:48%;--t:7.8s"></div>
+        <div class="drip" style="--h:26%;--t:6.9s"></div>
+        <div class="drip" style="--h:54%;--t:9.2s"></div>
+        <div class="drip" style="--h:30%;--t:7.2s"></div>
+        <div class="drip" style="--h:44%;--t:8.6s"></div>
+        <div class="drip" style="--h:22%;--t:6.6s"></div>
+        <div class="drip" style="--h:58%;--t:9.8s"></div>
+        <div class="drip" style="--h:28%;--t:7.0s"></div>
+        <div class="drip" style="--h:46%;--t:8.9s"></div>
+      </div>
+
+      <div class="hero-inner panel">
+        <div class="kicker">Black base / Atmosphere first / Global-ready</div>
+
+        <h1>Color arrives before words.</h1>
+
+        <p>
+          Hello. I’m <strong>Sairen Takashima</strong>.<br>
+          SAIREN COLOR ARCHIVE is a place to collect and publish my digital artworks.<br>
+          Start by looking at the works themselves.
+        </p>
+
+        <div class="cta-row" aria-label="Primary actions">
+          <a class="btn primary" href="./works.html">View Works</a>
+          <a class="btn" href="./lookbook.html">LOOKBOOK</a>
+          <a class="btn" href="./about.html">ABOUT</a>
+          <a class="btn" href="./sns.html">SNS</a>
+        </div>
+
+        <div class="section">
+          <p class="small">
+            If the atmosphere reaches your body, move to LOOKBOOK and touch the apparel line (TCDA).<br>
+            For commissions, collaborations, or features, contact via CONTACT.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div>Contact: <a href="mailto:info@sairencolorarchive.com">info@sairencolorarchive.com</a></div>
+      <div>© SAIREN COLOR ARCHIVE</div>
+    </footer>
+  </main>
+
+  <script src="../assets/js/main.js"></script>
 </body>
 </html>
