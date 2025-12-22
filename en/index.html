@@ -1,1 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>SAIREN COLOR ARCHIVE</title>
+  <meta name="description" content="SAIREN COLOR ARCHIVE — Digital Art Archive by Sairen Takashima." />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <script defer src="../assets/js/main.js"></script>
+</head>
+<body class="theme-a">
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="./index.html">
+        <div class="mark" aria-hidden="true"></div>
+        <div class="name">
+          <strong>SAIREN COLOR ARCHIVE</strong>
+          <span>Digital Art Archive</span>
+        </div>
+      </a>
 
+      <div class="navlinks">
+        <a class="btn ghost" href="./works.html">WORKS</a>
+        <a class="btn ghost" href="./about.html">ABOUT</a>
+        <a class="btn ghost" href="./lookbook.html">LOOKBOOK</a>
+        <a class="btn ghost" href="./contact.html">CONTACT</a>
+        <a class="btn ghost" href="../ja/index.html" aria-label="Switch to Japanese">JA</a>
+
+        <div class="theme-switch pill" title="Theme A/B/C">
+          <span class="kbd">THEME</span>
+          <select data-theme-select>
+            <option value="a">A</option>
+            <option value="b">B</option>
+            <option value="c">C</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container section">
+    <section class="hero" aria-label="Hero">
+      <div class="media" style="background-image:url('../assets/images/works/formed/artifact-04-main.webp')"></div>
+      <div class="veil"></div>
+      <div class="content">
+        <div class="badge">Black-based / world-building / strong navigation</div>
+        <h1>Color arrives before words.</h1>
+        <p>
+          Hi. I’m <strong>Sairen Takashima</strong>.<br>
+          SAIREN COLOR ARCHIVE is a place to store and publish my digital artworks.<br>
+          Please start with the works themselves.
+        </p>
+        <div class="cta">
+          <a class="btn primary" href="./works.html">View Works</a>
+          <a class="btn" href="./lookbook.html">LOOKBOOK → Apparel</a>
+          <a class="btn ghost" href="./about.html">About</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Flow</h2>
+      <div class="grid">
+        <div class="panel card third">
+          <h3>1. Website</h3>
+          <p>Start with viewing. We show <strong>Raw → Formed</strong> as a transformation.</p>
+        </div>
+        <div class="panel card third">
+          <h3>2. Lookbook</h3>
+          <p>When the world reaches your body. We guide you to a separate lookbook site.</p>
+        </div>
+        <div class="panel card third">
+          <h3>3. Apparel Shop</h3>
+          <p>TCDA apparel line. Purchasing happens on the shop side.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Featured</h2>
+      <p>A quick preview. Open a work to compare Raw vs Formed.</p>
+      <div class="gallery" data-works-gallery data-src="../assets/data/works.json"></div>
+      <div style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap">
+        <a class="btn primary" href="./works.html">Open WORKS</a>
+        <a class="btn ghost" href="./contact.html">Contact</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <div class="badge">SAIREN COLOR ARCHIVE</div>
+        <p class="muted" style="margin:10px 0 0;line-height:1.7">
+          Not only to “display” art, but to “wear” it — bringing it into daily life.
+        </p>
+      </div>
+      <div>
+        <h3 style="margin:0 0 10px">Links</h3>
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <a href="./works.html">WORKS</a>
+          <a href="./about.html">ABOUT</a>
+          <a href="./lookbook.html">LOOKBOOK</a>
+          <a href="./contact.html">CONTACT</a>
+        </div>
+      </div>
+      <div>
+        <h3 style="margin:0 0 10px">Contact</h3>
+        <div class="small">info@sairencolorarchive.com</div>
+        <div style="height:8px"></div>
+        <a class="btn" href="mailto:info@sairencolorarchive.com">Send Email</a>
+      </div>
+    </div>
+    <div class="container small" style="margin-top:14px;opacity:.7">
+      © SAIREN COLOR ARCHIVE
+    </div>
+  </footer>
+</body>
+</html>
