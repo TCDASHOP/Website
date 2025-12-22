@@ -1,47 +1,30 @@
 <!doctype html>
-<html lang="en">
+<html lang="ja">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="robots" content="index,follow" />
+  <meta http-equiv="refresh" content="0; url=./ja/" />
   <title>SAIREN COLOR ARCHIVE</title>
-  <meta name="description" content="SAIREN COLOR ARCHIVE — Digital Art Archive by Sairen Takashima." />
-  <style>
-    html,body{height:100%;margin:0;background:#000;color:#fff;font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;}
-    .wrap{min-height:100%;display:grid;place-items:center;padding:24px}
-    .card{max-width:760px;width:100%;border:1px solid rgba(255,255,255,.12);border-radius:18px;padding:22px;background:rgba(255,255,255,.04)}
-    h1{margin:0 0 8px;font-size:20px;letter-spacing:.08em}
-    p{margin:0 0 14px;opacity:.86;line-height:1.6}
-    .btns{display:flex;gap:10px;flex-wrap:wrap}
-    a{color:#fff;text-decoration:none;border:1px solid rgba(255,255,255,.18);padding:10px 14px;border-radius:12px;background:rgba(255,255,255,.06)}
-    a:hover{background:rgba(255,255,255,.12)}
-    .hint{margin-top:12px;font-size:12px;opacity:.7}
-  </style>
+  <meta name="robots" content="noindex" />
 </head>
 <body>
-  <div class="wrap">
-    <div class="card">
-      <h1>SAIREN COLOR ARCHIVE</h1>
-      <p>Select language / 言語を選択</p>
-      <div class="btns">
-        <a href="./ja/index.html">日本語</a>
-        <a href="./en/index.html">English</a>
-      </div>
-      <div class="hint">Theme A/B/C は各ページ右上の “THEME” から切替（保存されます）。</div>
-    </div>
-  </div>
-
+  <noscript>
+    <p><a href="./ja/">Go to Japanese site</a></p>
+  </noscript>
   <script>
-    // ざっくり言語推定（初回だけ）
-    (function(){
-      const saved = localStorage.getItem("sca_lang");
-      if(saved){ location.replace("./"+saved+"/index.html"); return; }
-      const isJa = (navigator.language || "").toLowerCase().startsWith("ja");
-      const lang = isJa ? "ja" : "en";
-      localStorage.setItem("sca_lang", lang);
-      // 2秒後に自動遷移（強制しすぎない）
-      setTimeout(()=>location.replace("./"+lang+"/index.html"), 900);
-    })();
+    // ざっくり言語推定（必要なら後で強化）
+    const lang = (navigator.language || 'ja').toLowerCase();
+    const map = [
+      ['zh', 'zh-hans'],
+      ['ko', 'ko'],
+      ['fr', 'fr'],
+      ['es', 'es'],
+      ['en', 'en'],
+      ['ja', 'ja'],
+    ];
+    let target = 'ja';
+    for (const [k,v] of map) { if (lang.startsWith(k)) { target = v; break; } }
+    location.replace('./' + target + '/');
   </script>
 </body>
 </html>
