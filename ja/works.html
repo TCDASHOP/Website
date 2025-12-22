@@ -4,70 +4,59 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>WORKS | SAIREN COLOR ARCHIVE</title>
-  <meta name="description" content="作品一覧 — Raw（加工前）と Formed（加工後）の対比で見る。" />
   <link rel="stylesheet" href="../assets/css/style.css" />
   <script defer src="../assets/js/main.js"></script>
 </head>
-<body class="theme-a">
-  <header class="site-header">
-    <div class="container nav">
-      <a class="brand" href="./index.html">
-        <div class="mark" aria-hidden="true"></div>
-        <div class="name">
-          <strong>SAIREN COLOR ARCHIVE</strong>
-          <span>WORKS</span>
-        </div>
-      </a>
 
-      <div class="navlinks">
-        <a class="btn ghost" href="./works.html">WORKS</a>
-        <a class="btn ghost" href="./about.html">ABOUT</a>
-        <a class="btn ghost" href="./lookbook.html">LOOKBOOK</a>
-        <a class="btn ghost" href="./contact.html">CONTACT</a>
-        <a class="btn ghost" href="../en/works.html">EN</a>
-
-        <div class="theme-switch pill">
-          <span class="kbd">THEME</span>
-          <select data-theme-select>
-            <option value="a">A</option>
-            <option value="b">B</option>
-            <option value="c">C</option>
-          </select>
+<body>
+  <header class="site">
+    <div class="wrap nav">
+      <div class="brand">
+        <div class="brandMark" aria-hidden="true"></div>
+        <div class="brandText">
+          <b>SAIREN COLOR ARCHIVE</b>
+          <span>Digital Art Archive</span>
         </div>
       </div>
+
+      <nav class="menu" aria-label="Primary">
+        <a class="pill ghost" data-nav href="works.html">WORKS</a>
+        <a class="pill ghost" data-nav href="about.html">ABOUT</a>
+        <a class="pill ghost" data-nav href="lookbook.html">LOOKBOOK</a>
+        <a class="pill ghost" data-nav href="sns.html">SNS</a>
+        <a class="pill ghost" data-nav href="contact.html">CONTACT</a>
+
+        <span class="sep" aria-hidden="true"></span>
+
+        <div class="langGroup" aria-label="Language">
+          <button class="pill small" type="button" data-lang="ja">JA</button>
+          <button class="pill small" type="button" data-lang="en">EN</button>
+          <button class="pill small" type="button" data-lang="es">ES</button>
+          <button class="pill small" type="button" data-lang="fr">FR</button>
+          <button class="pill small" type="button" data-lang="ko">KO</button>
+          <button class="pill small" type="button" data-lang="zh-hans">中文</button>
+        </div>
+      </nav>
     </div>
   </header>
 
-  <main class="container section">
-    <div class="panel card">
-      <h2 style="margin:0 0 8px">WORKS</h2>
-      <p class="muted">完成形だけで終わらせない。<strong>加工前（Raw）→加工後（Formed）</strong>の変換を、作品として提示します。</p>
-    </div>
-
-    <div class="gallery" data-works-gallery data-src="../assets/data/works.json" style="margin-top:16px"></div>
-  </main>
-
-  <footer>
-    <div class="container footer-grid">
-      <div>
-        <div class="badge">WORKS</div>
-        <p class="muted" style="margin:10px 0 0;line-height:1.7">
-          作品は “入口”。<br>世界観が身体の方まで伸びてきたら LOOKBOOK へ。
-        </p>
-      </div>
-      <div>
-        <h3 style="margin:0 0 10px">Next</h3>
-        <div style="display:flex;flex-direction:column;gap:8px">
-          <a href="./lookbook.html">LOOKBOOK</a>
-          <a href="./contact.html">CONTACT</a>
+  <main>
+    <div class="wrap">
+      <section class="card">
+        <div class="cardInner">
+          <div class="heroTag">WORKS</div>
+          <h1 class="h1">完成形だけで終わらせない。</h1>
+          <p class="p">加工前（Raw）→ 加工後（Formed）の変換を、作品として提示します。</p>
         </div>
-      </div>
-      <div>
-        <h3 style="margin:0 0 10px">Instagram</h3>
-        <a class="btn" href="https://www.instagram.com/tcda.shop" target="_blank" rel="noopener">tcda.shop</a>
-      </div>
+      </section>
     </div>
-    <div class="container small" style="margin-top:14px;opacity:.7">© SAIREN COLOR ARCHIVE</div>
-  </footer>
+
+    <footer>
+      <div class="wrap foot">
+        <div>© SAIREN COLOR ARCHIVE</div>
+        <div><a href="license.html">License</a></div>
+      </div>
+    </footer>
+  </main>
 </body>
 </html>
