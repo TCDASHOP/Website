@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <script src="../assets/js/app.js" defer></script>
+  <title>SNS | SAIREN COLOR ARCHIVE</title>
+</head>
+<body data-title-key="page.sns.title">
+  <div class="page">
+    <header class="top">
+      <div class="brand" data-i18n="siteName">SAIREN COLOR ARCHIVE</div>
+      <div class="controls">
+        <select id="langSelect" class="select" aria-label="language">
+          <option value="ja">JA</option>
+          <option value="en">EN</option>
+          <option value="es">ES</option>
+          <option value="fr">FR</option>
+          <option value="ko">KO</option>
+          <option value="zh-hans">中文</option>
+        </select>
+        <button id="menuBtn" class="menuBtn" aria-label="menu"><span></span></button>
+      </div>
+    </header>
+
+    <section class="panel">
+      <h1 class="h1" data-i18n="page.sns.title">SNS</h1>
+
+      <div class="iconRow">
+        <a id="igLink" class="iconBtn" target="_blank" rel="noopener" aria-label="Instagram">
+          <img src="../assets/images/Instagram-logo.png" alt="Instagram">
+        </a>
+        <a id="ttLink" class="iconBtn" target="_blank" rel="noopener" aria-label="TikTok">
+          <img src="../assets/images/TikTok-logo.png" alt="TikTok">
+        </a>
+      </div>
+
+      <p class="small" style="margin-top:12px;">
+        ※文字リンクは出さない仕様。URLは /assets/data/site.json の sns で管理。
+      </p>
+    </section>
+    <div id="overlay" class="overlay" aria-hidden="true">
+      <nav class="drawer" role="navigation">
+        <a href="./index.html"><span data-i18n="nav.home">HOME</span><span class="small">/</span></a>
+        <a href="./about.html"><span data-i18n="nav.about">ABOUT</span><span class="small">/</span></a>
+        <a href="./works.html"><span data-i18n="nav.works">WORKS</span><span class="small">/</span></a>
+        <a href="./lookbook.html"><span data-i18n="nav.lookbook">LOOKBOOK</span><span class="small">↗</span></a>
+        <a href="./sns.html"><span data-i18n="nav.sns">SNS</span><span class="small">/</span></a>
+        <a href="./contact.html"><span data-i18n="nav.contact">CONTACT</span><span class="small">@</span></a>
+        <a href="./license.html"><span data-i18n="nav.license">LICENSE</span><span class="small">©</span></a>
+        <div class="small" style="padding:10px 12px;">Tap outside to close.</div>
+      </nav>
+    </div>
+
+  </div>
+</body>
+</html>
