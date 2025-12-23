@@ -1,226 +1,228 @@
 {
-  "siteName": {
-    "ja": "SAIREN COLOR ARCHIVE",
-    "en": "SAIREN COLOR ARCHIVE",
-    "es": "SAIREN COLOR ARCHIVE",
-    "fr": "SAIREN COLOR ARCHIVE",
-    "ko": "SAIREN COLOR ARCHIVE",
-    "zh-hans": "SAIREN COLOR ARCHIVE"
-  },
-  "siteSub": {
-    "ja": "Digital Art Archive",
-    "en": "Digital Art Archive",
-    "es": "Archivo de Arte Digital",
-    "fr": "Archive d’Art Numérique",
-    "ko": "디지털 아트 아카이브",
-    "zh-hans": "数字艺术档案"
-  },
-  "nav.home": {
-    "ja": "HOME",
-    "en": "HOME",
-    "es": "INICIO",
-    "fr": "ACCUEIL",
-    "ko": "HOME",
-    "zh-hans": "首页"
-  },
-  "nav.about": {
-    "ja": "ABOUT",
-    "en": "ABOUT",
-    "es": "ACERCA",
-    "fr": "À PROPOS",
-    "ko": "ABOUT",
-    "zh-hans": "关于"
-  },
-  "nav.sns": {
-    "ja": "SNS",
-    "en": "SNS",
-    "es": "REDES",
-    "fr": "RÉSEAUX",
-    "ko": "SNS",
-    "zh-hans": "社交"
-  },
-  "nav.contact": {
-    "ja": "CONTACT",
-    "en": "CONTACT",
-    "es": "CONTACTO",
-    "fr": "CONTACT",
-    "ko": "CONTACT",
-    "zh-hans": "联系"
-  },
-  "hero.title": {
-    "ja": "色は、言葉より先に届く。",
-    "en": "Color arrives before words.",
-    "es": "El color llega antes que las palabras.",
-    "fr": "La couleur arrive avant les mots.",
-    "ko": "색은, 말보다 먼저 닿는다.",
-    "zh-hans": "色彩先于语言抵达。"
-  },
-  "hero.lead": {
-    "ja": "SAIREN COLOR ARCHIVEは、デジタルアートを「作品」として残し、静かに、しかし強く提示するアーカイブです。",
-    "en": "SAIREN COLOR ARCHIVE is an archive that preserves digital artworks as “works” — quiet, yet unmistakably present.",
-    "es": "SAIREN COLOR ARCHIVE preserva obras digitales como “piezas” — silenciosas, pero intensas.",
-    "fr": "SAIREN COLOR ARCHIVE conserve des œuvres numériques — discrètes, mais puissantes.",
-    "ko": "SAIREN COLOR ARCHIVE는 디지털 아트를 “작품”으로 남기고, 고요하지만 강하게 제시하는 아카이브입니다.",
-    "zh-hans": "SAIREN COLOR ARCHIVE 将数字艺术作为“作品”保存——安静，却有力量。"
-  },
-  "home.tile.works.title": {
-    "ja": "WORKS",
-    "en": "WORKS",
-    "es": "OBRAS",
-    "fr": "ŒUVRES",
-    "ko": "WORKS",
-    "zh-hans": "作品"
-  },
-  "home.tile.works.desc": {
-    "ja": "作品一覧（タップで拡大）",
-    "en": "Gallery (tap to enlarge)",
-    "es": "Galería (toca para ampliar)",
-    "fr": "Galerie (toucher pour agrandir)",
-    "ko": "갤러리(탭하여 확대)",
-    "zh-hans": "画廊（点击放大）"
-  },
-  "home.tile.lookbook.title": {
-    "ja": "LOOKBOOK",
-    "en": "LOOKBOOK",
-    "es": "LOOKBOOK",
-    "fr": "LOOKBOOK",
-    "ko": "LOOKBOOK",
-    "zh-hans": "造型集"
-  },
-  "home.tile.lookbook.desc": {
-    "ja": "作品から生まれたファッションの世界",
-    "en": "A fashion world born from the works",
-    "es": "Moda nacida de las obras",
-    "fr": "Une mode née des œuvres",
-    "ko": "작품에서 태어난 패션 세계",
-    "zh-hans": "由作品延展的时尚世界"
-  },
-  "page.about.title": {
-    "ja": "ABOUT",
-    "en": "ABOUT",
-    "es": "ACERCA",
-    "fr": "À PROPOS",
-    "ko": "ABOUT",
-    "zh-hans": "关于"
-  },
-  "page.about.body": {
-    "ja": "ここに自己紹介／制作姿勢／世界観を入れます。短く、強く。必要なら後で文章をこちらで整えます。",
-    "en": "Add your bio, process, and worldview here. Short. Strong. We can refine later.",
-    "es": "Añade aquí tu bio, proceso y visión. Breve. Fuerte. Podemos pulir después.",
-    "fr": "Ajoutez ici votre bio, processus et vision. Court. Fort. On affine ensuite.",
-    "ko": "여기에 소개/제작 방식/세계관을 넣으세요. 짧고 강하게. 나중에 다듬을 수 있어요.",
-    "zh-hans": "在这里放入简介/创作方式/世界观。简短、有力。之后可再润色。"
-  },
-  "page.sns.title": {
-    "ja": "SNS",
-    "en": "SNS",
-    "es": "REDES",
-    "fr": "RÉSEAUX",
-    "ko": "SNS",
-    "zh-hans": "社交"
-  },
-  "page.sns.body": {
-    "ja": "アイコンをタップすると各アカウントへ移動します（リンク文字は表示しません）。",
-    "en": "Tap an icon to open the account (no text links).",
-    "es": "Toca un icono para abrir la cuenta (sin enlaces de texto).",
-    "fr": "Touchez une icône pour ouvrir le compte (sans liens texte).",
-    "ko": "아이콘을 탭하면 계정으로 이동합니다(텍스트 링크 없음).",
-    "zh-hans": "点击图标打开账号（不显示文字链接）。"
-  },
-  "page.contact.title": {
-    "ja": "CONTACT",
-    "en": "CONTACT",
-    "es": "CONTACTO",
-    "fr": "CONTACT",
-    "ko": "CONTACT",
-    "zh-hans": "联系"
-  },
-  "page.contact.body": {
-    "ja": "依頼・コラボレーション・掲載のご相談はこちらへ。",
-    "en": "For commissions, collaborations, or features, contact here.",
-    "es": "Para encargos, colaboraciones o prensa, contacta aquí.",
-    "fr": "Pour commandes, collaborations ou presse, contactez ici.",
-    "ko": "의뢰/협업/게재 문의는 여기로.",
-    "zh-hans": "委托、合作、刊登咨询请联系这里。"
-  },
-  "page.works.title": {
-    "ja": "WORKS",
-    "en": "WORKS",
-    "es": "OBRAS",
-    "fr": "ŒUVRES",
-    "ko": "WORKS",
-    "zh-hans": "作品"
-  },
-  "page.works.body": {
-    "ja": "画像をタップすると、Color（raw）↔︎ Formed（main）が切り替わります。もう一度タップで戻ります。",
-    "en": "Tap an image to toggle Color (raw) ↔ Formed (main). Tap again to switch back.",
-    "es": "Toca una imagen para ampliarla.",
-    "fr": "Touchez une image pour basculer Color (raw) ↔ Formed (main). Touchez à nouveau pour revenir.",
-    "ko": "이미지를 탭하면 Color(raw) ↔ Formed(main)로 전환됩니다. 다시 탭하면 원래대로 돌아갑니다.",
-    "zh-hans": "点击图片可放大。",
-    "zh": "点击图片即可在 Color（raw）↔ Formed（main）之间切换；再次点击可切回。"
-  },
-  "page.lookbook.title": {
-    "ja": "LOOKBOOK",
-    "en": "LOOKBOOK",
-    "es": "LOOKBOOK",
-    "fr": "LOOKBOOK",
-    "ko": "LOOKBOOK",
-    "zh-hans": "造型集"
-  },
-  "page.lookbook.body": {
-    "ja": "ここにLOOKBOOKを配置します（画像・説明を追加）。",
-    "en": "Place the LOOKBOOK here (add images & captions).",
-    "es": "Coloca aquí el LOOKBOOK (añade imágenes y textos).",
-    "fr": "Placez le LOOKBOOK ici (ajoutez images & légendes).",
-    "ko": "여기에 LOOKBOOK을 배치하세요(이미지/설명 추가).",
-    "zh-hans": "在这里放置 LOOKBOOK（添加图片与说明）。"
-  },
-  "page.license.title": {
-    "ja": "License",
-    "en": "License",
-    "es": "Licencia",
-    "fr": "Licence",
-    "ko": "License",
-    "zh-hans": "许可"
-  },
-  "page.license.body": {
-    "ja": "本サイト内の画像・文章・デザインの無断転載、二次配布、再利用を禁じます。引用は出典を明記し、必要最小限に限ります。",
-    "en": "Unauthorized reproduction, redistribution, or reuse of images/text/design is prohibited. Quotation is permitted only with clear attribution and minimal extent.",
-    "es": "Se prohíbe la reproducción, redistribución o reutilización sin permiso. Las citas requieren atribución clara y uso mínimo.",
-    "fr": "Toute reproduction, redistribution ou réutilisation sans autorisation est interdite. La citation est permise avec attribution claire et usage minimal.",
-    "ko": "무단 복제/재배포/재사용을 금지합니다. 인용은 출처 명시 및 최소 범위로 제한됩니다.",
-    "zh-hans": "禁止未经许可的转载、二次发布与再利用。引用需注明出处且限于必要最小范围。"
-  },
-  "footer.copyright": {
-    "ja": "© 2025 SAIREN COLOR ARCHIVE",
-    "en": "© 2025 SAIREN COLOR ARCHIVE",
-    "es": "© 2025 SAIREN COLOR ARCHIVE",
-    "fr": "© 2025 SAIREN COLOR ARCHIVE",
-    "ko": "© 2025 SAIREN COLOR ARCHIVE",
-    "zh-hans": "© 2025 SAIREN COLOR ARCHIVE"
-  },
-  "footer.license": {
-    "ja": "License",
-    "en": "License",
-    "es": "Licencia",
-    "fr": "Licence",
-    "ko": "License",
-    "zh-hans": "许可"
-  },
-  "lang.label": {
-    "ja": "言語",
-    "en": "Language",
-    "es": "Idioma",
-    "fr": "Langue",
-    "ko": "언어",
-    "zh-hans": "语言"
-  },
-  "home.works.desc": {
-    "ja": "作品一覧（タップで切り替え）",
-    "en": "Works (tap to toggle)",
-    "ko": "작품(탭하여 전환)",
-    "zh": "作品（点击切换）",
-    "fr": "Œuvres (toucher pour basculer)"
+  "i18n": {
+    "siteName": {
+      "ja": "彩蓮 色彩アーカイブ",
+      "en": "SAIREN Color Archive",
+      "es": "Archivo de Color de SAIREN",
+      "fr": "Archives de Couleur SAIREN",
+      "ko": "사이렌 컬러 아카이브",
+      "zh-hans": "彩莲色彩档案"
+    },
+    "siteSub": {
+      "ja": "Digital Art Archive",
+      "en": "Digital Art Archive",
+      "es": "Archivo de Arte Digital",
+      "fr": "Archive d’art numérique",
+      "ko": "디지털 아트 아카이브",
+      "zh-hans": "数字艺术档案"
+    },
+    "nav.home": {
+      "ja": "HOME",
+      "en": "HOME",
+      "es": "INICIO",
+      "fr": "ACCUEIL",
+      "ko": "홈",
+      "zh-hans": "首页"
+    },
+    "nav.about": {
+      "ja": "ABOUT",
+      "en": "ABOUT",
+      "es": "ACERCA DE",
+      "fr": "À PROPOS",
+      "ko": "소개",
+      "zh-hans": "关于"
+    },
+    "nav.sns": {
+      "ja": "SNS",
+      "en": "SOCIAL",
+      "es": "REDES",
+      "fr": "RÉSEAUX",
+      "ko": "SNS",
+      "zh-hans": "社交媒体"
+    },
+    "nav.contact": {
+      "ja": "CONTACT",
+      "en": "CONTACT",
+      "es": "CONTACTO",
+      "fr": "CONTACT",
+      "ko": "문의",
+      "zh-hans": "联系"
+    },
+    "hero.title": {
+      "ja": "色は、言葉より先に届く。",
+      "en": "Color arrives before words.",
+      "es": "El color llega antes que las palabras.",
+      "fr": "La couleur arrive avant les mots.",
+      "ko": "색은 말보다 먼저 닿는다.",
+      "zh-hans": "色彩先于语言抵达。"
+    },
+    "hero.lead": {
+      "ja": "SAIREN COLOR ARCHIVEは、デジタルアートを「作品」として残し、静かに、しかし強く提示するアーカイブです。",
+      "en": "SAIREN COLOR ARCHIVE preserves digital art as “works” — quiet, yet unmistakably present.",
+      "es": "SAIREN COLOR ARCHIVE conserva el arte digital como “obras” — silenciosas, pero inconfundibles.",
+      "fr": "SAIREN COLOR ARCHIVE conserve l’art numérique comme des « œuvres » — discrètes, mais inoubliables.",
+      "ko": "SAIREN COLOR ARCHIVE는 디지털 아트를 “작품”으로 남기고, 고요하지만 분명하게 존재감을 드러내는 아카이브입니다.",
+      "zh-hans": "SAIREN COLOR ARCHIVE 将数字艺术作为“作品”保存——安静，却有不可忽视的存在感。"
+    },
+    "home.tile.works.title": {
+      "ja": "WORKS",
+      "en": "WORKS",
+      "es": "OBRAS",
+      "fr": "ŒUVRES",
+      "ko": "WORKS",
+      "zh-hans": "作品"
+    },
+    "home.tile.works.desc": {
+      "ja": "作品一覧（タップで拡大）",
+      "en": "Gallery (tap to enlarge)",
+      "es": "Galería (toca para ampliar)",
+      "fr": "Galerie (toucher pour agrandir)",
+      "ko": "갤러리(탭하여 확대)",
+      "zh-hans": "画廊（点击放大）"
+    },
+    "home.tile.lookbook.title": {
+      "ja": "LOOKBOOK",
+      "en": "LOOKBOOK",
+      "es": "LOOKBOOK",
+      "fr": "LOOKBOOK",
+      "ko": "LOOKBOOK",
+      "zh-hans": "造型集"
+    },
+    "home.tile.lookbook.desc": {
+      "ja": "作品から生まれたファッションの世界",
+      "en": "A fashion world born from the works",
+      "es": "Un mundo de moda nacido de las obras",
+      "fr": "Un univers de mode né des œuvres",
+      "ko": "작품에서 태어난 패션 세계",
+      "zh-hans": "由作品延展的时尚世界"
+    },
+    "page.about.title": {
+      "ja": "ABOUT",
+      "en": "ABOUT",
+      "es": "ACERCA DE",
+      "fr": "À PROPOS",
+      "ko": "ABOUT",
+      "zh-hans": "关于"
+    },
+    "page.about.body": {
+  "ja": "色彩は、言葉より先に届く。\nSAIREN COLOR ARCHIVE は、私・彩蓮（Sairen Takashima）の作品と制作の軌跡を記録するアーカイブです。\n\n私は、色を「きれい」や「オシャレ」で終わらせません。\n色は感情であり、痕跡であり、意識の温度です。\n言葉が追いつく前に、先に刺さってしまうもの。そこを狙って作っています。\n\nこの場所は、作品を並べるだけのギャラリーではなく、“感覚を取り戻すための入口”として設計しています。\n見る人が、自分の内側にある「まだ言語化されていない感覚」を回収できるように。\n\n【私について】\n彩蓮（Sairen）。\n私は自己実現型のクリエイターであり、思想家であり、ブランド創造者です。\n私の制作は、気分ではなく、問いから始まります。\n・それは本当か？\n・本質は何か？\n・何が“届いてしまう”のか？\n・なぜ、その色なのか？\n・なぜ、その余白なのか？\n作品は、説明より先に成立してほしい。\nけれど、成立した瞬間に“ただの雰囲気”に逃げたくない。\nだから私は、抽象でありながら、構造で締めます。\n\n【SAIREN COLOR ARCHIVE がやりたいこと】\nこのサイトがやりたいのは、派手な演出ではありません。\n余計なノイズを削って、作品にまっすぐ到達させること。\n私は、見せなくていい文言や、重複した導線や、意味の薄い装飾が簡単に増えるのを嫌います。\n見せたいのは「誤魔化し」ではなく「到達」だから。\nだからここでは、基本的に次の体験だけを強くします。\n・WORKS：作品一覧（タップで拡大）\n・LOOKBOOK：作品から生まれたファッションの世界\n・SNS：制作・更新・変化の“現在地”\n・CONTACT：依頼・相談窓口\n迷わせない。散らさない。作品に辿り着かせる。\nそれが、SAIREN COLOR ARCHIVE の設計思想です。\n\n【作品の核｜私のアートは何をしているか】\n私の作品は、抽象表現です。\nしかし、曖昧さの逃げ道としての抽象ではなく、感情を可視化するための抽象です。\n1) 感情の層を「レイヤー」で作る\n人の感情は単色じゃない。だから、色を重ねます。濁りも、透明も、痛みも、回復も、同居させます。\n2) 呼吸を「余白と密度」で設計する\n密度が高い場所は心拍を上げる。余白は、呼吸を戻す。作品の中に“身体反応”を起こすために、配置を決めています。\n3) ランダムに見える必然を作る\n「ランダム」は好きです。ただし“適当”とは違う。偶然っぽく見せながら、全体の方向性は締める。この矛盾の制御が、私の作品の骨格です。\n4) 言語化前の感覚を呼び起こす\n説明できないのに、分かってしまう。そのゾーンに触れると、人は自分の感覚に戻ります。私はそこを狙って作っています。\n\n【アートを“現実”に接続する｜LOOKBOOKについて】\n私の作品は、ときどき服になります。理由は単純です。アートを壁に閉じ込めたくないから。\nアートは、鑑賞で終わると「他人事」になりやすい。\nでも、身につけられる形に変換すると、アートは「体験」になります。\n自分の身体を通して、色が現実に染み込む。\n私のもう一つの世界として、Transcend Color Digital Apparel（TCDA）という思想と制作があります。\n理念は「アートを着る、感性を解放する」。LOOKBOOKは、その接続面です。\n\n【制作姿勢｜“色忠実”と“誠実さ”】【\n私の制作で最優先するのは、色の正確さです。色が狂うと、意味が狂う。\nそしてもう一つ。私は見せかけや欺瞞が嫌いです。\n「それっぽい言葉」や「盛ったストーリー」で誤魔化したくない。作品が届くかどうかで勝負します。",
+  "en": "Color arrives before words.\nSAIREN COLOR ARCHIVE is a digital art archive that records the works and creative path of Sairen Takashima.\n\nI don’t let color end at “pretty” or “stylish.”\nColor is emotion. A trace. The temperature of consciousness.\nSomething that hits before language can catch up — that’s what I aim for.\n\nThis isn’t just a gallery that lines up images.\nIt’s designed as an entrance to regain your senses — so you can retrieve what you feel inside, before you can name it.\n\n[About me]\nSairen (Sairen Takashima).\nI’m a self-actualization creator, a thinker, and a brand builder.\nMy work doesn’t start from mood. It starts from questions:\n• Is it true?\n• What’s the essence?\n• What exactly “lands” — uncontrollably?\n• Why this color?\n• Why this silence (this space)?\nI want a piece to stand before explanation.\nBut the moment it stands, I refuse to let it escape into “just a vibe.”\nSo even in abstraction, I lock it with structure.\n\n[What SAIREN COLOR ARCHIVE is here to do]\nThis site isn’t about flashy effects.\nIt’s about removing noise — and letting you reach the work directly.\nI dislike needless text, duplicated paths, and decoration that dilutes meaning.\nWhat I want to show isn’t a trick. It’s arrival.\nSo the experience is intentionally focused:\n• WORKS: the artworks (tap to enlarge)\n• LOOKBOOK: fashion born from the works\n• SOCIAL: the current location of making, updates, change\n• CONTACT: commissions & inquiries\nNo confusion. No scattering. Reach the work.\nThat’s the design philosophy of SAIREN COLOR ARCHIVE.\n\n[The core of the work | What my art is doing]\nMy work is abstract art — not as an escape into ambiguity, but as a way to make emotion visible.\n1) Building emotional layers\nHuman feeling isn’t a single color, so I stack color: clarity and murk, pain and recovery, coexisting.\n2) Designing breath through space and density\nDense areas raise the pulse. Open space returns the breath. Composition is chosen to trigger a bodily response.\n3) Creating necessity that looks random\nI love “random,” but not careless. It can look accidental while the overall direction stays tight. Controlling that contradiction is my backbone.\n4) Calling up pre-verbal sensation\nYou can’t explain it — yet you know. Touch that zone, and people return to their senses. That’s the target.\n\n[Connecting art to reality | About the LOOKBOOK]\nSometimes my works become clothing. Simple reason: I don’t want art trapped on a wall.\nWhen art ends at viewing, it becomes someone else’s story.\nWhen it becomes wearable, it becomes experience — color soaking into reality through your body.\nI also build another world: Transcend Color Digital Apparel (TCDA).\nThe principle is: “Wear art. Release sensibility.” The LOOKBOOK is the bridge.\n\n[Practice | Color fidelity and honesty]\nMy top priority is color accuracy. If the color shifts, the meaning shifts.\nAnd one more thing: I hate pretense.\nI won’t hide behind “nice-sounding words” or inflated stories.\nI’ll let the work prove whether it reaches you.",
+  "es": "El color llega antes que las palabras.\nSAIREN COLOR ARCHIVE es un archivo de arte digital que registra las obras y el recorrido creativo de Sairen Takashima.\n\nNo dejo que el color se quede en “bonito” o “con estilo”.\nEl color es emoción, huella, temperatura de la conciencia.\nAlgo que impacta antes de que el lenguaje alcance a explicarlo. Ahí apunto.\n\nEste lugar no es solo una galería para ordenar imágenes.\nEstá diseñado como una entrada para recuperar la sensibilidad: para que quien mira pueda recoger dentro de sí lo que aún no puede poner en palabras.\n\n[Sobre mí]\nSairen (Sairen Takashima).\nSoy una creadora orientada a la autorrealización, una pensadora y una constructora de marca.\nMi proceso no nace del ánimo; nace de preguntas:\n• ¿Es verdad?\n• ¿Cuál es la esencia?\n• ¿Qué es lo que “llega” inevitablemente?\n• ¿Por qué ese color?\n• ¿Por qué ese silencio (ese espacio)?\nQuiero que la obra exista antes que la explicación.\nPero en cuanto existe, no quiero que se escape hacia “solo una vibra”.\nPor eso, incluso siendo abstracta, la cierro con estructura.\n\n[Lo que quiere hacer SAIREN COLOR ARCHIVE]\nEste sitio no busca efectos llamativos.\nBusca quitar ruido y hacer que llegues directo a la obra.\nDetesto que se acumulen textos innecesarios, caminos duplicados y adornos con poco sentido.\nNo quiero mostrar “trucos”, quiero mostrar llegada.\nPor eso la experiencia se concentra en esto:\n• WORKS: obras (toca para ampliar)\n• LOOKBOOK: moda nacida de las obras\n• SOCIAL: el “ahora” de la creación, actualizaciones y cambios\n• CONTACT: encargos y consultas\nSin perderse. Sin dispersarse. Llegar a la obra.\nEsa es la filosofía de diseño de SAIREN COLOR ARCHIVE.\n\n[El núcleo | Qué hace mi arte]\nMi trabajo es abstracto, pero no como salida hacia lo ambiguo.\nEs abstracción para hacer visible la emoción.\n1) Capas emocionales\nLa emoción humana no es un solo color. Por eso superpongo: claridad y turbidez, dolor y recuperación, conviviendo.\n2) Respiración: espacio y densidad\nLa densidad sube el pulso. El vacío devuelve el aire. Decido la composición para provocar una reacción física.\n3) Necesidad que parece aleatoria\nMe gusta lo “random”, pero no lo descuidado. Puede parecer casual y, aun así, mantener el rumbo firme. Controlar esa contradicción es mi estructura.\n4) Sensación previa a las palabras\nNo puedes explicarlo, pero lo entiendes. Al tocar esa zona, uno vuelve a sus sentidos. Ese es el objetivo.\n\n[Conectar el arte con la realidad | LOOKBOOK]\nA veces mis obras se convierten en ropa. La razón es simple: no quiero encerrar el arte en una pared.\nSi el arte termina en contemplación, se vuelve “cosa de otros”.\nSi se vuelve vestible, se vuelve experiencia: el color entra en la realidad a través del cuerpo.\nTambién construyo otro mundo: Transcend Color Digital Apparel (TCDA).\nEl principio es: “Vestir arte, liberar la sensibilidad”. El LOOKBOOK es ese puente.\n\n[Postura | Fidelidad del color y honestidad]\nMi prioridad absoluta es la precisión del color: si el color se desplaza, el significado se desplaza.\nY otra cosa: detesto la apariencia y el engaño.\nNo quiero esconderme tras “palabras bonitas” o historias infladas.\nDejo que la obra demuestre si te alcanza.",
+  "fr": "La couleur arrive avant les mots.\nSAIREN COLOR ARCHIVE est une archive d’art numérique qui consigne les œuvres et le parcours de création de Sairen Takashima.\n\nJe ne laisse pas la couleur se terminer sur « joli » ou « stylé ».\nLa couleur est une émotion, une trace, la température de la conscience.\nQuelque chose qui frappe avant que le langage ne suive. C’est ce que je vise.\n\nCe lieu n’est pas une simple galerie qui aligne des images.\nIl est conçu comme une entrée pour retrouver ses sens — afin que chacun puisse récupérer en soi des sensations encore sans mots.\n\n[À propos de moi]\nSairen (Sairen Takashima).\nJe suis une créatrice tournée vers l’accomplissement de soi, une penseuse et une bâtisseuse de marque.\nMon travail ne part pas d’une humeur, mais de questions :\n• Est-ce vrai ?\n• Quelle est l’essence ?\n• Qu’est-ce qui « atteint » malgré soi ?\n• Pourquoi cette couleur ?\n• Pourquoi ce silence (cet espace) ?\nJe veux que l’œuvre tienne avant l’explication.\nMais dès qu’elle tient, je refuse qu’elle se réfugie dans « juste une ambiance ».\nAlors, même dans l’abstraction, je la verrouille par la structure.\n\n[Ce que veut faire SAIREN COLOR ARCHIVE]\nCe site ne cherche pas l’effet spectaculaire.\nIl cherche à retirer le bruit et à vous faire atteindre l’œuvre, directement.\nJe déteste les textes inutiles, les chemins en double, les ornements qui diluent le sens.\nCe que je veux montrer, ce n’est pas une ruse : c’est l’arrivée.\nL’expérience est donc volontairement concentrée :\n• WORKS : les œuvres (toucher pour agrandir)\n• LOOKBOOK : une mode née des œuvres\n• SOCIAL : le présent de la création, des mises à jour, des changements\n• CONTACT : commandes & demandes\nNe pas perdre. Ne pas disperser. Faire arriver à l’œuvre.\nC’est la philosophie de conception de SAIREN COLOR ARCHIVE.\n\n[Le noyau | Ce que fait mon art]\nMon travail est abstrait — pas comme échappatoire à l’ambiguïté, mais pour rendre l’émotion visible.\n1) Construire des strates émotionnelles\nLes émotions ne sont pas monochromes. Je superpose : trouble et transparence, douleur et guérison, ensemble.\n2) Dessiner la respiration par le vide et la densité\nLa densité accélère le rythme. Le vide rend le souffle. La composition vise une réaction corporelle.\n3) Créer une nécessité qui ressemble au hasard\nJ’aime le « random », mais pas le négligé. Cela peut sembler accidentel tout en restant fermement orienté. Ce contrôle du paradoxe est mon ossature.\n4) Réveiller des sensations avant les mots\nOn ne peut pas l’expliquer, et pourtant on sait. Toucher cette zone ramène aux sens. C’est la cible.\n\n[Relier l’art au réel | À propos du LOOKBOOK]\nParfois, mes œuvres deviennent des vêtements. La raison est simple : je ne veux pas enfermer l’art sur un mur.\nQuand l’art s’arrête au regard, il devient facilement « l’histoire des autres ».\nQuand il devient portable, il devient expérience : la couleur s’insinue dans le réel par le corps.\nJe construis aussi un autre monde : Transcend Color Digital Apparel (TCDA).\nLe principe : « Porter l’art, libérer la sensibilité ». Le LOOKBOOK est le point de jonction.\n\n[Posture | Fidélité des couleurs et sincérité]\nMa priorité absolue : l’exactitude des couleurs. Si la couleur dérive, le sens dérive.\nEt une chose encore : je déteste l’apparence et la tromperie.\nJe ne veux pas masquer par des « beaux mots » ou des récits gonflés.\nJe laisse l’œuvre prouver si elle vous atteint.",
+  "ko": "색은 말보다 먼저 닿는다.\nSAIREN COLOR ARCHIVE는 나, 사이렌(Sairen Takashima)의 작품과 제작의 궤적을 기록하는 디지털 아트 아카이브입니다.\n\n나는 색을 ‘예쁨’이나 ‘멋’으로 끝내지 않습니다.\n색은 감정이고, 흔적이며, 의식의 온도입니다.\n말이 따라잡기 전에 먼저 꽂혀 버리는 것. 그 지점을 겨냥해 만듭니다.\n\n여기는 작품을 나열하는 갤러리만이 아닙니다.\n감각을 되찾기 위한 ‘입구’로 설계했습니다.\n보는 사람이 자신의 안에 있는, 아직 언어화되지 않은 감각을 회수할 수 있도록.\n\n[나에 대해]\n사이렌(Sairen).\n나는 자기실현형 크리에이터이자 사상가, 그리고 브랜드 창조자입니다.\n내 제작은 기분이 아니라 ‘질문’에서 시작합니다.\n• 그것은 সত্য인가?\n• 본질은 무엇인가?\n• 무엇이 ‘닿아 버리는가’?\n• 왜 그 색인가?\n• 왜 그 여백인가?\n작품은 설명보다 먼저 성립하길 바랍니다.\n하지만 성립한 순간 ‘그냥 분위기’로 도망치고 싶지 않습니다.\n그래서 나는 추상이어도 구조로 조입니다.\n\n[SAIREN COLOR ARCHIVE가 하고 싶은 것]\n이 사이트가 원하는 건 화려한 연출이 아닙니다.\n불필요한 노이즈를 덜어내고, 작품에 곧바로 도달하게 하는 것.\n보여줄 필요 없는 문구, 중복된 동선, 의미가 옅은 장식이 쉽게 늘어나는 걸 싫어합니다.\n보여주고 싶은 건 ‘속임수’가 아니라 ‘도달’이니까.\n그래서 여기서는 기본적으로 다음 경험만 강하게 만듭니다.\n• WORKS: 작품 목록(탭하여 확대)\n• LOOKBOOK: 작품에서 태어난 패션 세계\n• SOCIAL: 제작/업데이트/변화의 ‘현재 위치’\n• CONTACT: 의뢰 및 상담 창구\n헤매게 하지 않는다. 흩뜨리지 않는다. 작품에 도착하게 한다.\n그것이 SAIREN COLOR ARCHIVE의 설계 철학입니다.\n\n[작품의 핵 | 내 아트가 하는 일]\n내 작품은 추상 표현입니다.\n하지만 모호함으로 도망치는 추상이 아니라, 감정을 가시화하기 위한 추상입니다.\n1) 감정의 층을 ‘레이어’로 만든다\n감정은 단색이 아니다. 그래서 색을 겹친다. 탁함도 투명함도, 아픔도 회복도 함께 둔다.\n2) 호흡을 ‘여백과 밀도’로 설계한다\n밀도가 높은 곳은 심박을 올리고, 여백은 호흡을 되돌린다. 작품 안에 ‘신체 반응’을 일으키기 위해 배치를 정한다.\n3) 랜덤처럼 보이는 필연을 만든다\n‘랜덤’을 좋아한다. 하지만 ‘대충’이 아니다. 우연처럼 보이게 하면서 전체 방향은 단단히 조인다. 이 모순을 제어하는 것이 내 골격이다.\n4) 언어화 이전의 감각을 깨운다\n설명할 수 없는데도 알아버리는 영역. 거기를 건드리면 사람은 감각으로 돌아온다. 나는 그 지점을 노린다.\n\n[아트를 ‘현실’에 연결하기 | LOOKBOOK]\n내 작품은 때때로 옷이 됩니다. 이유는 단순합니다. 아트를 벽에 가두고 싶지 않아서.\n아트가 감상에서 끝나면 ‘남의 일’이 되기 쉽습니다.\n하지만 입을 수 있는 형태로 바꾸면 아트는 ‘경험’이 됩니다.\n몸을 통해 색이 현실에 스며듭니다.\n또 하나의 세계로 Transcend Color Digital Apparel(TCDA)라는 사상과 제작이 있습니다.\n이념은 “아트를 입고, 감성을 해방한다.” LOOKBOOK은 그 접속면입니다.\n\n[제작 태도 | 색 정확도와 성실함]\n내 제작의 최우선은 색의 정확함입니다. 색이 틀어지면 의미가 틀어집니다.\n그리고 하나 더. 나는 겉치레와 기만을 싫어합니다.\n‘그럴듯한 말’이나 과장된 스토리로 포장하고 싶지 않습니다.\n작품이 닿는가, 그걸로 승부합니다.",
+  "zh-hans": "色彩先于语言抵达。\nSAIREN COLOR ARCHIVE 是记录我——彩莲（Sairen Takashima）——作品与创作轨迹的数字艺术档案。\n\n我不会把色彩停留在“好看”或“时髦”。\n色彩是情绪，是痕迹，是意识的温度。\n是语言还来不及追上就先刺入的东西——我就瞄准那里创作。\n\n这里不只是把作品排开的画廊。\n它被设计为“找回感觉的入口”，让观看的人能把自己内在那些尚未被语言化的感受重新捡回来。\n\n【关于我】\n彩莲（Sairen）。\n我是自我实现型的创作者、思想者，也是品牌的创造者。\n我的创作不是从心情出发，而是从问题出发：\n• 这是真的吗？\n• 本质是什么？\n• 什么会“直接抵达”？\n• 为什么是这个颜色？\n• 为什么是这样的留白？\n我希望作品先于解释而成立。\n但作品一旦成立，我也拒绝它逃进“只是氛围”。\n所以我在抽象之中，用结构把它收紧。\n\n【SAIREN COLOR ARCHIVE 想做什么】\n这个网站并不追求花哨的演出。\n它要做的是剔除噪音，让你直达作品。\n我讨厌无须展示的文字、重复的动线、稀释意义的装饰不断增加。\n我想呈现的不是“糊弄”，而是“抵达”。\n因此，这里会把体验集中在四件事上：\n• WORKS：作品一览（点击放大）\n• LOOKBOOK：由作品延展的时尚世界\n• SOCIAL：创作/更新/变化的“当前坐标”\n• CONTACT：委托与咨询窗口\n不让人迷路，不让人分散，让你到达作品。\n这就是 SAIREN COLOR ARCHIVE 的设计思想。\n\n【作品的核心｜我的艺术在做什么】\n我的作品是抽象表达。\n但这不是把抽象当作逃向含糊的退路，而是用抽象把情绪可视化。\n1) 用“层”来构建情绪\n人的情绪不是单一颜色，所以我叠加色彩：浑浊与透明、疼痛与修复，让它们共存。\n2) 用“留白与密度”设计呼吸\n高密度会抬高心跳；留白会把呼吸带回来。我用布局在作品里触发“身体反应”。\n3) 做出看似随机的必然\n我喜欢“随机”，但不是“随便”。看起来像偶然，整体方向却被收紧。控制这组矛盾，是我作品的骨架。\n4) 唤醒语言之前的感觉\n说不清，却会懂。触到那一区域，人会回到自己的感觉里。我就瞄准那里。\n\n【把艺术接到现实｜关于 LOOKBOOK】\n我的作品有时会变成衣服。原因很简单：我不想把艺术关在墙上。\n艺术如果止于观看，很容易变成“与我无关”。\n但当它变得可穿戴，艺术就成了“体验”——色彩通过身体渗入现实。\n我也在构建另一个世界：Transcend Color Digital Apparel（TCDA）。\n理念是“穿上艺术，解放感性”。LOOKBOOK 就是那条连接面。\n\n【创作态度｜色彩准确与诚实】\n我创作的第一优先是色彩的准确性。色一偏，意义就偏。\n还有一点：我讨厌伪装与欺瞒。\n我不想用“看起来很像那么回事”的话或夸张的故事来糊弄。\n作品能不能抵达你——我只用这一点来证明。"
+},
+    "page.sns.title": {
+      "ja": "SNS",
+      "en": "SOCIAL",
+      "es": "REDES",
+      "fr": "RÉSEAUX",
+      "ko": "SNS",
+      "zh-hans": "社交媒体"
+    },
+    "page.sns.body": {
+      "ja": "アイコンをタップすると各アカウントへ移動します（リンク文字は表示しません）。",
+      "en": "Tap an icon to open the account (no text links).",
+      "es": "Toca un icono para abrir la cuenta (sin enlaces de texto).",
+      "fr": "Touchez une icône pour ouvrir le compte (sans liens texte).",
+      "ko": "아이콘을 탭하면 계정으로 이동합니다(텍스트 링크 없음).",
+      "zh-hans": "点击图标打开账号（不显示文字链接）。"
+    },
+    "page.contact.title": {
+      "ja": "CONTACT",
+      "en": "CONTACT",
+      "es": "CONTACTO",
+      "fr": "CONTACT",
+      "ko": "CONTACT",
+      "zh-hans": "联系"
+    },
+    "page.contact.body": {
+      "ja": "依頼・コラボレーション・掲載のご相談はこちらへ。",
+      "en": "For commissions, collaborations, or media features, contact here.",
+      "es": "Para encargos, colaboraciones o prensa, contáctame aquí.",
+      "fr": "Pour commandes, collaborations ou demandes presse, contactez-moi ici.",
+      "ko": "의뢰/협업/게재 문의는 여기로.",
+      "zh-hans": "委托、合作或媒体刊登咨询请在此联系。"
+    },
+    "page.works.title": {
+      "ja": "WORKS",
+      "en": "WORKS",
+      "es": "OBRAS",
+      "fr": "ŒUVRES",
+      "ko": "WORKS",
+      "zh-hans": "作品"
+    },
+    "page.works.body": {
+      "ja": "画像をタップすると、Color（raw）↔︎ Formed（main）が切り替わります。もう一度タップで戻ります。",
+      "en": "Tap an image to toggle Color (raw) ↔ Formed (main). Tap again to switch back.",
+      "es": "Toca una imagen para alternar Color (raw) ↔ Formed (main). Toca otra vez para volver.",
+      "fr": "Touchez une image pour basculer Color (raw) ↔ Formed (main). Touchez à nouveau pour revenir.",
+      "ko": "이미지를 탭하면 Color(raw) ↔ Formed(main)로 전환됩니다. 다시 탭하면 되돌아갑니다.",
+      "zh-hans": "点击图片可在 Color（raw）↔ Formed（main）之间切换；再次点击可切回。"
+    },
+    "page.lookbook.title": {
+      "ja": "LOOKBOOK",
+      "en": "LOOKBOOK",
+      "es": "LOOKBOOK",
+      "fr": "LOOKBOOK",
+      "ko": "LOOKBOOK",
+      "zh-hans": "造型集"
+    },
+    "page.lookbook.body": {
+      "ja": "ここにLOOKBOOKを配置します（画像・説明を追加）。",
+      "en": "Place the LOOKBOOK here (add images & captions).",
+      "es": "Coloca aquí el LOOKBOOK (añade imágenes y textos).",
+      "fr": "Placez le LOOKBOOK ici (ajoutez images & légendes).",
+      "ko": "여기에 LOOKBOOK을 배치하세요(이미지/설명 추가).",
+      "zh-hans": "在这里放置 LOOKBOOK（添加图片与说明）。"
+    },
+    "page.license.title": {
+      "ja": "ライセンス",
+      "en": "License",
+      "es": "Licencia",
+      "fr": "Licence",
+      "ko": "License",
+      "zh-hans": "许可"
+    },
+    "page.license.body": {
+      "ja": "本サイト内の画像・文章・デザインの無断転載、二次配布、再利用を禁じます。引用は出典を明記し、必要最小限に限ります。",
+      "en": "Unauthorized reproduction, redistribution, or reuse of images/text/design is prohibited. Quotation is permitted only with clear attribution and minimal extent.",
+      "es": "Se prohíbe la reproducción, redistribución o reutilización sin permiso. Las citas requieren atribución clara y uso mínimo.",
+      "fr": "Toute reproduction, redistribution ou réutilisation sans autorisation est interdite. La citation est permise avec attribution claire et usage minimal.",
+      "ko": "무단 복제/재배포/재사용을 금지합니다. 인용은 출처 명시 및 최소 범위로 제한됩니다.",
+      "zh-hans": "禁止未经许可的转载、二次发布与再利用。引用需注明出处且限于必要最小范围。"
+    },
+    "footer.copyright": {
+      "ja": "© 2025 SAIREN COLOR ARCHIVE",
+      "en": "© 2025 SAIREN COLOR ARCHIVE",
+      "es": "© 2025 SAIREN COLOR ARCHIVE",
+      "fr": "© 2025 SAIREN COLOR ARCHIVE",
+      "ko": "© 2025 SAIREN COLOR ARCHIVE",
+      "zh-hans": "© 2025 SAIREN COLOR ARCHIVE"
+    },
+    "footer.license": {
+      "ja": "ライセンス",
+      "en": "License",
+      "es": "Licencia",
+      "fr": "Licence",
+      "ko": "License",
+      "zh-hans": "许可"
+    },
+    "lang.label": {
+      "ja": "言語",
+      "en": "Language",
+      "es": "Idioma",
+      "fr": "Langue",
+      "ko": "언어",
+      "zh-hans": "语言"
+    },
+    "home.works.desc": {
+      "ja": "作品一覧（タップで切り替え）",
+      "en": "Works (tap to toggle)",
+      "es": "Obras (toca para alternar)",
+      "fr": "Œuvres (toucher pour basculer)",
+      "ko": "작품(탭하여 전환)",
+      "zh-hans": "作品（点击切换）"
+    }
   }
 }
