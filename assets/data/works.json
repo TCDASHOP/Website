@@ -1,0 +1,18 @@
+{
+  "works": [
+    {
+      "id": "artifact-01",
+      "title": "WORK 01",
+      "raw": "/assets/images/works/color/artifact-01-raw.webp",
+      "main": "/assets/images/works/formed/artifact-01-main.webp",
+      "alt": "ARTIFACT 01"
+    },
+    {
+      "id": "artifact-02",
+      "title": "WORK 02",
+      "raw": "/assets/images/works/color/artifact-02-raw.webp",
+      "main": "/assets/images/works/formed/artifact-02-main.webp",
+      "alt": "ARTIFACT 02"
+    }
+  ]
+}

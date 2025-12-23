@@ -1,0 +1,19 @@
+{
+  "defaults": {
+    "lang": "ja"
+  },
+  "site": {
+    "name": "SAIREN COLOR ARCHIVE",
+    "taglineKey": "tagline"
+  },
+  "lookbook": {
+    "externalUrl": "https://look.sairencolorarchive.com/"
+  },
+  "contact": {
+    "email": "info@sairencolorarchive.com"
+  },
+  "sns": {
+    "instagramUrl": "https://instagram.com/REPLACE_ME",
+    "tiktokUrl": "https://tiktok.com/@REPLACE_ME"
+  }
+}

@@ -1,0 +1,130 @@
+{
+  "siteName": {
+    "ja": "SAIREN COLOR ARCHIVE",
+    "en": "SAIREN COLOR ARCHIVE",
+    "es": "SAIREN COLOR ARCHIVE",
+    "fr": "SAIREN COLOR ARCHIVE",
+    "ko": "SAIREN COLOR ARCHIVE",
+    "zh-hans": "SAIREN COLOR ARCHIVE"
+  },
+  "tagline": {
+    "ja": "色彩は、言葉より先に届く。",
+    "en": "Color arrives before words.",
+    "es": "El color llega antes que las palabras.",
+    "fr": "La couleur arrive avant les mots.",
+    "ko": "색채는 말보다 먼저 닿는다.",
+    "zh-hans": "色彩先于语言抵达。"
+  },
+  "nav.home": {
+    "ja": "HOME",
+    "en": "HOME",
+    "es": "INICIO",
+    "fr": "ACCUEIL",
+    "ko": "HOME",
+    "zh-hans": "首页"
+  },
+  "nav.about": {
+    "ja": "ABOUT",
+    "en": "ABOUT",
+    "es": "ACERCA",
+    "fr": "À PROPOS",
+    "ko": "ABOUT",
+    "zh-hans": "关于"
+  },
+  "nav.works": {
+    "ja": "WORKS",
+    "en": "WORKS",
+    "es": "OBRAS",
+    "fr": "ŒUVRES",
+    "ko": "WORKS",
+    "zh-hans": "作品"
+  },
+  "nav.lookbook": {
+    "ja": "LOOKBOOK",
+    "en": "LOOKBOOK",
+    "es": "LOOKBOOK",
+    "fr": "LOOKBOOK",
+    "ko": "LOOKBOOK",
+    "zh-hans": "画册"
+  },
+  "nav.sns": {
+    "ja": "SNS",
+    "en": "SOCIAL",
+    "es": "REDES",
+    "fr": "RÉSEAUX",
+    "ko": "SNS",
+    "zh-hans": "社交"
+  },
+  "nav.contact": {
+    "ja": "CONTACT",
+    "en": "CONTACT",
+    "es": "CONTACTO",
+    "fr": "CONTACT",
+    "ko": "CONTACT",
+    "zh-hans": "联系"
+  },
+  "nav.license": {
+    "ja": "LICENSE",
+    "en": "LICENSE",
+    "es": "LICENCIA",
+    "fr": "LICENCE",
+    "ko": "LICENSE",
+    "zh-hans": "许可"
+  },
+  "page.about.title": {
+    "ja": "自己紹介",
+    "en": "About",
+    "es": "Acerca de",
+    "fr": "À propos",
+    "ko": "소개",
+    "zh-hans": "关于"
+  },
+  "page.works.title": {
+    "ja": "作品",
+    "en": "Works",
+    "es": "Obras",
+    "fr": "Œuvres",
+    "ko": "작품",
+    "zh-hans": "作品"
+  },
+  "page.lookbook.title": {
+    "ja": "LOOKBOOK",
+    "en": "Lookbook",
+    "es": "Lookbook",
+    "fr": "Lookbook",
+    "ko": "룩북",
+    "zh-hans": "画册"
+  },
+  "page.sns.title": {
+    "ja": "SNS",
+    "en": "Social",
+    "es": "Redes",
+    "fr": "Réseaux",
+    "ko": "SNS",
+    "zh-hans": "社交"
+  },
+  "page.contact.title": {
+    "ja": "お問い合わせ",
+    "en": "Contact",
+    "es": "Contacto",
+    "fr": "Contact",
+    "ko": "문의",
+    "zh-hans": "联系"
+  },
+  "page.license.title": {
+    "ja": "ライセンス",
+    "en": "License",
+    "es": "Licencia",
+    "fr": "Licence",
+    "ko": "라이선스",
+    "zh-hans": "许可"
+  },
+  "ui.openLookbook": {
+    "ja": "外部LOOKBOOKを開く",
+    "en": "Open external Lookbook",
+    "es": "Abrir Lookbook externo",
+    "fr": "Ouvrir le Lookbook externe",
+    "ko": "외부 룩북 열기",
+    "zh-hans": "打开外部画册"
+  }
+}
