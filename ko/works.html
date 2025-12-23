@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>SAIREN COLOR ARCHIVE</title>
+  <link rel="stylesheet" href="/assets/css/site.css" />
+</head>
+<body>
+  <div class="wrap">
+    <header class="siteHeader">
+      <div class="brand">
+        <div class="brandMark" aria-hidden="true"></div>
+        <div>
+          <div class="brandTitle">SAIREN COLOR ARCHIVE</div>
+          <div class="brandSub">Digital Art Archive</div>
+        </div>
+      </div>
+
+      <nav class="nav" aria-label="Primary">
+        <a class="navLink" data-nav="home" href="./index.html" data-i18n="nav.home">HOME</a>
+        <a class="navLink" data-nav="about" href="./about.html" data-i18n="nav.about">ABOUT</a>
+        <a class="navLink" data-nav="sns" href="./sns.html" data-i18n="nav.sns">SNS</a>
+        <a class="navLink" data-nav="contact" href="./contact.html" data-i18n="nav.contact">CONTACT</a>
+      </nav>
+
+      <div class="tools">
+        <div class="langWrap" aria-label="Language">
+          <span class="langLabel" data-i18n="lang.label">Language</span>
+          <select id="langSelect" class="langSelect">
+            <option value="ja">JA</option>
+            <option value="en">EN</option>
+            <option value="es">ES</option>
+            <option value="fr">FR</option>
+            <option value="ko">KO</option>
+            <option value="zh-hans">中文</option>
+          </select>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    <section class="card section">
+          <div class="pageHead">
+            <h2 class="pageTitle" data-i18n="page.title">WORKS</h2>
+            <p class="pageBody" data-i18n="page.body">Tap an image to enlarge.</p>
+            <div id="gallery" class="gallery" aria-label="Works gallery"></div>
+          </div>
+        </section>
+
+        <div id="modal" class="modal" role="dialog" aria-modal="true" aria-label="Image viewer">
+          <div class="modalCard">
+            <div class="modalTop">
+              <div id="modalTitle" class="modalTitle">WORK</div>
+              <button id="modalClose" class="modalClose" type="button">Close</button>
+            </div>
+            <img id="modalImg" class="modalImg" src="" alt="">
+          </div>
+        </div>
+
+    <footer class="footer">
+      <small data-i18n="footer.copyright">© 2025 SAIREN COLOR ARCHIVE</small>
+      <a class="footerLink" href="./license.html" data-i18n="footer.license">License</a>
+    </footer>
+  </div>
+
+  <script>
+    try {
+      const lang = (location.pathname.split("/").filter(Boolean)[0]) || "ja";
+      localStorage.setItem("sca_lang", lang);
+    } catch(e) {}
+  </script>
+  <script src="/assets/js/site.js" defer></script>
+</body>
+</html>
