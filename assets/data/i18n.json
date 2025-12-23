@@ -1,0 +1,226 @@
+{
+  "siteName": {
+    "ja": "SAIREN COLOR ARCHIVE",
+    "en": "SAIREN COLOR ARCHIVE",
+    "es": "SAIREN COLOR ARCHIVE",
+    "fr": "SAIREN COLOR ARCHIVE",
+    "ko": "SAIREN COLOR ARCHIVE",
+    "zh-hans": "SAIREN COLOR ARCHIVE"
+  },
+  "siteSub": {
+    "ja": "Digital Art Archive",
+    "en": "Digital Art Archive",
+    "es": "Archivo de Arte Digital",
+    "fr": "Archive d’Art Numérique",
+    "ko": "디지털 아트 아카이브",
+    "zh-hans": "数字艺术档案"
+  },
+  "nav.home": {
+    "ja": "HOME",
+    "en": "HOME",
+    "es": "INICIO",
+    "fr": "ACCUEIL",
+    "ko": "HOME",
+    "zh-hans": "首页"
+  },
+  "nav.about": {
+    "ja": "ABOUT",
+    "en": "ABOUT",
+    "es": "ACERCA",
+    "fr": "À PROPOS",
+    "ko": "ABOUT",
+    "zh-hans": "关于"
+  },
+  "nav.sns": {
+    "ja": "SNS",
+    "en": "SNS",
+    "es": "REDES",
+    "fr": "RÉSEAUX",
+    "ko": "SNS",
+    "zh-hans": "社交"
+  },
+  "nav.contact": {
+    "ja": "CONTACT",
+    "en": "CONTACT",
+    "es": "CONTACTO",
+    "fr": "CONTACT",
+    "ko": "CONTACT",
+    "zh-hans": "联系"
+  },
+  "hero.title": {
+    "ja": "色は、言葉より先に届く。",
+    "en": "Color arrives before words.",
+    "es": "El color llega antes que las palabras.",
+    "fr": "La couleur arrive avant les mots.",
+    "ko": "색은, 말보다 먼저 닿는다.",
+    "zh-hans": "色彩先于语言抵达。"
+  },
+  "hero.lead": {
+    "ja": "SAIREN COLOR ARCHIVEは、デジタルアートを「作品」として残し、静かに、しかし強く提示するアーカイブです。",
+    "en": "SAIREN COLOR ARCHIVE is an archive that preserves digital artworks as “works” — quiet, yet unmistakably present.",
+    "es": "SAIREN COLOR ARCHIVE preserva obras digitales como “piezas” — silenciosas, pero intensas.",
+    "fr": "SAIREN COLOR ARCHIVE conserve des œuvres numériques — discrètes, mais puissantes.",
+    "ko": "SAIREN COLOR ARCHIVE는 디지털 아트를 “작품”으로 남기고, 고요하지만 강하게 제시하는 아카이브입니다.",
+    "zh-hans": "SAIREN COLOR ARCHIVE 将数字艺术作为“作品”保存——安静，却有力量。"
+  },
+  "home.tile.works.title": {
+    "ja": "WORKS",
+    "en": "WORKS",
+    "es": "OBRAS",
+    "fr": "ŒUVRES",
+    "ko": "WORKS",
+    "zh-hans": "作品"
+  },
+  "home.tile.works.desc": {
+    "ja": "作品一覧（タップで拡大）",
+    "en": "Gallery (tap to enlarge)",
+    "es": "Galería (toca para ampliar)",
+    "fr": "Galerie (toucher pour agrandir)",
+    "ko": "갤러리(탭하여 확대)",
+    "zh-hans": "画廊（点击放大）"
+  },
+  "home.tile.lookbook.title": {
+    "ja": "LOOKBOOK",
+    "en": "LOOKBOOK",
+    "es": "LOOKBOOK",
+    "fr": "LOOKBOOK",
+    "ko": "LOOKBOOK",
+    "zh-hans": "造型集"
+  },
+  "home.tile.lookbook.desc": {
+    "ja": "作品から生まれたファッションの世界",
+    "en": "A fashion world born from the works",
+    "es": "Moda nacida de las obras",
+    "fr": "Une mode née des œuvres",
+    "ko": "작품에서 태어난 패션 세계",
+    "zh-hans": "由作品延展的时尚世界"
+  },
+  "page.about.title": {
+    "ja": "ABOUT",
+    "en": "ABOUT",
+    "es": "ACERCA",
+    "fr": "À PROPOS",
+    "ko": "ABOUT",
+    "zh-hans": "关于"
+  },
+  "page.about.body": {
+    "ja": "色彩は、言葉より先に届く。\nSAIREN COLOR ARCHIVE は、私・彩蓮（Sairen Takashima）の作品と制作の軌跡を記録するアーカイブです。\n\n私は、色を「きれい」や「オシャレ」で終わらせません。\n色は感情であり、痕跡であり、意識の温度です。\n言葉が追いつく前に、先に刺さってしまうもの。そこを狙って作っています。\n\nこの場所は、作品を並べるだけのギャラリーではなく、“感覚を取り戻すための入口”として設計しています。\n見る人が、自分の内側にある「まだ言語化されていない感覚」を回収できるように。\n\n私について\n彩蓮（Sairen）。\n私は自己実現型のクリエイターであり、思想家であり、ブランド創造者です。\n\n私の制作は、気分ではなく、問いから始まります。\n・それは本当か？\n・本質は何か？\n・何が“届いてしまう”のか？\n・なぜ、その色なのか？\n・なぜ、その余白なのか？\n\n作品は、説明より先に成立してほしい。\nけれど、成立した瞬間に“ただの雰囲気”に逃げたくない。\nだから私は、抽象でありながら、構造で締めます。\n\nSAIREN COLOR ARCHIVE がやりたいこと\nこのサイトがやりたいのは、派手な演出ではありません。\n余計なノイズを削って、作品にまっすぐ到達させること。\n\n私は、見せなくていい文言や、重複した導線や、意味の薄い装飾が簡単に増えるのを嫌います。\n見せたいのは「誤魔化し」ではなく「到達」だから。\n\nだからここでは、基本的に次の体験だけを強くします。\n・WORKS：作品一覧（タップで拡大）\n・LOOKBOOK：作品から生まれたファッションの世界\n・SNS：制作・更新・変化の“現在地”\n・CONTACT：依頼・相談窓口\n\n迷わせない。散らさない。作品に辿り着かせる。\nそれが、SAIREN COLOR ARCHIVE の設計思想です。\n\n作品の核｜私のアートは何をしているか\n私の作品は、抽象表現です。\nしかし、曖昧さの逃げ道としての抽象ではなく、感情を可視化するための抽象です。\n\n1 感情の層を「レイヤー」で作る\n人の感情は単色じゃない。だから、色を重ねます。濁りも、透明も、痛みも、回復も、同居させます。\n\n2 呼吸を「余白と密度」で設計する\n密度が高い場所は心拍を上げる。余白は、呼吸を戻す。作品の中に“身体反応”を起こすために、配置を決めています。\n\n3 ランダムに見える必然を作る\n「ランダム」は好きです。ただし“適当”とは違う。偶然っぽく見せながら、全体の方向性は締める。この矛盾の制御が、私の作品の骨格です。\n\n4 言語化前の感覚を呼び起こす\n説明できないのに、分かってしまう。そのゾーンに触れると、人は自分の感覚に戻ります。私はそこを狙って作っています。\n\nアートを“現実”に接続する｜LOOKBOOKについて\n私の作品は、ときどき服になります。理由は単純です。アートを壁に閉じ込めたくないから。\n\nアートは、鑑賞で終わると「他人事」になりやすい。\nでも、身につけられる形に変換すると、アートは「体験」になります。\n自分の身体を通して、色が現実に染み込む。\n\n私のもう一つの世界として、Transcend Color Digital Apparel（TCDA）という思想と制作があります。\n理念は「アートを着る、感性を解放する」。\nLOOKBOOKは、その接続面です。\n\n制作姿勢｜“色忠実”と“誠実さ”\n私の制作で最優先するのは、色の正確さです。色が狂うと、意味が狂う。\nそしてもう一つ。私は見せかけや欺瞞が嫌いです。\n「それっぽい言葉」や「盛ったストーリー」で誤魔化したくない。作品が届くかどうかで勝負します。",
+    "en": "Color arrives before words.\nSAIREN COLOR ARCHIVE is an archive that records the works and the making of Sairen Takashima.\n\nI don’t let color end as “pretty” or “stylish.”\nColor is emotion, trace, and the temperature of consciousness.\nIt pierces before language can catch up — that’s what I aim for.\n\nThis place isn’t just a gallery that lines up pieces.\nIt’s designed as an entrance to reclaim sensation,\nso viewers can retrieve the feelings inside them that haven’t been put into words yet.\n\nAbout me\nSairen (Sairen Takashima).\nI’m a self-actualizing creator, a thinker, and a brand builder.\n\nMy work doesn’t start from mood — it starts from questions.\n• Is it true?\n• What’s the essence?\n• What ends up reaching people — whether they want it or not?\n• Why this color?\n• Why this whitespace?\n\nI want the work to stand before explanation.\nBut the moment it stands, I refuse to let it escape into “just vibes.”\nSo I tighten it with structure, even while staying abstract.\n\nWhat SAIREN COLOR ARCHIVE wants to do\nThis site isn’t chasing flashy effects.\nIt removes unnecessary noise so you reach the work directly.\n\nI dislike how easily nonessential copy, duplicated paths, and thin decoration multiply.\nWhat I want to show is not “misdirection,” but “arrival.”\n\nSo here, I strengthen only these experiences:\n• WORKS: gallery (tap to enlarge)\n• LOOKBOOK: a fashion world born from the works\n• SNS: the current location of making / updates / change\n• CONTACT: inquiries\n\nNo confusion. No scattering. Let you arrive at the work.\nThat’s the design philosophy of SAIREN COLOR ARCHIVE.\n\nThe core | What my art is doing\nMy work is abstract expression.\nNot abstraction as an escape route, but abstraction to make emotion visible.\n\n1) Build emotional layers with “layers”\nHuman feelings aren’t a single color. So I stack color.\nCloudiness, transparency, pain, recovery — all coexisting.\n\n2) Design breathing with whitespace and density\nDense areas raise the heartbeat. Whitespace returns the breath.\nI place elements to trigger a bodily response.\n\n3) Create inevitability that looks random\nI like “random.” But it’s not “whatever.”\nIt should look accidental while the overall direction stays tight.\nControlling that contradiction is the skeleton of my work.\n\n4) Wake up pre-verbal sensation\nYou can’t explain it, yet you understand.\nTouch that zone, and people return to their own senses.\nThat’s where I aim.\n\nConnecting art to reality | About LOOKBOOK\nSometimes my work becomes clothing. The reason is simple:\nI don’t want to lock art on a wall.\n\nIf art ends at viewing, it easily becomes “someone else’s thing.”\nBut when it transforms into something you can wear, art becomes experience.\nThrough your body, color seeps into reality.\n\nI also create under the idea and practice of Transcend Color Digital Apparel (TCDA).\nThe credo is: “Wear art, release your senses.”\nLOOKBOOK is that connection surface.\n\nMaking stance | “color fidelity” and “honesty”\nMy top priority is color accuracy. When color drifts, meaning drifts.\nAnd one more thing: I hate pretense.\nI don’t want to disguise it with “sounds-good words” or a “boosted story.”\nI’ll compete on whether the work reaches you.",
+    "es": "El color llega antes que las palabras.\nSAIREN COLOR ARCHIVE es un archivo que registra las obras y el proceso de creación de Sairen Takashima.\n\nNo dejo que el color termine como “bonito” o “a la moda”.\nEl color es emoción, huella y la temperatura de la consciencia.\nGolpea antes de que el lenguaje alcance — eso es lo que busco.\n\nEste lugar no es solo una galería que ordena obras.\nEstá diseñado como una entrada para recuperar la sensibilidad,\npara que quien mira pueda recoger dentro de sí sensaciones que aún no tienen palabras.\n\nSobre mí\nSairen (Sairen Takashima).\nSoy una creadora orientada a la autorrealización, pensadora y constructora de marca.\n\nMi trabajo no empieza por el ánimo; empieza por preguntas.\n• ¿Es verdad?\n• ¿Cuál es la esencia?\n• ¿Qué es lo que “llega” a la gente, quiera o no?\n• ¿Por qué ese color?\n• ¿Por qué ese espacio en blanco?\n\nQuiero que la obra exista antes de la explicación.\nPero en el instante en que existe, no quiero que se escape a “solo vibra”.\nPor eso, aunque sea abstracta, la cierro con estructura.\n\nLo que quiere hacer SAIREN COLOR ARCHIVE\nEste sitio no persigue efectos llamativos.\nElimina el ruido innecesario para que llegues directo a la obra.\n\nMe molesta lo fácil que crecen los textos prescindibles, las rutas duplicadas y la decoración débil.\nLo que quiero mostrar no es “disimulo”, sino “llegada”.\n\nAquí refuerzo solo estas experiencias:\n• WORKS: galería (toca para ampliar)\n• LOOKBOOK: un mundo de moda nacido de las obras\n• SNS: el “ahora” de creación / actualizaciones / cambio\n• CONTACT: consultas\n\nSin confusión. Sin dispersión. Que llegues a la obra.\nEsa es la filosofía de diseño de SAIREN COLOR ARCHIVE.\n\nEl núcleo | Qué hace mi arte\nMi trabajo es expresión abstracta.\nNo como escape de la ambigüedad, sino para hacer visible la emoción.\n\n1) Crear capas emocionales con “capas”\nLas emociones no son un solo color. Por eso superpongo color.\nTurbidez, transparencia, dolor y recuperación conviven.\n\n2) Diseñar la respiración con espacio y densidad\nLa densidad sube el pulso. El vacío devuelve el aliento.\nDecido la disposición para provocar una respuesta corporal.\n\n3) Crear una necesidad que parece aleatoria\nMe gusta lo “aleatorio”. Pero no es “da igual”.\nQue parezca casual y, aun así, la dirección general quede firme.\nControlar esa contradicción es el esqueleto de mi obra.\n\n4) Despertar la sensación antes del lenguaje\nNo puedes explicarlo, pero lo entiendes.\nAl tocar esa zona, la gente vuelve a su propia sensibilidad.\nAhí apunto.\n\nConectar el arte con la realidad | Sobre LOOKBOOK\nA veces mis obras se convierten en ropa. La razón es simple:\nno quiero encerrar el arte en una pared.\n\nSi el arte termina en la contemplación, se vuelve “cosa de otros”.\nPero si lo transformas en algo que puedes llevar, se vuelve experiencia.\nA través del cuerpo, el color se filtra en la realidad.\n\nTambién trabajo bajo la idea y práctica de Transcend Color Digital Apparel (TCDA).\nEl lema es: “Vestir arte, liberar la sensibilidad”.\nLOOKBOOK es esa superficie de conexión.\n\nPostura de creación | “fidelidad del color” y “honestidad”\nMi prioridad máxima es la precisión del color. Si el color se desvía, el sentido se desvía.\nY una cosa más: detesto la apariencia y el engaño.\nNo quiero ocultarlo con “palabras que suenan bien” ni con una “historia inflada”.\nCompito con si la obra llega o no.",
+    "fr": "La couleur arrive avant les mots.\nSAIREN COLOR ARCHIVE est une archive qui consigne les œuvres et le processus de création de Sairen Takashima.\n\nJe ne laisse pas la couleur se réduire à « joli » ou « tendance ».\nLa couleur est émotion, trace, température de la conscience.\nElle frappe avant que le langage ne rattrape — c’est ce que je vise.\n\nCe lieu n’est pas seulement une galerie qui aligne des pièces.\nIl est conçu comme une entrée pour retrouver la sensation,\nafin que chacun puisse récupérer en soi des sensations encore sans mots.\n\nÀ propos de moi\nSairen (Sairen Takashima).\nJe suis une créatrice tournée vers l’accomplissement, une penseuse, et une bâtisseuse de marque.\n\nMon travail ne part pas de l’humeur : il part de questions.\n• Est-ce vrai ?\n• Quelle est l’essence ?\n• Qu’est-ce qui « atteint » les gens, qu’ils le veuillent ou non ?\n• Pourquoi cette couleur ?\n• Pourquoi ce blanc, ce vide ?\n\nJe veux que l’œuvre tienne avant l’explication.\nMais dès qu’elle tient, je refuse qu’elle s’échappe en « simple ambiance ».\nAlors, même abstraite, je la serre par la structure.\n\nCe que veut faire SAIREN COLOR ARCHIVE\nCe site ne cherche pas l’effet spectaculaire.\nIl retire le bruit inutile pour que vous arriviez droit à l’œuvre.\n\nJe déteste la facilité avec laquelle s’accumulent les textes inutiles, les parcours doublons et les ornements faibles.\nCe que je veux montrer, ce n’est pas la « diversion », mais l’« arrivée ».\n\nIci, je renforce seulement ces expériences :\n• WORKS : galerie (toucher pour agrandir)\n• LOOKBOOK : un monde de mode né des œuvres\n• SNS : le présent de la création / des mises à jour / du changement\n• CONTACT : demandes\n\nNe pas égarer. Ne pas disperser. Faire arriver à l’œuvre.\nC’est la philosophie de conception de SAIREN COLOR ARCHIVE.\n\nLe noyau | Ce que fait mon art\nMon travail est une expression abstraite.\nPas une abstraction comme échappatoire au flou, mais pour rendre l’émotion visible.\n\n1) Créer des couches émotionnelles par « couches »\nLes émotions ne sont pas monochromes. Alors je superpose.\nOpacité, transparence, douleur, rétablissement — tout coexiste.\n\n2) Concevoir la respiration par le vide et la densité\nLa densité accélère le rythme. Le vide rend le souffle.\nJe place pour déclencher une réaction corporelle.\n\n3) Fabriquer une nécessité qui semble aléatoire\nJ’aime le « hasard ». Mais ce n’est pas « n’importe quoi ».\nCela doit paraître accidentel tout en restant dirigé.\nMaîtriser cette contradiction est l’ossature de mon travail.\n\n4) Réveiller la sensation avant le langage\nOn ne sait pas l’expliquer, et pourtant on comprend.\nEn touchant cette zone, on revient à ses propres sensations.\nC’est là que je vise.\n\nRelier l’art au réel | À propos de LOOKBOOK\nParfois, mes œuvres deviennent des vêtements. La raison est simple :\nje ne veux pas enfermer l’art sur un mur.\n\nSi l’art s’arrête au regard, il devient vite « l’affaire des autres ».\nMais quand il se transforme en quelque chose que l’on porte, il devient expérience.\nPar le corps, la couleur s’infiltre dans le réel.\n\nJe travaille aussi sous l’idée et la pratique de Transcend Color Digital Apparel (TCDA).\nLe credo : « Porter l’art, libérer la sensibilité ».\nLOOKBOOK est cette surface de connexion.\n\nPosture de création | « fidélité des couleurs » et « sincérité »\nMa priorité absolue est la justesse des couleurs. Si la couleur dérive, le sens dérive.\nEt une chose encore : je déteste la façade et la tromperie.\nJe ne veux pas masquer avec des « mots qui sonnent bien » ou une « histoire gonflée ».\nJe joue sur une seule chose : est-ce que l’œuvre atteint, ou non.",
+    "ko": "색은, 말보다 먼저 닿는다.\nSAIREN COLOR ARCHIVE는 나, 사이렌(彩蓮, Sairen Takashima)의 작품과 제작의 궤적을 기록하는 아카이브다.\n\n나는 색을 “예쁘다/멋지다”로 끝내지 않는다.\n색은 감정이고, 흔적이고, 의식의 온도다.\n언어가 따라오기 전에 먼저 찌르는 것. 나는 그 지점을 노린다.\n\n이곳은 작품을 늘어놓는 갤러리가 아니다.\n“감각을 되찾기 위한 입구”로 설계했다.\n보는 사람이 자기 안의, 아직 언어화되지 않은 감각을 회수할 수 있도록.\n\n나에 대해\n사이렌(Sairen).\n나는 자기실현형 크리에이터이자 사상가, 그리고 브랜드 창조자다.\n\n내 제작은 기분이 아니라 질문에서 시작한다.\n• 그것은 সত্য인가?\n• 본질은 무엇인가?\n• 무엇이 ‘닿아버리는가’?\n• 왜 그 색인가?\n• 왜 그 여백인가?\n\n작품은 설명보다 먼저 성립하길 바란다.\n하지만 성립한 순간 “그냥 분위기”로 도망치고 싶지 않다.\n그래서 나는 추상이면서도 구조로 조인다.\n\nSAIREN COLOR ARCHIVE가 하고 싶은 것\n이 사이트가 노리는 건 화려한 연출이 아니다.\n불필요한 노이즈를 걷어내고, 작품에 곧장 도달하게 하는 것.\n\n보여주지 않아도 되는 문구, 중복된 동선, 의미가 얇은 장식은 쉽게 늘어난다.\n나는 그걸 싫어한다. 보여주고 싶은 건 “포장”이 아니라 “도달”이기 때문이다.\n\n그래서 여기서는 기본적으로 다음 경험만 강하게 만든다.\n• WORKS: 작품 목록(탭하여 확대)\n• LOOKBOOK: 작품에서 태어난 패션의 세계\n• SNS: 제작/업데이트/변화의 ‘현재 위치’\n• CONTACT: 의뢰/상담 창구\n\n헤매게 하지 않는다. 흩뜨리지 않는다. 작품에 닿게 한다.\n그게 SAIREN COLOR ARCHIVE의 설계 철학이다.\n\n작품의 핵 | 내 아트는 무엇을 하는가\n내 작품은 추상 표현이다.\n하지만 모호함의 도피처로서의 추상이 아니라, 감정을 가시화하기 위한 추상이다.\n\n1) 감정의 층을 ‘레이어’로 만든다\n감정은 단색이 아니다. 그래서 색을 겹친다.\n탁함도, 투명함도, 아픔도, 회복도 함께 둔다.\n\n2) 호흡을 ‘여백과 밀도’로 설계한다\n밀도가 높은 곳은 심박을 올린다. 여백은 호흡을 돌려준다.\n작품 안에서 ‘신체 반응’을 일으키기 위해 배치를 결정한다.\n\n3) 랜덤처럼 보이는 필연을 만든다\n나는 ‘랜덤’을 좋아한다. 하지만 ‘대충’이 아니다.\n우연처럼 보이면서도 전체 방향은 조인다.\n이 모순을 제어하는 것이 내 작품의 골격이다.\n\n4) 언어 이전의 감각을 깨운다\n설명할 수 없는데도, 알아버린다.\n그 영역에 닿으면 사람은 자기 감각으로 돌아온다.\n나는 그 지점을 노린다.\n\n아트를 ‘현실’에 연결하기 | LOOKBOOK\n내 작품은 때때로 옷이 된다. 이유는 단순하다.\n아트를 벽에 가두고 싶지 않아서다.\n\n아트가 감상으로 끝나면 ‘남의 일’이 되기 쉽다.\n하지만 입을 수 있는 형태로 변환하면 아트는 ‘체험’이 된다.\n몸을 통해 색이 현실에 스민다.\n\n또 하나의 세계로, Transcend Color Digital Apparel(TCDA)라는 사상과 제작이 있다.\n이념은 “아트를 입고, 감각을 해방한다”.\nLOOKBOOK은 그 접속면이다.\n\n제작 자세 | ‘색 충실’과 ‘정직함’\n내 제작에서 최우선은 색의 정확성이다. 색이 흔들리면 의미가 흔들린다.\n그리고 하나 더. 나는 겉치레와 기만을 싫어한다.\n‘그럴듯한 말’이나 ‘부풀린 서사’로 속이고 싶지 않다.\n작품이 닿는가 아닌가로 승부한다.",
+    "zh-hans": "色彩先于语言抵达。\nSAIREN COLOR ARCHIVE 记录我——彩蓮（Sairen Takashima）的作品与创作轨迹。\n\n我不会让颜色止步于“好看”或“时髦”。\n颜色是情绪、痕迹，也是意识的温度。\n在语言追上之前先刺入——我瞄准的就是那里。\n\n这里不是把作品排成一列的画廊。\n它被设计为“找回感受的入口”，\n让观看的人能把自己内心里那些尚未被语言化的感觉收回来。\n\n关于我\n彩蓮（Sairen）。\n我是以自我实现为驱动的创作者、思想者，也是品牌创造者。\n\n我的创作不是从心情开始，而是从提问开始。\n• 这是真的吗？\n• 本质是什么？\n• 什么会“不可避免地抵达”人心？\n• 为什么是这个颜色？\n• 为什么是这个留白？\n\n我希望作品先于解释而成立。\n但作品一成立，我不想它逃进“只是氛围”。\n所以即便是抽象，我也用结构把它收紧。\n\nSAIREN COLOR ARCHIVE 想做什么\n这个网站追求的不是花哨的演出。\n而是删去多余噪音，让你直达作品。\n\n我讨厌那些不必展示的文案、重复的路径、意义稀薄的装饰轻易增殖。\n我想呈现的不是“掩饰”，而是“抵达”。\n\n因此，这里只强化以下体验：\n• WORKS：作品列表（点击放大）\n• LOOKBOOK：由作品延展的时尚世界\n• SNS：创作 / 更新 / 变化的“现在位置”\n• CONTACT：委托与咨询\n\n不让你迷路，不让你分散，让你抵达作品。\n这就是 SAIREN COLOR ARCHIVE 的设计思想。\n\n作品的核心｜我的艺术在做什么\n我的作品是抽象表达。\n但不是把抽象当作逃避暧昧的退路，而是用抽象把情绪可视化。\n\n1）用“层”构建情绪的层次\n情绪不是单色，所以我叠加颜色。\n浑浊、透明、疼痛、复原——让它们共存。\n\n2）用留白与密度设计呼吸\n密度高的地方抬高心跳；留白让呼吸回来。\n我通过布局在作品中触发“身体反应”。\n\n3）制造看似随机的必然\n我喜欢“随机”，但不是“随便”。\n要看起来像偶然，同时整体方向依然收紧。\n控制这种矛盾，是我作品的骨架。\n\n4）唤醒语言之前的感受\n说不清，却明白了。\n触到那个区域，人就会回到自己的感受里。\n我瞄准的就是那里。\n\n把艺术接到“现实”｜关于 LOOKBOOK\n我的作品有时会变成衣服。理由很简单：\n我不想把艺术关在墙上。\n\n艺术若止步于观看，很容易变成“别人的事”。\n但当它被转换成能穿在身上的形式，艺术就成为“体验”。\n颜色会通过身体渗入现实。\n\n我也在 Transcend Color Digital Apparel（TCDA）这一思想与制作中工作。\n理念是：“穿上艺术，释放感官”。\nLOOKBOOK 是那个连接面。\n\n创作姿态｜“色彩忠实”与“诚实”\n我创作的最高优先级是色彩的准确性。颜色偏了，意义就偏了。\n还有一点：我讨厌虚饰与欺瞒。\n我不想用“听起来很对的话”或“被夸大的故事”来糊弄。\n作品能不能抵达——就用这一点来赢。"
+  },
+  "page.sns.title": {
+    "ja": "SNS",
+    "en": "SNS",
+    "es": "REDES",
+    "fr": "RÉSEAUX",
+    "ko": "SNS",
+    "zh-hans": "社交"
+  },
+  "page.sns.body": {
+    "ja": "アイコンをタップすると各アカウントへ移動します（リンク文字は表示しません）。",
+    "en": "Tap an icon to open the account (no text links).",
+    "es": "Toca un icono para abrir la cuenta (sin enlaces de texto).",
+    "fr": "Touchez une icône pour ouvrir le compte (sans liens texte).",
+    "ko": "아이콘을 탭하면 계정으로 이동합니다(텍스트 링크 없음).",
+    "zh-hans": "点击图标打开账号（不显示文字链接）。"
+  },
+  "page.contact.title": {
+    "ja": "CONTACT",
+    "en": "CONTACT",
+    "es": "CONTACTO",
+    "fr": "CONTACT",
+    "ko": "CONTACT",
+    "zh-hans": "联系"
+  },
+  "page.contact.body": {
+    "ja": "依頼・コラボレーション・掲載のご相談はこちらへ。",
+    "en": "For commissions, collaborations, or features, contact here.",
+    "es": "Para encargos, colaboraciones o prensa, contacta aquí.",
+    "fr": "Pour commandes, collaborations ou presse, contactez ici.",
+    "ko": "의뢰/협업/게재 문의는 여기로.",
+    "zh-hans": "委托、合作、刊登咨询请联系这里。"
+  },
+  "page.works.title": {
+    "ja": "WORKS",
+    "en": "WORKS",
+    "es": "OBRAS",
+    "fr": "ŒUVRES",
+    "ko": "WORKS",
+    "zh-hans": "作品"
+  },
+  "page.works.body": {
+    "ja": "画像をタップすると拡大表示します。",
+    "en": "Tap an image to enlarge.",
+    "es": "Toca una imagen para ampliarla.",
+    "fr": "Touchez une image pour l’agrandir.",
+    "ko": "이미지를 탭하면 확대됩니다.",
+    "zh-hans": "点击图片可放大。"
+  },
+  "page.lookbook.title": {
+    "ja": "LOOKBOOK",
+    "en": "LOOKBOOK",
+    "es": "LOOKBOOK",
+    "fr": "LOOKBOOK",
+    "ko": "LOOKBOOK",
+    "zh-hans": "造型集"
+  },
+  "page.lookbook.body": {
+    "ja": "ここにLOOKBOOKを配置します（画像・説明を追加）。",
+    "en": "Place the LOOKBOOK here (add images & captions).",
+    "es": "Coloca aquí el LOOKBOOK (añade imágenes y textos).",
+    "fr": "Placez le LOOKBOOK ici (ajoutez images & légendes).",
+    "ko": "여기에 LOOKBOOK을 배치하세요(이미지/설명 추가).",
+    "zh-hans": "在这里放置 LOOKBOOK（添加图片与说明）。"
+  },
+  "page.license.title": {
+    "ja": "License",
+    "en": "License",
+    "es": "Licencia",
+    "fr": "Licence",
+    "ko": "License",
+    "zh-hans": "许可"
+  },
+  "page.license.body": {
+    "ja": "本サイト内の画像・文章・デザインの無断転載、二次配布、再利用を禁じます。引用は出典を明記し、必要最小限に限ります。",
+    "en": "Unauthorized reproduction, redistribution, or reuse of images/text/design is prohibited. Quotation is permitted only with clear attribution and minimal extent.",
+    "es": "Se prohíbe la reproducción, redistribución o reutilización sin permiso. Las citas requieren atribución clara y uso mínimo.",
+    "fr": "Toute reproduction, redistribution ou réutilisation sans autorisation est interdite. La citation est permise avec attribution claire et usage minimal.",
+    "ko": "무단 복제/재배포/재사용을 금지합니다. 인용은 출처 명시 및 최소 범위로 제한됩니다.",
+    "zh-hans": "禁止未经许可的转载、二次发布与再利用。引用需注明出处且限于必要最小范围。"
+  },
+  "footer.copyright": {
+    "ja": "© 2025 SAIREN COLOR ARCHIVE",
+    "en": "© 2025 SAIREN COLOR ARCHIVE",
+    "es": "© 2025 SAIREN COLOR ARCHIVE",
+    "fr": "© 2025 SAIREN COLOR ARCHIVE",
+    "ko": "© 2025 SAIREN COLOR ARCHIVE",
+    "zh-hans": "© 2025 SAIREN COLOR ARCHIVE"
+  },
+  "footer.license": {
+    "ja": "License",
+    "en": "License",
+    "es": "Licencia",
+    "fr": "Licence",
+    "ko": "License",
+    "zh-hans": "许可"
+  },
+  "lang.label": {
+    "ja": "言語",
+    "en": "Language",
+    "es": "Idioma",
+    "fr": "Langue",
+    "ko": "언어",
+    "zh-hans": "语言"
+  },
+  "page.about.bodyHtml": {
+    "ja": "<p>色彩は、言葉より先に届く。<br>\nSAIREN COLOR ARCHIVE は、私・彩蓮（Sairen Takashima）の作品と制作の軌跡を記録するアーカイブです。</p>\n\n<p>私は、色を「きれい」や「オシャレ」で終わらせません。<br>\n色は感情であり、痕跡であり、意識の温度です。<br>\n言葉が追いつく前に、先に刺さってしまうもの。そこを狙って作っています。</p>\n\n<p>この場所は、作品を並べるだけのギャラリーではなく、<strong>“感覚を取り戻すための入口”</strong>として設計しています。<br>\n見る人が、自分の内側にある「まだ言語化されていない感覚」を回収できるように。</p>\n\n<hr>\n\n<h3>私について</h3>\n<p>彩蓮（Sairen）。<br>\n私は自己実現型のクリエイターであり、思想家であり、ブランド創造者です。</p>\n\n<p>私の制作は、気分ではなく、問いから始まります。</p>\n<ul>\n  <li>それは本当か？</li>\n  <li>本質は何か？</li>\n  <li>何が“届いてしまう”のか？</li>\n  <li>なぜ、その色なのか？</li>\n  <li>なぜ、その余白なのか？</li>\n</ul>\n\n<p>作品は、説明より先に成立してほしい。<br>\nけれど、成立した瞬間に“ただの雰囲気”に逃げたくない。<br>\nだから私は、抽象でありながら、構造で締めます。</p>\n\n<hr>\n\n<h3>SAIREN COLOR ARCHIVE がやりたいこと</h3>\n<p>このサイトがやりたいのは、派手な演出ではありません。<br>\n余計なノイズを削って、作品にまっすぐ到達させること。</p>\n\n<p>私は、見せなくていい文言や、重複した導線や、意味の薄い装飾が簡単に増えるのを嫌います。<br>\n見せたいのは「誤魔化し」ではなく「到達」だから。</p>\n\n<p>だからここでは、基本的に次の体験だけを強くします。</p>\n<ul>\n  <li><strong>WORKS</strong>：作品一覧（タップで拡大）</li>\n  <li><strong>LOOKBOOK</strong>：作品から生まれたファッションの世界</li>\n  <li><strong>SNS</strong>：制作・更新・変化の“現在地”</li>\n  <li><strong>CONTACT</strong>：依頼・相談窓口</li>\n</ul>\n\n<p>迷わせない。散らさない。作品に辿り着かせる。<br>\nそれが、SAIREN COLOR ARCHIVE の設計思想です。</p>\n\n<hr>\n\n<h3>作品の核｜私のアートは何をしているか</h3>\n<p>私の作品は、抽象表現です。<br>\nしかし、曖昧さの逃げ道としての抽象ではなく、感情を可視化するための抽象です。</p>\n\n<ol>\n  <li>\n    <strong>感情の層を「レイヤー」で作る</strong><br>\n    人の感情は単色じゃない。だから、色を重ねます。濁りも、透明も、痛みも、回復も、同居させます。\n  </li>\n  <li>\n    <strong>呼吸を「余白と密度」で設計する</strong><br>\n    密度が高い場所は心拍を上げる。余白は、呼吸を戻す。作品の中に“身体反応”を起こすために、配置を決めています。\n  </li>\n  <li>\n    <strong>ランダムに見える必然を作る</strong><br>\n    「ランダム」は好きです。ただし“適当”とは違う。偶然っぽく見せながら、全体の方向性は締める。この矛盾の制御が、私の作品の骨格です。\n  </li>\n  <li>\n    <strong>言語化前の感覚を呼び起こす</strong><br>\n    説明できないのに、分かってしまう。そのゾーンに触れると、人は自分の感覚に戻ります。私はそこを狙って作っています。\n  </li>\n</ol>\n\n<hr>\n\n<h3>アートを“現実”に接続する｜LOOKBOOKについて</h3>\n<p>私の作品は、ときどき服になります。理由は単純です。アートを壁に閉じ込めたくないから。</p>\n\n<p>アートは、鑑賞で終わると「他人事」になりやすい。<br>\nでも、身につけられる形に変換すると、アートは「体験」になります。<br>\n自分の身体を通して、色が現実に染み込む。</p>\n\n<p>私のもう一つの世界として、<strong>Transcend Color Digital Apparel（TCDA）</strong>という思想と制作があります。<br>\n理念は「アートを着る、感性を解放する」。<br>\nLOOKBOOKは、その接続面です。</p>\n\n<hr>\n\n<h3>制作姿勢｜“色忠実”と“誠実さ”</h3>\n<p>私の制作で最優先するのは、色の正確さです。色が狂うと、意味が狂う。<br>\nそしてもう一つ。私は見せかけや欺瞞が嫌いです。<br>\n「それっぽい言葉」や「盛ったストーリー」で誤魔化したくない。作品が届くかどうかで勝負します。</p>",
+    "en": "<p><strong>Color arrives before words.</strong><br>\nSAIREN COLOR ARCHIVE is an archive that records the works and the making of <strong>Sairen Takashima</strong>.</p>\n\n<p>I don’t let color end as “pretty” or “stylish.”<br>\nColor is emotion, trace, and the temperature of consciousness.<br>\nIt pierces before language can catch up — that’s what I aim for.</p>\n\n<p>This place isn’t just a gallery that lines up pieces.<br>\nIt’s designed as an <strong>entrance to reclaim sensation</strong>,<br>\nso viewers can retrieve the feelings inside them that haven’t been put into words yet.</p>\n\n<hr>\n\n<h3>About me</h3>\n<p>Sairen (Sairen Takashima).<br>\nI’m a self-actualizing creator, a thinker, and a brand builder.</p>\n\n<p>My work doesn’t start from mood — it starts from questions.</p>\n<ul>\n  <li>Is it true?</li>\n  <li>What’s the essence?</li>\n  <li>What ends up reaching people — whether they want it or not?</li>\n  <li>Why this color?</li>\n  <li>Why this whitespace?</li>\n</ul>\n\n<p>I want the work to stand before explanation.<br>\nBut the moment it stands, I refuse to let it escape into “just vibes.”<br>\nSo I tighten it with structure, even while staying abstract.</p>\n\n<hr>\n\n<h3>What SAIREN COLOR ARCHIVE wants to do</h3>\n<p>This site isn’t chasing flashy effects.<br>\nIt removes unnecessary noise so you reach the work directly.</p>\n\n<p>I dislike how easily nonessential copy, duplicated paths, and thin decoration multiply.<br>\nWhat I want to show is not “misdirection,” but “arrival.”</p>\n\n<p>So here, I strengthen only these experiences:</p>\n<ul>\n  <li><strong>WORKS</strong>: gallery (tap to enlarge)</li>\n  <li><strong>LOOKBOOK</strong>: a fashion world born from the works</li>\n  <li><strong>SNS</strong>: the current location of making / updates / change</li>\n  <li><strong>CONTACT</strong>: inquiries</li>\n</ul>\n\n<p>No confusion. No scattering. Let you arrive at the work.<br>\nThat’s the design philosophy of SAIREN COLOR ARCHIVE.</p>\n\n<hr>\n\n<h3>The core | What my art is doing</h3>\n<p>My work is abstract expression.<br>\nNot abstraction as an escape route, but abstraction to make emotion visible.</p>\n\n<ol>\n  <li>\n    <strong>Build emotional layers with “layers”</strong><br>\n    Human feelings aren’t a single color. So I stack color — cloudiness, transparency, pain, recovery — all coexisting.\n  </li>\n  <li>\n    <strong>Design breathing with whitespace and density</strong><br>\n    Dense areas raise the heartbeat. Whitespace returns the breath. I place elements to trigger a bodily response.\n  </li>\n  <li>\n    <strong>Create inevitability that looks random</strong><br>\n    I like “random.” But it’s not “whatever.” It should look accidental while the overall direction stays tight. Controlling that contradiction is the skeleton of my work.\n  </li>\n  <li>\n    <strong>Wake up pre-verbal sensation</strong><br>\n    You can’t explain it, yet you understand. Touch that zone, and people return to their own senses. That’s where I aim.\n  </li>\n</ol>\n\n<hr>\n\n<h3>Connecting art to reality | About LOOKBOOK</h3>\n<p>Sometimes my work becomes clothing. The reason is simple: I don’t want to lock art on a wall.</p>\n\n<p>If art ends at viewing, it easily becomes “someone else’s thing.”<br>\nBut when it transforms into something you can wear, art becomes experience.<br>\nThrough your body, color seeps into reality.</p>\n\n<p>I also create under the idea and practice of <strong>Transcend Color Digital Apparel (TCDA)</strong>.<br>\nThe credo is: “Wear art, release your senses.”<br>\nLOOKBOOK is that connection surface.</p>\n\n<hr>\n\n<h3>Making stance | “color fidelity” and “honesty”</h3>\n<p>My top priority is color accuracy. When color drifts, meaning drifts.<br>\nAnd one more thing: I hate pretense.<br>\nI don’t want to disguise it with “sounds-good words” or a “boosted story.” I’ll compete on whether the work reaches you.</p>",
+    "es": "<p><strong>El color llega antes que las palabras.</strong><br>\nSAIREN COLOR ARCHIVE es un archivo que registra las obras y el proceso de creación de <strong>Sairen Takashima</strong>.</p>\n\n<p>No dejo que el color termine como “bonito” o “a la moda”.<br>\nEl color es emoción, huella y la temperatura de la consciencia.<br>\nGolpea antes de que el lenguaje alcance — eso es lo que busco.</p>\n\n<p>Este lugar no es solo una galería que ordena obras.<br>\nEstá diseñado como una <strong>entrada para recuperar la sensibilidad</strong>,<br>\npara que quien mira pueda recoger dentro de sí sensaciones que aún no tienen palabras.</p>\n\n<hr>\n\n<h3>Sobre mí</h3>\n<p>Sairen (Sairen Takashima).<br>\nSoy una creadora orientada a la autorrealización, pensadora y constructora de marca.</p>\n\n<p>Mi trabajo no empieza por el ánimo; empieza por preguntas.</p>\n<ul>\n  <li>¿Es verdad?</li>\n  <li>¿Cuál es la esencia?</li>\n  <li>¿Qué es lo que “llega” a la gente, quiera o no?</li>\n  <li>¿Por qué ese color?</li>\n  <li>¿Por qué ese espacio en blanco?</li>\n</ul>\n\n<p>Quiero que la obra exista antes de la explicación.<br>\nPero en el instante en que existe, no quiero que se escape a “solo vibra”.<br>\nPor eso, aunque sea abstracta, la cierro con estructura.</p>\n\n<hr>\n\n<h3>Lo que quiere hacer SAIREN COLOR ARCHIVE</h3>\n<p>Este sitio no persigue efectos llamativos.<br>\nElimina el ruido innecesario para que llegues directo a la obra.</p>\n\n<p>Me molesta lo fácil que crecen los textos prescindibles, las rutas duplicadas y la decoración débil.<br>\nLo que quiero mostrar no es “disimulo”, sino “llegada”.</p>\n\n<p>Aquí refuerzo solo estas experiencias:</p>\n<ul>\n  <li><strong>WORKS</strong>: galería (toca para ampliar)</li>\n  <li><strong>LOOKBOOK</strong>: un mundo de moda nacido de las obras</li>\n  <li><strong>SNS</strong>: el “ahora” de creación / actualizaciones / cambio</li>\n  <li><strong>CONTACT</strong>: consultas</li>\n</ul>\n\n<p>Sin confusión. Sin dispersión. Que llegues a la obra.<br>\nEsa es la filosofía de diseño de SAIREN COLOR ARCHIVE.</p>\n\n<hr>\n\n<h3>El núcleo | Qué hace mi arte</h3>\n<p>Mi trabajo es expresión abstracta.<br>\nNo como escape de la ambigüedad, sino para hacer visible la emoción.</p>\n\n<ol>\n  <li>\n    <strong>Crear capas emocionales con “capas”</strong><br>\n    Las emociones no son un solo color. Por eso superpongo color: turbidez, transparencia, dolor y recuperación conviven.\n  </li>\n  <li>\n    <strong>Diseñar la respiración con espacio y densidad</strong><br>\n    La densidad sube el pulso. El vacío devuelve el aliento. Decido la disposición para provocar una respuesta corporal.\n  </li>\n  <li>\n    <strong>Crear una necesidad que parece aleatoria</strong><br>\n    Me gusta lo “aleatorio”. Pero no es “da igual”. Que parezca casual y, aun así, la dirección general quede firme. Controlar esa contradicción es el esqueleto de mi obra.\n  </li>\n  <li>\n    <strong>Despertar la sensación antes del lenguaje</strong><br>\n    No puedes explicarlo, pero lo entiendes. Al tocar esa zona, la gente vuelve a su propia sensibilidad. Ahí apunto.\n  </li>\n</ol>\n\n<hr>\n\n<h3>Conectar el arte con la realidad | Sobre LOOKBOOK</h3>\n<p>A veces mis obras se convierten en ropa. La razón es simple: no quiero encerrar el arte en una pared.</p>\n\n<p>Si el arte termina en la contemplación, se vuelve “cosa de otros”.<br>\nPero si lo transformas en algo que puedes llevar, se vuelve experiencia.<br>\nA través del cuerpo, el color se filtra en la realidad.</p>\n\n<p>También trabajo bajo la idea y práctica de <strong>Transcend Color Digital Apparel (TCDA)</strong>.<br>\nEl lema es: “Vestir arte, liberar la sensibilidad”.<br>\nLOOKBOOK es esa superficie de conexión.</p>\n\n<hr>\n\n<h3>Postura de creación | “fidelidad del color” y “honestidad”</h3>\n<p>Mi prioridad máxima es la precisión del color. Si el color se desvía, el sentido se desvía.<br>\nY una cosa más: detesto la apariencia y el engaño.<br>\nNo quiero ocultarlo con “palabras que suenan bien” ni con una “historia inflada”. Compito con si la obra llega o no.</p>",
+    "fr": "<p><strong>La couleur arrive avant les mots.</strong><br>\nSAIREN COLOR ARCHIVE est une archive qui consigne les œuvres et le processus de création de <strong>Sairen Takashima</strong>.</p>\n\n<p>Je ne laisse pas la couleur se réduire à « joli » ou « tendance ».<br>\nLa couleur est émotion, trace, température de la conscience.<br>\nElle frappe avant que le langage ne rattrape — c’est ce que je vise.</p>\n\n<p>Ce lieu n’est pas seulement une galerie qui aligne des pièces.<br>\nIl est conçu comme une <strong>entrée pour retrouver la sensation</strong>,<br>\nafin que chacun puisse récupérer en soi des sensations encore sans mots.</p>\n\n<hr>\n\n<h3>À propos de moi</h3>\n<p>Sairen (Sairen Takashima).<br>\nJe suis une créatrice tournée vers l’accomplissement, une penseuse, et une bâtisseuse de marque.</p>\n\n<p>Mon travail ne part pas de l’humeur : il part de questions.</p>\n<ul>\n  <li>Est-ce vrai ?</li>\n  <li>Quelle est l’essence ?</li>\n  <li>Qu’est-ce qui « atteint » les gens, qu’ils le veuillent ou non ?</li>\n  <li>Pourquoi cette couleur ?</li>\n  <li>Pourquoi ce blanc, ce vide ?</li>\n</ul>\n\n<p>Je veux que l’œuvre tienne avant l’explication.<br>\nMais dès qu’elle tient, je refuse qu’elle s’échappe en « simple ambiance ».<br>\nAlors, même abstraite, je la serre par la structure.</p>\n\n<hr>\n\n<h3>Ce que veut faire SAIREN COLOR ARCHIVE</h3>\n<p>Ce site ne cherche pas l’effet spectaculaire.<br>\nIl retire le bruit inutile pour que vous arriviez droit à l’œuvre.</p>\n\n<p>Je déteste la facilité avec laquelle s’accumulent les textes inutiles, les parcours doublons et les ornements faibles.<br>\nCe que je veux montrer, ce n’est pas la « diversion », mais l’« arrivée ».</p>\n\n<p>Ici, je renforce seulement ces expériences :</p>\n<ul>\n  <li><strong>WORKS</strong> : galerie (toucher pour agrandir)</li>\n  <li><strong>LOOKBOOK</strong> : un monde de mode né des œuvres</li>\n  <li><strong>SNS</strong> : le présent de la création / des mises à jour / du changement</li>\n  <li><strong>CONTACT</strong> : demandes</li>\n</ul>\n\n<p>Ne pas égarer. Ne pas disperser. Faire arriver à l’œuvre.<br>\nC’est la philosophie de conception de SAIREN COLOR ARCHIVE.</p>\n\n<hr>\n\n<h3>Le noyau | Ce que fait mon art</h3>\n<p>Mon travail est une expression abstraite.<br>\nPas une abstraction comme échappatoire au flou, mais pour rendre l’émotion visible.</p>\n\n<ol>\n  <li>\n    <strong>Créer des couches émotionnelles par « couches »</strong><br>\n    Les émotions ne sont pas monochromes. Alors je superpose : opacité, transparence, douleur, rétablissement — tout coexiste.\n  </li>\n  <li>\n    <strong>Concevoir la respiration par le vide et la densité</strong><br>\n    La densité accélère le rythme. Le vide rend le souffle. Je place pour déclencher une réaction corporelle.\n  </li>\n  <li>\n    <strong>Fabriquer une nécessité qui semble aléatoire</strong><br>\n    J’aime le « hasard ». Mais ce n’est pas « n’importe quoi ». Cela doit paraître accidentel tout en restant dirigé. Maîtriser cette contradiction est l’ossature de mon travail.\n  </li>\n  <li>\n    <strong>Réveiller la sensation avant le langage</strong><br>\n    On ne sait pas l’expliquer, et pourtant on comprend. En touchant cette zone, on revient à ses propres sensations. C’est là que je vise.\n  </li>\n</ol>\n\n<hr>\n\n<h3>Relier l’art au réel | À propos de LOOKBOOK</h3>\n<p>Parfois, mes œuvres deviennent des vêtements. La raison est simple : je ne veux pas enfermer l’art sur un mur.</p>\n\n<p>Si l’art s’arrête au regard, il devient vite « l’affaire des autres ».<br>\nMais quand il se transforme en quelque chose que l’on porte, il devient expérience.<br>\nPar le corps, la couleur s’infiltre dans le réel.</p>\n\n<p>Je travaille aussi sous l’idée et la pratique de <strong>Transcend Color Digital Apparel (TCDA)</strong>.<br>\nLe credo : « Porter l’art, libérer la sensibilité ».<br>\nLOOKBOOK est cette surface de connexion.</p>\n\n<hr>\n\n<h3>Posture de création | « fidélité des couleurs » et « sincérité »</h3>\n<p>Ma priorité absolue est la justesse des couleurs. Si la couleur dérive, le sens dérive.<br>\nEt une chose encore : je déteste la façade et la tromperie.<br>\nJe ne veux pas masquer avec des « mots qui sonnent bien » ou une « histoire gonflée ». Je joue sur une seule chose : est-ce que l’œuvre atteint, ou non.</p>",
+    "ko": "<p><strong>색은, 말보다 먼저 닿는다.</strong><br>\nSAIREN COLOR ARCHIVE는 나, <strong>사이렌(彩蓮, Sairen Takashima)</strong>의 작품과 제작의 궤적을 기록하는 아카이브다.</p>\n\n<p>나는 색을 “예쁘다/멋지다”로 끝내지 않는다.<br>\n색은 감정이고, 흔적이고, 의식의 온도다.<br>\n언어가 따라오기 전에 먼저 찌르는 것. 나는 그 지점을 노린다.</p>\n\n<p>이곳은 작품을 늘어놓는 갤러리가 아니다.<br>\n<strong>“감각을 되찾기 위한 입구”</strong>로 설계했다.<br>\n보는 사람이 자기 안의, 아직 언어화되지 않은 감각을 회수할 수 있도록.</p>\n\n<hr>\n\n<h3>나에 대해</h3>\n<p>사이렌(Sairen).<br>\n나는 자기실현형 크리에이터이자 사상가, 그리고 브랜드 창조자다.</p>\n\n<p>내 제작은 기분이 아니라 질문에서 시작한다.</p>\n<ul>\n  <li>그것은 진실인가?</li>\n  <li>본질은 무엇인가?</li>\n  <li>무엇이 ‘닿아버리는가’?</li>\n  <li>왜 그 색인가?</li>\n  <li>왜 그 여백인가?</li>\n</ul>\n\n<p>작품은 설명보다 먼저 성립하길 바란다.<br>\n하지만 성립한 순간 “그냥 분위기”로 도망치고 싶지 않다.<br>\n그래서 나는 추상이면서도 구조로 조인다.</p>\n\n<hr>\n\n<h3>SAIREN COLOR ARCHIVE가 하고 싶은 것</h3>\n<p>이 사이트가 노리는 건 화려한 연출이 아니다.<br>\n불필요한 노이즈를 걷어내고, 작품에 곧장 도달하게 하는 것.</p>\n\n<p>보여주지 않아도 되는 문구, 중복된 동선, 의미가 얇은 장식은 쉽게 늘어난다.<br>\n나는 그걸 싫어한다. 보여주고 싶은 건 “포장”이 아니라 “도달”이기 때문이다.</p>\n\n<p>그래서 여기서는 기본적으로 다음 경험만 강하게 만든다.</p>\n<ul>\n  <li><strong>WORKS</strong>: 작품 목록(탭하여 확대)</li>\n  <li><strong>LOOKBOOK</strong>: 작품에서 태어난 패션의 세계</li>\n  <li><strong>SNS</strong>: 제작/업데이트/변화의 ‘현재 위치’</li>\n  <li><strong>CONTACT</strong>: 의뢰/상담 창구</li>\n</ul>\n\n<p>헤매게 하지 않는다. 흩뜨리지 않는다. 작품에 닿게 한다.<br>\n그게 SAIREN COLOR ARCHIVE의 설계 철학이다.</p>\n\n<hr>\n\n<h3>작품의 핵 | 내 아트는 무엇을 하는가</h3>\n<p>내 작품은 추상 표현이다.<br>\n하지만 모호함의 도피처로서의 추상이 아니라, 감정을 가시화하기 위한 추상이다.</p>\n\n<ol>\n  <li>\n    <strong>감정의 층을 ‘레이어’로 만든다</strong><br>\n    감정은 단색이 아니다. 그래서 색을 겹친다. 탁함도, 투명함도, 아픔도, 회복도 함께 둔다.\n  </li>\n  <li>\n    <strong>호흡을 ‘여백과 밀도’로 설계한다</strong><br>\n    밀도가 높은 곳은 심박을 올린다. 여백은 호흡을 돌려준다. 작품 안에서 ‘신체 반응’을 일으키기 위해 배치를 결정한다.\n  </li>\n  <li>\n    <strong>랜덤처럼 보이는 필연을 만든다</strong><br>\n    나는 ‘랜덤’을 좋아한다. 하지만 ‘대충’이 아니다. 우연처럼 보이면서도 전체 방향은 조인다. 이 모순을 제어하는 것이 내 작품의 골격이다.\n  </li>\n  <li>\n    <strong>언어 이전의 감각을 깨운다</strong><br>\n    설명할 수 없는데도, 알아버린다. 그 영역에 닿으면 사람은 자기 감각으로 돌아온다. 나는 그 지점을 노린다.\n  </li>\n</ol>\n\n<hr>\n\n<h3>아트를 ‘현실’에 연결하기 | LOOKBOOK</h3>\n<p>내 작품은 때때로 옷이 된다. 이유는 단순하다. 아트를 벽에 가두고 싶지 않아서다.</p>\n\n<p>아트가 감상으로 끝나면 ‘남의 일’이 되기 쉽다.<br>\n하지만 입을 수 있는 형태로 변환하면 아트는 ‘체험’이 된다.<br>\n몸을 통해 색이 현실에 스민다.</p>\n\n<p>또 하나의 세계로, <strong>Transcend Color Digital Apparel(TCDA)</strong>라는 사상과 제작이 있다.<br>\n이념은 “아트를 입고, 감각을 해방한다”.<br>\nLOOKBOOK은 그 접속면이다.</p>\n\n<hr>\n\n<h3>제작 자세 | ‘색 충실’과 ‘정직함’</h3>\n<p>내 제작에서 최우선은 색의 정확성이다. 색이 흔들리면 의미가 흔들린다.<br>\n그리고 하나 더. 나는 겉치레와 기만을 싫어한다.<br>\n‘그럴듯한 말’이나 ‘부풀린 서사’로 속이고 싶지 않다. 작품이 닿는가 아닌가로 승부한다.</p>",
+    "zh-hans": "<p><strong>色彩先于语言抵达。</strong><br>\nSAIREN COLOR ARCHIVE 记录我——<strong>彩蓮（Sairen Takashima）</strong>的作品与创作轨迹。</p>\n\n<p>我不会让颜色止步于“好看”或“时髦”。<br>\n颜色是情绪、痕迹，也是意识的温度。<br>\n在语言追上之前先刺入——我瞄准的就是那里。</p>\n\n<p>这里不是把作品排成一列的画廊。<br>\n它被设计为<strong>“找回感受的入口”</strong>，<br>\n让观看的人能把自己内心里那些尚未被语言化的感觉收回来。</p>\n\n<hr>\n\n<h3>关于我</h3>\n<p>彩蓮（Sairen）。<br>\n我是以自我实现为驱动的创作者、思想者，也是品牌创造者。</p>\n\n<p>我的创作不是从心情开始，而是从提问开始。</p>\n<ul>\n  <li>这是真的吗？</li>\n  <li>本质是什么？</li>\n  <li>什么会“不可避免地抵达”人心？</li>\n  <li>为什么是这个颜色？</li>\n  <li>为什么是这个留白？</li>\n</ul>\n\n<p>我希望作品先于解释而成立。<br>\n但作品一成立，我不想它逃进“只是氛围”。<br>\n所以即便是抽象，我也用结构把它收紧。</p>\n\n<hr>\n\n<h3>SAIREN COLOR ARCHIVE 想做什么</h3>\n<p>这个网站追求的不是花哨的演出。<br>\n而是删去多余噪音，让你直达作品。</p>\n\n<p>我讨厌那些不必展示的文案、重复的路径、意义稀薄的装饰轻易增殖。<br>\n我想呈现的不是“掩饰”，而是“抵达”。</p>\n\n<p>因此，这里只强化以下体验：</p>\n<ul>\n  <li><strong>WORKS</strong>：作品列表（点击放大）</li>\n  <li><strong>LOOKBOOK</strong>：由作品延展的时尚世界</li>\n  <li><strong>SNS</strong>：创作 / 更新 / 变化的“现在位置”</li>\n  <li><strong>CONTACT</strong>：委托与咨询</li>\n</ul>\n\n<p>不让你迷路，不让你分散，让你抵达作品。<br>\n这就是 SAIREN COLOR ARCHIVE 的设计思想。</p>\n\n<hr>\n\n<h3>作品的核心｜我的艺术在做什么</h3>\n<p>我的作品是抽象表达。<br>\n但不是把抽象当作逃避暧昧的退路，而是用抽象把情绪可视化。</p>\n\n<ol>\n  <li>\n    <strong>用“层”构建情绪的层次</strong><br>\n    情绪不是单色，所以我叠加颜色。浑浊、透明、疼痛、复原——让它们共存。\n  </li>\n  <li>\n    <strong>用留白与密度设计呼吸</strong><br>\n    密度高的地方抬高心跳；留白让呼吸回来。我通过布局在作品中触发“身体反应”。\n  </li>\n  <li>\n    <strong>制造看似随机的必然</strong><br>\n    我喜欢“随机”，但不是“随便”。要看起来像偶然，同时整体方向依然收紧。控制这种矛盾，是我作品的骨架。\n  </li>\n  <li>\n    <strong>唤醒语言之前的感受</strong><br>\n    说不清，却明白了。触到那个区域，人就会回到自己的感受里。我瞄准的就是那里。\n  </li>\n</ol>\n\n<hr>\n\n<h3>把艺术接到“现实”｜关于 LOOKBOOK</h3>\n<p>我的作品有时会变成衣服。理由很简单：我不想把艺术关在墙上。</p>\n\n<p>艺术若止步于观看，很容易变成“别人的事”。<br>\n但当它被转换成能穿在身上的形式，艺术就成为“体验”。<br>\n颜色会通过身体渗入现实。</p>\n\n<p>我也在 <strong>Transcend Color Digital Apparel（TCDA）</strong> 这一思想与制作中工作。<br>\n理念是：“穿上艺术，释放感官”。<br>\nLOOKBOOK 是那个连接面。</p>\n\n<hr>\n\n<h3>创作姿态｜“色彩忠实”与“诚实”</h3>\n<p>我创作的最高优先级是色彩的准确性。颜色偏了，意义就偏了。<br>\n还有一点：我讨厌虚饰与欺瞒。<br>\n我不想用“听起来很对的话”或“被夸大的故事”来糊弄。作品能不能抵达——就用这一点来赢。</p>"
+  }
+}
