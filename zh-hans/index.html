@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <script src="../assets/js/app.js" defer></script>
+  <title>SAIREN COLOR ARCHIVE</title>
+</head>
+<body>
+  <div id="introFx" class="introFx" aria-hidden="true"></div>
+  <div class="page">
+    <header class="top">
+      <div class="brand" data-i18n="siteName">SAIREN COLOR ARCHIVE</div>
+      <div class="controls">
+        <select id="langSelect" class="select" aria-label="language">
+          <option value="ja">JA</option>
+          <option value="en">EN</option>
+          <option value="es">ES</option>
+          <option value="fr">FR</option>
+          <option value="ko">KO</option>
+          <option value="zh-hans">中文</option>
+        </select>
+        <button id="menuBtn" class="menuBtn" aria-label="menu"><span></span></button>
+      </div>
+    </header>
+
+    <section class="hero">
+      <h1 class="tagline">
+        <span id="taglineGrad" class="grad" data-i18n="tagline">色彩は、言葉より先に届く。</span>
+      </h1>
+      <p class="muted" style="margin:14px 0 0;">
+        © <span data-i18n="siteName">SAIREN COLOR ARCHIVE</span>
+      </p>
+    </section>
+
+  <section class="cta">
+    <a class="ctaCard" href="./works.html">
+      <div class="ctaTitle" data-i18n="nav.works">WORKS</div>
+      <div class="ctaHint" data-i18n="home.cta.open">タップして開く</div>
+    </a>
+    <a class="ctaCard" href="./lookbook.html">
+      <div class="ctaTitle" data-i18n="nav.lookbook">LOOKBOOK</div>
+      <div class="ctaHint" data-i18n="home.cta.open">タップして開く</div>
+    </a>
+  </section>
+
+
+    <div id="overlay" class="overlay" aria-hidden="true">
+      <nav class="drawer" role="navigation">
+        <a href="./index.html"><span data-i18n="nav.home">HOME</span><span class="small">/</span></a>
+        <a href="./about.html"><span data-i18n="nav.about">ABOUT</span><span class="small">/</span></a>
+<a href="./sns.html"><span data-i18n="nav.sns">SNS</span><span class="small">/</span></a>
+        <a href="./contact.html"><span data-i18n="nav.contact">CONTACT</span><span class="small">@</span></a>
+        <a href="./license.html"><span data-i18n="nav.license">LICENSE</span><span class="small">©</span></a>
+        <div class="small" style="padding:10px 12px;">Tap outside to close.</div>
+      </nav>
+    </div>
+
+  </div>
+</body>
+</html>
