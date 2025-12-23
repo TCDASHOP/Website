@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>SAIREN COLOR ARCHIVE</title>
+  <link rel="stylesheet" href="/assets/css/site.css" />
+</head>
+<body>
+  <div class="wrap">
+    <header class="siteHeader">
+      <div class="brand">
+        <div class="brandMark" aria-hidden="true"></div>
+        <div>
+          <div class="brandTitle">SAIREN COLOR ARCHIVE</div>
+          <div class="brandSub">Digital Art Archive</div>
+        </div>
+      </div>
+
+      <nav class="nav" aria-label="Primary">
+        <a class="navLink" data-nav="home" href="./index.html" data-i18n="nav.home">HOME</a>
+        <a class="navLink" data-nav="about" href="./about.html" data-i18n="nav.about">ABOUT</a>
+        <a class="navLink" data-nav="sns" href="./sns.html" data-i18n="nav.sns">SNS</a>
+        <a class="navLink" data-nav="contact" href="./contact.html" data-i18n="nav.contact">CONTACT</a>
+      </nav>
+
+      <div class="tools">
+        <div class="langWrap" aria-label="Language">
+          <span class="langLabel" data-i18n="lang.label">Language</span>
+          <select id="langSelect" class="langSelect">
+            <option value="ja">JA</option>
+            <option value="en">EN</option>
+            <option value="es">ES</option>
+            <option value="fr">FR</option>
+            <option value="ko">KO</option>
+            <option value="zh-hans">中文</option>
+          </select>
+        </div>
+      </div>
+    </header>
+
+    <section class="card hero">
+          <div class="heroFX" aria-hidden="true">
+            <span class="orb o1"></span><span class="orb o2"></span><span class="orb o3"></span>
+          </div>
+          <div class="heroInner">
+            <h1 class="heroTitle" data-i18n="hero.title">Color arrives before words.</h1>
+            <p class="heroLead" data-i18n="hero.lead">SAIREN COLOR ARCHIVE is an archive.</p>
+          </div>
+        </section>
+
+    <section class="tiles">
+          <a class="tile" href="./works.html">
+            <h3 data-i18n="home.tile.works.title">WORKS</h3>
+            <p data-i18n="home.tile.works.desc">Gallery</p>
+          </a>
+          <a class="tile" href="./lookbook.html">
+            <h3 data-i18n="home.tile.lookbook.title">LOOKBOOK</h3>
+            <p data-i18n="home.tile.lookbook.desc">Fashion world</p>
+          </a>
+        </section>
+
+    <section class="card section">
+          <div class="pageHead">
+            <h2 class="pageTitle">PAGE</h2>
+            <p class="pageBody">Content</p>
+          </div>
+        </section>
+
+    <footer class="footer">
+      <small data-i18n="footer.copyright">© 2025 SAIREN COLOR ARCHIVE</small>
+      <a class="footerLink" href="./license.html" data-i18n="footer.license">License</a>
+    </footer>
+  </div>
+
+  <script>
+    try {
+      const lang = (location.pathname.split("/").filter(Boolean)[0]) || "ja";
+      localStorage.setItem("sca_lang", lang);
+    } catch(e) {}
+  </script>
+  <script src="/assets/js/site.js" defer></script>
+</body>
+</html>
