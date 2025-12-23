@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="zh-hans">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>SAIREN COLOR ARCHIVE</title>
+  <link rel="stylesheet" href="/assets/css/site.css" />
+</head>
+<body>
+  <div class="wrap">
+    <header class="siteHeader">
+      <div class="brand"><div>
+          <div class="brandTitle">SAIREN COLOR ARCHIVE</div></div>
+      </div>
+
+      <nav class="nav" aria-label="Primary">
+        <a class="navLink" data-nav="home" href="./index.html" data-i18n="nav.home">HOME</a>
+        <a class="navLink" data-nav="about" href="./about.html" data-i18n="nav.about">ABOUT</a>
+        <a class="navLink" data-nav="sns" href="./sns.html" data-i18n="nav.sns">SNS</a>
+        <a class="navLink" data-nav="contact" href="./contact.html" data-i18n="nav.contact">CONTACT</a>
+      </nav>
+
+      <div class="tools">
+        <div class="langWrap" aria-label="Language">
+          <span class="langLabel" data-i18n="lang.label">Language</span>
+          <select id="langSelect" class="langSelect">
+            <option value="ja">JA</option>
+            <option value="en">EN</option>
+            <option value="es">ES</option>
+            <option value="fr">FR</option>
+            <option value="ko">KO</option>
+            <option value="zh-hans">中文</option>
+          </select>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    <section class="card section">
+          <div class="pageHead">
+            <h2 class="pageTitle" data-i18n="page.title">SNS</h2>
+            <p class="pageBody" data-i18n="page.body">Body text</p>
+          </div>
+        </section>
+        
+            <div class="iconRow" aria-label="SNS links">
+              <a class="iconBtn" data-sns="instagram" href="https://instagram.com/REPLACE_ME" target="_blank" rel="noopener" aria-label="Instagram"><svg class="snsSvg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+  <path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9A5.5 5.5 0 0 1 16.5 22h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2zm0 2A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9A3.5 3.5 0 0 0 20 16.5v-9A3.5 3.5 0 0 0 16.5 4h-9z"/>
+  <path d="M12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2.2A2.8 2.8 0 1 0 12 15a2.8 2.8 0 0 0 0-5.6z"/>
+  <path d="M17.4 6.6a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
+</svg></a>
+              <a class="iconBtn" data-sns="tiktok" href="https://tiktok.com/@REPLACE_ME" target="_blank" rel="noopener" aria-label="TikTok"><svg class="snsSvg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+  <path d="M14 2h2.2c.2 2.4 1.6 4.3 3.8 5.1V9c-2.2-.1-4-1-5.3-2.3V14c0 4-3.1 7-7 7-3.6 0-6.5-2.8-6.7-6.4C1.9 10.8 4.7 8 8.2 8h.8v2.6h-.8c-2.1 0-3.8 1.7-3.8 3.8s1.7 3.8 3.8 3.8c2.2 0 3.9-1.8 3.9-4V2z"/>
+</svg></a>
+            </div>
+            <p class="pageBody" style="margin-top:10px; opacity:.55; font-size:12px;">
+              ※URLはあなたの実アカウントに差し替えてください（表示はアイコンのみ）
+            </p>
+
+    <footer class="footer">
+      <small data-i18n="footer.copyright">© 2025 SAIREN COLOR ARCHIVE</small>
+      <a class="footerLink" href="./license.html" data-i18n="footer.license">License</a>
+    </footer>
+  </div>
+
+  <script>
+    try {
+      const lang = (location.pathname.split("/").filter(Boolean)[0]) || "ja";
+      localStorage.setItem("sca_lang", lang);
+    } catch(e) {}
+  </script>
+  <script src="/assets/js/site.js" defer></script>
+</body>
+</html>
