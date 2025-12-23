@@ -1,0 +1,335 @@
+:root{
+  --bg:#07070a;
+  --panel:#0e0f14;
+  --line:rgba(255,255,255,.10);
+  --text:rgba(255,255,255,.92);
+  --muted:rgba(255,255,255,.68);
+  --shadow: 0 12px 40px rgba(0,0,0,.45);
+  --radius: 18px;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  background: radial-gradient(1200px 700px at 20% 0%, rgba(120,90,255,.18), transparent 60%),
+              radial-gradient(1000px 700px at 90% 10%, rgba(0,220,255,.12), transparent 55%),
+              var(--bg);
+  color:var(--text);
+  font-family: ui-sans-serif, system-ui, -apple-system, "Hiragino Sans", "Noto Sans JP", "Segoe UI", Arial, sans-serif;
+  letter-spacing:.2px;
+}
+
+a{color:inherit; text-decoration:none}
+img{max-width:100%; display:block}
+
+.page{min-height:100%; padding:20px; max-width:1060px; margin:0 auto;}
+.top{
+  display:flex; align-items:center; justify-content:space-between;
+  padding:10px 6px 16px;
+}
+.brand{font-weight:700; letter-spacing:1.6px; font-size:14px; opacity:.95;}
+.controls{display:flex; gap:10px; align-items:center;}
+.select{
+  background:rgba(255,255,255,.06);
+  border:1px solid var(--line);
+  color:var(--text);
+  border-radius:999px;
+  padding:8px 12px;
+  outline:none;
+}
+.menuBtn{
+  width:40px; height:40px;
+  border-radius:999px;
+  border:1px solid var(--line);
+  background:rgba(255,255,255,.06);
+  display:grid; place-items:center;
+  cursor:pointer;
+}
+.menuBtn span{
+  width:16px; height:2px; background:rgba(255,255,255,.78);
+  position:relative; display:block;
+}
+.menuBtn span:before,.menuBtn span:after{
+  content:""; position:absolute; left:0; width:16px; height:2px;
+  background:rgba(255,255,255,.78);
+}
+.menuBtn span:before{top:-6px}
+.menuBtn span:after{top:6px}
+
+.hero{
+  padding:38px 8px 18px;
+}
+.tagline{
+  font-size:42px;
+  line-height:1.1;
+  font-weight:800;
+  margin:0;
+  letter-spacing:.6px;
+}
+.tagline .grad{
+  -webkit-text-fill-color: transparent;
+  background-clip:text;
+  -webkit-background-clip:text;
+}
+.muted{color:var(--muted)}
+.panel{
+  margin-top:18px;
+  background:rgba(255,255,255,.05);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  padding:18px;
+}
+
+.h1{margin:0 0 10px; font-size:22px; letter-spacing:.4px;}
+.row{display:flex; gap:10px; flex-wrap:wrap; align-items:center;}
+.btn{
+  display:inline-flex; align-items:center; justify-content:center;
+  padding:10px 14px;
+  border-radius:999px;
+  border:1px solid var(--line);
+  background:rgba(255,255,255,.10);
+}
+.btn.ghost{background:transparent}
+
+.grid{
+  display:grid;
+  grid-template-columns: repeat(2, minmax(0,1fr));
+  gap:12px;
+}
+@media (min-width: 840px){
+  .grid{grid-template-columns: repeat(3, minmax(0,1fr));}
+  .tagline{font-size:56px;}
+}
+.card{
+  border:1px solid var(--line);
+  background:rgba(0,0,0,.18);
+  border-radius:16px;
+  overflow:hidden;
+}
+.card .thumb{aspect-ratio: 4/5; background:rgba(255,255,255,.03);}
+.card .meta{padding:10px 12px;}
+.card .title{font-weight:700; font-size:13px; opacity:.92}
+.card .sub{font-size:12px; color:var(--muted); margin-top:2px}
+
+.overlay{
+  position:fixed; inset:0;
+  background:rgba(0,0,0,.65);
+  display:none;
+  padding:20px;
+}
+.overlay.on{display:block}
+.drawer{
+  max-width:420px;
+  background:rgba(16,17,22,.96);
+  border:1px solid var(--line);
+  border-radius:22px;
+  padding:14px;
+  box-shadow:var(--shadow);
+}
+.drawer a{
+  display:flex; justify-content:space-between; align-items:center;
+  padding:12px 12px;
+  border-radius:14px;
+}
+.drawer a:hover{background:rgba(255,255,255,.06)}
+.small{font-size:12px; color:var(--muted)}
+
+.iconRow{display:flex; gap:14px; align-items:center; flex-wrap:wrap;}
+.iconBtn{
+  width:60px; height:60px;
+  border-radius:16px;
+  border:1px solid var(--line);
+  background:rgba(255,255,255,.06);
+  display:grid; place-items:center;
+}
+.iconBtn img{width:34px; height:34px}
+
+
+/* ---- Home CTA tiles ---- */
+.cta{
+  display:grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap:14px;
+  max-width: 860px;
+  margin: 22px auto 0;
+  padding: 0 18px;
+}
+.ctaCard{
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:flex-start;
+  padding:18px 18px;
+  min-height:120px;
+  border-radius:16px;
+  border:1px solid var(--line);
+  background: linear-gradient(135deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+  box-shadow: 0 18px 60px rgba(0,0,0,.45);
+  text-decoration:none;
+  color: var(--fg);
+  overflow:hidden;
+  transition: transform .18s ease, border-color .18s ease, background .18s ease;
+}
+.ctaCard:active{ transform: translateY(1px) scale(.995); }
+.ctaCard:hover{ border-color: rgba(255,255,255,.22); }
+.ctaTitle{
+  font-weight: 700;
+  letter-spacing: .08em;
+  font-size: 18px;
+}
+.ctaHint{
+  margin-top: 6px;
+  font-size: 12px;
+  color: var(--muted);
+}
+/* subtle moving sheen */
+.ctaCard::after{
+  content:"";
+  position:absolute;
+  inset:-40% -40%;
+  background: radial-gradient(closest-side, rgba(255,255,255,.14), transparent 60%);
+  transform: translateX(-30%) translateY(20%) rotate(20deg);
+  animation: sheen 5.2s ease-in-out infinite;
+  pointer-events:none;
+}
+@keyframes sheen{
+  0%,100%{ transform: translateX(-30%) translateY(20%) rotate(20deg); opacity:.25;}
+  50%{ transform: translateX(30%) translateY(-10%) rotate(20deg); opacity:.45;}
+}
+
+/* ---- Intro FX (paint drips + falling pieces) ---- */
+.introFx{
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 50;
+  overflow: hidden;
+}
+.drip{
+  position:absolute;
+  top:-10vh;
+  height: 140vh;
+  transform-origin: top;
+  transform: scaleY(0);
+  border-radius: 999px;
+  background: linear-gradient(180deg, rgba(180,120,255,.55), rgba(70,180,255,.20), rgba(255,80,170,.12), transparent 70%);
+  filter: blur(.2px);
+  animation: drip 2.4s ease forwards;
+}
+@keyframes drip{
+  0%{ transform: scaleY(0); opacity:1;}
+  70%{ transform: scaleY(1); opacity:1;}
+  100%{ transform: scaleY(1); opacity:0;}
+}
+.piece{
+  position:absolute;
+  top:-12vh;
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,.18);
+  background: linear-gradient(135deg, rgba(255,255,255,.12), rgba(255,255,255,.03));
+  box-shadow: 0 14px 40px rgba(0,0,0,.45);
+  transform: translateY(-20px) rotate(0deg);
+  animation: fall 2.6s ease forwards;
+}
+@keyframes fall{
+  0%{ transform: translateY(-20vh) rotate(-30deg); opacity:0;}
+  10%{ opacity:1;}
+  75%{ opacity:1;}
+  100%{ transform: translateY(120vh) rotate(260deg); opacity:0;}
+}
+/* During build, soften the page, then reveal */
+html.building .wrap{
+  opacity: .25;
+  transform: translateY(8px);
+  filter: blur(6px);
+  transition: opacity .65s ease, transform .65s ease, filter .65s ease;
+}
+html.buildingDone .wrap{
+  opacity:1;
+  transform:none;
+  filter:none;
+}
+
+/* ---- Works modal ---- */
+.modal{
+  position: fixed;
+  inset: 0;
+  display:none;
+  z-index: 60;
+  background: rgba(0,0,0,.62);
+  backdrop-filter: blur(10px);
+}
+.modal.on{ display:block; }
+.modalInner{
+  position:absolute;
+  inset: 18px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.modalBox{
+  position:relative;
+  width:min(92vw, 980px);
+  max-height: 90vh;
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,.18);
+  background: rgba(14,15,20,.72);
+  box-shadow: 0 30px 90px rgba(0,0,0,.6);
+  overflow:hidden;
+}
+.modalTop{
+  display:flex;
+  gap:10px;
+  align-items:center;
+  justify-content:space-between;
+  padding:12px 12px;
+  border-bottom: 1px solid rgba(255,255,255,.10);
+}
+.modalTitle{
+  font-size: 13px;
+  color: rgba(255,255,255,.85);
+}
+.modalClose{
+  width: 40px; height: 36px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,.16);
+  background: rgba(255,255,255,.06);
+  color: rgba(255,255,255,.9);
+}
+.modalImgWrap{
+  padding: 10px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.modalImg{
+  max-width: 100%;
+  max-height: 76vh;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,.10);
+}
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce){
+  .drip,.piece,.ctaCard::after{ animation:none !important; }
+  html.building .wrap{ transition:none; }
+}
+
+/* Works cards as tappable buttons */
+.workCard{
+  width:100%;
+  text-align:left;
+  cursor:pointer;
+  border:1px solid var(--line);
+  background:rgba(0,0,0,.18);
+  border-radius:16px;
+  overflow:hidden;
+}
+.workCard .thumb{aspect-ratio: 4/5; background:rgba(255,255,255,.03);}
+.workCard .meta{padding:10px 12px;}
+.workCard .title{font-weight:700; font-size:13px; opacity:.92}
+.workCard .sub{font-size:12px; color:var(--muted); margin-top:2px}
