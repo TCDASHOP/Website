@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ja" data-i18n-title="meta.title">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#0b0d10" />
+  <meta name="description" content="SAIREN COLOR ARCHIVE — Color reaches you before language." />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="SAIREN COLOR ARCHIVE" />
+  <meta property="og:description" content="Color reaches you before language." />
+  <meta property="og:url" content="https://sairencolorarchive.com/" />
+  <meta property="og:image" content="https://sairencolorarchive.com/assets/images/ui/logo.svg" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="SAIREN COLOR ARCHIVE" />
+  <meta name="twitter:description" content="Color reaches you before language." />
+  <meta name="twitter:image" content="https://sairencolorarchive.com/assets/images/ui/logo.svg" />
+
+  <link rel="icon" href="/assets/images/ui/favicon.ico" />
+  <link rel="stylesheet" href="/assets/css/style.css" />
+</head>
+<body>
+  <canvas id="matrixCanvas" class="matrixCanvas" aria-hidden="true"></canvas>
+  <div class="matrixGlow" aria-hidden="true"></div>
+  <div class="matrix-veil" aria-hidden="true"></div>
+  <header class="header">
+    <div class="inner">
+      <a class="brand matrix-text matrix-scramble" data-colorize="chars" data-keep-lang="1" href="/index.html">
+        <span data-i18n="siteName">SAIREN COLOR ARCHIVE</span>
+      </a>
+
+      <div class="headerRight">
+        <div class="langWrap">
+          <label class="srOnly" for="langSelect">Language</label>
+          <select id="langSelect" class="langSelect" aria-label="Language">
+            <option value="ja">JA</option>
+            <option value="en">EN</option>
+            <option value="es">ES</option>
+            <option value="fr">FR</option>
+            <option value="ko">KO</option>
+            <option value="zh-hans">中文</option>
+          </select>
+          <button class="navToggle" id="navToggle" aria-label="Menu">☰</button>
+        </div>
+
+        <nav class="nav" aria-label="Primary">
+          <a data-i18n="nav.home" data-keep-lang="1" href="/index.html">HOME</a>
+          <a data-i18n="nav.works" data-keep-lang="1" href="/works.html">WORKS</a>
+          <a data-i18n="nav.about" data-keep-lang="1" href="/about.html">ABOUT</a>
+          <a data-i18n="nav.sns" data-keep-lang="1" href="/sns.html">SNS</a>
+          <a data-i18n="nav.contact" data-keep-lang="1" href="/contact.html">CONTACT</a>
+          <a data-i18n="nav.license" data-keep-lang="1" href="/license.html">LICENSE</a>
+        </nav>
+      </div>
+    </div>
+
+    <div class="navDrawer" id="navDrawer" aria-hidden="true">
+      <a data-i18n="nav.home" data-keep-lang="1" href="/index.html">HOME</a>
+      <a data-i18n="nav.works" data-keep-lang="1" href="/works.html">WORKS</a>
+      <a data-i18n="nav.about" data-keep-lang="1" href="/about.html">ABOUT</a>
+      <a data-i18n="nav.sns" data-keep-lang="1" href="/sns.html">SNS</a>
+      <a data-i18n="nav.contact" data-keep-lang="1" href="/contact.html">CONTACT</a>
+      <a data-i18n="nav.license" data-keep-lang="1" href="/license.html">LICENSE</a>
+    </div>
+  </header>
+  <main class="main">
+    <section class="pageHeader">
+      <h1 class="pageTitle matrix-text" data-colorize="words" data-i18n="contact.title">CONTACT</h1>
+      <p class="pageSub" data-i18n="contact.subtitle">Email</p>
+    </section>
+
+    <section class="cards">
+      <div class="card">
+        <div class="cardTitle" data-i18n="contact.emailLabel">Email</div>
+        <div class="cardMeta"><a href="mailto:info@sairencolorarchive.com">info@sairencolorarchive.com</a></div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="footerInner">
+      <div class="footerLeft">© <span id="year"></span> <span data-i18n="siteName">SAIREN COLOR ARCHIVE</span></div>
+    </div>
+  </footer>
+
+  <script src="/assets/js/i18n.js"></script>
+  <script src="/assets/js/matrix-text.js" defer></script>
+  <script src="/assets/js/brand-color.js"></script>
+  <script src="/assets/js/theme-hero.js"></script>
+  <script src="/assets/js/tiles-color.js"></script>
+  <script src="/assets/js/matrix.js"></script>
+  <script src="/assets/js/nav.js"></script>
+  <script src="/assets/js/year.js"></script>
+</body>
+</html>
