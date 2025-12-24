@@ -1,0 +1,67 @@
+(function(){
+  const PALETTE = ['#39ff14','#00ff9a','#00e5ff','#7cff00','#00c853','#00b0ff','#b6ff00','#00ffea'];
+
+  function randomColor(){
+    return PALETTE[Math.floor(Math.random()*PALETTE.length)];
+  }
+
+  function wrapWords(el){
+    const text = el.textContent || '';
+    const parts = text.split(/(\s+)/);
+    el.innerHTML = parts.map(p => {
+      if(/^\s+$/.test(p)) return p;
+      return `<span class="color-word">${escapeHtml(p)}</span>`;
+    }).join('');
+  }
+
+  function wrapChars(el){
+    const text = el.textContent || '';
+    const chars = Array.from(text);
+    el.innerHTML = chars.map(ch => {
+      if(ch === ' ') return ' ';
+      return `<span class="color-char">${escapeHtml(ch)}</span>`;
+    }).join('');
+  }
+
+  function escapeHtml(str){
+    return str
+      .replace(/&/g,'&amp;')
+      .replace(/</g,'&lt;')
+      .replace(/>/g,'&gt;')
+      .replace(/"/g,'&quot;')
+      .replace(/'/g,'&#039;');
+  }
+
+  function recolor(el){
+    el.querySelectorAll('span.color-word, span.color-char').forEach(s => {
+      s.style.color = randomColor();
+      s.style.textShadow = `0 0 18px ${s.style.color}`;
+    });
+  }
+
+  // Public: called from i18n.js after it updates text
+  window.colorizeText = function(){
+    document.querySelectorAll('[data-colorize="words"]').forEach(el => {
+      wrapWords(el);
+      recolor(el);
+    });
+    document.querySelectorAll('[data-colorize="chars"]').forEach(el => {
+      wrapChars(el);
+      recolor(el);
+    });
+  };
+
+  function prefersReduced(){
+    return window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  }
+
+  // Initial paint
+  window.colorizeText();
+
+  // Slow re-coloring for a "living" title (disabled for reduced motion)
+  if(!prefersReduced()){
+    setInterval(() => {
+      document.querySelectorAll('[data-colorize]').forEach(recolor);
+    }, 6500);
+  }
+})();
