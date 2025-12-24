@@ -1,0 +1,487 @@
+{
+  "defaults": {
+    "lang": "ja"
+  },
+  "lookbook": {
+    "externalUrl": "https://look.sairencolorarchive.com/"
+  },
+  "contact": {
+    "email": "info@sairencolorarchive.com"
+  },
+  "sns": {
+    "instagramUrl": "https://www.instagram.com/tcda.shop",
+    "tiktokUrl": "https://www.tiktok.com/@tcda.shop"
+  },
+  "works": [
+    {
+      "id": "artifact-01",
+      "title": "WORK 01",
+      "raw": "/assets/images/works/color/artifact-01-raw.webp",
+      "main": "/assets/images/works/formed/artifact-01-main.webp",
+      "alt": "ARTIFACT 01"
+    },
+    {
+      "id": "artifact-02",
+      "title": "WORK 02",
+      "raw": "/assets/images/works/color/artifact-02-raw.webp",
+      "main": "/assets/images/works/formed/artifact-02-main.webp",
+      "alt": "ARTIFACT 02"
+    },
+    {
+      "id": "artifact-03",
+      "title": "WORK 03",
+      "raw": "/assets/images/works/color/artifact-03-raw.webp",
+      "main": "/assets/images/works/formed/artifact-03-main.webp",
+      "alt": "ARTIFACT 03"
+    },
+    {
+      "id": "artifact-04",
+      "title": "WORK 04",
+      "raw": "/assets/images/works/color/artifact-04-raw.webp",
+      "main": "/assets/images/works/formed/artifact-04-main.webp",
+      "alt": "ARTIFACT 04"
+    },
+    {
+      "id": "artifact-05",
+      "title": "WORK 05",
+      "raw": "/assets/images/works/color/artifact-05-raw.webp",
+      "main": "/assets/images/works/formed/artifact-05-main.webp",
+      "alt": "ARTIFACT 05"
+    },
+    {
+      "id": "artifact-06",
+      "title": "WORK 06",
+      "raw": "/assets/images/works/color/artifact-06-raw.webp",
+      "main": "/assets/images/works/formed/artifact-06-main.webp",
+      "alt": "ARTIFACT 06"
+    },
+    {
+      "id": "artifact-07",
+      "title": "WORK 07",
+      "raw": "/assets/images/works/color/artifact-07-raw.webp",
+      "main": "/assets/images/works/formed/artifact-07-main.webp",
+      "alt": "ARTIFACT 07"
+    },
+    {
+      "id": "artifact-08",
+      "title": "WORK 08",
+      "raw": "/assets/images/works/color/artifact-08-raw.webp",
+      "main": "/assets/images/works/formed/artifact-08-main.webp",
+      "alt": "ARTIFACT 08"
+    },
+    {
+      "id": "artifact-09",
+      "title": "WORK 09",
+      "raw": "/assets/images/works/color/artifact-09-raw.webp",
+      "main": "/assets/images/works/formed/artifact-09-main.webp",
+      "alt": "ARTIFACT 09"
+    },
+    {
+      "id": "artifact-10",
+      "title": "WORK 10",
+      "raw": "/assets/images/works/color/artifact-10-raw.webp",
+      "main": "/assets/images/works/formed/artifact-10-main.webp",
+      "alt": "ARTIFACT 10"
+    },
+    {
+      "id": "artifact-11",
+      "title": "WORK 11",
+      "raw": "/assets/images/works/color/artifact-11-raw.webp",
+      "main": "/assets/images/works/formed/artifact-11-main.webp",
+      "alt": "ARTIFACT 11"
+    },
+    {
+      "id": "artifact-12",
+      "title": "WORK 12",
+      "raw": "/assets/images/works/color/artifact-12-raw.webp",
+      "main": "/assets/images/works/formed/artifact-12-main.webp",
+      "alt": "ARTIFACT 12"
+    },
+    {
+      "id": "artifact-13",
+      "title": "WORK 13",
+      "raw": "/assets/images/works/color/artifact-13-raw.webp",
+      "main": "/assets/images/works/formed/artifact-13-main.webp",
+      "alt": "ARTIFACT 13"
+    },
+    {
+      "id": "artifact-14",
+      "title": "WORK 14",
+      "raw": "/assets/images/works/color/artifact-14-raw.webp",
+      "main": "/assets/images/works/formed/artifact-14-main.webp",
+      "alt": "ARTIFACT 14"
+    },
+    {
+      "id": "artifact-15",
+      "title": "WORK 15",
+      "raw": "/assets/images/works/color/artifact-15-raw.webp",
+      "main": "/assets/images/works/formed/artifact-15-main.webp",
+      "alt": "ARTIFACT 15"
+    },
+    {
+      "id": "artifact-16",
+      "title": "WORK 16",
+      "raw": "/assets/images/works/color/artifact-16-raw.webp",
+      "main": "/assets/images/works/formed/artifact-16-main.webp",
+      "alt": "ARTIFACT 16"
+    },
+    {
+      "id": "artifact-17",
+      "title": "WORK 17",
+      "raw": "/assets/images/works/color/artifact-17-raw.webp",
+      "main": "/assets/images/works/formed/artifact-17-main.webp",
+      "alt": "ARTIFACT 17"
+    },
+    {
+      "id": "artifact-18",
+      "title": "WORK 18",
+      "raw": "/assets/images/works/color/artifact-18-raw.webp",
+      "main": "/assets/images/works/formed/artifact-18-main.webp",
+      "alt": "ARTIFACT 18"
+    },
+    {
+      "id": "artifact-19",
+      "title": "WORK 19",
+      "raw": "/assets/images/works/color/artifact-19-raw.webp",
+      "main": "/assets/images/works/formed/artifact-19-main.webp",
+      "alt": "ARTIFACT 19"
+    },
+    {
+      "id": "artifact-20",
+      "title": "WORK 20",
+      "raw": "/assets/images/works/color/artifact-20-raw.webp",
+      "main": "/assets/images/works/formed/artifact-20-main.webp",
+      "alt": "ARTIFACT 20"
+    }
+  ],
+  "i18n": {
+    "siteName": {
+      "ja": "SAIREN COLOR ARCHIVE",
+      "en": "SAIREN COLOR ARCHIVE",
+      "es": "SAIREN COLOR ARCHIVE",
+      "fr": "SAIREN COLOR ARCHIVE",
+      "ko": "SAIREN COLOR ARCHIVE",
+      "zh-hans": "SAIREN COLOR ARCHIVE"
+    },
+    "title.home": {
+      "ja": "SAIREN COLOR ARCHIVE",
+      "en": "SAIREN COLOR ARCHIVE",
+      "es": "SAIREN COLOR ARCHIVE",
+      "fr": "SAIREN COLOR ARCHIVE",
+      "ko": "SAIREN COLOR ARCHIVE",
+      "zh-hans": "SAIREN COLOR ARCHIVE"
+    },
+    "title.works": {
+      "ja": "WORKS | SAIREN COLOR ARCHIVE",
+      "en": "WORKS | SAIREN COLOR ARCHIVE",
+      "es": "OBRAS | SAIREN COLOR ARCHIVE",
+      "fr": "ŒUVRES | SAIREN COLOR ARCHIVE",
+      "ko": "WORKS | SAIREN COLOR ARCHIVE",
+      "zh-hans": "作品 | SAIREN COLOR ARCHIVE"
+    },
+    "title.about": {
+      "ja": "ABOUT | SAIREN COLOR ARCHIVE",
+      "en": "ABOUT | SAIREN COLOR ARCHIVE",
+      "es": "ACERCA DE | SAIREN COLOR ARCHIVE",
+      "fr": "À PROPOS | SAIREN COLOR ARCHIVE",
+      "ko": "ABOUT | SAIREN COLOR ARCHIVE",
+      "zh-hans": "关于 | SAIREN COLOR ARCHIVE"
+    },
+    "title.sns": {
+      "ja": "SNS | SAIREN COLOR ARCHIVE",
+      "en": "SNS | SAIREN COLOR ARCHIVE",
+      "es": "SNS | SAIREN COLOR ARCHIVE",
+      "fr": "RÉSEAUX | SAIREN COLOR ARCHIVE",
+      "ko": "SNS | SAIREN COLOR ARCHIVE",
+      "zh-hans": "社交 | SAIREN COLOR ARCHIVE"
+    },
+    "title.contact": {
+      "ja": "CONTACT | SAIREN COLOR ARCHIVE",
+      "en": "CONTACT | SAIREN COLOR ARCHIVE",
+      "es": "CONTACTO | SAIREN COLOR ARCHIVE",
+      "fr": "CONTACT | SAIREN COLOR ARCHIVE",
+      "ko": "CONTACT | SAIREN COLOR ARCHIVE",
+      "zh-hans": "联系 | SAIREN COLOR ARCHIVE"
+    },
+    "title.license": {
+      "ja": "LICENSE | SAIREN COLOR ARCHIVE",
+      "en": "LICENSE | SAIREN COLOR ARCHIVE",
+      "es": "LICENCIA | SAIREN COLOR ARCHIVE",
+      "fr": "LICENCE | SAIREN COLOR ARCHIVE",
+      "ko": "LICENSE | SAIREN COLOR ARCHIVE",
+      "zh-hans": "许可 | SAIREN COLOR ARCHIVE"
+    },
+    "nav.home": {
+      "ja": "HOME",
+      "en": "HOME",
+      "es": "INICIO",
+      "fr": "ACCUEIL",
+      "ko": "HOME",
+      "zh-hans": "首页"
+    },
+    "nav.works": {
+      "ja": "WORKS",
+      "en": "WORKS",
+      "es": "OBRAS",
+      "fr": "ŒUVRES",
+      "ko": "WORKS",
+      "zh-hans": "作品"
+    },
+    "nav.lookbook": {
+      "ja": "LOOKBOOK",
+      "en": "LOOKBOOK",
+      "es": "LOOKBOOK",
+      "fr": "LOOKBOOK",
+      "ko": "LOOKBOOK",
+      "zh-hans": "造型册"
+    },
+    "nav.about": {
+      "ja": "ABOUT",
+      "en": "ABOUT",
+      "es": "ACERCA DE",
+      "fr": "À PROPOS",
+      "ko": "ABOUT",
+      "zh-hans": "关于"
+    },
+    "nav.sns": {
+      "ja": "SNS",
+      "en": "SNS",
+      "es": "SNS",
+      "fr": "RÉSEAUX",
+      "ko": "SNS",
+      "zh-hans": "社交"
+    },
+    "nav.contact": {
+      "ja": "CONTACT",
+      "en": "CONTACT",
+      "es": "CONTACTO",
+      "fr": "CONTACT",
+      "ko": "CONTACT",
+      "zh-hans": "联系"
+    },
+    "nav.license": {
+      "ja": "LICENSE",
+      "en": "LICENSE",
+      "es": "LICENCIA",
+      "fr": "LICENCE",
+      "ko": "LICENSE",
+      "zh-hans": "许可"
+    },
+    "hero.tagline": {
+      "ja": "色彩は、言葉より先に届く。",
+      "en": "Color reaches you before words.",
+      "es": "El color llega antes que las palabras.",
+      "fr": "La couleur te touche avant les mots.",
+      "ko": "색채는 말보다 먼저 닿는다.",
+      "zh-hans": "色彩先于语言抵达。"
+    },
+    "works.openHint": {
+      "ja": "タップして開く",
+      "en": "Tap to open",
+      "es": "Toca para abrir",
+      "fr": "Touchez pour ouvrir",
+      "ko": "탭해서 열기",
+      "zh-hans": "点击打开"
+    },
+    "works.tapHint": {
+      "ja": "作品をタップすると画面上に表示されます。RAW / MAIN を切り替え可能。",
+      "en": "Tap a work to open. Switch RAW / MAIN.",
+      "es": "Toca una obra para abrir. Cambia RAW / MAIN.",
+      "fr": "Touchez une œuvre pour ouvrir. Basculer RAW / MAIN.",
+      "ko": "작품을 탭하면 열립니다. RAW / MAIN 전환.",
+      "zh-hans": "点击作品打开，可切换 RAW / MAIN。"
+    },
+    "work.viewMain": {
+      "ja": "MAIN",
+      "en": "MAIN",
+      "es": "MAIN",
+      "fr": "MAIN",
+      "ko": "MAIN",
+      "zh-hans": "主图"
+    },
+    "work.viewRaw": {
+      "ja": "RAW",
+      "en": "RAW",
+      "es": "RAW",
+      "fr": "RAW",
+      "ko": "RAW",
+      "zh-hans": "原图"
+    },
+    "work.close": {
+      "ja": "閉じる",
+      "en": "Close",
+      "es": "Cerrar",
+      "fr": "Fermer",
+      "ko": "닫기",
+      "zh-hans": "关闭"
+    },
+    "about.lead": {
+      "ja": "SAIREN COLOR ARCHIVE は、彩蓮（Sairen Takashima）の作品と制作の軌跡を記録するアーカイブです。",
+      "en": "SAIREN COLOR ARCHIVE is an archive of artworks and the creative journey by Sairen Takashima.",
+      "es": "SAIREN COLOR ARCHIVE es un archivo de obras y del recorrido creativo de Sairen Takashima.",
+      "fr": "SAIREN COLOR ARCHIVE est une archive des œuvres et du parcours créatif de Sairen Takashima.",
+      "ko": "SAIREN COLOR ARCHIVE는 사이렌 타카시마의 작품과 제작의 궤적을 기록하는 아카이브입니다.",
+      "zh-hans": "SAIREN COLOR ARCHIVE 是高嶋彩莲（Sairen Takashima）的作品与创作轨迹档案。"
+    },
+    "about.p1": {
+      "ja": "色を「きれい」や「オシャレ」で終わらせず、感情や痕跡として扱います。",
+      "en": "Color is treated as emotion and trace—not merely “pretty” or “stylish.”",
+      "es": "El color se trata como emoción y huella, no solo como “bonito” o “elegante”.",
+      "fr": "La couleur est une émotion et une trace—pas seulement “belle” ou “stylée”.",
+      "ko": "색을 '예쁘다'나 '멋지다'로 끝내지 않고 감정과 흔적으로 다룹니다.",
+      "zh-hans": "色彩不仅是“好看/时髦”，更是情感与痕迹。"
+    },
+    "about.p2": {
+      "ja": "WORKS では完成形（MAIN）と素材（RAW）を切り替えできます。",
+      "en": "In WORKS, you can switch between the formed image (MAIN) and the raw material (RAW).",
+      "es": "En WORKS puedes alternar entre la imagen final (MAIN) y el material (RAW).",
+      "fr": "Dans WORKS, vous pouvez basculer entre l’image finale (MAIN) et la matière (RAW).",
+      "ko": "WORKS에서 완성본(MAIN)과 원본(RAW)을 전환할 수 있습니다.",
+      "zh-hans": "在 WORKS 中可在成品（MAIN）与素材（RAW）之间切换。"
+    },
+    "sns.desc": {
+      "ja": "公式SNSはこちら。",
+      "en": "Official social links.",
+      "es": "Enlaces oficiales de redes.",
+      "fr": "Liens officiels.",
+      "ko": "공식 SNS 링크.",
+      "zh-hans": "官方社交链接。"
+    },
+    "contact.desc": {
+      "ja": "お問い合わせはメールでお願いします。",
+      "en": "Contact by email.",
+      "es": "Contacto por correo.",
+      "fr": "Contact par email.",
+      "ko": "이메일로 문의하세요.",
+      "zh-hans": "请通过邮件联系。"
+    },
+    "license.p1": {
+      "ja": "本サイトの画像・文章の無断転載を禁止します。",
+      "en": "Unauthorized reproduction is prohibited.",
+      "es": "Se prohíbe la reproducción no autorizada.",
+      "fr": "Reproduction non autorisée interdite.",
+      "ko": "무단 전재를 금지합니다.",
+      "zh-hans": "禁止未经许可转载。"
+    },
+    "license.p2": {
+      "ja": "詳細は必要に応じて追記します。",
+      "en": "More details may be added as needed.",
+      "es": "Se añadirán detalles si es necesario.",
+      "fr": "Des détails peuvent être ajoutés si nécessaire.",
+      "ko": "필요 시 추가 안내합니다.",
+      "zh-hans": "必要时将补充说明。"
+    },
+    "about.body": {
+      "ja": "<p>色彩は、言葉より先に届く。<br>SAIREN COLOR ARCHIVE は、私・<strong>彩蓮（Sairen Takashima）</strong>の作品と制作の軌跡を記録するアーカイブです。</p>\n<p>私は、色を「きれい」や「オシャレ」で終わらせません。<br>色は感情であり、痕跡であり、意識の温度です。<br>言葉が追いつく前に、先に刺さってしまうもの。そこを狙って作っています。</p>\n<p>この場所は、作品を並べるだけのギャラリーではなく、<strong>“感覚を取り戻すための入口”</strong>として設計しています。<br>見る人が、自分の内側にある「まだ言語化されていない感覚」を回収できるように。</p>\n<hr>\n<h3>私について</h3>\n<p>彩蓮（Sairen Takashima）。<br>私は自己実現型のクリエイターであり、思想家であり、ブランド創造者です。</p>\n<p>私の制作は、気分ではなく、問いから始まります。</p>\n<ul>\n<li>それは本当か？</li>\n<li>本質は何か？</li>\n<li>何が“届いてしまう”のか？</li>\n<li>なぜ、その色なのか？</li>\n<li>なぜ、その余白なのか？</li>\n</ul>\n<p>作品は、説明より先に成立してほしい。<br>けれど、成立した瞬間に“ただの雰囲気”に逃げたくない。<br>だから私は、抽象でありながら、構造で締めます。</p>\n<hr>\n<h3>SAIREN COLOR ARCHIVE がやりたいこと</h3>\n<p>このサイトがやりたいのは、派手な演出ではありません。<br>余計なノイズを削って、作品にまっすぐ到達させること。</p>\n<p>制作の世界には、見せなくていい文言や、重複した導線や、意味の薄い装飾が簡単に増えます。<br>私はそれを嫌います。見せたいのは「誤魔化し」ではなく「到達」だから。</p>\n<p>だからここでは、基本的に次の体験だけを強くします。</p>\n<ul>\n<li><strong>WORKS</strong>：作品一覧（タップで拡大）</li>\n<li><strong>LOOKBOOK</strong>：作品から生まれたファッションの世界</li>\n<li><strong>SNS</strong>：制作・更新・変化の“現在地”</li>\n<li><strong>CONTACT</strong>：依頼・相談窓口</li>\n</ul>\n<p>迷わせない。散らさない。作品に辿り着かせる。<br>それが、SAIREN COLOR ARCHIVE の設計思想です。</p>\n<hr>\n<h3>作品の核｜私のアートは何をしているか</h3>\n<p>私の作品は、抽象表現です。<br>しかし、曖昧さの逃げ道としての抽象ではなく、感情を可視化するための抽象です。</p>\n<p>主にやっているのは、この4つです。</p>\n<ol>\n<li><strong>感情の層を「レイヤー」で作る</strong><br>人の感情は単色じゃない。だから、色を重ねます。濁りも、透明も、痛みも、回復も、同居させます。</li>\n<li><strong>呼吸を「余白と密度」で設計する</strong><br>密度が高い場所は心拍を上げる。余白は、呼吸を戻す。作品の中に“身体反応”を起こすために、配置を決めています。</li>\n<li><strong>ランダムに見える必然を作る</strong><br>「ランダム」は好きです。ただし“適当”とは違う。偶然っぽく見せながら、全体の方向性は締める。この矛盾の制御が、私の作品の骨格です。</li>\n<li><strong>言語化前の感覚を呼び起こす</strong><br>説明できないのに、分かってしまう。そのゾーンに触れると、人は自分の感覚に戻ります。私はそこを狙って作っています。</li>\n</ol>\n<hr>\n<h3>アートを“現実”に接続する｜LOOKBOOKについて</h3>\n<p>私の作品は、ときどき服になります。理由は単純です。アートを壁に閉じ込めたくないから。</p>\n<p>アートは、鑑賞で終わると「他人事」になりやすい。<br>でも、身につけられる形に変換すると、アートは「体験」になります。<br>自分の身体を通して、色が現実に染み込む。</p>\n<p>私のもう一つの世界として、<strong>Transcend Color Digital Apparel（TCDA）</strong>という思想と制作があります。<br>理念は「アートを着る、感性を解放する」。<br>LOOKBOOKは、その接続面です。</p>\n<hr>\n<h3>制作姿勢｜“色忠実”と“誠実さ”</h3>\n<p>私の制作で最優先するのは、色の正確さです。色が狂うと、意味が狂う。だから、作品を見せる環境も、できる限り整えます。</p>\n<p>そしてもう一つ。私は見せかけや欺瞞が嫌いです。「それっぽい言葉」や「盛ったストーリー」で誤魔化したくない。作品が届くかどうかで勝負します。</p>\n<hr>\n<h3>このサイトでできること（見る人へ）</h3>\n<p>ここに来たあなたにしてほしいのは、理解ではなく“反応”です。</p>\n<ul>\n<li>好き／嫌い</li>\n<li>落ち着く／落ち着かない</li>\n<li>何かを思い出す</li>\n<li>言葉にならないけど引っかかる</li>\n</ul>\n<p>それで十分です。感覚が動いた時点で、作品は仕事をしています。</p>",
+      "en": "<p><strong>Color reaches you before language.</strong><br>SAIREN COLOR ARCHIVE is an archive of my works and making process—by <strong>Sairen Takashima</strong>.</p>\n<p>I don’t let color end at “pretty” or “fashionable.”<br>Color is emotion, trace, and the temperature of consciousness—something that pierces you before words catch up. That is what I aim for.</p>\n<p>This is not just a gallery that displays works. It is designed as an <strong>entrance to recover your senses</strong>, so you can pick up feelings inside you that you haven’t yet turned into language.</p>\n<hr>\n<h3>About me</h3>\n<p>Sairen Takashima.<br>I am a self-actualizing creator, a thinker, and a brand builder.</p>\n<p>My work begins with questions—not moods:</p>\n<ul>\n<li>Is it true?</li>\n<li>What is the essence?</li>\n<li>What “reaches” people?</li>\n<li>Why this color?</li>\n<li>Why this space?</li>\n</ul>\n<p>I want a piece to stand on its own before explanations—yet I refuse to escape into “vibes.” So I tighten abstraction with structure.</p>\n<hr>\n<h3>What SAIREN COLOR ARCHIVE is for</h3>\n<p>This site is not about flashy tricks. It’s about removing noise and letting you arrive at the work directly.</p>\n<p>Creative sites easily accumulate unnecessary text, duplicated paths, and decoration with thin meaning. I dislike that. I want “arrival,” not “disguise.”</p>\n<p>So I strengthen only these experiences:</p>\n<ul>\n<li><strong>WORKS</strong>: the artworks (tap to enlarge)</li>\n<li><strong>LOOKBOOK</strong>: fashion born from the works</li>\n<li><strong>SNS</strong>: the current pulse—process, updates, changes</li>\n<li><strong>CONTACT</strong>: commissions and inquiries</li>\n</ul>\n<p>No confusion. No scattering. Reach the work. That is the design philosophy.</p>\n<hr>\n<h3>The core of my art</h3>\n<p>My work is abstract—<em>not</em> as an escape into ambiguity, but as a way to visualize emotion.</p>\n<ol>\n<li><strong>Build emotional layers</strong><br>Feelings aren’t single-color, so I stack colors—mud, clarity, pain, recovery—together.</li>\n<li><strong>Design breathing with density and space</strong><br>Dense areas raise the heartbeat; blank areas return the breath. I place elements to trigger bodily response.</li>\n<li><strong>Create necessity that looks random</strong><br>I love randomness, but not carelessness. It looks accidental while the overall direction stays tight.</li>\n<li><strong>Awaken pre-verbal sensation</strong><br>You can’t explain it, yet you know it. Touch that zone and you return to your senses. That is my target.</li>\n</ol>\n<hr>\n<h3>Connecting art to reality: LOOKBOOK</h3>\n<p>Sometimes my works become clothing—simply because I don’t want art trapped on a wall.</p>\n<p>Wearable form turns art from “someone else’s” into an experience—color soaking into reality through your body.</p>\n<p>Another world of mine is <strong>Transcend Color Digital Apparel (TCDA)</strong>, built on the idea: “Wear art, release sensitivity.” LOOKBOOK is that connection.</p>\n<hr>\n<h3>My stance: color accuracy & honesty</h3>\n<p>My top priority is color fidelity. When color breaks, meaning breaks. So I shape the viewing environment as carefully as possible.</p>\n<p>And I dislike pretense. No “sounding good” words, no inflated story—only whether the work reaches you.</p>\n<hr>\n<h3>For you, the viewer</h3>\n<p>What I want is not “understanding,” but <strong>reaction</strong>:</p>\n<ul>\n<li>like / dislike</li>\n<li>calm / unsettled</li>\n<li>remember something</li>\n<li>can’t name it, but it catches</li>\n</ul>\n<p>That’s enough. If your senses move, the work has done its job.</p>",
+      "es": "<p><strong>El color llega antes que las palabras.</strong><br>SAIREN COLOR ARCHIVE es un archivo de mis obras y de mi proceso de creación—por <strong>Sairen Takashima</strong>.</p>\n<p>No dejo que el color termine en “bonito” o “a la moda”.<br>El color es emoción, huella y temperatura de la conciencia—algo que te atraviesa antes de que las palabras alcancen. Eso es lo que busco.</p>\n<p>Esto no es solo una galería. Está diseñado como una <strong>entrada para recuperar los sentidos</strong>, para que recojas sensaciones internas que aún no has verbalizado.</p>\n<hr>\n<h3>Sobre mí</h3>\n<p>Sairen Takashima.<br>Soy una creadora orientada a la autorrealización, pensadora y creadora de marca.</p>\n<p>Mi trabajo empieza con preguntas, no con estados de ánimo:</p>\n<ul><li>¿Es verdad?</li><li>¿Cuál es la esencia?</li><li>¿Qué “llega” a la gente?</li><li>¿Por qué ese color?</li><li>¿Por qué ese espacio?</li></ul>\n<p>Quiero que la obra exista antes que la explicación, pero sin escapar a “solo vibra”. Por eso cierro la abstracción con estructura.</p>\n<hr>\n<h3>Qué quiere hacer SAIREN COLOR ARCHIVE</h3>\n<p>No se trata de trucos llamativos. Se trata de eliminar ruido y llegar directo a la obra.</p>\n<ul><li><strong>WORKS</strong>: obras (tocar para ampliar)</li><li><strong>LOOKBOOK</strong>: moda nacida de las obras</li><li><strong>SNS</strong>: el pulso actual</li><li><strong>CONTACT</strong>: encargos y consultas</li></ul>\n<p>No perderse. No dispersarse. Llegar a la obra. Esa es la filosofía.</p>",
+      "fr": "<p><strong>La couleur touche avant les mots.</strong><br>SAIREN COLOR ARCHIVE est une archive de mes œuvres et de mon processus—par <strong>Sairen Takashima</strong>.</p>\n<p>Je ne laisse pas la couleur se terminer à “joli” ou “tendance”.<br>La couleur est émotion, trace et température de la conscience—quelque chose qui frappe avant que les mots ne suivent. C’est ce que je vise.</p>\n<p>Ce n’est pas seulement une galerie. C’est une <strong>entrée pour retrouver ses sensations</strong>, afin de récupérer ce qui n’est pas encore verbalisé.</p>\n<hr>\n<h3>À propos de moi</h3>\n<p>Sairen Takashima.<br>Créatrice orientée vers l’accomplissement, penseuse et bâtisseuse de marque.</p>\n<p>Mon travail commence par des questions :</p>\n<ul><li>Est-ce vrai ?</li><li>Quelle est l’essence ?</li><li>Qu’est-ce qui “atteint” ?</li><li>Pourquoi cette couleur ?</li><li>Pourquoi cet espace ?</li></ul>\n<p>Je veux que l’œuvre tienne avant l’explication, sans se cacher derrière une simple “ambiance”. Je serre l’abstraction par la structure.</p>",
+      "ko": "<p><strong>색채는 말보다 먼저 닿는다.</strong><br>SAIREN COLOR ARCHIVE는 <strong>사이렌 타카시마</strong>의 작품과 제작의 궤적을 기록하는 아카이브입니다.</p>\n<p>나는 색을 ‘예쁘다’나 ‘멋지다’로 끝내지 않습니다.<br>색은 감정이고 흔적이며 의식의 온도입니다. 말이 따라오기 전에 먼저 꽂히는 것—그 지점을 노립니다.</p>\n<p>이곳은 단순한 갤러리가 아니라 <strong>감각을 되찾는 입구</strong>로 설계했습니다. 아직 언어화되지 않은 감각을 회수할 수 있도록.</p>\n<hr>\n<h3>나에 대해</h3>\n<p>사이렌 타카시마.<br>나는 자기실현형 크리에이터이자 사상가, 브랜드 창조자입니다.</p>\n<p>작업은 기분이 아니라 질문에서 시작합니다.</p>\n<ul><li>그것은 সত্য인가?</li><li>본질은 무엇인가?</li><li>무엇이 ‘닿는가’?</li><li>왜 그 색인가?</li><li>왜 그 여백인가?</li></ul>",
+      "zh-hans": "<p><strong>色彩比语言更先抵达。</strong><br>SAIREN COLOR ARCHIVE 是由 <strong>高嶋彩蓮（Sairen Takashima）</strong>记录作品与制作轨迹的档案。</p>\n<p>我不会让色彩停留在“好看”或“时髦”。<br>色彩是情绪、痕迹，也是意识的温度——在语言追上之前就先刺入的东西，我瞄准的就是这一点。</p>\n<p>这里不仅是陈列作品的画廊，更是一个<strong>找回感官的入口</strong>：帮助你回收那些尚未被语言化的感受。</p>\n<hr>\n<h3>关于我</h3>\n<p>高嶋彩蓮（Sairen Takashima）。<br>我是以自我实现为核心的创作者、思想者与品牌创造者。</p>\n<p>我的创作从提问开始：</p>\n<ul><li>这是真的吗？</li><li>本质是什么？</li><li>什么会“抵达”？</li><li>为什么是这个颜色？</li><li>为什么是这个留白？</li></ul>"
+    },
+    "meta.title": {
+      "ja": "SAIREN COLOR ARCHIVE",
+      "en": "SAIREN COLOR ARCHIVE",
+      "es": "SAIREN COLOR ARCHIVE",
+      "fr": "SAIREN COLOR ARCHIVE",
+      "ko": "SAIREN COLOR ARCHIVE",
+      "zh-hans": "SAIREN COLOR ARCHIVE"
+    },
+    "works.title": {
+      "ja": "WORKS",
+      "en": "WORKS",
+      "es": "WORKS",
+      "fr": "WORKS",
+      "ko": "WORKS",
+      "zh-hans": "WORKS"
+    },
+    "works.subtitle": {
+      "ja": "タップで拡大。RAW / MAIN を切替できます。",
+      "en": "Tap to enlarge. Toggle RAW / MAIN.",
+      "es": "Toca para ampliar. Cambia RAW / MAIN.",
+      "fr": "Touchez pour agrandir. Bascule RAW / MAIN.",
+      "ko": "탭하여 확대. RAW / MAIN 전환.",
+      "zh-hans": "点击放大。切换 RAW / MAIN。"
+    },
+    "sns.title": {
+      "ja": "SNS",
+      "en": "SNS",
+      "es": "SNS",
+      "fr": "SNS",
+      "ko": "SNS",
+      "zh-hans": "SNS"
+    },
+    "sns.subtitle": {
+      "ja": "アカウントリンク",
+      "en": "Account links",
+      "es": "Enlaces",
+      "fr": "Liens",
+      "ko": "계정 링크",
+      "zh-hans": "账号链接"
+    },
+    "contact.title": {
+      "ja": "CONTACT",
+      "en": "CONTACT",
+      "es": "CONTACT",
+      "fr": "CONTACT",
+      "ko": "CONTACT",
+      "zh-hans": "CONTACT"
+    },
+    "contact.subtitle": {
+      "ja": "お問い合わせはメールでお願いします。",
+      "en": "Email for inquiries.",
+      "es": "Correo para consultas.",
+      "fr": "Email pour demandes.",
+      "ko": "문의는 이메일로.",
+      "zh-hans": "咨询请发邮件。"
+    },
+    "contact.emailLabel": {
+      "ja": "Email",
+      "en": "Email",
+      "es": "Email",
+      "fr": "Email",
+      "ko": "이메일",
+      "zh-hans": "邮箱"
+    },
+    "license.title": {
+      "ja": "LICENSE",
+      "en": "LICENSE",
+      "es": "LICENSE",
+      "fr": "LICENSE",
+      "ko": "LICENSE",
+      "zh-hans": "LICENSE"
+    },
+    "license.subtitle": {
+      "ja": "利用規約",
+      "en": "Usage",
+      "es": "Uso",
+      "fr": "Utilisation",
+      "ko": "이용",
+      "zh-hans": "使用"
+    },
+    "license.body": {
+      "ja": "作品の著作権は SAIREN COLOR ARCHIVE に帰属します。無断転載は禁止転載を禁じます。",
+      "en": "All artworks are © SAIREN COLOR ARCHIVE. Unauthorized reproduction is prohibited.",
+      "es": "Todas las obras son © SAIREN COLOR ARCHIVE. Prohibida la reproducción sin permiso.",
+      "fr": "Toutes les œuvres sont © SAIREN COLOR ARCHIVE. Reproduction non autorisée interdite.",
+      "ko": "모든 작품은 © SAIREN COLOR ARCHIVE. 무단 복제 금지.",
+      "zh-hans": "所有作品均为 © SAIREN COLOR ARCHIVE。禁止未经授权转载。"
+    },
+    "lookbook.title": {
+      "ja": "LOOKBOOK",
+      "en": "LOOKBOOK",
+      "es": "LOOKBOOK",
+      "fr": "LOOKBOOK",
+      "ko": "LOOKBOOK",
+      "zh-hans": "LOOKBOOK"
+    },
+    "lookbook.subtitle": {
+      "ja": "外部サイトを開いています…",
+      "en": "Opening external site…",
+      "es": "Abriendo sitio externo…",
+      "fr": "Ouverture du site externe…",
+      "ko": "외부 사이트 여는 중…",
+      "zh-hans": "正在打开外部站点…"
+    }
+  }
+}
