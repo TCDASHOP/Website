@@ -1,0 +1,77 @@
+/* Works grid */
+#worksGrid{
+  display:grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap:14px;
+}
+
+.work-card{
+  border-radius:16px;
+  border:1px solid rgba(255,255,255,.18);
+  background: rgba(255,255,255,.06);
+  padding:18px 14px;
+  color: rgba(255,255,255,.92);
+  text-align:left;
+  cursor:pointer;
+}
+
+.work-card__label{
+  font-weight:800;
+  letter-spacing:.08em;
+}
+
+/* Modal */
+.workModal{ position: fixed; inset: 0; display:none; z-index:9999; }
+.workModal.is-open{ display:block; }
+
+.workModal__backdrop{ position:absolute; inset:0; background: rgba(0,0,0,.62); }
+
+.workModal__dialog{
+  position:absolute; left:50%; top:50%;
+  transform: translate(-50%,-50%);
+  width: min(92vw, 980px);
+  max-height: 92dvh;
+  border-radius: 16px;
+  overflow:hidden;
+  background: rgba(10,10,12,.92);
+  border:1px solid rgba(255,255,255,.14);
+}
+
+.workModal__header{
+  padding: 14px 16px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+}
+
+.workModal__tabs{ display:flex; gap:8px; }
+.tab{
+  padding:8px 12px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,.18);
+  background: rgba(255,255,255,.06);
+  color: rgba(255,255,255,.92);
+  cursor:pointer;
+}
+.tab.is-active{ outline: 1px solid rgba(255,255,255,.55); }
+
+.workModal__close{
+  position:absolute;
+  right: 10px;
+  top: 10px;
+  padding: 8px 10px;
+  border-radius: 10px;
+  border:1px solid rgba(255,255,255,.18);
+  background: rgba(0,0,0,.25);
+  color: rgba(255,255,255,.92);
+  cursor:pointer;
+}
+
+#workModalImg{
+  width: 100%;
+  height: auto;
+  display:block;
+  background:#000;
+  object-fit: contain;
+}
