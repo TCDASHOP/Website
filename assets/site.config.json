@@ -1,0 +1,375 @@
+{
+  "defaults": {
+    "lang": "ja"
+  },
+  "lookbook": {
+    "externalUrl": "https://look.sairencolorarchive.com/"
+  },
+  "contact": {
+    "email": "info@sairencolorarchive.com"
+  },
+  "sns": {
+    "instagramUrl": "https://instagram.com/REPLACE_ME",
+    "tiktokUrl": "https://tiktok.com/@REPLACE_ME"
+  },
+  "works": [
+    {
+      "id": "artifact-01",
+      "title": "WORK 01",
+      "raw": "/assets/images/works/color/artifact-01-raw.webp",
+      "main": "/assets/images/works/formed/artifact-01-main.webp",
+      "alt": "ARTIFACT 01"
+    },
+    {
+      "id": "artifact-02",
+      "title": "WORK 02",
+      "raw": "/assets/images/works/color/artifact-02-raw.webp",
+      "main": "/assets/images/works/formed/artifact-02-main.webp",
+      "alt": "ARTIFACT 02"
+    },
+    {
+      "id": "artifact-03",
+      "title": "WORK 03",
+      "raw": "/assets/images/works/color/artifact-03-raw.webp",
+      "main": "/assets/images/works/formed/artifact-03-main.webp",
+      "alt": "ARTIFACT 03"
+    },
+    {
+      "id": "artifact-04",
+      "title": "WORK 04",
+      "raw": "/assets/images/works/color/artifact-04-raw.webp",
+      "main": "/assets/images/works/formed/artifact-04-main.webp",
+      "alt": "ARTIFACT 04"
+    },
+    {
+      "id": "artifact-05",
+      "title": "WORK 05",
+      "raw": "/assets/images/works/color/artifact-05-raw.webp",
+      "main": "/assets/images/works/formed/artifact-05-main.webp",
+      "alt": "ARTIFACT 05"
+    },
+    {
+      "id": "artifact-06",
+      "title": "WORK 06",
+      "raw": "/assets/images/works/color/artifact-06-raw.webp",
+      "main": "/assets/images/works/formed/artifact-06-main.webp",
+      "alt": "ARTIFACT 06"
+    },
+    {
+      "id": "artifact-07",
+      "title": "WORK 07",
+      "raw": "/assets/images/works/color/artifact-07-raw.webp",
+      "main": "/assets/images/works/formed/artifact-07-main.webp",
+      "alt": "ARTIFACT 07"
+    },
+    {
+      "id": "artifact-08",
+      "title": "WORK 08",
+      "raw": "/assets/images/works/color/artifact-08-raw.webp",
+      "main": "/assets/images/works/formed/artifact-08-main.webp",
+      "alt": "ARTIFACT 08"
+    },
+    {
+      "id": "artifact-09",
+      "title": "WORK 09",
+      "raw": "/assets/images/works/color/artifact-09-raw.webp",
+      "main": "/assets/images/works/formed/artifact-09-main.webp",
+      "alt": "ARTIFACT 09"
+    },
+    {
+      "id": "artifact-10",
+      "title": "WORK 10",
+      "raw": "/assets/images/works/color/artifact-10-raw.webp",
+      "main": "/assets/images/works/formed/artifact-10-main.webp",
+      "alt": "ARTIFACT 10"
+    },
+    {
+      "id": "artifact-11",
+      "title": "WORK 11",
+      "raw": "/assets/images/works/color/artifact-11-raw.webp",
+      "main": "/assets/images/works/formed/artifact-11-main.webp",
+      "alt": "ARTIFACT 11"
+    },
+    {
+      "id": "artifact-12",
+      "title": "WORK 12",
+      "raw": "/assets/images/works/color/artifact-12-raw.webp",
+      "main": "/assets/images/works/formed/artifact-12-main.webp",
+      "alt": "ARTIFACT 12"
+    },
+    {
+      "id": "artifact-13",
+      "title": "WORK 13",
+      "raw": "/assets/images/works/color/artifact-13-raw.webp",
+      "main": "/assets/images/works/formed/artifact-13-main.webp",
+      "alt": "ARTIFACT 13"
+    },
+    {
+      "id": "artifact-14",
+      "title": "WORK 14",
+      "raw": "/assets/images/works/color/artifact-14-raw.webp",
+      "main": "/assets/images/works/formed/artifact-14-main.webp",
+      "alt": "ARTIFACT 14"
+    },
+    {
+      "id": "artifact-15",
+      "title": "WORK 15",
+      "raw": "/assets/images/works/color/artifact-15-raw.webp",
+      "main": "/assets/images/works/formed/artifact-15-main.webp",
+      "alt": "ARTIFACT 15"
+    },
+    {
+      "id": "artifact-16",
+      "title": "WORK 16",
+      "raw": "/assets/images/works/color/artifact-16-raw.webp",
+      "main": "/assets/images/works/formed/artifact-16-main.webp",
+      "alt": "ARTIFACT 16"
+    },
+    {
+      "id": "artifact-17",
+      "title": "WORK 17",
+      "raw": "/assets/images/works/color/artifact-17-raw.webp",
+      "main": "/assets/images/works/formed/artifact-17-main.webp",
+      "alt": "ARTIFACT 17"
+    },
+    {
+      "id": "artifact-18",
+      "title": "WORK 18",
+      "raw": "/assets/images/works/color/artifact-18-raw.webp",
+      "main": "/assets/images/works/formed/artifact-18-main.webp",
+      "alt": "ARTIFACT 18"
+    },
+    {
+      "id": "artifact-19",
+      "title": "WORK 19",
+      "raw": "/assets/images/works/color/artifact-19-raw.webp",
+      "main": "/assets/images/works/formed/artifact-19-main.webp",
+      "alt": "ARTIFACT 19"
+    },
+    {
+      "id": "artifact-20",
+      "title": "WORK 20",
+      "raw": "/assets/images/works/color/artifact-20-raw.webp",
+      "main": "/assets/images/works/formed/artifact-20-main.webp",
+      "alt": "ARTIFACT 20"
+    }
+  ],
+  "i18n": {
+    "siteName": {
+      "ja": "SAIREN COLOR ARCHIVE",
+      "en": "SAIREN COLOR ARCHIVE",
+      "es": "SAIREN COLOR ARCHIVE",
+      "fr": "SAIREN COLOR ARCHIVE",
+      "ko": "SAIREN COLOR ARCHIVE",
+      "zh-hans": "SAIREN COLOR ARCHIVE"
+    },
+    "title.home": {
+      "ja": "SAIREN COLOR ARCHIVE",
+      "en": "SAIREN COLOR ARCHIVE",
+      "es": "SAIREN COLOR ARCHIVE",
+      "fr": "SAIREN COLOR ARCHIVE",
+      "ko": "SAIREN COLOR ARCHIVE",
+      "zh-hans": "SAIREN COLOR ARCHIVE"
+    },
+    "title.works": {
+      "ja": "WORKS | SAIREN COLOR ARCHIVE",
+      "en": "WORKS | SAIREN COLOR ARCHIVE",
+      "es": "OBRAS | SAIREN COLOR ARCHIVE",
+      "fr": "ŒUVRES | SAIREN COLOR ARCHIVE",
+      "ko": "WORKS | SAIREN COLOR ARCHIVE",
+      "zh-hans": "作品 | SAIREN COLOR ARCHIVE"
+    },
+    "title.about": {
+      "ja": "ABOUT | SAIREN COLOR ARCHIVE",
+      "en": "ABOUT | SAIREN COLOR ARCHIVE",
+      "es": "ACERCA DE | SAIREN COLOR ARCHIVE",
+      "fr": "À PROPOS | SAIREN COLOR ARCHIVE",
+      "ko": "ABOUT | SAIREN COLOR ARCHIVE",
+      "zh-hans": "关于 | SAIREN COLOR ARCHIVE"
+    },
+    "title.sns": {
+      "ja": "SNS | SAIREN COLOR ARCHIVE",
+      "en": "SNS | SAIREN COLOR ARCHIVE",
+      "es": "SNS | SAIREN COLOR ARCHIVE",
+      "fr": "RÉSEAUX | SAIREN COLOR ARCHIVE",
+      "ko": "SNS | SAIREN COLOR ARCHIVE",
+      "zh-hans": "社交 | SAIREN COLOR ARCHIVE"
+    },
+    "title.contact": {
+      "ja": "CONTACT | SAIREN COLOR ARCHIVE",
+      "en": "CONTACT | SAIREN COLOR ARCHIVE",
+      "es": "CONTACTO | SAIREN COLOR ARCHIVE",
+      "fr": "CONTACT | SAIREN COLOR ARCHIVE",
+      "ko": "CONTACT | SAIREN COLOR ARCHIVE",
+      "zh-hans": "联系 | SAIREN COLOR ARCHIVE"
+    },
+    "title.license": {
+      "ja": "LICENSE | SAIREN COLOR ARCHIVE",
+      "en": "LICENSE | SAIREN COLOR ARCHIVE",
+      "es": "LICENCIA | SAIREN COLOR ARCHIVE",
+      "fr": "LICENCE | SAIREN COLOR ARCHIVE",
+      "ko": "LICENSE | SAIREN COLOR ARCHIVE",
+      "zh-hans": "许可 | SAIREN COLOR ARCHIVE"
+    },
+    "nav.home": {
+      "ja": "HOME",
+      "en": "HOME",
+      "es": "INICIO",
+      "fr": "ACCUEIL",
+      "ko": "HOME",
+      "zh-hans": "首页"
+    },
+    "nav.works": {
+      "ja": "WORKS",
+      "en": "WORKS",
+      "es": "OBRAS",
+      "fr": "ŒUVRES",
+      "ko": "WORKS",
+      "zh-hans": "作品"
+    },
+    "nav.lookbook": {
+      "ja": "LOOKBOOK",
+      "en": "LOOKBOOK",
+      "es": "LOOKBOOK",
+      "fr": "LOOKBOOK",
+      "ko": "LOOKBOOK",
+      "zh-hans": "造型册"
+    },
+    "nav.about": {
+      "ja": "ABOUT",
+      "en": "ABOUT",
+      "es": "ACERCA DE",
+      "fr": "À PROPOS",
+      "ko": "ABOUT",
+      "zh-hans": "关于"
+    },
+    "nav.sns": {
+      "ja": "SNS",
+      "en": "SNS",
+      "es": "SNS",
+      "fr": "RÉSEAUX",
+      "ko": "SNS",
+      "zh-hans": "社交"
+    },
+    "nav.contact": {
+      "ja": "CONTACT",
+      "en": "CONTACT",
+      "es": "CONTACTO",
+      "fr": "CONTACT",
+      "ko": "CONTACT",
+      "zh-hans": "联系"
+    },
+    "nav.license": {
+      "ja": "LICENSE",
+      "en": "LICENSE",
+      "es": "LICENCIA",
+      "fr": "LICENCE",
+      "ko": "LICENSE",
+      "zh-hans": "许可"
+    },
+    "hero.tagline": {
+      "ja": "色彩は、言葉より先に届く。",
+      "en": "Color reaches you before words.",
+      "es": "El color llega antes que las palabras.",
+      "fr": "La couleur te touche avant les mots.",
+      "ko": "색채는 말보다 먼저 닿는다.",
+      "zh-hans": "色彩先于语言抵达。"
+    },
+    "works.openHint": {
+      "ja": "タップして開く",
+      "en": "Tap to open",
+      "es": "Toca para abrir",
+      "fr": "Touchez pour ouvrir",
+      "ko": "탭해서 열기",
+      "zh-hans": "点击打开"
+    },
+    "works.tapHint": {
+      "ja": "作品をタップすると画面上に表示されます。RAW / MAIN を切り替え可能。",
+      "en": "Tap a work to open. Switch RAW / MAIN.",
+      "es": "Toca una obra para abrir. Cambia RAW / MAIN.",
+      "fr": "Touchez une œuvre pour ouvrir. Basculer RAW / MAIN.",
+      "ko": "작품을 탭하면 열립니다. RAW / MAIN 전환.",
+      "zh-hans": "点击作品打开，可切换 RAW / MAIN。"
+    },
+    "work.viewMain": {
+      "ja": "MAIN",
+      "en": "MAIN",
+      "es": "MAIN",
+      "fr": "MAIN",
+      "ko": "MAIN",
+      "zh-hans": "主图"
+    },
+    "work.viewRaw": {
+      "ja": "RAW",
+      "en": "RAW",
+      "es": "RAW",
+      "fr": "RAW",
+      "ko": "RAW",
+      "zh-hans": "原图"
+    },
+    "work.close": {
+      "ja": "閉じる",
+      "en": "Close",
+      "es": "Cerrar",
+      "fr": "Fermer",
+      "ko": "닫기",
+      "zh-hans": "关闭"
+    },
+    "about.lead": {
+      "ja": "SAIREN COLOR ARCHIVE は、彩蓮（Sairen Takashima）の作品と制作の軌跡を記録するアーカイブです。",
+      "en": "SAIREN COLOR ARCHIVE is an archive of artworks and the creative journey by Sairen Takashima.",
+      "es": "SAIREN COLOR ARCHIVE es un archivo de obras y del recorrido creativo de Sairen Takashima.",
+      "fr": "SAIREN COLOR ARCHIVE est une archive des œuvres et du parcours créatif de Sairen Takashima.",
+      "ko": "SAIREN COLOR ARCHIVE는 사이렌 타카시마의 작품과 제작의 궤적을 기록하는 아카이브입니다.",
+      "zh-hans": "SAIREN COLOR ARCHIVE 是高嶋彩莲（Sairen Takashima）的作品与创作轨迹档案。"
+    },
+    "about.p1": {
+      "ja": "色を「きれい」や「オシャレ」で終わらせず、感情や痕跡として扱います。",
+      "en": "Color is treated as emotion and trace—not merely “pretty” or “stylish.”",
+      "es": "El color se trata como emoción y huella, no solo como “bonito” o “elegante”.",
+      "fr": "La couleur est une émotion et une trace—pas seulement “belle” ou “stylée”.",
+      "ko": "색을 '예쁘다'나 '멋지다'로 끝내지 않고 감정과 흔적으로 다룹니다.",
+      "zh-hans": "色彩不仅是“好看/时髦”，更是情感与痕迹。"
+    },
+    "about.p2": {
+      "ja": "WORKS では完成形（MAIN）と素材（RAW）を切り替えできます。",
+      "en": "In WORKS, you can switch between the formed image (MAIN) and the raw material (RAW).",
+      "es": "En WORKS puedes alternar entre la imagen final (MAIN) y el material (RAW).",
+      "fr": "Dans WORKS, vous pouvez basculer entre l’image finale (MAIN) et la matière (RAW).",
+      "ko": "WORKS에서 완성본(MAIN)과 원본(RAW)을 전환할 수 있습니다.",
+      "zh-hans": "在 WORKS 中可在成品（MAIN）与素材（RAW）之间切换。"
+    },
+    "sns.desc": {
+      "ja": "公式SNSはこちら。",
+      "en": "Official social links.",
+      "es": "Enlaces oficiales de redes.",
+      "fr": "Liens officiels.",
+      "ko": "공식 SNS 링크.",
+      "zh-hans": "官方社交链接。"
+    },
+    "contact.desc": {
+      "ja": "お問い合わせはメールでお願いします。",
+      "en": "Contact by email.",
+      "es": "Contacto por correo.",
+      "fr": "Contact par email.",
+      "ko": "이메일로 문의하세요.",
+      "zh-hans": "请通过邮件联系。"
+    },
+    "license.p1": {
+      "ja": "本サイトの画像・文章の無断転載を禁止します。",
+      "en": "Unauthorized reproduction is prohibited.",
+      "es": "Se prohíbe la reproducción no autorizada.",
+      "fr": "Reproduction non autorisée interdite.",
+      "ko": "무단 전재를 금지합니다.",
+      "zh-hans": "禁止未经许可转载。"
+    },
+    "license.p2": {
+      "ja": "詳細は必要に応じて追記します。",
+      "en": "More details may be added as needed.",
+      "es": "Se añadirán detalles si es necesario.",
+      "fr": "Des détails peuvent être ajoutés si nécessaire.",
+      "ko": "필요 시 추가 안내합니다.",
+      "zh-hans": "必要时将补充说明。"
+    }
+  }
+}
