@@ -1,0 +1,351 @@
+{
+  "defaults": {
+    "lang": "ja"
+  },
+  "lookbook": {
+    "externalUrl": "https://look.sairencolorarchive.com/"
+  },
+  "contact": {
+    "email": "info@sairencolorarchive.com"
+  },
+  "sns": {
+    "instagramUrl": "https://www.instagram.com/tcda.shop",
+    "tiktokUrl": "https://www.tiktok.com/@tcda.shop"
+  },
+  "i18n": {
+    "siteName": {
+      "ja": "SAIREN COLOR ARCHIVE",
+      "en": "SAIREN COLOR ARCHIVE",
+      "es": "SAIREN COLOR ARCHIVE",
+      "fr": "SAIREN COLOR ARCHIVE",
+      "ko": "SAIREN COLOR ARCHIVE",
+      "zh-hans": "SAIREN COLOR ARCHIVE"
+    },
+    "nav.home": {
+      "ja": "HOME",
+      "en": "HOME",
+      "es": "INICIO",
+      "fr": "ACCUEIL",
+      "ko": "HOME",
+      "zh-hans": "首页"
+    },
+    "nav.works": {
+      "ja": "WORKS",
+      "en": "WORKS",
+      "es": "OBRAS",
+      "fr": "ŒUVRES",
+      "ko": "WORKS",
+      "zh-hans": "作品"
+    },
+    "nav.about": {
+      "ja": "ABOUT",
+      "en": "ABOUT",
+      "es": "ACERCA",
+      "fr": "À PROPOS",
+      "ko": "ABOUT",
+      "zh-hans": "关于"
+    },
+    "nav.sns": {
+      "ja": "SNS",
+      "en": "SNS",
+      "es": "SNS",
+      "fr": "SNS",
+      "ko": "SNS",
+      "zh-hans": "SNS"
+    },
+    "nav.contact": {
+      "ja": "CONTACT",
+      "en": "CONTACT",
+      "es": "CONTACTO",
+      "fr": "CONTACT",
+      "ko": "CONTACT",
+      "zh-hans": "联系"
+    },
+    "nav.license": {
+      "ja": "LICENSE",
+      "en": "LICENSE",
+      "es": "LICENCIA",
+      "fr": "LICENCE",
+      "ko": "LICENSE",
+      "zh-hans": "许可"
+    },
+    "home.catch": {
+      "ja": "色彩は、言葉より先に届く。",
+      "en": "Color arrives before words.",
+      "es": "El color llega antes que las palabras.",
+      "fr": "La couleur arrive avant les mots.",
+      "ko": "색채는 말보다 먼저 닿는다.",
+      "zh-hans": "色彩先于言语抵达。"
+    },
+    "home.subcatch": {
+      "ja": "作品と制作の軌跡を記録するアーカイブ。",
+      "en": "An archive of works and process.",
+      "es": "Un archivo de obras y proceso.",
+      "fr": "Un archive des œuvres et du processus.",
+      "ko": "작품과 제작의 궤적을 기록하는 아카이브.",
+      "zh-hans": "记录作品与制作轨迹的档案。"
+    },
+    "home.tiles.works.title": {
+      "ja": "WORKS",
+      "en": "WORKS",
+      "es": "WORKS",
+      "fr": "WORKS",
+      "ko": "WORKS",
+      "zh-hans": "WORKS"
+    },
+    "home.tiles.lookbook.title": {
+      "ja": "LOOKBOOK",
+      "en": "LOOKBOOK",
+      "es": "LOOKBOOK",
+      "fr": "LOOKBOOK",
+      "ko": "LOOKBOOK",
+      "zh-hans": "LOOKBOOK"
+    },
+    "home.tiles.about.title": {
+      "ja": "𝐀𝐁𝐎𝐔𝐓",
+      "en": "𝐀𝐁𝐎𝐔𝐓",
+      "es": "𝐀𝐁𝐎𝐔𝐓",
+      "fr": "𝐀𝐁𝐎𝐔𝐓",
+      "ko": "𝐀𝐁𝐎𝐔𝐓",
+      "zh-hans": "𝐀𝐁𝐎𝐔𝐓"
+    },
+    "home.tiles.works.hint": {
+      "ja": "タップして開く",
+      "en": "Tap to open",
+      "es": "Toca para abrir",
+      "fr": "Touchez pour ouvrir",
+      "ko": "탭하여 열기",
+      "zh-hans": "点击打开"
+    },
+    "home.tiles.lookbook.hint": {
+      "ja": "タップして開く",
+      "en": "Tap to open",
+      "es": "Toca para abrir",
+      "fr": "Touchez pour ouvrir",
+      "ko": "탭하여 열기",
+      "zh-hans": "点击打开"
+    },
+    "home.tiles.about.hint": {
+      "ja": "タップして開く",
+      "en": "Tap to open",
+      "es": "Toca para abrir",
+      "fr": "Touchez pour ouvrir",
+      "ko": "탭하여 열기",
+      "zh-hans": "点击打开"
+    },
+    "works.title": {
+      "ja": "WORKS",
+      "en": "WORKS",
+      "es": "OBRAS",
+      "fr": "ŒUVRES",
+      "ko": "WORKS",
+      "zh-hans": "作品"
+    },
+    "works.subtitle": {
+      "ja": "作品一覧（formedのみ）",
+      "en": "Works (formed only)",
+      "es": "Obras (solo formed)",
+      "fr": "Œuvres (formed uniquement)",
+      "ko": "작품(formed만)",
+      "zh-hans": "作品（仅 formed）"
+    },
+    "works.tapHint": {
+      "ja": "タップで拡大（閉じる表示なし）",
+      "en": "Tap to enlarge (no close UI)",
+      "es": "Toca para ampliar (sin botón de cerrar)",
+      "fr": "Touchez pour agrandir (sans bouton fermer)",
+      "ko": "탭하여 확대(닫기 표시 없음)",
+      "zh-hans": "点击放大（无关闭按钮）"
+    },
+    "sns.title": {
+      "ja": "SNS",
+      "en": "SNS",
+      "es": "SNS",
+      "fr": "SNS",
+      "ko": "SNS",
+      "zh-hans": "SNS"
+    },
+    "sns.subtitle": {
+      "ja": "アイコンをタップして移動",
+      "en": "Tap an icon to open",
+      "es": "Toca un icono para abrir",
+      "fr": "Touchez une icône pour ouvrir",
+      "ko": "아이콘을 탭하여 이동",
+      "zh-hans": "点击图标打开"
+    },
+    "about.title": {
+      "ja": "ABOUT｜SAIREN COLOR ARCHIVE",
+      "en": "ABOUT｜SAIREN COLOR ARCHIVE",
+      "es": "ACERCA｜SAIREN COLOR ARCHIVE",
+      "fr": "À PROPOS｜SAIREN COLOR ARCHIVE",
+      "ko": "ABOUT｜SAIREN COLOR ARCHIVE",
+      "zh-hans": "关于｜SAIREN COLOR ARCHIVE"
+    },
+    "about.body": {
+      "ja": "このページはあなたの既存の本文を残す前提です。必要なら site.config.json の about.body を各言語で置き換えてください。",
+      "en": "This patch keeps your existing About text in mind. Replace about.body per language if needed.",
+      "es": "Este parche supone que mantienes tu texto actual. Sustituye about.body por idioma si hace falta.",
+      "fr": "Ce patch suppose que vous gardez votre texte actuel. Remplacez about.body par langue si nécessaire.",
+      "ko": "이 패치는 기존 ABOUT 본문을 유지하는 전제입니다. 필요하면 언어별 about.body를 교체하세요.",
+      "zh-hans": "此补丁默认保留你现有的 ABOUT 文案。如需多语言，请按语言替换 about.body。"
+    },
+    "contact.title": {
+      "ja": "CONTACT",
+      "en": "CONTACT",
+      "es": "CONTACTO",
+      "fr": "CONTACT",
+      "ko": "CONTACT",
+      "zh-hans": "联系"
+    },
+    "license.title": {
+      "ja": "LICENSE",
+      "en": "LICENSE",
+      "es": "LICENCIA",
+      "fr": "LICENCE",
+      "ko": "LICENSE",
+      "zh-hans": "许可"
+    }
+  },
+  "works": [
+    {
+      "id": "artifact-01",
+      "title": "WORK 01",
+      "raw": "/assets/images/works/color/artifact-01-raw.webp",
+      "main": "/assets/images/works/formed/artifact-01-main.webp",
+      "alt": "ARTIFACT 01"
+    },
+    {
+      "id": "artifact-02",
+      "title": "WORK 02",
+      "raw": "/assets/images/works/color/artifact-02-raw.webp",
+      "main": "/assets/images/works/formed/artifact-02-main.webp",
+      "alt": "ARTIFACT 02"
+    },
+    {
+      "id": "artifact-03",
+      "title": "WORK 03",
+      "raw": "/assets/images/works/color/artifact-03-raw.webp",
+      "main": "/assets/images/works/formed/artifact-03-main.webp",
+      "alt": "ARTIFACT 03"
+    },
+    {
+      "id": "artifact-04",
+      "title": "WORK 04",
+      "raw": "/assets/images/works/color/artifact-04-raw.webp",
+      "main": "/assets/images/works/formed/artifact-04-main.webp",
+      "alt": "ARTIFACT 04"
+    },
+    {
+      "id": "artifact-05",
+      "title": "WORK 05",
+      "raw": "/assets/images/works/color/artifact-05-raw.webp",
+      "main": "/assets/images/works/formed/artifact-05-main.webp",
+      "alt": "ARTIFACT 05"
+    },
+    {
+      "id": "artifact-06",
+      "title": "WORK 06",
+      "raw": "/assets/images/works/color/artifact-06-raw.webp",
+      "main": "/assets/images/works/formed/artifact-06-main.webp",
+      "alt": "ARTIFACT 06"
+    },
+    {
+      "id": "artifact-07",
+      "title": "WORK 07",
+      "raw": "/assets/images/works/color/artifact-07-raw.webp",
+      "main": "/assets/images/works/formed/artifact-07-main.webp",
+      "alt": "ARTIFACT 07"
+    },
+    {
+      "id": "artifact-08",
+      "title": "WORK 08",
+      "raw": "/assets/images/works/color/artifact-08-raw.webp",
+      "main": "/assets/images/works/formed/artifact-08-main.webp",
+      "alt": "ARTIFACT 08"
+    },
+    {
+      "id": "artifact-09",
+      "title": "WORK 09",
+      "raw": "/assets/images/works/color/artifact-09-raw.webp",
+      "main": "/assets/images/works/formed/artifact-09-main.webp",
+      "alt": "ARTIFACT 09"
+    },
+    {
+      "id": "artifact-10",
+      "title": "WORK 10",
+      "raw": "/assets/images/works/color/artifact-10-raw.webp",
+      "main": "/assets/images/works/formed/artifact-10-main.webp",
+      "alt": "ARTIFACT 10"
+    },
+    {
+      "id": "artifact-11",
+      "title": "WORK 11",
+      "raw": "/assets/images/works/color/artifact-11-raw.webp",
+      "main": "/assets/images/works/formed/artifact-11-main.webp",
+      "alt": "ARTIFACT 11"
+    },
+    {
+      "id": "artifact-12",
+      "title": "WORK 12",
+      "raw": "/assets/images/works/color/artifact-12-raw.webp",
+      "main": "/assets/images/works/formed/artifact-12-main.webp",
+      "alt": "ARTIFACT 12"
+    },
+    {
+      "id": "artifact-13",
+      "title": "WORK 13",
+      "raw": "/assets/images/works/color/artifact-13-raw.webp",
+      "main": "/assets/images/works/formed/artifact-13-main.webp",
+      "alt": "ARTIFACT 13"
+    },
+    {
+      "id": "artifact-14",
+      "title": "WORK 14",
+      "raw": "/assets/images/works/color/artifact-14-raw.webp",
+      "main": "/assets/images/works/formed/artifact-14-main.webp",
+      "alt": "ARTIFACT 14"
+    },
+    {
+      "id": "artifact-15",
+      "title": "WORK 15",
+      "raw": "/assets/images/works/color/artifact-15-raw.webp",
+      "main": "/assets/images/works/formed/artifact-15-main.webp",
+      "alt": "ARTIFACT 15"
+    },
+    {
+      "id": "artifact-16",
+      "title": "WORK 16",
+      "raw": "/assets/images/works/color/artifact-16-raw.webp",
+      "main": "/assets/images/works/formed/artifact-16-main.webp",
+      "alt": "ARTIFACT 16"
+    },
+    {
+      "id": "artifact-17",
+      "title": "WORK 17",
+      "raw": "/assets/images/works/color/artifact-17-raw.webp",
+      "main": "/assets/images/works/formed/artifact-17-main.webp",
+      "alt": "ARTIFACT 17"
+    },
+    {
+      "id": "artifact-18",
+      "title": "WORK 18",
+      "raw": "/assets/images/works/color/artifact-18-raw.webp",
+      "main": "/assets/images/works/formed/artifact-18-main.webp",
+      "alt": "ARTIFACT 18"
+    },
+    {
+      "id": "artifact-19",
+      "title": "WORK 19",
+      "raw": "/assets/images/works/color/artifact-19-raw.webp",
+      "main": "/assets/images/works/formed/artifact-19-main.webp",
+      "alt": "ARTIFACT 19"
+    },
+    {
+      "id": "artifact-20",
+      "title": "WORK 20",
+      "raw": "/assets/images/works/color/artifact-20-raw.webp",
+      "main": "/assets/images/works/formed/artifact-20-main.webp",
+      "alt": "ARTIFACT 20"
+    }
+  ]
+}
