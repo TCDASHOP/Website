@@ -1,114 +1,60 @@
-/* WORKS modal (tap image to toggle RAW/MAIN) */
-(function () {
-  const glyph = (id) => document.getElementById(id);
+(() => {
+  const modal = document.getElementById('worksModal');
+  const closeBtn = document.getElementById('worksModalClose');
+  const img = document.getElementById('worksModalImage');
+  const title = document.getElementById('worksModalTitle');
 
-  const overlay = glyph("worksModal");
-  const backdrop = overlay ? overlay.querySelector(".modalBackdrop") : null;
-  const img = glyph("modalImage");
-  const grid = glyph("worksGrid");
+  if (!modal || !img) return;
 
-  let works = [];
-  let current = null;
-  let mode = "main"; // "main" or "raw"
+  const getMainSrc = (w) => {
+    // 優先: main → formed（もしキー名が違う場合に備えて） → raw（最後の保険）
+    return w?.main || w?.formed || w?.raw || '';
+  };
 
-  function setImg() {
-    if (!current || !img) return;
-    const src = mode === "raw" ? current.raw : current.main;
+  const open = (w) => {
+    const src = getMainSrc(w);
+    if (!src) return;
+
+    if (title) title.textContent = w?.title || '';
     img.src = src;
-    img.alt = current.alt || current.title || "WORK";
-  }
+    img.alt = w?.alt || w?.title || 'WORK';
 
-  function openModal(work) {
-    if (!overlay) return;
-    current = work;
-    mode = "main";
-    setImg();
+    modal.setAttribute('aria-hidden', 'false');
+    modal.classList.add('isOpen');
+    document.body.style.overflow = 'hidden';
+  };
 
-    overlay.classList.add("isOpen");
-    overlay.setAttribute("aria-hidden", "false");
-    document.documentElement.classList.add("noScroll");
-  }
+  const close = () => {
+    modal.setAttribute('aria-hidden', 'true');
+    modal.classList.remove('isOpen');
+    document.body.style.overflow = '';
+    // 次回の再描画を軽くする（任意）
+    img.removeAttribute('src');
+  };
 
-  function closeModal() {
-    if (!overlay) return;
-    overlay.classList.remove("isOpen");
-    overlay.setAttribute("aria-hidden", "true");
-    document.documentElement.classList.remove("noScroll");
-    current = null;
-    if (img) {
-      img.src = "";
-      img.alt = "";
-    }
-  }
+  // 作品カードに data-work-id が付いてる前提
+  document.addEventListener('click', (e) => {
+    const el = e.target.closest('[data-work-id]');
+    if (!el) return;
 
-  function toggleMode() {
-    if (!current) return;
-    mode = mode === "main" ? "raw" : "main";
-    setImg();
-  }
+    const id = el.getAttribute('data-work-id');
+    const works = (window.SITE_DATA && window.SITE_DATA.works) ? window.SITE_DATA.works : [];
+    const w = works.find(x => x.id === id);
+    if (!w) return;
 
-  async function loadConfig() {
-    try {
-      const res = await fetch("/assets/site.config.json", { cache: "no-store" });
-      const data = await res.json();
-      works = Array.isArray(data.works) ? data.works : [];
-      return works;
-    } catch (e) {
-      console.warn("Failed to load site.config.json", e);
-      works = [];
-      return works;
-    }
-  }
-
-  function buildGrid() {
-    if (!grid) return;
-    grid.innerHTML = "";
-
-    const frag = document.createDocumentFragment();
-    works.forEach((w, idx) => {
-      const btn = document.createElement("button");
-      btn.type = "button";
-      btn.className = "workThumb";
-      btn.setAttribute("aria-label", w.title || `WORK ${idx + 1}`);
-
-      const imgEl = document.createElement("img");
-      imgEl.loading = "lazy";
-      imgEl.src = w.main || w.raw;
-      imgEl.alt = w.alt || w.title || `WORK ${idx + 1}`;
-      btn.appendChild(imgEl);
-
-      btn.addEventListener("click", () => openModal(w));
-      frag.appendChild(btn);
-    });
-    grid.appendChild(frag);
-  }
-
-  // Events
-  if (backdrop) backdrop.addEventListener("click", closeModal);
-
-  if (overlay) {
-    // click outside inner closes
-    overlay.addEventListener("click", (e) => {
-      if (e.target === overlay) closeModal();
-    });
-  }
-
-  if (img) {
-    img.addEventListener("click", (e) => {
-      e.preventDefault();
-      toggleMode();
-    });
-  }
-
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && overlay && overlay.classList.contains("isOpen")) {
-      closeModal();
-    }
+    e.preventDefault();
+    open(w);
   });
 
-  // Init
-  document.addEventListener("DOMContentLoaded", async () => {
-    await loadConfig();
-    buildGrid();
+  closeBtn?.addEventListener('click', close);
+
+  // 背景クリックで閉じる
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) close();
+  });
+
+  // ESCで閉じる
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') close();
   });
 })();
