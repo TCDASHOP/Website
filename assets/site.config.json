@@ -1,0 +1,234 @@
+{
+  "defaults": {
+    "lang": "ja"
+  },
+  "lookbook": {
+    "externalUrl": "https://look.sairencolorarchive.com/"
+  },
+  "contact": {
+    "email": "info@sairencolorarchive.com"
+  },
+  "sns": {
+    "instagramUrl": "https://instagram.com/REPLACE_ME",
+    "tiktokUrl": "https://tiktok.com/@REPLACE_ME"
+  },
+  "i18n": {
+    "siteName": {
+      "ja": "SAIREN COLOR ARCHIVE",
+      "en": "SAIREN COLOR ARCHIVE",
+      "es": "SAIREN COLOR ARCHIVE",
+      "fr": "SAIREN COLOR ARCHIVE",
+      "ko": "SAIREN COLOR ARCHIVE",
+      "zh-hans": "SAIREN COLOR ARCHIVE"
+    },
+    "title.home": {
+      "ja": "SAIREN COLOR ARCHIVE",
+      "en": "SAIREN COLOR ARCHIVE",
+      "es": "SAIREN COLOR ARCHIVE",
+      "fr": "SAIREN COLOR ARCHIVE",
+      "ko": "SAIREN COLOR ARCHIVE",
+      "zh-hans": "SAIREN COLOR ARCHIVE"
+    },
+    "title.works": {
+      "ja": "WORKS | SAIREN COLOR ARCHIVE",
+      "en": "WORKS | SAIREN COLOR ARCHIVE",
+      "es": "OBRAS | SAIREN COLOR ARCHIVE",
+      "fr": "ŒUVRES | SAIREN COLOR ARCHIVE",
+      "ko": "WORKS | SAIREN COLOR ARCHIVE",
+      "zh-hans": "作品 | SAIREN COLOR ARCHIVE"
+    },
+    "title.about": {
+      "ja": "ABOUT | SAIREN COLOR ARCHIVE",
+      "en": "ABOUT | SAIREN COLOR ARCHIVE",
+      "es": "ACERCA DE | SAIREN COLOR ARCHIVE",
+      "fr": "À PROPOS | SAIREN COLOR ARCHIVE",
+      "ko": "ABOUT | SAIREN COLOR ARCHIVE",
+      "zh-hans": "关于 | SAIREN COLOR ARCHIVE"
+    },
+    "title.sns": {
+      "ja": "SNS | SAIREN COLOR ARCHIVE",
+      "en": "SNS | SAIREN COLOR ARCHIVE",
+      "es": "SNS | SAIREN COLOR ARCHIVE",
+      "fr": "RÉSEAUX | SAIREN COLOR ARCHIVE",
+      "ko": "SNS | SAIREN COLOR ARCHIVE",
+      "zh-hans": "社交 | SAIREN COLOR ARCHIVE"
+    },
+    "title.contact": {
+      "ja": "CONTACT | SAIREN COLOR ARCHIVE",
+      "en": "CONTACT | SAIREN COLOR ARCHIVE",
+      "es": "CONTACTO | SAIREN COLOR ARCHIVE",
+      "fr": "CONTACT | SAIREN COLOR ARCHIVE",
+      "ko": "CONTACT | SAIREN COLOR ARCHIVE",
+      "zh-hans": "联系 | SAIREN COLOR ARCHIVE"
+    },
+    "title.license": {
+      "ja": "LICENSE | SAIREN COLOR ARCHIVE",
+      "en": "LICENSE | SAIREN COLOR ARCHIVE",
+      "es": "LICENCIA | SAIREN COLOR ARCHIVE",
+      "fr": "LICENCE | SAIREN COLOR ARCHIVE",
+      "ko": "LICENSE | SAIREN COLOR ARCHIVE",
+      "zh-hans": "许可 | SAIREN COLOR ARCHIVE"
+    },
+    "nav.home": {
+      "ja": "HOME",
+      "en": "HOME",
+      "es": "INICIO",
+      "fr": "ACCUEIL",
+      "ko": "HOME",
+      "zh-hans": "首页"
+    },
+    "nav.works": {
+      "ja": "WORKS",
+      "en": "WORKS",
+      "es": "OBRAS",
+      "fr": "ŒUVRES",
+      "ko": "WORKS",
+      "zh-hans": "作品"
+    },
+    "nav.lookbook": {
+      "ja": "LOOKBOOK",
+      "en": "LOOKBOOK",
+      "es": "LOOKBOOK",
+      "fr": "LOOKBOOK",
+      "ko": "LOOKBOOK",
+      "zh-hans": "造型册"
+    },
+    "nav.about": {
+      "ja": "ABOUT",
+      "en": "ABOUT",
+      "es": "ACERCA DE",
+      "fr": "À PROPOS",
+      "ko": "ABOUT",
+      "zh-hans": "关于"
+    },
+    "nav.sns": {
+      "ja": "SNS",
+      "en": "SNS",
+      "es": "SNS",
+      "fr": "RÉSEAUX",
+      "ko": "SNS",
+      "zh-hans": "社交"
+    },
+    "nav.contact": {
+      "ja": "CONTACT",
+      "en": "CONTACT",
+      "es": "CONTACTO",
+      "fr": "CONTACT",
+      "ko": "CONTACT",
+      "zh-hans": "联系"
+    },
+    "nav.license": {
+      "ja": "LICENSE",
+      "en": "LICENSE",
+      "es": "LICENCIA",
+      "fr": "LICENCE",
+      "ko": "LICENSE",
+      "zh-hans": "许可"
+    },
+    "hero.tagline": {
+      "ja": "色彩は、言葉より先に届く。",
+      "en": "Color reaches you before words.",
+      "es": "El color llega antes que las palabras.",
+      "fr": "La couleur te touche avant les mots.",
+      "ko": "색채는 말보다 먼저 닿는다.",
+      "zh-hans": "色彩先于语言抵达。"
+    },
+    "works.openHint": {
+      "ja": "タップして開く",
+      "en": "Tap to open",
+      "es": "Toca para abrir",
+      "fr": "Touchez pour ouvrir",
+      "ko": "탭해서 열기",
+      "zh-hans": "点击打开"
+    },
+    "work.viewMain": {
+      "ja": "MAIN",
+      "en": "MAIN",
+      "es": "MAIN",
+      "fr": "MAIN",
+      "ko": "MAIN",
+      "zh-hans": "主图"
+    },
+    "work.viewRaw": {
+      "ja": "RAW",
+      "en": "RAW",
+      "es": "RAW",
+      "fr": "RAW",
+      "ko": "RAW",
+      "zh-hans": "原图"
+    },
+    "work.close": {
+      "ja": "閉じる",
+      "en": "Close",
+      "es": "Cerrar",
+      "fr": "Fermer",
+      "ko": "닫기",
+      "zh-hans": "关闭"
+    },
+    "about.lead": {
+      "ja": "SAIREN COLOR ARCHIVE は、彩蓮（Sairen Takashima）の作品と制作の軌跡を記録するアーカイブです。",
+      "en": "SAIREN COLOR ARCHIVE is an archive of artworks and the creative journey by Sairen Takashima.",
+      "es": "SAIREN COLOR ARCHIVE es un archivo de obras y del recorrido creativo de Sairen Takashima.",
+      "fr": "SAIREN COLOR ARCHIVE est une archive des œuvres et du parcours créatif de Sairen Takashima.",
+      "ko": "SAIREN COLOR ARCHIVE는 사이렌 타카시마의 작품과 제작의 궤적을 기록하는 아카이브입니다.",
+      "zh-hans": "SAIREN COLOR ARCHIVE 是高嶋彩莲（Sairen Takashima）的作品与创作轨迹档案。"
+    },
+    "about.p1": {
+      "ja": "色を「きれい」や「オシャレ」で終わらせず、感情や痕跡として扱います。",
+      "en": "Color is treated as emotion and trace—not merely “pretty” or “stylish.”",
+      "es": "El color se trata como emoción y huella, no solo como “bonito” o “elegante”.",
+      "fr": "La couleur est une émotion et une trace, pas seulement “jolie” ou “stylée”.",
+      "ko": "색을 단순히 ‘예쁘다/멋지다’로 끝내지 않고 감정과 흔적으로 다룹니다.",
+      "zh-hans": "色彩被视为情感与痕迹，而非仅仅“漂亮”或“时髦”。"
+    },
+    "about.p2": {
+      "ja": "ここでは作品をRAWとMAINで切り替えながら、色の構造と変化を見せます。",
+      "en": "Here you can switch between RAW and MAIN to see the structure and transformation of color.",
+      "es": "Aquí puedes alternar entre RAW y MAIN para ver la estructura y transformación del color.",
+      "fr": "Ici, vous pouvez basculer entre RAW et MAIN pour voir la structure et la transformation de la couleur.",
+      "ko": "여기서는 RAW와 MAIN을 전환하며 색의 구조와 변화를 보여줍니다.",
+      "zh-hans": "在这里你可以在 RAW 与 MAIN 间切换，观看色彩的结构与变化。"
+    },
+    "sns.desc": {
+      "ja": "公式SNSへのリンクです。",
+      "en": "Links to official social accounts.",
+      "es": "Enlaces a las cuentas oficiales.",
+      "fr": "Liens vers les comptes officiels.",
+      "ko": "공식 SNS 링크입니다.",
+      "zh-hans": "官方社交账号链接。"
+    },
+    "contact.desc": {
+      "ja": "お問い合わせはメールでお願いします。",
+      "en": "Please contact via email.",
+      "es": "Contacto por correo electrónico.",
+      "fr": "Contact par e-mail.",
+      "ko": "문의는 이메일로 부탁드립니다.",
+      "zh-hans": "请通过电子邮件联系。"
+    },
+    "license.p1": {
+      "ja": "当サイト内の画像・文章等の無断転載・無断使用を禁止します。",
+      "en": "Unauthorized reproduction or use of images/texts on this site is prohibited.",
+      "es": "Se prohíbe la reproducción o uso no autorizado de imágenes/textos en este sitio.",
+      "fr": "Toute reproduction ou utilisation non autorisée des images/textes de ce site est interdite.",
+      "ko": "본 사이트의 이미지/문구 등의 무단 전재 및 무단 사용을 금지합니다.",
+      "zh-hans": "禁止未经许可转载或使用本站图片/文字等内容。"
+    },
+    "license.p2": {
+      "ja": "著作権は彩蓮（Sairen Takashima）に帰属します。",
+      "en": "Copyright belongs to Sairen Takashima.",
+      "es": "Los derechos de autor pertenecen a Sairen Takashima.",
+      "fr": "Les droits d’auteur appartiennent à Sairen Takashima.",
+      "ko": "저작권은 사이렌 타카시마에게 귀속됩니다.",
+      "zh-hans": "版权归高嶋彩莲（Sairen Takashima）所有。"
+    }
+  },
+  "works": [
+    {
+      "id": "artifact-01",
+      "title": "WORK 01",
+      "raw": "/assets/images/works/color/artifact-01-raw.webp",
+      "main": "/assets/images/works/formed/artifact-01-main.webp",
+      "alt": "ARTIFACT 01"
+    }
+  ]
+}
