@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <title data-i18n="title.about">SAIREN COLOR ARCHIVE</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <!-- OGP / Twitter -->
+  <link rel="canonical" href="https://sairencolorarchive.com/about.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="SAIREN COLOR ARCHIVE">
+  <meta property="og:title" content="ABOUT | SAIREN COLOR ARCHIVE">
+  <meta property="og:description" content="作者紹介。色彩のアーカイブ。">
+  <meta property="og:url" content="https://sairencolorarchive.com/about.html">
+  <meta property="og:image" content="https://sairencolorarchive.com/assets/images/ui/logo.svg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="SAIREN COLOR ARCHIVE">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="ABOUT | SAIREN COLOR ARCHIVE">
+  <meta name="twitter:description" content="作者紹介。色彩のアーカイブ。">
+  <meta name="twitter:image" content="https://sairencolorarchive.com/assets/images/ui/logo.svg">
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/svg+xml" href="/assets/images/ui/logo.svg">
+  <link rel="icon" href="/assets/images/ui/logo.svg" sizes="any">
+  <link rel="apple-touch-icon" href="/assets/images/ui/logo.svg">
+  <meta name="theme-color" content="#0b0b10">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/works-modal.css">
+
+  <!-- JS -->
+  <script src="/assets/js/i18n.js" defer></script>
+  <script src="/assets/js/theme-hero.js" defer></script>
+  <script src="/assets/js/brand-color.js" defer></script>
+  <script src="/assets/js/year.js" defer></script>
+
+</head>
+
+  <div class="matrixGlow" aria-hidden="true"></div>
+  <canvas id="matrixCanvas" class="matrixCanvas" aria-hidden="true"></canvas>
+<header class="header">
+    <a class="brand" href="/" data-keep-lang data-colorize="letters">
+      <span data-i18n="siteName"></span>
+    </a>
+
+    <div class="header-right">
+      <select id="langSelect" aria-label="Language">
+        <option value="ja">JA</option>
+        <option value="en">EN</option>
+        <option value="es">ES</option>
+        <option value="fr">FR</option>
+        <option value="ko">KO</option>
+        <option value="zh-hans">ZH</option>
+      </select>
+
+      <nav class="nav" aria-label="Primary">
+        <a href="/" data-keep-lang data-i18n="nav.home"></a>
+        <a href="/works.html" data-keep-lang data-i18n="nav.works"></a>
+        <a href="/about.html" data-keep-lang data-i18n="nav.about"></a>
+        <a href="/sns.html" data-keep-lang data-i18n="nav.sns"></a>
+        <a href="/contact.html" data-keep-lang data-i18n="nav.contact"></a>
+        <a href="/license.html" data-keep-lang data-i18n="nav.license"></a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page prose">
+    <h1 data-i18n="nav.about"></h1>
+    <p class="lead" data-i18n="about.lead"></p>
+    <p data-i18n="about.p1"></p>
+    <p data-i18n="about.p2"></p>
+  </main>
+
+  <footer class="footer">
+    <p>© <span id="year"></span> <span data-i18n="siteName"></span></p>
+  </footer>
+
+  <script src="/assets/js/matrix.js"></script>
+</body>
+</html>
