@@ -1,5 +1,0 @@
-ここに PWA 用のアイコンを置きます（PNG推奨）。
-- assets/icons/icon-192.png  (192x192)
-- assets/icons/icon-512.png  (512x512)
-
-※ まだPWA不要なら、このファイルだけ置いておけばOK（manifestの参照が404になるのを避けたい場合は、上記PNGも追加してください）
