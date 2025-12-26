@@ -1,25 +1,28 @@
-# --- Allow normal search engines ---
-User-agent: *
-Allow: /
-Sitemap: https://sairencolorarchive.com/sitemap.xml
+# ==============================
+# SAIREN COLOR ARCHIVE robots.txt
+# Policy: Block AI bots / Allow search indexing
+# ==============================
 
-# --- Block AI / training crawlers (best-effort) ---
+# --- AI / LLM crawlers (block) ---
 User-agent: GPTBot
 Disallow: /
 
 User-agent: ChatGPT-User
 Disallow: /
 
-User-agent: CCBot
-Disallow: /
-
-User-agent: ClaudeBot
+User-agent: OAI-SearchBot
 Disallow: /
 
 User-agent: Google-Extended
 Disallow: /
 
 User-agent: Applebot-Extended
+Disallow: /
+
+User-agent: ClaudeBot
+Disallow: /
+
+User-agent: CCBot
 Disallow: /
 
 User-agent: PerplexityBot
@@ -31,5 +34,8 @@ Disallow: /
 User-agent: meta-externalagent
 Disallow: /
 
-User-agent: meta-externalfetcher
-Disallow: /
+# --- Default: allow normal search engines ---
+User-agent: *
+Allow: /
+
+Sitemap: https://sairencolorarchive.com/sitemap.xml
