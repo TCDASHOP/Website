@@ -1,9 +1,7 @@
-# ==============================
-# SAIREN COLOR ARCHIVE robots.txt
-# Policy: Block AI/LLM crawlers (and Amazonbot) / Allow search indexing
-# ==============================
+User-agent: *
+Allow: /
 
-# --- Block AI / LLM / training-related crawlers (best-effort) ---
+# --- AI / LLM crawlers (block) ---
 User-agent: GPTBot
 Disallow: /
 
@@ -22,23 +20,13 @@ Disallow: /
 User-agent: ClaudeBot
 Disallow: /
 
-User-agent: CCBot
-Disallow: /
-
 User-agent: PerplexityBot
 Disallow: /
 
-User-agent: YouBot
+User-agent: CCBot
 Disallow: /
 
-User-agent: meta-externalagent
+User-agent: Bytespider
 Disallow: /
-
-User-agent: Amazonbot
-Disallow: /
-
-# --- Default: allow normal search engines ---
-User-agent: *
-Allow: /
 
 Sitemap: https://sairencolorarchive.com/sitemap.xml
