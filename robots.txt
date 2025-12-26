@@ -1,9 +1,9 @@
 # ==============================
 # SAIREN COLOR ARCHIVE robots.txt
-# Policy: Block AI bots / Allow search indexing
+# Policy: Block AI/LLM crawlers (and Amazonbot) / Allow search indexing
 # ==============================
 
-# --- AI / LLM crawlers (block) ---
+# --- Block AI / LLM / training-related crawlers (best-effort) ---
 User-agent: GPTBot
 Disallow: /
 
@@ -32,6 +32,9 @@ User-agent: YouBot
 Disallow: /
 
 User-agent: meta-externalagent
+Disallow: /
+
+User-agent: Amazonbot
 Disallow: /
 
 # --- Default: allow normal search engines ---
