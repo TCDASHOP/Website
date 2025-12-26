@@ -1,3 +1,0 @@
-User-agent: *
-Allow: /
-Sitemap: https://sairencolorarchive.com/sitemap.xml
