@@ -335,3 +335,8 @@ canvas.matrix-canvas,
 canvas#matrix {
   pointer-events: none !important;
 }
+
+/* drawer overlay が閉じてる時はクリックを完全に通す */
+.drawer-overlay { pointer-events: none; }
+.drawer.is-open ~ .drawer-overlay { pointer-events: auto; } /* 直後じゃなくてもOK */
+.drawer-overlay.is-open { pointer-events: auto; } /* JSでis-open付けてる場合にも対応 */
