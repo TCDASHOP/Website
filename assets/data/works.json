@@ -1,0 +1,124 @@
+{
+  "works": [
+    {
+      "id": "artifact-01",
+      "title": "WORK 01",
+      "main": "/assets/images/works/formed/artifact-01-main.webp",
+      "alt": "ARTIFACT 01"
+    },
+    {
+      "id": "artifact-02",
+      "title": "WORK 02",
+      "main": "/assets/images/works/formed/artifact-02-main.webp",
+      "alt": "ARTIFACT 02"
+    },
+    {
+      "id": "artifact-03",
+      "title": "WORK 03",
+      "main": "/assets/images/works/formed/artifact-03-main.webp",
+      "alt": "ARTIFACT 03"
+    },
+    {
+      "id": "artifact-04",
+      "title": "WORK 04",
+      "main": "/assets/images/works/formed/artifact-04-main.webp",
+      "alt": "ARTIFACT 04"
+    },
+    {
+      "id": "artifact-05",
+      "title": "WORK 05",
+      "main": "/assets/images/works/formed/artifact-05-main.webp",
+      "alt": "ARTIFACT 05"
+    },
+    {
+      "id": "artifact-06",
+      "title": "WORK 06",
+      "main": "/assets/images/works/formed/artifact-06-main.webp",
+      "alt": "ARTIFACT 06"
+    },
+    {
+      "id": "artifact-07",
+      "title": "WORK 07",
+      "main": "/assets/images/works/formed/artifact-07-main.webp",
+      "alt": "ARTIFACT 07"
+    },
+    {
+      "id": "artifact-08",
+      "title": "WORK 08",
+      "main": "/assets/images/works/formed/artifact-08-main.webp",
+      "alt": "ARTIFACT 08"
+    },
+    {
+      "id": "artifact-09",
+      "title": "WORK 09",
+      "main": "/assets/images/works/formed/artifact-09-main.webp",
+      "alt": "ARTIFACT 09"
+    },
+    {
+      "id": "artifact-10",
+      "title": "WORK 10",
+      "main": "/assets/images/works/formed/artifact-10-main.webp",
+      "alt": "ARTIFACT 10"
+    },
+    {
+      "id": "artifact-11",
+      "title": "WORK 11",
+      "main": "/assets/images/works/formed/artifact-11-main.webp",
+      "alt": "ARTIFACT 11"
+    },
+    {
+      "id": "artifact-12",
+      "title": "WORK 12",
+      "main": "/assets/images/works/formed/artifact-12-main.webp",
+      "alt": "ARTIFACT 12"
+    },
+    {
+      "id": "artifact-13",
+      "title": "WORK 13",
+      "main": "/assets/images/works/formed/artifact-13-main.webp",
+      "alt": "ARTIFACT 13"
+    },
+    {
+      "id": "artifact-14",
+      "title": "WORK 14",
+      "main": "/assets/images/works/formed/artifact-14-main.webp",
+      "alt": "ARTIFACT 14"
+    },
+    {
+      "id": "artifact-15",
+      "title": "WORK 15",
+      "main": "/assets/images/works/formed/artifact-15-main.webp",
+      "alt": "ARTIFACT 15"
+    },
+    {
+      "id": "artifact-16",
+      "title": "WORK 16",
+      "main": "/assets/images/works/formed/artifact-16-main.webp",
+      "alt": "ARTIFACT 16"
+    },
+    {
+      "id": "artifact-17",
+      "title": "WORK 17",
+      "main": "/assets/images/works/formed/artifact-17-main.webp",
+      "alt": "ARTIFACT 17"
+    },
+    {
+      "id": "artifact-18",
+      "title": "WORK 18",
+      "main": "/assets/images/works/formed/artifact-18-main.webp",
+      "alt": "ARTIFACT 18"
+    },
+    {
+      "id": "artifact-19",
+      "title": "WORK 19",
+      "main": "/assets/images/works/formed/artifact-19-main.webp",
+      "alt": "ARTIFACT 19"
+    },
+    {
+      "id": "artifact-20",
+      "title": "WORK 20",
+      "main": "/assets/images/works/formed/artifact-20-main.webp",
+      "alt": "ARTIFACT 20"
+    }
+  ]
+}
