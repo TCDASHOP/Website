@@ -1,11 +1,9 @@
 /*
   SAIREN COLOR ARCHIVE — Matrix Rain (TextMASK integrated)
-  v5: "rain itself forms the letters" (no big overlay text)
-
-  - Prebuild an alpha mask of the 2 lines.
-  - While drawing rain glyphs, sample mask alpha at (x,y).
-    If inside the text shape, brighten/gently glow that rain.
-  - Canvas is injected as FIRST child of <body> so UI sits above it.
+  v6: Make the textmask unmistakable:
+      - Outside mask: dimmer rain
+      - Inside mask: brighter + glow
+      - No overlay text element (rain itself forms the letters)
 */
 
 (() => {
@@ -16,31 +14,33 @@
     'An archive of works and the trail of creation.'
   ];
 
-  // ---- Tunables (feel free to tweak) ----
   const MASK_SETTINGS = {
-    y: 0.38,          // vertical anchor (0-1)
-    lineGap: 1.55,    // spacing between line1 and line2
-    titleMaxPx: 34,
+    y: 0.38,
+    lineGap: 1.55,
+    titleMaxPx: 36,
     titleMinPx: 18,
     subMaxPx: 18,
     subMinPx: 12
   };
 
   const RAIN_SETTINGS = {
-    columnStep: 16,   // smaller = denser
+    columnStep: 16,
     speedMin: 0.9,
     speedMax: 2.2,
-    fade: 0.08,       // larger = faster trails disappear
-    baseAlpha: 0.55,
-    // highlight when inside text mask
-    boostAlpha: 0.92,
-    glowBlur: 6,
-    glowBoost: 0.35,  // 0..1, how strong the glow is inside mask
+    fade: 0.10,          // trails fade (slightly faster = clearer mask contrast)
+    outsideAlpha: 0.18,  // <<< important: outside mask is dim
+    insideAlpha: 0.95,   // <<< important: inside mask is bright
+    insideGlowBlur: 10,
+    insideGlowAlpha: 0.55,
+    // Optional “pulse” to feel alive
+    pulseEverySec: 12,
+    pulseDurationSec: 0.6,
+    pulseBoost: 0.20
   };
 
-  const GLYPHS = '01ABCDEFGHIJKLMNOPQRSTUVWXYZ#$%&*+?/<>()[]{}';
+  // Add some JP-friendly glyphs too (subtle vibe)
+  const GLYPHS = '01ABCDEFGHIJKLMNOPQRSTUVWXYZ#$%&*+?/<>()[]{}ｱｲｳｴｵﾝﾄﾘﾐ';
 
-  // ---------- Canvas bootstrap ----------
   function ensureCanvas() {
     let c = document.getElementById('sairen-matrix-canvas');
     if (c) return c;
@@ -56,7 +56,6 @@
     c.style.pointerEvents = 'none';
     c.style.zIndex = '0';
 
-    // Put it BEFORE everything so header/page/footer naturally paint on top.
     const body = document.body;
     if (body.firstChild) body.insertBefore(c, body.firstChild);
     else body.appendChild(c);
@@ -69,13 +68,67 @@
 
   let W = 0, H = 0, DPR = 1;
 
-  // Text mask buffer
+  // Mask alpha field (0..255)
   let maskW = 0, maskH = 0;
-  let maskAlpha = null; // Uint8Array
+  let maskAlpha = null;
+
+  let columns = [];
 
   function clamp(n, a, b) { return Math.max(a, Math.min(b, n)); }
   function rand(a, b) { return a + Math.random() * (b - a); }
   function pick(str) { return str[(Math.random() * str.length) | 0]; }
+
+  function buildMask() {
+    const off = document.createElement('canvas');
+    off.width = W;
+    off.height = H;
+    const m = off.getContext('2d');
+
+    m.clearRect(0, 0, W, H);
+
+    const titlePx = clamp(W * 0.055, MASK_SETTINGS.titleMinPx, MASK_SETTINGS.titleMaxPx);
+    const subPx   = clamp(W * 0.020, MASK_SETTINGS.subMinPx,   MASK_SETTINGS.subMaxPx);
+
+    m.textAlign = 'center';
+    m.textBaseline = 'middle';
+    m.fillStyle = '#fff';
+
+    const x = W * 0.5;
+    const y0 = H * MASK_SETTINGS.y;
+
+    m.font = `700 ${titlePx}px ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace`;
+    m.fillText(TEXT_LINES[0], x, y0);
+
+    m.font = `500 ${subPx}px ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace`;
+    m.fillText(TEXT_LINES[1], x, y0 + titlePx * MASK_SETTINGS.lineGap);
+
+    const img = m.getImageData(0, 0, W, H).data;
+    maskW = W; maskH = H;
+
+    const a = new Uint8Array(W * H);
+    for (let p = 0, i = 0; p < a.length; p++, i += 4) a[p] = img[i + 3];
+    maskAlpha = a;
+  }
+
+  function sampleMask(x, y) {
+    if (!maskAlpha) return 0;
+    const xi = x | 0;
+    const yi = y | 0;
+    if (xi < 0 || yi < 0 || xi >= maskW || yi >= maskH) return 0;
+    return maskAlpha[yi * maskW + xi] / 255; // 0..1
+  }
+
+  function buildColumns() {
+    const colCount = Math.ceil(W / RAIN_SETTINGS.columnStep);
+    columns = new Array(colCount);
+    for (let i = 0; i < colCount; i++) {
+      columns[i] = {
+        x: i * RAIN_SETTINGS.columnStep,
+        y: rand(-H, 0),
+        speed: rand(RAIN_SETTINGS.speedMin, RAIN_SETTINGS.speedMax)
+      };
+    }
+  }
 
   function resize() {
     DPR = Math.min(2, window.devicePixelRatio || 1);
@@ -90,154 +143,80 @@
     buildColumns();
   }
 
-  // ---------- Text mask (alpha field) ----------
-  function buildMask() {
-    const off = document.createElement('canvas');
-    off.width = W;
-    off.height = H;
-    const m = off.getContext('2d');
-
-    // clear
-    m.clearRect(0, 0, W, H);
-
-    // fonts (keep it calm — the rain makes it readable)
-    const titlePx = clamp(W * 0.055, MASK_SETTINGS.titleMinPx, MASK_SETTINGS.titleMaxPx);
-    const subPx = clamp(W * 0.020, MASK_SETTINGS.subMinPx, MASK_SETTINGS.subMaxPx);
-
-    m.textAlign = 'center';
-    m.textBaseline = 'middle';
-    m.fillStyle = '#fff';
-
-    const x = W * 0.5;
-    const y0 = H * MASK_SETTINGS.y;
-
-    m.font = `600 ${titlePx}px ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace`;
-    m.fillText(TEXT_LINES[0], x, y0);
-
-    m.font = `400 ${subPx}px ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace`;
-    m.fillText(TEXT_LINES[1], x, y0 + titlePx * MASK_SETTINGS.lineGap);
-
-    const img = m.getImageData(0, 0, W, H).data;
-    maskW = W;
-    maskH = H;
-
-    // Store alpha channel (img[i+3])
-    const a = new Uint8Array(W * H);
-    for (let p = 0, i = 0; p < a.length; p++, i += 4) a[p] = img[i + 3];
-    maskAlpha = a;
+  let t0 = performance.now();
+  function pulseFactor(now) {
+    const sec = (now - t0) / 1000;
+    const p = RAIN_SETTINGS.pulseEverySec;
+    const d = RAIN_SETTINGS.pulseDurationSec;
+    const phase = sec % p;
+    if (phase > d) return 0;
+    // smooth in/out pulse 0..1
+    const x = phase / d;
+    return Math.sin(Math.PI * x) * RAIN_SETTINGS.pulseBoost;
   }
 
-  function sampleMaskAlpha(x, y) {
-    if (!maskAlpha) return 0;
-    const xi = x | 0;
-    const yi = y | 0;
-    if (xi < 0 || yi < 0 || xi >= maskW || yi >= maskH) return 0;
-    return maskAlpha[yi * maskW + xi];
-  }
+  function frame(now) {
+    requestAnimationFrame(frame);
 
-  // ---------- Rain columns ----------
-  let columns = [];
-
-  function buildColumns() {
-    const step = RAIN_SETTINGS.columnStep;
-    const count = Math.max(12, Math.floor(W / step));
-    columns = new Array(count);
-
-    for (let i = 0; i < count; i++) {
-      columns[i] = {
-        x: i * step + step * 0.5,
-        y: rand(-H, 0),
-        speed: rand(RAIN_SETTINGS.speedMin, RAIN_SETTINGS.speedMax),
-        // vary density
-        jitter: rand(0.65, 1.35)
-      };
-    }
-  }
-
-  // ---------- Render loop ----------
-  function paintBackgroundFade() {
-    // subtle fade, keeps trails
-    ctx.fillStyle = `rgba(11, 12, 16, ${RAIN_SETTINGS.fade})`;
+    // Fade previous frame (trail)
+    ctx.fillStyle = `rgba(0,0,0,${RAIN_SETTINGS.fade})`;
     ctx.fillRect(0, 0, W, H);
-  }
 
-  function drawColumn(col) {
-    // base glyph size
-    const fontSize = clamp(W / 80, 14, 20);
-    ctx.font = `${fontSize}px ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace`;
+    const pulse = pulseFactor(now);
 
-    // draw multiple glyphs per column per frame for richness
-    const stamps = Math.max(2, Math.floor(5 * col.jitter));
+    // Draw glyphs
+    ctx.font = '14px ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace';
+    ctx.textBaseline = 'top';
 
-    for (let s = 0; s < stamps; s++) {
-      const y = col.y - s * fontSize * 1.15;
-      if (y < -50) continue;
-      if (y > H + 50) continue;
+    for (let i = 0; i < columns.length; i++) {
+      const col = columns[i];
 
-      const x = col.x + rand(-2, 2);
-      const a = sampleMaskAlpha(x, y);
-      const inside = a > 10;
-      const t = inside ? (a / 255) : 0;
+      const x = col.x;
+      const y = col.y;
 
-      // colors: base teal-gray -> bright cyan-white inside mask
-      // (done as manual lerp)
-      const baseR = 120, baseG = 190, baseB = 185;
-      const hiR = 210, hiG = 255, hiB = 245;
-      const r = (baseR + (hiR - baseR) * t) | 0;
-      const g = (baseG + (hiG - baseG) * t) | 0;
-      const b = (baseB + (hiB - baseB) * t) | 0;
+      const m = sampleMask(x, y); // 0..1
 
-      const alpha = inside
-        ? (RAIN_SETTINGS.boostAlpha * (0.55 + 0.45 * t))
-        : RAIN_SETTINGS.baseAlpha;
+      // Make the LETTERS by contrast:
+      // Outside mask: very dim
+      // Inside mask: bright + glow
+      const a = (m > 0.02)
+        ? clamp(RAIN_SETTINGS.insideAlpha + pulse, 0, 1)
+        : RAIN_SETTINGS.outsideAlpha;
+
+      // Color palette: keep cool/teal vibe but readable
+      // (inside slightly brighter)
+      const inside = (m > 0.02);
 
       if (inside) {
-        ctx.shadowColor = `rgba(${hiR}, ${hiG}, ${hiB}, ${RAIN_SETTINGS.glowBoost * t})`;
-        ctx.shadowBlur = RAIN_SETTINGS.glowBlur;
+        ctx.save();
+        ctx.globalAlpha = a;
+
+        ctx.shadowBlur = RAIN_SETTINGS.insideGlowBlur;
+        ctx.shadowColor = `rgba(200,255,255,${RAIN_SETTINGS.insideGlowAlpha})`;
+
+        ctx.fillStyle = 'rgba(210,255,255,1)';
+        ctx.fillText(pick(GLYPHS), x, y);
+
+        ctx.restore();
       } else {
+        ctx.globalAlpha = a;
         ctx.shadowBlur = 0;
+        ctx.fillStyle = 'rgba(160,220,220,1)';
+        ctx.fillText(pick(GLYPHS), x, y);
       }
 
-      ctx.fillStyle = `rgba(${r}, ${g}, ${b}, ${alpha})`;
-      ctx.fillText(pick(GLYPHS), x, y);
-    }
+      // Move
+      col.y += col.speed * 10;
 
-    // move
-    col.y += col.speed * 10;
-    if (col.y > H + 120) {
-      col.y = rand(-H * 0.6, -50);
-      col.speed = rand(RAIN_SETTINGS.speedMin, RAIN_SETTINGS.speedMax);
-      col.jitter = rand(0.65, 1.35);
+      // Reset column if it leaves screen
+      if (col.y > H + 40) {
+        col.y = rand(-200, -40);
+        col.speed = rand(RAIN_SETTINGS.speedMin, RAIN_SETTINGS.speedMax);
+      }
     }
   }
 
-  function frame() {
-    paintBackgroundFade();
-
-    // Draw columns
-    for (let i = 0; i < columns.length; i++) drawColumn(columns[i]);
-
-    requestAnimationFrame(frame);
-  }
-
-  // ---------- Kickoff ----------
-  window.addEventListener('resize', () => {
-    clearTimeout(resize._t);
-    resize._t = setTimeout(resize, 120);
-  });
-
-  // IMPORTANT: If page is hidden, stop heavy drawing
-  document.addEventListener('visibilitychange', () => {
-    if (document.hidden) {
-      // paint once (dimmer) and let it rest
-      ctx.fillStyle = 'rgba(11,12,16,0.5)';
-      ctx.fillRect(0, 0, W, H);
-    }
-  });
-
+  window.addEventListener('resize', resize, { passive: true });
   resize();
-  // clear to base
-  ctx.fillStyle = '#0b0c10';
-  ctx.fillRect(0, 0, W, H);
-  frame();
+  requestAnimationFrame(frame);
 })();
