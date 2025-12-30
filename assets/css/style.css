@@ -328,3 +328,10 @@ header, main, footer, .drawer, .drawer-overlay, .lang, .lang-switch, .menu, .men
   position: relative;
   z-index: 1;
 }
+
+/* matrix canvas は絶対にクリックを奪わない */
+#matrixCanvas,
+canvas.matrix-canvas,
+canvas#matrix {
+  pointer-events: none !important;
+}
