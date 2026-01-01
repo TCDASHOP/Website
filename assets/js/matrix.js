@@ -51,22 +51,27 @@
 
   // ====== Canvas setup ======
   const canvas = document.createElement('canvas');
-  canvas.id = 'matrix-canvas';
+  canvas.id = 'matrixCanvas';
+  canvas.className = 'matrix-canvas';
   Object.assign(canvas.style, {
     position: 'fixed',
     inset: '0',
     width: '100%',
     height: '100%',
-    zIndex: '0',
+    zIndex: '1',
     pointerEvents: 'none'
   });
-  document.body.appendChild(canvas);
+  document.body.insertBefore(canvas, document.body.firstChild);
 
-  const ctx = canvas.getContext('2d', { alpha: true });
+  let ctx = null;
+  try { ctx = canvas.getContext('2d', { alpha: true }); } catch (e) {}
+  if (!ctx) ctx = canvas.getContext('2d');
 
   // Offscreen mask canvas
   const maskCanvas = document.createElement('canvas');
-  const mctx = maskCanvas.getContext('2d', { alpha: true, willReadFrequently: true });
+  let mctx = null;
+  try { mctx = maskCanvas.getContext('2d', { alpha: true, willReadFrequently: true }); } catch (e) {}
+  if (!mctx) mctx = maskCanvas.getContext('2d');
 
   let DPR = Math.max(1, Math.min(2.5, window.devicePixelRatio || 1));
   let W = 0, H = 0;
