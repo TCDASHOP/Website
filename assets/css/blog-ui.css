@@ -1,0 +1,14 @@
+/* BLOG UI (minimal, matches site tokens) */
+.blog-list{display:grid;grid-template-columns:repeat(12,1fr);gap:12px;margin-top:12px}
+.blog-item{grid-column:span 12;border:1px solid rgba(255,255,255,.10);border-radius:16px;padding:14px 14px 12px;background:rgba(255,255,255,.02)}
+.blog-item__meta{opacity:.72;font-size:12px;letter-spacing:.06em}
+.blog-item__title{margin:8px 0 6px;font-size:16px;letter-spacing:.04em}
+.blog-item__summary{margin:0;opacity:.85;font-size:13px;line-height:1.55}
+.blog-item__actions{margin-top:10px;display:flex;justify-content:space-between;align-items:center;gap:10px}
+.blog-tags{display:flex;gap:8px;flex-wrap:wrap}
+.blog-tag{font-size:11px;opacity:.75;border:1px solid rgba(255,255,255,.12);padding:2px 8px;border-radius:999px}
+.blog-cover{width:100%;aspect-ratio:16/9;border-radius:14px;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.03);display:flex;align-items:center;justify-content:center;margin:14px 0 16px}
+.blog-cover span{opacity:.55;font-size:12px}
+@media (min-width:860px){
+  .blog-item{grid-column:span 6}
+}
