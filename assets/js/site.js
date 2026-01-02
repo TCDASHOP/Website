@@ -94,7 +94,7 @@
 
   function detectLangFromPath(){
     const seg = location.pathname.split("/").filter(Boolean)[0];
-    return SUPPORTED.includes(seg) ? seg : DEFAULT_LANG;
+    return SUPPORTED.includes(seg) ? seg : "ja";
   }
 
   function currentPageFile(){
@@ -151,8 +151,6 @@
     });
 
     const siteName = getText(dict, "siteName", lang) || "SAIREN COLOR ARCHIVE";
-    // Keep <html lang> in sync (SEO / a11y)
-    document.documentElement.lang = (lang === "zh-hans") ? "zh-Hans" : lang;
     // dispatch hook for matrix.js to re-scramble short labels
     document.dispatchEvent(new CustomEvent("sairen:i18n-applied"));
   }
@@ -163,7 +161,7 @@
     brand.addEventListener("click", () => {
       const lang = detectLangFromPath();
       location.href = `${langBase(lang)}index.html`;
-    });
+      });
   }
 
   function wireLangSelect(lang){
@@ -190,7 +188,6 @@
 	    { key:"nav.home", page:"index.html", icon:"⌂" },
 	    { key:"nav.news", page:"news/index.html", icon:"✦" },
         { key:"nav.blog", page:"blog/index.html", icon:"✎" },
-        { key:"nav.timeline", page:"timeline.html", icon:"⌁" },
 	    { key:"nav.sns", page:"sns.html", icon:"◎" },
 	    { key:"nav.contact", page:"contact.html", icon:"✉" },
 	    { key:"nav.license", page:"license.html", icon:"§" },
@@ -264,98 +261,6 @@
       grid.appendChild(card);
     });
   }
-  async function renderTimeline(dict, lang){
-    const nav = $("#timelineNav");
-    const wrap = $("#timelineYears");
-    if(!nav || !wrap) return;
-
-    // Build year list (fixed range + any extra years found)
-    const FIXED = ["2025","2024","2023","2022","2021","2020"];
-
-    nav.innerHTML = `<div class="timeline-nav-label" data-i18n="timeline.jump"></div>`;
-    applyI18n(dict, lang);
-
-    const res = await fetch("/assets/data/works.json", { cache:"no-store" });
-    if(!res.ok){
-      wrap.innerHTML = `<div class="card"><p>works.json not found</p></div>`;
-      return;
-    }
-    const data = await res.json();
-    const works = Array.isArray(data.works) ? data.works : [];
-
-    const byYear = new Map();
-    works.forEach(w => {
-      const m = (w.main||"").match(/\/formed\/(\d{4})\//);
-      const y = (w.year || (m ? m[1] : "") || "unknown").toString();
-      if(!byYear.has(y)) byYear.set(y, []);
-      byYear.get(y).push(w);
-    });
-
-    const extraYears = Array.from(byYear.keys()).filter(y => y !== "unknown" && !FIXED.includes(y));
-    extraYears.sort((a,b) => Number(b) - Number(a));
-
-    const years = [...FIXED, ...extraYears];
-    if(byYear.has("unknown")) years.push("unknown");
-
-    // Build year buttons (always tappable)
-    const btnRow = document.createElement("div");
-    btnRow.className = "timeline-nav-buttons";
-    years.forEach(y => {
-      const count = (byYear.get(y) || []).length;
-      const b = document.createElement("button");
-      b.type = "button";
-      b.className = "timeline-year-btn" + (count===0 ? " is-empty" : "");
-      b.textContent = (y==="unknown") ? "?" : y;
-      b.addEventListener("click", () => {
-        const id = (y==="unknown") ? "year-unknown" : `year-${y}`;
-        const el = document.getElementById(id);
-        if(el) el.scrollIntoView({ behavior:"smooth", block:"start" });
-      });
-      btnRow.appendChild(b);
-    });
-    nav.appendChild(btnRow);
-
-    // Build year sections
-    wrap.innerHTML = "";
-    years.forEach(y => {
-      const list = byYear.get(y) || [];
-      const sec = document.createElement("section");
-      sec.className = "card timeline-year";
-      sec.id = (y==="unknown") ? "year-unknown" : `year-${y}`;
-
-      const h2 = document.createElement("h2");
-      h2.className = "timeline-year-title";
-      h2.textContent = (y==="unknown") ? "UNKNOWN" : y;
-      sec.appendChild(h2);
-
-      if(list.length === 0){
-        const empty = document.createElement("div");
-        empty.className = "timeline-empty";
-        empty.setAttribute("data-i18n", "timeline.empty");
-        sec.appendChild(empty);
-      }else{
-        const grid = document.createElement("div");
-        grid.className = "works-grid timeline-grid";
-        list.forEach(w => {
-          const card = document.createElement("div");
-          card.className = "work-card";
-          card.innerHTML = `
-            <img src="${w.main}" alt="${w.alt || ""}" loading="lazy">
-            <div class="label">${w.title || ""}</div>
-          `;
-          card.addEventListener("click", () => openWorkModal(w));
-          grid.appendChild(card);
-        });
-        sec.appendChild(grid);
-      }
-
-      wrap.appendChild(sec);
-    });
-
-    // translate empty messages / label
-    applyI18n(dict, lang);
-  }
-
 
   function openWorkModal(work){
     const modal = $("#workModal");
@@ -416,7 +321,6 @@
     wireModalClose();
 
     await renderWorks(dict, lang);
-    await renderTimeline(dict, lang);
 
     // LOOKBOOK external link wiring (apply to all matching elements)
     const lbs = document.querySelectorAll("[data-lookbook-open]");
