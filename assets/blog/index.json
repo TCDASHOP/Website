@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "updated": "2026-01-03",
+  "posts": [
+    {
+      "id": "2026-01-01",
+      "path": "/assets/blog/posts/2026-01-01.json"
+    },
+    {
+      "id": "2025-07-09-ikiterufuri",
+      "path": "/assets/blog/posts/2025-07-09-ikiterufuri.json"
+    }
+  ]
+}
