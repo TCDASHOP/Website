@@ -268,7 +268,7 @@
     if(!nav || !wrap) return;
 
     // Build year list (fixed range + any extra years found)
-    const FIXED = ["2026","2025","2024","2023","2022","2021","2020"];
+    const FIXED = ["2025","2024","2023","2022","2021","2020"];
 
     nav.innerHTML = `<div class="timeline-nav-label" data-i18n="timeline.jump"></div>`;
     applyI18n(dict, lang);
