@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
+  <url>
+    <loc>https://sairencolorarchive.com/ja/news/2025-12-31-title/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>SAIREN COLOR ARCHIVE</news:name>
+        <news:language>ja</news:language>
+      </news:publication>
+      <news:publication_date>2025-12-31</news:publication_date>
+      <news:title>NEWS（テンプレ）｜タイトルを差し替え - SAIREN COLOR ARCHIVE</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://sairencolorarchive.com/en/news/2025-12-31-title/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>SAIREN COLOR ARCHIVE</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2025-12-31</news:publication_date>
+      <news:title>NEWS (Template) — Replace title - SAIREN COLOR ARCHIVE</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://sairencolorarchive.com/es/news/2025-12-31-title/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>SAIREN COLOR ARCHIVE</news:name>
+        <news:language>es</news:language>
+      </news:publication>
+      <news:publication_date>2025-12-31</news:publication_date>
+      <news:title>NEWS (Plantilla) — Reemplaza el título - SAIREN COLOR ARCHIVE</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://sairencolorarchive.com/fr/news/2025-12-31-title/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>SAIREN COLOR ARCHIVE</news:name>
+        <news:language>fr</news:language>
+      </news:publication>
+      <news:publication_date>2025-12-31</news:publication_date>
+      <news:title>NEWS (Modèle) — Remplacer le titre - SAIREN COLOR ARCHIVE</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://sairencolorarchive.com/ko/news/2025-12-31-title/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>SAIREN COLOR ARCHIVE</news:name>
+        <news:language>ko</news:language>
+      </news:publication>
+      <news:publication_date>2025-12-31</news:publication_date>
+      <news:title>NEWS (템플릿) — 제목을 교체하세요 - SAIREN COLOR ARCHIVE</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://sairencolorarchive.com/zh-hans/news/2025-12-31-title/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>SAIREN COLOR ARCHIVE</news:name>
+        <news:language>zh</news:language>
+      </news:publication>
+      <news:publication_date>2025-12-31</news:publication_date>
+      <news:title>NEWS（模板）— 替换标题 - SAIREN COLOR ARCHIVE</news:title>
+    </news:news>
+  </url>
+</urlset>
