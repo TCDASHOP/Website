@@ -17,6 +17,21 @@
   <text x="50%" y="50%" fill="rgba(255,255,255,0.40)" font-family="system-ui, -apple-system, Segoe UI, Roboto, sans-serif" font-size="44" text-anchor="middle" dominant-baseline="middle">COMING SOON</text>
 </svg>`);
 
+// ---------------------------------------------------------------------------
+// Responsive WORKS images (srcset)
+//  - Keeps existing `main.webp` as the safe fallback `src`
+//  - Adds -960 / -1440 / -2048 candidates via srcset when available
+// ---------------------------------------------------------------------------
+const WORK_IMG_SIZES = "(max-width: 650px) 50vw, (max-width: 900px) 33vw, 25vw";
+const WORK_MODAL_SIZES = "(max-width: 900px) 92vw, 80vw";
+
+function buildWorkSrcset(mainPath){
+  if(!mainPath || typeof mainPath !== "string") return "";
+  if(!mainPath.endsWith("-main.webp")) return "";
+  const base = mainPath.slice(0, -"-main.webp".length);
+  return `${base}-960.webp 960w, ${base}-1440.webp 1440w, ${base}-2048.webp 2048w`;
+}
+
   function applyImageFallback(scope){
     if(!scope) return;
     scope.querySelectorAll("img[data-work-img]").forEach((img) => {
@@ -270,10 +285,11 @@ function wireLangSelect(lang){
     works.forEach(w => {
       const card = document.createElement("div");
       card.className = "work-card";
-      card.innerHTML = `
-        <img data-work-img src="${w.main}" alt="${w.alt || ""}" loading="lazy">
-        <div class="label">${w.title || ""}</div>
-      `;
+      const srcset = buildWorkSrcset(w.main);
+card.innerHTML = `
+  <img data-work-img src="${w.main}" srcset="${srcset}" sizes="${WORK_IMG_SIZES}" alt="${w.alt || ""}" loading="lazy">
+  <div class="label">${w.title || ""}</div>
+`;
       card.addEventListener("click", () => openWorkModal(w));
       grid.appendChild(card);
     });
@@ -355,10 +371,11 @@ function wireLangSelect(lang){
         list.forEach(w => {
           const card = document.createElement("div");
           card.className = "work-card";
-          card.innerHTML = `
-            <img data-work-img src="${w.main}" alt="${w.alt || ""}" loading="lazy">
-            <div class="label">${w.title || ""}</div>
-          `;
+          const srcset = buildWorkSrcset(w.main);
+card.innerHTML = `
+  <img data-work-img src="${w.main}" srcset="${srcset}" sizes="${WORK_IMG_SIZES}" alt="${w.alt || ""}" loading="lazy">
+  <div class="label">${w.title || ""}</div>
+`;
           card.addEventListener("click", () => openWorkModal(w));
           grid.appendChild(card);
         });
@@ -382,6 +399,8 @@ function wireLangSelect(lang){
     const img = $("#workModalImg");
     if(!modal || !img) return;
     img.src = work.main;
+    img.srcset = buildWorkSrcset(work.main);
+    img.sizes = WORK_MODAL_SIZES;
     img.alt = work.alt || "";
     modal.classList.add("is-open");
   }
@@ -394,14 +413,14 @@ function wireLangSelect(lang){
       if(e.target === modal){
         modal.classList.remove("is-open");
         const img = $("#workModalImg");
-        if(img) img.src = "";
+        if(img){ img.src = ""; img.removeAttribute("srcset"); img.removeAttribute("sizes"); }
       }
     });
     document.addEventListener("keydown", (e) => {
       if(e.key === "Escape" && modal.classList.contains("is-open")){
         modal.classList.remove("is-open");
         const img = $("#workModalImg");
-        if(img) img.src = "";
+        if(img){ img.src = ""; img.removeAttribute("srcset"); img.removeAttribute("sizes"); }
       }
     });
   }
