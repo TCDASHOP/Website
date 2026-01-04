@@ -412,3 +412,47 @@ canvas#matrix {
 .work-card.is-missing img{
   opacity: 0.55;
 }
+/* ===== Save deterrence (right-click / long-press) ===== */
+/* NOTE:
+   - This is deterrence, not perfect prevention (users can still screenshot / devtools).
+   - Keeps design intact; no layout changes. */
+.work-card img,
+.modal img,
+#workModalImg{
+  -webkit-touch-callout: none; /* iOS Safari: reduce "Save Image" menu */
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-user-drag: none;
+  user-drag: none;
+}
+
+.work-card img,
+.modal img,
+#workModalImg{
+  pointer-events: auto; /* keep taps/clicks working */
+}
+
+/* Transparent overlay so the "image element" itself is harder to long-press */
+.work-card{ position:relative; }
+.work-card::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:transparent;
+}
+
+/* Modal overlay too */
+.modal{ position:fixed; }
+.modal::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:transparent;
+}
+
+/* Extra: block image drag save on desktop */
+.work-card img,
+.modal img,
+#workModalImg{
+  -webkit-user-drag: none;
+}
