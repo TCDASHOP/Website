@@ -472,4 +472,52 @@ function wireLangSelect(lang){
     }
 
   });
+
+
+  // ---------------------------------------------------------------------------
+  // Save deterrence (right-click / long-press) - WORKS images
+  //  - Not perfect prevention, but blocks common save gestures/menus.
+  // ---------------------------------------------------------------------------
+  (function protectArtworkMedia(){
+    const isArtworkTarget = (t) => {
+      if(!t || !t.closest) return false;
+      return Boolean(
+        t.closest(".work-card") ||
+        t.closest("#workModal") ||
+        t.closest(".modal")
+      );
+    };
+
+    // Disable context menu on artwork areas (desktop right-click)
+    document.addEventListener("contextmenu", (e) => {
+      if(isArtworkTarget(e.target)) e.preventDefault();
+    }, { capture:true });
+
+    // Disable drag (drag-to-desktop save)
+    document.addEventListener("dragstart", (e) => {
+      if(isArtworkTarget(e.target)) e.preventDefault();
+    }, { capture:true });
+
+    // Reduce text/image selection on long-press
+    document.addEventListener("selectstart", (e) => {
+      if(isArtworkTarget(e.target)) e.preventDefault();
+    }, { capture:true });
+
+    // iOS long-press helper: prevent default only after a short hold
+    let holdTimer = null;
+    document.addEventListener("touchstart", (e) => {
+      if(!isArtworkTarget(e.target)) return;
+      holdTimer = setTimeout(() => {
+        try { e.preventDefault(); } catch(_) {}
+      }, 450);
+    }, { passive:false, capture:true });
+
+    const clearHold = () => {
+      if(holdTimer){ clearTimeout(holdTimer); holdTimer = null; }
+    };
+    document.addEventListener("touchend", clearHold, { capture:true });
+    document.addEventListener("touchmove", clearHold, { capture:true });
+    document.addEventListener("touchcancel", clearHold, { capture:true });
+  })();
+
 })();
