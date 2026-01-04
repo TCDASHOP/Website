@@ -71,13 +71,97 @@
   // ====== Hidden message rain (easter-egg) ======
   // Goal: Let meaningful phrases drift *inside* the rain without DOM overlays.
   // "Noticeable only when noticed" — rare, subtle, but real letters.
-  const MSG_LINES = [LINE1, LINE2];
+  // NOTE: Purely-canvas (no DOM). This preserves navigation + SEO.
+  // We keep messages subtle and biased to peripheral vision.
+  const SUBLIMINAL = {
+    enabled: true,
+    // Only spawn when the viewer is relatively still (reduces "banner" feeling).
+    idleSeconds: 1.8,
+    // Keep message frequency low to avoid feeling like UI text.
+    firstMinuteMin: 14,
+    firstMinuteMax: 28,
+    min: 26,
+    max: 65,
+    // Peripheral bias: how often we avoid the center.
+    peripheralBias: 0.72, // 0..1 higher = more often peripheral
+  };
+
+  // Tiered text (subliminal). Long lines are split automatically.
+  const MSG_TIERS = {
+    // 最後にだけ残る署名（比較的読める）
+    signature: [
+      'REMEMBER THIS.',
+      'COLOR ARRIVES BEFORE WORDS.',
+      'SAIREN COLOR ARCHIVE.'
+    ],
+    // 観測者の態度スイッチ（短く、読めそうで読めない）
+    triggers: [
+      'LOOK CLOSER.',
+      'SLOW DOWN.',
+      'LISTEN WITH YOUR EYES.'
+    ],
+    // 宣言（意味を掴ませてから沈める）
+    manifesto: [
+      'NOT A FEED. AN ARCHIVE.',
+      'NOT ANSWERS. EXPERIENCE.',
+      'COLOR AS TIME.',
+      'COLOR IS MEMORY.',
+      'MEANING, UNTRANSLATED.',
+      'THE SIGNAL IS COLOR.'
+    ],
+    // 概念語群（日本語は“気配”として扱う）
+    jpConcept: [
+      'アカシックレコード',
+      'タイムレコード',
+      '文字レコード',
+      '数字レコード',
+      '神代文字',
+      '古代文字'
+    ],
+    // 粒子（脳内補完を誘う断片）
+    fragments: [
+      'COLOR', 'TIME', 'MEMORY', 'SIGNAL', 'ARCHIVE', 'UNTRANSLATED'
+    ]
+  };
+
+  // Weighted tier choice: mostly fragments, sometimes triggers/manifesto, rarely signature.
+  const MSG_TIER_WEIGHTS = [
+    ['fragments', 0.46],
+    ['jpConcept', 0.22],
+    ['triggers', 0.17],
+    ['manifesto', 0.13],
+    ['signature', 0.02]
+  ];
+
+  function pickWeighted(pairs) {
+    const r = Math.random();
+    let acc = 0;
+    for (let i = 0; i < pairs.length; i++) {
+      acc += pairs[i][1];
+      if (r <= acc) return pairs[i][0];
+    }
+    return pairs[pairs.length - 1][0];
+  }
+
+  function pickTierLine() {
+    const tier = pickWeighted(MSG_TIER_WEIGHTS);
+    const arr = MSG_TIERS[tier] || [LINE1, LINE2];
+    return arr[randInt(arr.length)];
+  }
+
+  // Viewer activity gate (idle detection)
+  let lastActivityAt = performance.now();
+  const markActivity = () => { lastActivityAt = performance.now(); };
+  window.addEventListener('pointermove', markActivity, { passive: true });
+  window.addEventListener('touchstart', markActivity, { passive: true });
+  window.addEventListener('keydown', markActivity, { passive: true });
+  window.addEventListener('scroll', markActivity, { passive: true });
 
   // Spawn cadence (seconds). First minute: slightly more likely, then slower.
-  const MSG_FIRST_MIN = 15;
-  const MSG_FIRST_MAX = 30;
-  const MSG_MIN = 25;
-  const MSG_MAX = 60;
+  const MSG_FIRST_MIN = SUBLIMINAL.firstMinuteMin;
+  const MSG_FIRST_MAX = SUBLIMINAL.firstMinuteMax;
+  const MSG_MIN = SUBLIMINAL.min;
+  const MSG_MAX = SUBLIMINAL.max;
 
   // Visual strength (alpha). Pulse is a brief clarity spike (bird-skin moment).
   const MSG_ALPHA_BASE = 0.12;
@@ -88,7 +172,7 @@
   // Motion & placement
   const MSG_SPEED_FACTOR_MIN = 0.88;   // relative to normal rain speed
   const MSG_SPEED_FACTOR_MAX = 0.95;
-  const MSG_CENTER_BIAS = 0.55;        // 0..1: higher = more often near center columns
+  const MSG_CENTER_BIAS = 0.55;        // legacy center bias (used only when not peripheral)
 
   let msgEvents = [];
   let nextMsgAt = 0;
@@ -110,6 +194,15 @@
     const maxStart = Math.max(0, totalCols - textLen - 1);
     if (maxStart <= 0) return 0;
 
+    // Prefer peripheral placement for subliminal feel.
+    if (SUBLIMINAL.enabled && Math.random() < SUBLIMINAL.peripheralBias) {
+      // left or right band (avoid the center third)
+      const leftMax = Math.max(0, Math.floor(maxStart * 0.33));
+      const rightMin = Math.max(0, Math.floor(maxStart * 0.67));
+      if (Math.random() < 0.5) return randInt(leftMax + 1);
+      return rightMin + randInt(Math.max(1, maxStart - rightMin + 1));
+    }
+
     // Blend of uniform + center-biased pick
     if (rand01() > MSG_CENTER_BIAS) return randInt(maxStart + 1);
 
@@ -122,12 +215,48 @@
     return Math.max(0, Math.min(maxStart, targetCol + Math.round(g)));
   }
 
+  function splitToFit(text, maxLen) {
+    if (text.length <= maxLen) return [text];
+    // Try to split on spaces first.
+    if (text.indexOf(' ') !== -1) {
+      const words = text.split(' ');
+      const chunks = [];
+      let cur = '';
+      for (let i = 0; i < words.length; i++) {
+        const w = words[i];
+        const next = cur ? (cur + ' ' + w) : w;
+        if (next.length <= maxLen) {
+          cur = next;
+        } else {
+          if (cur) chunks.push(cur);
+          cur = w;
+        }
+      }
+      if (cur) chunks.push(cur);
+      return chunks.length ? chunks : [text.slice(0, maxLen)];
+    }
+    // Japanese/no-spaces: hard slice
+    const out = [];
+    for (let i = 0; i < text.length; i += maxLen) out.push(text.slice(i, i + maxLen));
+    return out;
+  }
+
   function spawnMessage(t) {
     if (REDUCE_MOTION) return;
+    if (!SUBLIMINAL.enabled) return;
 
-    const text = MSG_LINES[randInt(MSG_LINES.length)];
+    // Only when idle
+    const idle = (performance.now() - lastActivityAt) / 1000;
+    if (idle < SUBLIMINAL.idleSeconds) return;
+
     const step = Math.max(10, Math.floor(COL_SPACING));
     const totalCols = Math.ceil(W / step) + 1;
+    const maxLen = Math.max(6, totalCols - 2);
+
+    // Pick a line, then split if needed; spawn one chunk (keeps it subtle)
+    const chosen = pickTierLine();
+    const chunks = splitToFit(chosen, maxLen);
+    const text = chunks[randInt(chunks.length)];
 
     const colStart = biasedColumnStart(totalCols, text.length);
     const x = colStart * step;
