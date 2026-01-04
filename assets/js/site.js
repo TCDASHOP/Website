@@ -521,3 +521,94 @@ function wireLangSelect(lang){
   })();
 
 })();
+
+
+/* ===== Watermark on save-attempt (right-click / long-press only) ===== */
+(function watermarkOnSaveAttempt(){
+  const WM_TEXT = "https://sairencolorarchive.com";
+  const SHOW_MS = 850; // 0.6–1.0s range (fixed here)
+  const TILE = 240;    // must match CSS background-size for consistency
+
+  function svgDataUrl(text){
+    // Tiled SVG with rotated text. Kept lightweight.
+    const svg = `
+<svg xmlns="http://www.w3.org/2000/svg" width="${TILE}" height="${TILE}">
+  <rect width="100%" height="100%" fill="transparent"/>
+  <g transform="translate(${TILE/2},${TILE/2}) rotate(-20)">
+    <text x="0" y="0" text-anchor="middle"
+      font-family="system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif"
+      font-size="18"
+      fill="rgba(255,255,255,0.9)"
+      stroke="rgba(0,0,0,0.35)" stroke-width="0.6"
+      paint-order="stroke"
+    >${text}</text>
+  </g>
+</svg>`;
+    return "data:image/svg+xml;charset=UTF-8," + encodeURIComponent(svg.trim());
+  }
+
+  const WM_BG = `url("${svgDataUrl(WM_TEXT)}")`;
+
+  function pickArtworkImage(target){
+    if (!target) return null;
+    const img = target.closest?.(".work-card img, #workModal img");
+    if (img) return img;
+    const card = target.closest?.(".work-card");
+    if (card) return card.querySelector("img");
+    const modal = target.closest?.("#workModal");
+    if (modal) return modal.querySelector("img");
+    return null;
+  }
+
+  function showWatermarkOver(img){
+    if (!img) return;
+    const rect = img.getBoundingClientRect();
+    // Ignore invisible / zero-sized targets
+    if (rect.width < 8 || rect.height < 8) return;
+
+    const overlay = document.createElement("div");
+    overlay.className = "sairen-wm-overlay";
+    overlay.style.left = rect.left + "px";
+    overlay.style.top = rect.top + "px";
+    overlay.style.width = rect.width + "px";
+    overlay.style.height = rect.height + "px";
+    overlay.style.backgroundImage = WM_BG;
+
+    document.body.appendChild(overlay);
+    requestAnimationFrame(() => overlay.classList.add("is-on"));
+
+    // Cleanup
+    window.setTimeout(() => {
+      overlay.classList.remove("is-on");
+      window.setTimeout(() => overlay.remove(), 120);
+    }, SHOW_MS);
+  }
+
+  // Right-click: show watermark immediately
+  document.addEventListener("contextmenu", (e) => {
+    const img = pickArtworkImage(e.target);
+    if (!img) return;
+    showWatermarkOver(img);
+  }, { capture: true });
+
+  // Long-press: show watermark shortly after press begins
+  let lpTimer = null;
+  function clearLP(){
+    if (lpTimer) window.clearTimeout(lpTimer);
+    lpTimer = null;
+  }
+
+  document.addEventListener("touchstart", (e) => {
+    const img = pickArtworkImage(e.target);
+    if (!img) return;
+
+    clearLP();
+    lpTimer = window.setTimeout(() => {
+      showWatermarkOver(img);
+    }, 280); // before iOS long-press menu typically appears
+  }, { passive: true, capture: true });
+
+  document.addEventListener("touchend", clearLP, { capture: true });
+  document.addEventListener("touchmove", clearLP, { capture: true });
+  document.addEventListener("touchcancel", clearLP, { capture: true });
+})();
