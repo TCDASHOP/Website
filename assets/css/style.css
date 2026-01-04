@@ -456,3 +456,24 @@ canvas#matrix {
 #workModalImg{
   -webkit-user-drag: none;
 }
+
+
+/* ===== Watermark on save-attempt (right-click / long-press only) ===== */
+/* Normal viewing: no watermark. Appears briefly only when user attempts to save. */
+.sairen-wm-overlay{
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+  opacity: 0;
+  z-index: 99999;
+  transition: opacity 60ms linear;
+  background-repeat: repeat;
+  background-size: 240px 240px;
+  background-position: 0 0;
+}
+.sairen-wm-overlay.is-on{
+  opacity: 0.18;
+}
