@@ -55,11 +55,11 @@
     },
     "nav.sns": {
       "ja": "SNS",
-      "en": "SNS",
+      "en": "SOCIAL",
       "es": "REDES",
       "fr": "RÉSEAUX",
-      "ko": "SNS",
-      "zh-hans": "社交"
+      "ko": "소셜",
+      "zh-hans": "社交媒体"
     },
     "nav.contact": {
       "ja": "CONTACT",
@@ -159,11 +159,11 @@
     },
     "sns.title": {
       "ja": "SNS",
-      "en": "SNS",
+      "en": "SOCIAL",
       "es": "Redes",
       "fr": "Réseaux",
-      "ko": "SNS",
-      "zh-hans": "社交"
+      "ko": "소셜",
+      "zh-hans": "社交媒体"
     },
     "sns.desc": {
       "ja": "アイコンをタップして移動",
