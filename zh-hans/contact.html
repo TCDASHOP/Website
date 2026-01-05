@@ -52,17 +52,32 @@
 <h1 class="page-title" data-i18n="contact.title"></h1>
 <p class="page-sub" data-i18n="contact.desc"></p>
 <div style="margin-top:14px">
-<div data-i18n="contact.emailLabel" style="color:rgba(255,255,255,.70);margin-bottom:8px"></div>
-<a class="tile" data-contact-email="" href="mailto:info@sairencolorarchive.com?subject=SAIREN%20COLOR%20ARCHIVE%EF%BD%9C%E8%81%94%E7%B3%BB" style="display:block;min-height:auto">
-<div class="tile-inner">
-<h2 class="tile-title" data-contact-email-text>info [at] sairencolorarchive.com</h2>
-<p class="tile-hint" data-i18n="contact.tapToEmail">点按发送邮件</p>
-</div>
-</a>
-<div class="contact-actions" style="margin-top:10px;display:flex;gap:10px;align-items:center;flex-wrap:wrap">
-<button type="button" data-contact-copy style="padding:8px 10px;border-radius:12px;border:1px solid rgba(124,255,215,.18);background: rgba(0,0,0,.28);color: var(--text);font: inherit;cursor:pointer;"><span data-contact-copy-label data-i18n="contact.copy">复制</span></button>
-<div style="color:rgba(255,255,255,.70);font-size:13px;line-height:1.5" data-i18n="contact.replyEta">回复时间：3个工作日内</div>
-</div></div>
+  <div data-i18n="contact.topicLabel" style="color:rgba(255,255,255,.70);margin-bottom:8px"></div>
+  <select class="lang-select" data-contact-topic style="width:100%;max-width:520px">
+    <option value="" data-i18n="contact.topic.placeholder"></option>
+    <option value="art" data-i18n="contact.topic.artRequest"></option>
+    <option value="interview" data-i18n="contact.topic.interviewRequest"></option>
+    <option value="license" data-i18n="contact.topic.license"></option>
+    <option value="collab" data-i18n="contact.topic.collab"></option>
+    <option value="exhibition" data-i18n="contact.topic.exhibition"></option>
+    <option value="b2b" data-i18n="contact.topic.b2b"></option>
+    <option value="press" data-i18n="contact.topic.press"></option>
+    <option value="other" data-i18n="contact.topic.other"></option>
+  </select>
+
+  <div data-i18n="contact.emailLabel" style="color:rgba(255,255,255,.70);margin:14px 0 8px"></div>
+  <a class="tile" data-contact-email="" href="mailto:info@sairencolorarchive.com" style="display:block;min-height:auto">
+    <div class="tile-inner">
+      <h2 class="tile-title" data-contact-email-text="">info [at] sairencolorarchive.com</h2>
+      <p class="tile-hint" data-i18n="contact.tapToEmail"></p>
+    </div>
+  </a>
+
+  <div class="contact-actions" style="display:flex;align-items:center;gap:10px;margin-top:10px;flex-wrap:wrap">
+    <button type="button" data-contact-copy="" data-i18n="contact.copy"
+      style="padding:8px 12px;border-radius:12px;border:1px solid rgba(124,255,215,.18);background:rgba(0,0,0,.28);color:var(--text);cursor:pointer"></button>
+    <div data-i18n="contact.replyEta" style="color:rgba(255,255,255,.70);font-size:12px"></div>
+  </div>
 </div>
 </section>
 </main>
