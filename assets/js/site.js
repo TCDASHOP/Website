@@ -522,12 +522,58 @@ card.innerHTML = `
 
     // CONTACT email wiring
     const emailLink = document.querySelector("[data-contact-email]");
+    const copyBtn = document.querySelector("[data-contact-copy]");
     if(emailLink){
       const email = dict.contact?.email || "";
+      const subject = getText(dict, "contact.mailSubject", lang) || "";
       if(email){
-        emailLink.textContent = email;
-        emailLink.href = `mailto:${email}`;
+        const href = subject ? `mailto:${email}?subject=${encodeURIComponent(subject)}` : `mailto:${email}`;
+        emailLink.href = href;
+        const titleEl = emailLink.querySelector("[data-contact-email-text]") || emailLink.querySelector(".tile-title");
+        if(titleEl) titleEl.textContent = email.replace("@", " [at] ");
       }
+    }
+
+    // CONTACT: Copy email
+    if(copyBtn){
+      const labelEl = copyBtn.querySelector("[data-contact-copy-label]") || copyBtn;
+      const defaultLabel = getText(dict, "contact.copy", lang) || labelEl.textContent || "Copy";
+      const copiedLabel = getText(dict, "contact.copied", lang) || "Copied";
+
+      const copyToClipboard = async (text) => {
+        try {
+          if(navigator.clipboard && navigator.clipboard.writeText){
+            await navigator.clipboard.writeText(text);
+            return true;
+          }
+        } catch (e) {}
+        try {
+          const ta = document.createElement("textarea");
+          ta.value = text;
+          ta.setAttribute("readonly", "");
+          ta.style.position = "fixed";
+          ta.style.left = "-9999px";
+          document.body.appendChild(ta);
+          ta.select();
+          const ok = document.execCommand("copy");
+          document.body.removeChild(ta);
+          return ok;
+        } catch (e) {
+          return false;
+        }
+      };
+
+      copyBtn.addEventListener("click", async (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        const email = dict.contact?.email || "";
+        if(!email) return;
+        const ok = await copyToClipboard(email);
+        if(ok){
+          labelEl.textContent = copiedLabel;
+          window.setTimeout(() => { labelEl.textContent = defaultLabel; }, 1400);
+        }
+      });
     }
 
     // SNS icons wiring
