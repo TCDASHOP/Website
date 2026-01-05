@@ -520,60 +520,67 @@ card.innerHTML = `
       }
     }
 
-    // CONTACT email wiring
-    const emailLink = document.querySelector("[data-contact-email]");
-    const copyBtn = document.querySelector("[data-contact-copy]");
-    if(emailLink){
-      const email = dict.contact?.email || "";
-      const subject = getText(dict, "contact.mailSubject", lang) || "";
-      if(email){
-        const href = subject ? `mailto:${email}?subject=${encodeURIComponent(subject)}` : `mailto:${email}`;
-        emailLink.href = href;
-        const titleEl = emailLink.querySelector("[data-contact-email-text]") || emailLink.querySelector(".tile-title");
-        if(titleEl) titleEl.textContent = email.replace("@", " [at] ");
-      }
-    }
+    // CONTACT wiring (subject auto-fill + copy + spam-safe display)
+    const emailTile = document.querySelector("[data-contact-email]");
+    if(emailTile){
+      const email = (dict.contact && dict.contact.email) ? dict.contact.email : "";
+      const titleEl = emailTile.querySelector("[data-contact-email-text]") || emailTile.querySelector(".tile-title");
+      const topicSel = document.querySelector("[data-contact-topic]");
+      const copyBtn = document.querySelector("[data-contact-copy]");
 
-    // CONTACT: Copy email
-    if(copyBtn){
-      const labelEl = copyBtn.querySelector("[data-contact-copy-label]") || copyBtn;
-      const defaultLabel = getText(dict, "contact.copy", lang) || labelEl.textContent || "Copy";
-      const copiedLabel = getText(dict, "contact.copied", lang) || "Copied";
-
-      const copyToClipboard = async (text) => {
-        try {
-          if(navigator.clipboard && navigator.clipboard.writeText){
-            await navigator.clipboard.writeText(text);
-            return true;
-          }
-        } catch (e) {}
-        try {
-          const ta = document.createElement("textarea");
-          ta.value = text;
-          ta.setAttribute("readonly", "");
-          ta.style.position = "fixed";
-          ta.style.left = "-9999px";
-          document.body.appendChild(ta);
-          ta.select();
-          const ok = document.execCommand("copy");
-          document.body.removeChild(ta);
-          return ok;
-        } catch (e) {
-          return false;
+      const getSubject = () => {
+        const baseSubject = getText(dict, "contact.mailSubject.default", lang) || "SAIREN COLOR ARCHIVE — Contact";
+        if(topicSel && topicSel.value){
+          const opt = topicSel.options[topicSel.selectedIndex];
+          const topic = (opt && opt.textContent) ? opt.textContent.trim() : "";
+          if(topic) return `${topic} — SAIREN COLOR ARCHIVE`;
         }
+        return baseSubject;
       };
 
-      copyBtn.addEventListener("click", async (e) => {
-        e.preventDefault();
-        e.stopPropagation();
-        const email = dict.contact?.email || "";
+      const updateMailto = () => {
         if(!email) return;
-        const ok = await copyToClipboard(email);
-        if(ok){
-          labelEl.textContent = copiedLabel;
-          window.setTimeout(() => { labelEl.textContent = defaultLabel; }, 1400);
+        if(titleEl){
+          titleEl.textContent = email.replace("@", " [at] ");
         }
-      });
+        const subject = getSubject();
+        emailTile.href = `mailto:${email}?subject=${encodeURIComponent(subject)}`;
+      };
+
+      updateMailto();
+      if(topicSel){
+        topicSel.addEventListener("change", updateMailto);
+      }
+
+      if(copyBtn && email){
+        const copyLabel = getText(dict, "contact.copy", lang) || copyBtn.textContent || "Copy";
+        const copiedLabel = getText(dict, "contact.copied", lang) || "Copied";
+        copyBtn.addEventListener("click", async () => {
+          try{
+            if(navigator.clipboard && window.isSecureContext){
+              await navigator.clipboard.writeText(email);
+            }else{
+              const ta = document.createElement("textarea");
+              ta.value = email;
+              ta.setAttribute("readonly","");
+              ta.style.position = "fixed";
+              ta.style.left = "-9999px";
+              document.body.appendChild(ta);
+              ta.select();
+              document.execCommand("copy");
+              document.body.removeChild(ta);
+            }
+            copyBtn.textContent = copiedLabel;
+            copyBtn.disabled = true;
+            setTimeout(() => {
+              copyBtn.textContent = copyLabel;
+              copyBtn.disabled = false;
+            }, 1200);
+          }catch(e){
+            // ignore
+          }
+        });
+      }
     }
 
     // SNS icons wiring
