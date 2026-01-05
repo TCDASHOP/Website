@@ -431,9 +431,58 @@ card.innerHTML = `
     el.textContent = String(new Date().getFullYear());
   }
 
+  // --- SEO: hreflang alternates (multi-language) ---
+  function injectHreflangAlternates(){
+    try{
+      const path = window.location.pathname || "/";
+      const m = path.match(/^\/(ja|en|es|fr|ko|zh-hans)(\/|$)/);
+      if(!m) return; // only for language-scoped pages
+      let rest = path.replace(/^\/(ja|en|es|fr|ko|zh-hans)/, "");
+      if(rest === "") rest = "/";
+
+      const origin = window.location.origin;
+      const langList = ["ja","en","es","fr","ko","zh-hans"];
+      const hreflangMap = {
+        "ja": "ja",
+        "en": "en",
+        "es": "es",
+        "fr": "fr",
+        "ko": "ko",
+        "zh-hans": "zh-Hans"
+      };
+      const defaultLang = "ja";
+
+      // Remove existing alternates we manage (avoid duplicates)
+      const existing = document.head.querySelectorAll('link[rel="alternate"][hreflang]');
+      existing.forEach((el) => {
+        const hl = (el.getAttribute("hreflang") || "").toLowerCase();
+        const managed = Object.values(hreflangMap).map(v => v.toLowerCase());
+        if(hl === "x-default" || managed.includes(hl)){
+          el.remove();
+        }
+      });
+
+      langList.forEach((lang) => {
+        const link = document.createElement("link");
+        link.setAttribute("rel", "alternate");
+        link.setAttribute("hreflang", hreflangMap[lang]);
+        link.setAttribute("href", origin + "/" + lang + (rest.startsWith("/") ? rest : ("/" + rest)));
+        document.head.appendChild(link);
+      });
+
+      const xdef = document.createElement("link");
+      xdef.setAttribute("rel", "alternate");
+      xdef.setAttribute("hreflang", "x-default");
+      xdef.setAttribute("href", origin + "/" + defaultLang + (rest.startsWith("/") ? rest : ("/" + rest)));
+      document.head.appendChild(xdef);
+    }catch(e){
+      // fail-safe: never block page rendering because of SEO tags
+    }
+  }
   document.addEventListener("DOMContentLoaded", async () => {
     // Always set footer year first (failsafe)
     try { setFooterYear(); } catch (e) {}
+    try { injectHreflangAlternates(); } catch (e) {}
 
     try {
     const urlLang = detectLangFromPath();
