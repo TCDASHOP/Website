@@ -213,13 +213,13 @@
       "ko": "의뢰·상담",
       "zh-hans": "委托与咨询"
     },
-    "contact.emailLabel": {
-      "ja": "Email",
-      "en": "Email",
-      "es": "Email",
-      "fr": "Email",
-      "ko": "Email",
-      "zh-hans": "邮箱"
+  "contact.emailLabel": {
+  "ja": "メール",
+  "en": "Email",
+  "es": "Correo",
+  "fr": "E-mail",
+  "ko": "이메일",
+  "zh-hans": "邮箱"
     },
     "license.title": {
       "ja": "LICENSE",
