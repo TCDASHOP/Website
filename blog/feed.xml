@@ -13,19 +13,8 @@
     <name>SAIREN COLOR ARCHIVE</name>
   </author>
 
-  <!--
-    How to update:
-    1) Replace <updated> with the latest update time (RFC3339).
-    2) Add one <entry> per post (newest first).
-    3) Keep URLs absolute (https://...).
-  -->
-
-  <entry>
-    <title>REPLACE: Post title</title>
-    <id>https://sairencolorarchive.com/en/blog/REPLACE-SLUG/</id>
-    <link rel="alternate" href="https://sairencolorarchive.com/en/blog/REPLACE-SLUG/"/>
-    <updated>2026-01-07T00:00:00+09:00</updated>
-    <summary type="html"><![CDATA[REPLACE: short excerpt (plain text or safe HTML).]]></summary>
-  </entry>
-
+  <!-- Update this file when you publish a new post:
+       - Set <updated> to the latest post time (RFC3339)
+       - Add one <entry> per post (newest first)
+       - Use absolute URLs (https://...) -->
 </feed>
