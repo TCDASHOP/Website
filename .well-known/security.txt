@@ -1,1 +1,5 @@
+# security.txt (RFC 9116)
 Contact: mailto:info@sairencolorarchive.com
+Preferred-Languages: ja, en
+Canonical: https://sairencolorarchive.com/.well-known/security.txt
+Expires: 2026-12-31T23:59:59+09:00
