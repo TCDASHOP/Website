@@ -14,13 +14,4 @@
   </author>
 
   <!-- Add entries from Blog and News here (newest first). -->
-
-  <entry>
-    <title>REPLACE: Entry title</title>
-    <id>https://sairencolorarchive.com/en/blog-or-news/REPLACE-SLUG/</id>
-    <link rel="alternate" href="https://sairencolorarchive.com/en/blog-or-news/REPLACE-SLUG/"/>
-    <updated>2026-01-07T00:00:00+09:00</updated>
-    <summary type="html"><![CDATA[REPLACE: short excerpt.]]></summary>
-  </entry>
-
 </feed>
