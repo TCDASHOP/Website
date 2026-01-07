@@ -13,12 +13,5 @@
     <name>SAIREN COLOR ARCHIVE</name>
   </author>
 
-  <entry>
-    <title>REPLACE: News title</title>
-    <id>https://sairencolorarchive.com/en/news/REPLACE-SLUG/</id>
-    <link rel="alternate" href="https://sairencolorarchive.com/en/news/REPLACE-SLUG/"/>
-    <updated>2026-01-07T00:00:00+09:00</updated>
-    <summary type="html"><![CDATA[REPLACE: short summary (plain text or safe HTML).]]></summary>
-  </entry>
-
+  <!-- Add <entry> items here when you publish news. -->
 </feed>
