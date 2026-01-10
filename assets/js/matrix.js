@@ -121,17 +121,68 @@
     // 粒子（脳内補完を誘う断片）
     fragments: [
       'COLOR', 'TIME', 'MEMORY', 'SIGNAL', 'ARCHIVE', 'UNTRANSLATED'
-    ]
+    ],
+    // 数学者/物理学者の公式・短い名言（外部JSONで上書き可能）
+    archive: []
   };
 
   // Weighted tier choice: mostly fragments, sometimes triggers/manifesto, rarely signature.
   const MSG_TIER_WEIGHTS = [
-    ['fragments', 0.46],
+    ['fragments', 0.41],
     ['jpConcept', 0.22],
     ['triggers', 0.17],
     ['manifesto', 0.13],
+    // 偉人の公式・名言は「たまに流れる」くらいの頻度（増やしたい場合はここを上げる）
+    ['archive', 0.05],
     ['signature', 0.02]
   ];
+
+  // ====== Archive loader (optional external file) ======
+  // /assets/data/matrix-archive.json が存在する場合、MSG_TIERS.archive を差し替える。
+  // 形式例:
+  // { "version": 1, "items": ["E=MC^2 — ALBERT EINSTEIN", ...] }
+  const ARCHIVE_FALLBACK = [
+    'E=MC^2 — ALBERT EINSTEIN',
+    'F=MA — ISAAC NEWTON',
+    'PV=NRT — IDEAL GAS LAW',
+    'A^2+B^2=C^2 — PYTHAGORAS',
+    'EI\u03c0+1=0 — LEONHARD EULER',
+    '\u2207\u00b7E=\u03c1/\u03b5\u2080 — GAUSS',
+    '\u2207\u00d7E= -\u2202B/\u2202T — FARADAY',
+    '\u2207\u00d7B=\u03bc\u2080J+\u03bc\u2080\u03b5\u2080\u2202E/\u2202T — MAXWELL',
+    'S=K LOG W — BOLTZMANN',
+    'H\u03c8=E\u03c8 — SCHR\u00d6DINGER',
+    '\u0394X\u00b7\u0394P\u2265\u210f/2 — HEISENBERG',
+    'E=H\u03bd — PLANCK',
+    'F=G M1 M2 / R^2 — GRAVITATION',
+    'I^2=-1 — COMPLEX NUMBERS',
+    'KNOWING IS NOT ENOUGH. WE MUST APPLY. — GOETHE',
+    'NATURE IS WRITTEN IN THE LANGUAGE OF MATHEMATICS. — GALILEO'
+  ];
+
+  // Ensure it's never empty (prevents rare undefined message picks before async load)
+  MSG_TIERS.archive = ARCHIVE_FALLBACK.slice();
+
+  function normalizeArchiveItems(items) {
+    if (!Array.isArray(items)) return [];
+    return items
+      .map(v => (typeof v === 'string' ? v : ''))
+      .map(v => v.trim())
+      .filter(Boolean);
+  }
+
+  async function loadArchiveIfPresent() {
+    // Keep the site robust: if fetch fails, silently fall back.
+    try {
+      const res = await fetch('/assets/data/matrix-archive.json', { cache: 'no-store' });
+      if (!res.ok) throw new Error('not ok');
+      const json = await res.json();
+      const items = normalizeArchiveItems(json && json.items);
+      MSG_TIERS.archive = items.length ? items : ARCHIVE_FALLBACK.slice();
+    } catch (e) {
+      MSG_TIERS.archive = ARCHIVE_FALLBACK.slice();
+    }
+  }
 
   function pickWeighted(pairs) {
     const r = Math.random();
@@ -631,6 +682,9 @@
   window.addEventListener('resize', () => {
     resize();
   }, { passive: true });
+
+  // Load optional archive list (non-blocking; silently falls back on failure)
+  loadArchiveIfPresent();
 
   // In case body isn't ready yet
   if (document.readyState === 'loading') {
