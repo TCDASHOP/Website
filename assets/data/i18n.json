@@ -13,7 +13,8 @@
     "tiktokUrl": "https://www.tiktok.com/@tcda.shop",
     "spotifyUrl": "https://open.spotify.com/",
     "appleMusicUrl": "https://music.apple.com/",
-    "amazonMusicUrl": "https://music.amazon.com/"
+    "amazonMusicUrl": "https://music.amazon.com/",
+    "youtubeMusicUrl": "https://music.youtube.com/"
   },
   "i18n": {
     "siteName": {
@@ -232,13 +233,13 @@
       "ko": "의뢰·상담",
       "zh-hans": "委托与咨询"
     },
-  "contact.emailLabel": {
-  "ja": "メール",
-  "en": "Email",
-  "es": "Correo",
-  "fr": "E-mail",
-  "ko": "이메일",
-  "zh-hans": "邮箱"
+    "contact.emailLabel": {
+      "ja": "メール",
+      "en": "Email",
+      "es": "Correo",
+      "fr": "E-mail",
+      "ko": "이메일",
+      "zh-hans": "邮箱"
     },
     "license.title": {
       "ja": "LICENSE",
