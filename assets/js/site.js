@@ -589,11 +589,13 @@ card.innerHTML = `
     const sp = document.querySelector("[data-stream-spotify]");
     const am = document.querySelector("[data-stream-applemusic]");
     const az = document.querySelector("[data-stream-amazonmusic]");
+    const yt = document.querySelector("[data-stream-youtubemusic]");
     if(ig) ig.href = dict.sns?.instagramUrl || "https://www.instagram.com/";
     if(tt) tt.href = dict.sns?.tiktokUrl || "https://www.tiktok.com/";
     if(sp) sp.href = dict.sns?.spotifyUrl || "https://open.spotify.com/";
     if(am) am.href = dict.sns?.appleMusicUrl || "https://music.apple.com/";
     if(az) az.href = dict.sns?.amazonMusicUrl || "https://music.amazon.com/";
+    if(yt) yt.href = dict.sns?.youtubeMusicUrl || "https://music.youtube.com/";
     } catch (e) {
       console.warn("site init failed", e);
     }
