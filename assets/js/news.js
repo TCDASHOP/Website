@@ -33,6 +33,13 @@
     }[m]));
   }
 
+  function resolveUrl(url, lang){
+    const u = String(url ?? "");
+    if(!u) return "";
+    if(u.indexOf("{lang}") === -1) return u;
+    return u.split("{lang}").join(lang);
+  }
+
   function normCatId(it){
     if(it && it.categoryId) return String(it.categoryId).toLowerCase();
     if(it && it.categoryKey && String(it.categoryKey).startsWith("news.cat.")){
@@ -84,7 +91,8 @@
     list.innerHTML = latest.map(it => {
       const title = getText(dict, it.titleKey, lang) || it.title || "";
       const summary = getText(dict, it.summaryKey, lang) || it.summary || "";
-      const url = (it.links && it.links[0] && it.links[0].url) ? it.links[0].url : "#";
+      const urlRaw = (it.links && it.links[0] && it.links[0].url) ? it.links[0].url : "#";
+        const url = resolveUrl(urlRaw, lang);
       const cat = catLabel(dict, lang, it);
       return `
         <a class="news-item" href="${esc(url)}">
@@ -168,7 +176,8 @@
       list.innerHTML = filtered.map(it => {
         const title = getText(dict, it.titleKey, lang) || it.title || "";
         const summary = getText(dict, it.summaryKey, lang) || it.summary || "";
-        const url = (it.links && it.links[0] && it.links[0].url) ? it.links[0].url : "#";
+        const urlRaw = (it.links && it.links[0] && it.links[0].url) ? it.links[0].url : "#";
+        const url = resolveUrl(urlRaw, lang);
         const cat = catLabel(dict, lang, it);
         return `
           <a class="news-item" href="${esc(url)}">
