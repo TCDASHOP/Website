@@ -66,4 +66,70 @@
       <news:title>NEWS（模板）— 替换标题 - SAIREN COLOR ARCHIVE</news:title>
     </news:news>
   </url>
+  <url>
+    <loc>https://sairencolorarchive.com/ja/news/2026-01-23-anatahe/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>SAIREN COLOR ARCHIVE</news:name>
+        <news:language>ja</news:language>
+      </news:publication>
+      <news:publication_date>2026-01-23</news:publication_date>
+      <news:title>新曲「あなたへ」公開 - SAIREN COLOR ARCHIVE</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://sairencolorarchive.com/en/news/2026-01-23-anatahe/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>SAIREN COLOR ARCHIVE</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-01-23</news:publication_date>
+      <news:title>New single “To You” out now - SAIREN COLOR ARCHIVE</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://sairencolorarchive.com/es/news/2026-01-23-anatahe/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>SAIREN COLOR ARCHIVE</news:name>
+        <news:language>es</news:language>
+      </news:publication>
+      <news:publication_date>2026-01-23</news:publication_date>
+      <news:title>Nuevo sencillo “To You” disponible - SAIREN COLOR ARCHIVE</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://sairencolorarchive.com/fr/news/2026-01-23-anatahe/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>SAIREN COLOR ARCHIVE</news:name>
+        <news:language>fr</news:language>
+      </news:publication>
+      <news:publication_date>2026-01-23</news:publication_date>
+      <news:title>Nouveau single « To You » disponible - SAIREN COLOR ARCHIVE</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://sairencolorarchive.com/ko/news/2026-01-23-anatahe/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>SAIREN COLOR ARCHIVE</news:name>
+        <news:language>ko</news:language>
+      </news:publication>
+      <news:publication_date>2026-01-23</news:publication_date>
+      <news:title>새 싱글 “To You” 공개 - SAIREN COLOR ARCHIVE</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://sairencolorarchive.com/zh-hans/news/2026-01-23-anatahe/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>SAIREN COLOR ARCHIVE</news:name>
+        <news:language>zh</news:language>
+      </news:publication>
+      <news:publication_date>2026-01-23</news:publication_date>
+      <news:title>新单曲《To You》上线 - SAIREN COLOR ARCHIVE</news:title>
+    </news:news>
+  </url>
 </urlset>
