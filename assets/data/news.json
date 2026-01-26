@@ -12,5 +12,19 @@
     ],
     "categoryId": "release",
     "categoryKey": "news.cat.release"
+  },
+  {
+    "date": "2026-01-23",
+    "category": "RELEASE",
+    "titleKey": "news.song_anatahe.title",
+    "summaryKey": "news.song_anatahe.summary",
+    "links": [
+      {
+        "labelKey": "news.readmore",
+        "url": "/{lang}/news/2026-01-23-anatahe/"
+      }
+    ],
+    "categoryId": "release",
+    "categoryKey": "news.cat.release"
   }
 ]

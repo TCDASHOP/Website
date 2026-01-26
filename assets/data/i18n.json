@@ -10,11 +10,7 @@
   },
   "sns": {
     "instagramUrl": "https://www.instagram.com/tcda.shop",
-    "tiktokUrl": "https://www.tiktok.com/@tcda.shop",
-    "spotifyUrl": "https://open.spotify.com/artist/36BvgoQjXS6jNFwcKzUzpI",
-    "appleMusicUrl": "https://music.apple.com/jp/artist/sairen/1869487278",
-    "amazonMusicUrl": "https://music.amazon.co.jp/artists/B0B63S12D9",
-    "youtubeMusicUrl": "https://music.youtube.com/channel/UCYgdpKDHVtgQ7oZTXwcSSWQ"
+    "tiktokUrl": "https://www.tiktok.com/@tcda.shop"
   },
   "i18n": {
     "siteName": {
@@ -177,22 +173,6 @@
       "ko": "아이콘을 탭하여 이동",
       "zh-hans": "点击图标打开"
     },
-    "sns.musicTitle": {
-      "ja": "MUSIC",
-      "en": "MUSIC",
-      "es": "Música",
-      "fr": "Musique",
-      "ko": "음악",
-      "zh-hans": "音乐"
-    },
-    "sns.musicDesc": {
-      "ja": "配信先のリンク",
-      "en": "Streaming platforms",
-      "es": "Plataformas de streaming",
-      "fr": "Plateformes de streaming",
-      "ko": "스트리밍 플랫폼",
-      "zh-hans": "流媒体平台"
-    },
     "lookbook.title": {
       "ja": "LOOKBOOK",
       "en": "LOOKBOOK",
@@ -233,13 +213,13 @@
       "ko": "의뢰·상담",
       "zh-hans": "委托与咨询"
     },
-    "contact.emailLabel": {
-      "ja": "メール",
-      "en": "Email",
-      "es": "Correo",
-      "fr": "E-mail",
-      "ko": "이메일",
-      "zh-hans": "邮箱"
+  "contact.emailLabel": {
+  "ja": "メール",
+  "en": "Email",
+  "es": "Correo",
+  "fr": "E-mail",
+  "ko": "이메일",
+  "zh-hans": "邮箱"
     },
     "license.title": {
       "ja": "LICENSE",
@@ -360,6 +340,22 @@
       "fr": "LOOKBOOK Issue 01 est en ligne.",
       "ko": "LOOKBOOK Issue 01을 공개했습니다.",
       "zh-hans": "LOOKBOOK Issue 01 现已上线。"
+    },
+    "news.song_anatahe.title": {
+      "ja": "新曲「あなたへ」公開",
+      "en": "New single “To You” out now",
+      "es": "Nuevo sencillo “To You” disponible",
+      "fr": "Nouveau single « To You » disponible",
+      "ko": "새 싱글 “To You” 공개",
+      "zh-hans": "新单曲《To You》上线"
+    },
+    "news.song_anatahe.summary": {
+      "ja": "自分を変えてくれた人への感謝の曲。",
+      "en": "A song of gratitude for the person who changed me.",
+      "es": "Una canción de gratitud para la persona que me cambió.",
+      "fr": "Une chanson de gratitude pour la personne qui m’a changé.",
+      "ko": "나를 바꿔준 사람에게 바치는 감사의 노래.",
+      "zh-hans": "献给改变了我的那个人的感谢之歌。"
     },
     "nav.blog": {
       "ja": "BLOG",
