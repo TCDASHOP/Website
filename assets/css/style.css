@@ -252,12 +252,18 @@ a:focus-visible, button:focus-visible, select:focus-visible{outline:2px solid rg
   inset:0;
   pointer-events:none;
   z-index: 0;
-  /* Layered light: subtle room spill + stronger vignette (avoid flat "UI black") */
+  /* Layered light: room spill + spotlight haze + strong vignette (avoid flat "UI black") */
   background-image:
-    radial-gradient(90% 70% at 50% 42%, rgba(255,255,255,.11) 0%, rgba(255,255,255,0) 58%),
-    radial-gradient(60% 50% at 62% 36%, rgba(124,255,215,.07) 0%, rgba(124,255,215,0) 62%),
-    linear-gradient(180deg, rgba(0,0,0,.28) 0%, rgba(0,0,0,0) 26%, rgba(0,0,0,.18) 100%),
-    radial-gradient(130% 110% at 50% 50%, rgba(0,0,0,0) 0%, rgba(0,0,0,.58) 68%, rgba(0,0,0,.84) 100%);
+    /* ceiling/ambient spill */
+    radial-gradient(90% 70% at 50% 40%, rgba(255,255,255,.11) 0%, rgba(255,255,255,0) 58%),
+    /* subtle cyan tint (brand) */
+    radial-gradient(60% 50% at 62% 34%, rgba(124,255,215,.06) 0%, rgba(124,255,215,0) 62%),
+    /* floor-ish lift (gives "room" structure without moving layout) */
+    radial-gradient(120% 62% at 50% 112%, rgba(255,255,255,.055) 0%, rgba(255,255,255,0) 60%),
+    /* top-to-bottom falloff */
+    linear-gradient(180deg, rgba(0,0,0,.30) 0%, rgba(0,0,0,0) 28%, rgba(0,0,0,.22) 100%),
+    /* vignette */
+    radial-gradient(135% 120% at 50% 50%, rgba(0,0,0,0) 0%, rgba(0,0,0,.62) 68%, rgba(0,0,0,.88) 100%);
   opacity: 1;
 }
 
@@ -266,16 +272,22 @@ a:focus-visible, button:focus-visible, select:focus-visible{outline:2px solid rg
   z-index: 1;
   display: inline-block;
   border-radius: 16px;
-  /* Frame depth: 3-layer shadow + subtle "recess" */
+  /* Frame depth: multi-layer distance + deeper inner recess (mat) */
   box-shadow:
-    0 34px 92px rgba(0,0,0,.62),
-    0 16px 44px rgba(0,0,0,.52),
-    0 7px 18px rgba(0,0,0,.42),
-    0 2px 6px rgba(0,0,0,.32),
-    inset 0 0 0 1px rgba(124,255,215,.12),
-    inset 0 20px 64px rgba(0,0,0,.36),
-    inset 0 -10px 28px rgba(255,255,255,.03);
-  background: rgba(0,0,0,.28);
+    /* far */
+    0 42px 120px rgba(0,0,0,.64),
+    /* mid */
+    0 20px 60px rgba(0,0,0,.54),
+    /* near */
+    0 9px 22px rgba(0,0,0,.44),
+    0 3px 8px rgba(0,0,0,.34),
+    /* subtle edge line (avoid "UI card" look) */
+    inset 0 0 0 1px rgba(255,255,255,.045),
+    inset 0 0 0 2px rgba(124,255,215,.06),
+    /* inner recess */
+    inset 0 28px 86px rgba(0,0,0,.44),
+    inset 0 -12px 34px rgba(255,255,255,.02);
+  background: rgba(0,0,0,.22);
   /* Open motion (kept subtle) */
   transform: scale(.985);
   opacity: 0;
@@ -290,16 +302,16 @@ a:focus-visible, button:focus-visible, select:focus-visible{outline:2px solid rg
 .modal-art::after{
   content:"";
   position:absolute;
-  inset:-22px;
-  border-radius: 22px;
+  inset:-30px;
+  border-radius: 26px;
   pointer-events:none;
   z-index: -1;
-  /* "Spotlight" bloom behind the frame (subtle, but adds depth) */
+  /* "Spotlight" bloom behind the frame (adds air / distance) */
   background:
-    radial-gradient(55% 45% at 50% 40%, rgba(255,255,255,.18) 0%, rgba(255,255,255,0) 70%),
-    radial-gradient(55% 45% at 55% 45%, rgba(124,255,215,.10) 0%, rgba(124,255,215,0) 72%);
-  filter: blur(14px);
-  opacity: .85;
+    radial-gradient(60% 52% at 50% 38%, rgba(255,255,255,.18) 0%, rgba(255,255,255,0) 72%),
+    radial-gradient(58% 50% at 56% 44%, rgba(124,255,215,.09) 0%, rgba(124,255,215,0) 74%);
+  filter: blur(18px);
+  opacity: .92;
 }
 
 .modal-art::before{
@@ -320,7 +332,7 @@ a:focus-visible, button:focus-visible, select:focus-visible{outline:2px solid rg
 }
 
 .modal.is-open .modal-art::before{
-  opacity: .75;
+  opacity: .55;
 }
 
 .modal img{
@@ -548,8 +560,11 @@ canvas#matrix {
   content:"";
   position:absolute;
   inset:0;
-  background:transparent;
   pointer-events:none; /* keep backdrop click logic working */
+  /* Extra room structure: faint "floor" + haze (kept subtle to protect artworks) */
+  background-image:
+    radial-gradient(120% 70% at 50% 120%, rgba(255,255,255,.06) 0%, rgba(255,255,255,0) 62%),
+    linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 62%, rgba(0,0,0,.18) 100%);
 }
 
 /* Extra: block image drag save on desktop */
