@@ -232,7 +232,7 @@ a:focus-visible, button:focus-visible, select:focus-visible{outline:2px solid rg
   position: fixed; inset:0;
   display:none;
   align-items:center; justify-content:center;
-  background: rgba(0,0,0,.55);
+  background: rgba(0,0,0,.68);
   z-index: 999;
 }
 .modal.is-open{display:flex;}
@@ -252,11 +252,12 @@ a:focus-visible, button:focus-visible, select:focus-visible{outline:2px solid rg
   inset:0;
   pointer-events:none;
   z-index: 0;
-  /* Layered light: center glow + off-center spill + vignette */
+  /* Layered light: subtle room spill + stronger vignette (avoid flat "UI black") */
   background-image:
-    radial-gradient(80% 60% at 50% 45%, rgba(255,255,255,.10) 0%, rgba(255,255,255,0) 60%),
-    radial-gradient(50% 40% at 62% 38%, rgba(124,255,215,.08) 0%, rgba(124,255,215,0) 65%),
-    radial-gradient(120% 100% at 50% 50%, rgba(0,0,0,0) 0%, rgba(0,0,0,.45) 70%, rgba(0,0,0,.70) 100%);
+    radial-gradient(90% 70% at 50% 42%, rgba(255,255,255,.11) 0%, rgba(255,255,255,0) 58%),
+    radial-gradient(60% 50% at 62% 36%, rgba(124,255,215,.07) 0%, rgba(124,255,215,0) 62%),
+    linear-gradient(180deg, rgba(0,0,0,.28) 0%, rgba(0,0,0,0) 26%, rgba(0,0,0,.18) 100%),
+    radial-gradient(130% 110% at 50% 50%, rgba(0,0,0,0) 0%, rgba(0,0,0,.58) 68%, rgba(0,0,0,.84) 100%);
   opacity: 1;
 }
 
@@ -267,25 +268,40 @@ a:focus-visible, button:focus-visible, select:focus-visible{outline:2px solid rg
   border-radius: 16px;
   /* Frame depth: 3-layer shadow + subtle "recess" */
   box-shadow:
-    0 14px 34px rgba(0,0,0,.55),
-    0 6px 16px rgba(0,0,0,.45),
-    0 1px 2px rgba(0,0,0,.35),
-    inset 0 0 0 1px rgba(124,255,215,.18),
-    inset 0 0 0 2px rgba(255,255,255,.06),
-    inset 0 18px 44px rgba(0,0,0,.20);
-  background: rgba(0,0,0,.35);
+    0 34px 92px rgba(0,0,0,.62),
+    0 16px 44px rgba(0,0,0,.52),
+    0 7px 18px rgba(0,0,0,.42),
+    0 2px 6px rgba(0,0,0,.32),
+    inset 0 0 0 1px rgba(124,255,215,.12),
+    inset 0 20px 64px rgba(0,0,0,.36),
+    inset 0 -10px 28px rgba(255,255,255,.03);
+  background: rgba(0,0,0,.28);
   /* Open motion (kept subtle) */
   transform: scale(.985);
   opacity: 0;
   transition: transform 220ms ease, opacity 220ms ease;
 }
-
 .modal.is-open .modal-art{
   transform: scale(1);
   opacity: 1;
 }
 
 /* "Glass" reflection (very subtle) */
+.modal-art::after{
+  content:"";
+  position:absolute;
+  inset:-22px;
+  border-radius: 22px;
+  pointer-events:none;
+  z-index: -1;
+  /* "Spotlight" bloom behind the frame (subtle, but adds depth) */
+  background:
+    radial-gradient(55% 45% at 50% 40%, rgba(255,255,255,.18) 0%, rgba(255,255,255,0) 70%),
+    radial-gradient(55% 45% at 55% 45%, rgba(124,255,215,.10) 0%, rgba(124,255,215,0) 72%);
+  filter: blur(14px);
+  opacity: .85;
+}
+
 .modal-art::before{
   content:"";
   position:absolute;
@@ -295,16 +311,16 @@ a:focus-visible, button:focus-visible, select:focus-visible{outline:2px solid rg
   background:
     linear-gradient(125deg,
       rgba(255,255,255,0) 0%,
-      rgba(255,255,255,.035) 22%,
+      rgba(255,255,255,.022) 22%,
       rgba(255,255,255,0) 48%,
-      rgba(255,255,255,.020) 66%,
+      rgba(255,255,255,.014) 66%,
       rgba(255,255,255,0) 100%);
   opacity: 0;
   transition: opacity 260ms ease 60ms;
 }
 
 .modal.is-open .modal-art::before{
-  opacity: 1;
+  opacity: .75;
 }
 
 .modal img{
